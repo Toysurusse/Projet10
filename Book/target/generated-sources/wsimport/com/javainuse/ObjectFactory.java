@@ -46,19 +46,19 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link OutputSOARentbookAddConfirm }
+     * 
+     */
+    public OutputSOARentbookAddConfirm createOutputSOARentbookAddConfirm() {
+        return new OutputSOARentbookAddConfirm();
+    }
+
+    /**
      * Create an instance of {@link InputSOAUser }
      * 
      */
     public InputSOAUser createInputSOAUser() {
         return new InputSOAUser();
-    }
-
-    /**
-     * Create an instance of {@link OutputSOAUserAdd }
-     * 
-     */
-    public OutputSOAUserAdd createOutputSOAUserAdd() {
-        return new OutputSOAUserAdd();
     }
 
     /**
@@ -78,6 +78,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link OutputSOAUserById }
+     * 
+     */
+    public OutputSOAUserById createOutputSOAUserById() {
+        return new OutputSOAUserById();
+    }
+
+    /**
+     * Create an instance of {@link OutputSOARentbookDelConfirm }
+     * 
+     */
+    public OutputSOARentbookDelConfirm createOutputSOARentbookDelConfirm() {
+        return new OutputSOARentbookDelConfirm();
+    }
+
+    /**
+     * Create an instance of {@link InputSOARentbookById }
+     * 
+     */
+    public InputSOARentbookById createInputSOARentbookById() {
+        return new InputSOARentbookById();
+    }
+
+    /**
      * Create an instance of {@link OutputSOAUser }
      * 
      */
@@ -86,19 +110,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OutputSOAShoppingCart }
+     * Create an instance of {@link InputSOARentbook }
      * 
      */
-    public OutputSOAShoppingCart createOutputSOAShoppingCart() {
-        return new OutputSOAShoppingCart();
+    public InputSOARentbook createInputSOARentbook() {
+        return new InputSOARentbook();
     }
 
     /**
-     * Create an instance of {@link ShoppingCart }
+     * Create an instance of {@link OutputSOARentbookById }
      * 
      */
-    public ShoppingCart createShoppingCart() {
-        return new ShoppingCart();
+    public OutputSOARentbookById createOutputSOARentbookById() {
+        return new OutputSOARentbookById();
+    }
+
+    /**
+     * Create an instance of {@link Rentbook }
+     * 
+     */
+    public Rentbook createRentbook() {
+        return new Rentbook();
     }
 
     /**
@@ -110,6 +142,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link InputSOARentbookAdd }
+     * 
+     */
+    public InputSOARentbookAdd createInputSOARentbookAdd() {
+        return new InputSOARentbookAdd();
+    }
+
+    /**
+     * Create an instance of {@link OutputSOARentbook }
+     * 
+     */
+    public OutputSOARentbook createOutputSOARentbook() {
+        return new OutputSOARentbook();
+    }
+
+    /**
      * Create an instance of {@link InputSOABookById }
      * 
      */
@@ -118,43 +166,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link InputSOARent }
+     * Create an instance of {@link InputSOAUserDel }
      * 
      */
-    public InputSOARent createInputSOARent() {
-        return new InputSOARent();
-    }
-
-    /**
-     * Create an instance of {@link OutputSOAShoppingBook }
-     * 
-     */
-    public OutputSOAShoppingBook createOutputSOAShoppingBook() {
-        return new OutputSOAShoppingBook();
-    }
-
-    /**
-     * Create an instance of {@link ShoppingBook }
-     * 
-     */
-    public ShoppingBook createShoppingBook() {
-        return new ShoppingBook();
-    }
-
-    /**
-     * Create an instance of {@link InputSOAShoppingBook }
-     * 
-     */
-    public InputSOAShoppingBook createInputSOAShoppingBook() {
-        return new InputSOAShoppingBook();
-    }
-
-    /**
-     * Create an instance of {@link InputSOAShoppingCart }
-     * 
-     */
-    public InputSOAShoppingCart createInputSOAShoppingCart() {
-        return new InputSOAShoppingCart();
+    public InputSOAUserDel createInputSOAUserDel() {
+        return new InputSOAUserDel();
     }
 
     /**
@@ -182,19 +198,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OutputSOARent }
+     * Create an instance of {@link InputSOAUserById }
      * 
      */
-    public OutputSOARent createOutputSOARent() {
-        return new OutputSOARent();
-    }
-
-    /**
-     * Create an instance of {@link Rent }
-     * 
-     */
-    public Rent createRent() {
-        return new Rent();
+    public InputSOAUserById createInputSOAUserById() {
+        return new InputSOAUserById();
     }
 
     /**
@@ -211,6 +219,30 @@ public class ObjectFactory {
      */
     public OutputSODelConfirm createOutputSODelConfirm() {
         return new OutputSODelConfirm();
+    }
+
+    /**
+     * Create an instance of {@link OutputSOAUserAddConfirm }
+     * 
+     */
+    public OutputSOAUserAddConfirm createOutputSOAUserAddConfirm() {
+        return new OutputSOAUserAddConfirm();
+    }
+
+    /**
+     * Create an instance of {@link OutputSOAUserDelConfirm }
+     * 
+     */
+    public OutputSOAUserDelConfirm createOutputSOAUserDelConfirm() {
+        return new OutputSOAUserDelConfirm();
+    }
+
+    /**
+     * Create an instance of {@link InputSOARentbookDel }
+     * 
+     */
+    public InputSOARentbookDel createInputSOARentbookDel() {
+        return new InputSOARentbookDel();
     }
 
 }

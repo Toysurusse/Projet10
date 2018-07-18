@@ -71,6 +71,12 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>4.1.1</version>
+        </dependency>
 
         <!-- Jakarta Commons -->
         <dependency>
@@ -102,9 +108,25 @@
         <finalName>struts2-archetype-starter</finalName>
         <plugins>
 
-
             <plugin>
-
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>2.2</version>
+                <executions>
+                    <execution>
+                        <id>xjc</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sources>
+                        <source>src/main/resources/xsd</source>
+                    </sources>
+                </configuration>
+            </plugin>
+            <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>jaxws-maven-plugin</artifactId>
                     <version>2.5</version>
@@ -117,7 +139,7 @@
                             <configuration>
                                 <bindingDirectory>src/bindings</bindingDirectory>
                                 <wsdlUrls>
-                                    <wsdlUrl>http://r:r@localhost:8080/javainuse/ws/helloworld.wsdl?wsdl</wsdlUrl>
+                                    <wsdlUrl>http://localhost:8085/javainuse/ws/helloworld.wsdl</wsdlUrl>
                                 </wsdlUrls>
                             </configuration>
                         </execution>

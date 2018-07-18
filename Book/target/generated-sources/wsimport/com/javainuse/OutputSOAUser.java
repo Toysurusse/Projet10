@@ -1,6 +1,8 @@
 
 package com.javainuse;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -18,7 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="result" type="{http://javainuse.com}user"/>
+ *         &lt;element name="result" type="{http://javainuse.com}user" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,30 +37,35 @@ import javax.xml.bind.annotation.XmlType;
 public class OutputSOAUser {
 
     @XmlElement(required = true)
-    protected User result;
+    protected List<User> result;
 
     /**
-     * Obtient la valeur de la propriété result.
+     * Gets the value of the result property.
      * 
-     * @return
-     *     possible object is
-     *     {@link User }
-     *     
-     */
-    public User getResult() {
-        return result;
-    }
-
-    /**
-     * Définit la valeur de la propriété result.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the result property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link User }
-     *     
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getResult().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link User }
+     * 
+     * 
      */
-    public void setResult(User value) {
-        this.result = value;
+    public List<User> getResult() {
+        if (result == null) {
+            result = new ArrayList<User>();
+        }
+        return this.result;
     }
 
 }

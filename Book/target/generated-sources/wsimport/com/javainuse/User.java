@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="userid" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="pseudo" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="gender" type="{http://www.w3.org/2001/XMLSchema}string"/>
@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "user", propOrder = {
-    "id",
+    "userid",
     "pseudo",
     "password",
     "gender",
@@ -40,7 +40,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class User {
 
-    protected int id;
+    protected int userid;
     @XmlElement(required = true)
     protected String pseudo;
     @XmlElement(required = true)
@@ -51,19 +51,19 @@ public class User {
     protected String mail;
 
     /**
-     * Obtient la valeur de la propriété id.
+     * Obtient la valeur de la propriété userid.
      * 
      */
-    public int getId() {
-        return id;
+    public int getUserid() {
+        return userid;
     }
 
     /**
-     * Définit la valeur de la propriété id.
+     * Définit la valeur de la propriété userid.
      * 
      */
-    public void setId(int value) {
-        this.id = value;
+    public void setUserid(int value) {
+        this.userid = value;
     }
 
     /**

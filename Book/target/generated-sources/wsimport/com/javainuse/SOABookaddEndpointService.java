@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "SOABookaddEndpointService", targetNamespace = "http://javainuse.com", wsdlLocation = "http://r:r@localhost:8080/javainuse/ws/helloworld.wsdl?wsdl")
+@WebServiceClient(name = "SOABookaddEndpointService", targetNamespace = "http://javainuse.com", wsdlLocation = "http://localhost:8085/javainuse/ws/helloworld.wsdl")
 public class SOABookaddEndpointService
     extends Service
 {
@@ -30,7 +30,7 @@ public class SOABookaddEndpointService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://r:r@localhost:8080/javainuse/ws/helloworld.wsdl?wsdl");
+            url = new URL("http://localhost:8085/javainuse/ws/helloworld.wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

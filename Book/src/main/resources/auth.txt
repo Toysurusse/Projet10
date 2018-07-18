@@ -1,1 +1,0 @@
-http://r:r@localhost:8080/javainuse/ws/helloworld.wsdl?wsdl

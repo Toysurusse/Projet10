@@ -32,19 +32,19 @@
         	HEADER
             <hr />
         </div>
-        
+
         <div id="content" class="clearfix">
             <div id="main">
             	<h3>Main Content</h3>
             	<decorator:body/>
                 <hr />
             </div>
-            
+
             <div id="sub">
             	<h3>Sub Content</h3>
             </div>
-            
-            
+
+
             <div id="local">
                 <h3>Local Nav. Bar</h3>
                 <ul>
@@ -56,8 +56,8 @@
                     <li><a href="#">Content page 6</a></li>
                 </ul>
             </div>
-            
-            
+
+
             <div id="nav">
                 <div class="wrapper">
                 <h3>Nav. bar</h3>
@@ -73,13 +73,13 @@
                 <hr />
             </div>
         </div>
-        
+
         <div id="footer" class="clearfix">
             Footer
         </div>
-        
+
     </div>
-    
+
     <div id="extra1">&nbsp;</div>
     <div id="extra2">&nbsp;</div>
 </body>

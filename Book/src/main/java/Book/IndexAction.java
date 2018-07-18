@@ -15,10 +15,15 @@
  */
 package Book;
 
+import client.Authentication;
+import com.javainuse.OutputSOABook;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.Date;
 import com.opensymphony.xwork2.conversion.annotations.Conversion;
 import com.opensymphony.xwork2.conversion.annotations.TypeConversion;
+import client.Book.BookClient;
+import client.Book.SoapClientBookConfig;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * 
@@ -39,7 +44,11 @@ public class IndexAction extends ActionSupport {
         test2=test.getSOABookEndpoint().soaBook(testin);
         System.out.println(test2.getResult().get(0).getBookName());*/
 
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
+        BookClient client = context.getBean(BookClient.class);
+        OutputSOABook response = client.getBook(new Authentication("username","password"));
 
+        System.out.println(response.getResult().get(0).getId()+" "+response.getResult().get(0).getAuthor() );
 
         now = new Date(System.currentTimeMillis());
         return SUCCESS;

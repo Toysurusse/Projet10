@@ -77,29 +77,86 @@
                 </xs:sequence>
             </xs:complexType>
 
-            <xs:element name="inputSOAUser">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element type="xs:int" name="id"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="outputSOAUser">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element type="tns:user" name="result"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
 
-            <xs:element name="inputSOAUserAdd">
+                <xs:element name="inputSOAUserAdd">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="tns:user" name="user"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="outputSOAUserAddConfirm">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="result"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="inputSOAUserDel">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="tns:user" name="user"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="outputSOAUserDelConfirm">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="result"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="inputSOAUserById">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:int" name="id"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="outputSOAUserById">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="tns:user" name="result"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="inputSOAUser">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="test"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="outputSOAUser">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="tns:user" name="result" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:complexType name="user">
+                    <xs:sequence>
+                        <xs:element name="userid" type="xs:int"/>
+                        <xs:element name="pseudo" type="xs:string"/>
+                        <xs:element name="password" type="xs:string"/>
+                        <xs:element name="gender" type="xs:string"/>
+                        <xs:element name="mail" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+
+
+            <xs:element name="inputSOARentbookAdd">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="tns:user" name="user"/>
+                        <xs:element type="tns:rentbook" name="rentbook"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="outputSOAUserAdd">
+            <xs:element name="outputSOARentbookAddConfirm">
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element type="xs:string" name="result"/>
@@ -107,93 +164,80 @@
                 </xs:complexType>
             </xs:element>
 
-            <xs:complexType name="user">
-                <xs:sequence>
-                    <xs:element name="id" type="xs:int"/>
-                    <xs:element name="pseudo" type="xs:string"/>
-                    <xs:element name="password" type="xs:string"/>
-                    <xs:element name="gender" type="xs:string"/>
-                    <xs:element name="mail" type="xs:string"/>
-                </xs:sequence>
-            </xs:complexType>
+            <xs:element name="inputSOARentbookDel">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:rentbook" name="rentbook"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOARentbookDelConfirm">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="result"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
 
-            <xs:element name="inputSOARent">
+            <xs:element name="inputSOARentbookById">
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element type="xs:int" name="id"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="outputSOARent">
+            <xs:element name="outputSOARentbookById">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="tns:rent" name="result" maxOccurs="unbounded"/>
+                        <xs:element type="tns:rentbook" name="result"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:complexType name="rent">
+
+            <xs:element name="inputSOARentbook">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="test"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOARentbook">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:rentbook" name="result" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:complexType name="rentbook">
                 <xs:sequence>
-                    <xs:element name="id" type="xs:int"/>
-                    <xs:element name="book_id" type="xs:int"/>
+                    <xs:element name="rentid" type="xs:int"/>
                     <xs:element name="user_id" type="xs:int"/>
-                    <xs:element name="create_at" type="xs:date"/>
-                    <xs:element name="end_at" type="xs:date"/>
+                    <xs:element name="book_id" type="xs:int"/>
                     <xs:element name="reload" type="xs:boolean"/>
                     <xs:element name="returnbook" type="xs:boolean"/>
+                    <xs:element name="createat" type="xs:date"/>
+                    <xs:element name="endat" type="xs:date"/>
                 </xs:sequence>
             </xs:complexType>
 
-            <xs:element name="inputSOAShoppingBook">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element type="xs:int" name="id"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="outputSOAShoppingBook">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element type="tns:shoppingBook" name="result" maxOccurs="unbounded"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:complexType name="shoppingBook">
-                <xs:sequence>
-                    <xs:element name="id" type="xs:int"/>
-                    <xs:element name="book_id" type="xs:int"/>
-                    <xs:element name="user_id" type="xs:int"/>
-                    <xs:element name="create_at" type="xs:date"/>
-                    <xs:element name="end_at" type="xs:date"/>
-                    <xs:element name="reload" type="xs:boolean"/>
-                    <xs:element name="returnbook" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
 
-            <xs:element name="inputSOAShoppingCart">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element type="xs:int" name="id"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="outputSOAShoppingCart">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element type="tns:shoppingCart" name="result" maxOccurs="unbounded"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:complexType name="shoppingCart">
-                <xs:sequence>
-                    <xs:element name="cartid" type="xs:int"/>
-                    <xs:element name="user_id" type="xs:int"/>
-                    <xs:element name="duration" type="xs:int"/>
-                    <xs:element name="statut" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
 
-        </xs:schema>
+
+
+
+
+
+
+
+
+
+
+
+
+            </xs:schema>
     </wsdl:types>
+
 
 
     <!--Define input and output parameters -->
@@ -209,34 +253,17 @@
     <wsdl:message name="outputSODelConfirm">
         <wsdl:part name="out" element="tns:outputSODelConfirm"/>
     </wsdl:message>
-
-
     <wsdl:message name="inputSOABookById">
         <wsdl:part name="in" element="tns:inputSOABookById"/>
     </wsdl:message>
     <wsdl:message name="outputSOABookById">
         <wsdl:part name="out" element="tns:outputSOABookById"/>
     </wsdl:message>
-
     <wsdl:message name="inputSOABook">
         <wsdl:part name="in" element="tns:inputSOABook"/>
     </wsdl:message>
     <wsdl:message name="outputSOABook">
         <wsdl:part name="out" element="tns:outputSOABook"/>
-    </wsdl:message>
-
-    <wsdl:message name="inputSOAUser">
-        <wsdl:part name="in" element="tns:inputSOAUser"/>
-    </wsdl:message>
-    <wsdl:message name="outputSOAUser">
-        <wsdl:part name="out" element="tns:outputSOAUser"/>
-    </wsdl:message>
-
-    <wsdl:message name="inputSOAUserAdd">
-        <wsdl:part name="in" element="tns:inputSOAUserAdd"/>
-    </wsdl:message>
-    <wsdl:message name="outputSOAUserAdd">
-        <wsdl:part name="out" element="tns:outputSOAUserAdd"/>
     </wsdl:message>
 
     <!--Define port definition -->
@@ -267,20 +294,6 @@
         <wsdl:operation name="SOABook">
             <wsdl:input message="tns:inputSOABook"/>
             <wsdl:output message="tns:outputSOABook"/>
-        </wsdl:operation>
-    </wsdl:portType>
-
-    <wsdl:portType name="SOAUserEndpoint">
-        <wsdl:operation name="SOAUser">
-            <wsdl:input message="tns:inputSOAUser"/>
-            <wsdl:output message="tns:outputSOAUser"/>
-        </wsdl:operation>
-    </wsdl:portType>
-
-    <wsdl:portType name="SOAUserEndpointAdd">
-        <wsdl:operation name="SOAUserAdd">
-            <wsdl:input message="tns:inputSOAUserAdd"/>
-            <wsdl:output message="tns:outputSOAUserAdd"/>
         </wsdl:operation>
     </wsdl:portType>
 
@@ -341,35 +354,6 @@
         </wsdl:operation>
     </wsdl:binding>
 
-    <wsdl:binding name="SOAUserBinding" type="tns:SOAUserEndpoint">
-        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
-        <wsdl:operation name="SOAUser">
-            <soap:operation soapAction="http://javainuse.com"
-                            style="document"/>
-            <wsdl:input>
-                <soap:body parts="in" use="literal"/>
-            </wsdl:input>
-            <wsdl:output>
-                <soap:body parts="out" use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
-    </wsdl:binding>
-
-    <wsdl:binding name="SOAUserAddBinding" type="tns:SOAUserEndpointAdd">
-        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
-        <wsdl:operation name="SOAUserAdd">
-            <soap:operation soapAction="http://javainuse.com"
-                            style="document"/>
-            <wsdl:input>
-                <soap:body parts="in" use="literal"/>
-            </wsdl:input>
-            <wsdl:output>
-                <soap:body parts="out" use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
-    </wsdl:binding>
-
-
     <!--Define com.javainuse.service -->
     <wsdl:service name="SOABookaddEndpointService">
         <wsdl:port name="SOABookaddEndpoint" binding="tns:SOABookaddBinding">
@@ -395,16 +379,296 @@
         </wsdl:port>
     </wsdl:service>
 
+    <!--Define input and output parameters -->
+    <wsdl:message name="inputSOAUserAdd">
+        <wsdl:part name="in" element="tns:inputSOAUserAdd"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOAUserAddConfirm">
+        <wsdl:part name="out" element="tns:outputSOAUserAddConfirm"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOAUserDel">
+        <wsdl:part name="in" element="tns:inputSOAUserDel"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOAUserDelConfirm">
+        <wsdl:part name="out" element="tns:outputSOAUserDelConfirm"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOAUserById">
+        <wsdl:part name="in" element="tns:inputSOAUserById"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOAUserById">
+        <wsdl:part name="out" element="tns:outputSOAUserById"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOAUser">
+        <wsdl:part name="in" element="tns:inputSOAUser"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOAUser">
+        <wsdl:part name="out" element="tns:outputSOAUser"/>
+    </wsdl:message>
+
+    <!--Define port definition -->
+
+    <wsdl:portType name="SOAUseradd">
+        <wsdl:operation name="SOAUseradd">
+            <wsdl:input message="tns:inputSOAUserAdd"/>
+            <wsdl:output message="tns:outputSOAUserAddConfirm"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOAUserdel">
+        <wsdl:operation name="SOAUserdel">
+            <wsdl:input message="tns:inputSOAUserDel"/>
+            <wsdl:output message="tns:outputSOAUserDelConfirm"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+
+    <wsdl:portType name="SOAUserByIdEndpoint">
+        <wsdl:operation name="SOAUserById">
+            <wsdl:input message="tns:inputSOAUserById"/>
+            <wsdl:output message="tns:outputSOAUserById"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOAUserEndpoint">
+        <wsdl:operation name="SOAUser">
+            <wsdl:input message="tns:inputSOAUser"/>
+            <wsdl:output message="tns:outputSOAUser"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <!--Bind Soap operation and com.javainuse.service -->
+    <wsdl:binding name="SOAUseraddBinding" type="tns:SOAUseradd">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOAUseradd">
+            <soap:operation soapAction="http://javainuse.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOAUserdelBinding" type="tns:SOAUserdel">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOAUserdel">
+            <soap:operation soapAction="http://javainuse.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOAUserByIdBinding" type="tns:SOAUserByIdEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOAUserById">
+            <soap:operation soapAction="http://javainuse.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOAUserBinding" type="tns:SOAUserEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOAUser">
+            <soap:operation soapAction="http://javainuse.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <!--Define com.javainuse.service -->
+    <wsdl:service name="SOAUseraddEndpointService">
+        <wsdl:port name="SOAUseraddEndpoint" binding="tns:SOAUseraddBinding">
+            <soap:address location="http://localhost:8080/javainuse/ws/UserAdd"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOAUserdelEndpointService">
+        <wsdl:port name="SOAUserdelEndpoint" binding="tns:SOAUserdelBinding">
+            <soap:address location="http://localhost:8080/javainuse/ws/Userdel"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOAUserByIdEndpointService">
+        <wsdl:port name="SOAUserByIdEndpoint" binding="tns:SOAUserByIdBinding">
+            <soap:address location="http://localhost:8080/javainuse/ws/UserById"/>
+        </wsdl:port>
+    </wsdl:service>
+
     <wsdl:service name="SOAUserEndpointService">
         <wsdl:port name="SOAUserEndpoint" binding="tns:SOAUserBinding">
             <soap:address location="http://localhost:8080/javainuse/ws/user"/>
         </wsdl:port>
     </wsdl:service>
 
-    <wsdl:service name="SOAUserEndpointServiceAdd">
-        <wsdl:port name="SOAUserEndpointAdd" binding="tns:SOAUserAddBinding">
-            <soap:address location="http://localhost:8080/javainuse/ws/userAdd"/>
+
+
+    <!--Define input and output parameters -->
+    <wsdl:message name="inputSOARentbookAdd">
+        <wsdl:part name="in" element="tns:inputSOARentbookAdd"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOARentbookAddConfirm">
+        <wsdl:part name="out" element="tns:outputSOARentbookAddConfirm"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOARentbookDel">
+        <wsdl:part name="in" element="tns:inputSOARentbookDel"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOARentbookDelConfirm">
+        <wsdl:part name="out" element="tns:outputSOARentbookDelConfirm"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOARentbookById">
+        <wsdl:part name="in" element="tns:inputSOARentbookById"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOARentbookById">
+        <wsdl:part name="out" element="tns:outputSOARentbookById"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOARentbook">
+        <wsdl:part name="in" element="tns:inputSOARentbook"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOARentbook">
+        <wsdl:part name="out" element="tns:outputSOARentbook"/>
+    </wsdl:message>
+
+    <!--Define port definition -->
+
+    <wsdl:portType name="SOARentbookadd">
+        <wsdl:operation name="SOARentbookadd">
+            <wsdl:input message="tns:inputSOARentbookAdd"/>
+            <wsdl:output message="tns:outputSOARentbookAddConfirm"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOARentbookdel">
+        <wsdl:operation name="SOARentbookdel">
+            <wsdl:input message="tns:inputSOARentbookDel"/>
+            <wsdl:output message="tns:outputSOARentbookDelConfirm"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+
+    <wsdl:portType name="SOARentbookByIdEndpoint">
+        <wsdl:operation name="SOARentbookById">
+            <wsdl:input message="tns:inputSOARentbookById"/>
+            <wsdl:output message="tns:outputSOARentbookById"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOARentbookEndpoint">
+        <wsdl:operation name="SOARentbook">
+            <wsdl:input message="tns:inputSOARentbook"/>
+            <wsdl:output message="tns:outputSOARentbook"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <!--Bind Soap operation and com.javainuse.service -->
+    <wsdl:binding name="SOARentbookaddBinding" type="tns:SOARentbookadd">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOARentbookadd">
+            <soap:operation soapAction="http://javainuse.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOARentbookdelBinding" type="tns:SOARentbookdel">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOARentbookdel">
+            <soap:operation soapAction="http://javainuse.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOARentbookByIdBinding" type="tns:SOARentbookByIdEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOARentbookById">
+            <soap:operation soapAction="http://javainuse.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOARentbookBinding" type="tns:SOARentbookEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOARentbook">
+            <soap:operation soapAction="http://javainuse.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <!--Define com.javainuse.service -->
+    <wsdl:service name="SOARentbookaddEndpointService">
+        <wsdl:port name="SOARentbookaddEndpoint" binding="tns:SOARentbookaddBinding">
+            <soap:address location="http://localhost:8080/javainuse/ws/RentbookAdd"/>
         </wsdl:port>
     </wsdl:service>
+
+    <wsdl:service name="SOARentbookdelEndpointService">
+        <wsdl:port name="SOARentbookdelEndpoint" binding="tns:SOARentbookdelBinding">
+            <soap:address location="http://localhost:8080/javainuse/ws/Rentbookdel"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOARentbookByIdEndpointService">
+        <wsdl:port name="SOARentbookByIdEndpoint" binding="tns:SOARentbookByIdBinding">
+            <soap:address location="http://localhost:8080/javainuse/ws/RentbookById"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOARentbookEndpointService">
+        <wsdl:port name="SOARentbookEndpoint" binding="tns:SOARentbookBinding">
+            <soap:address location="http://localhost:8080/javainuse/ws/rentbook"/>
+        </wsdl:port>
+    </wsdl:service>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </wsdl:definitions>
