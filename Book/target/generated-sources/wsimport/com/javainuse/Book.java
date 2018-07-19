@@ -22,6 +22,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="author" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="editeurs" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="nbPage" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="dispo" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,7 +37,8 @@ import javax.xml.bind.annotation.XmlType;
     "bookName",
     "author",
     "editeurs",
-    "nbPage"
+    "nbPage",
+    "dispo"
 })
 public class Book {
 
@@ -48,6 +50,7 @@ public class Book {
     @XmlElement(required = true)
     protected String editeurs;
     protected int nbPage;
+    protected boolean dispo;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -151,6 +154,22 @@ public class Book {
      */
     public void setNbPage(int value) {
         this.nbPage = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété dispo.
+     * 
+     */
+    public boolean isDispo() {
+        return dispo;
+    }
+
+    /**
+     * Définit la valeur de la propriété dispo.
+     * 
+     */
+    public void setDispo(boolean value) {
+        this.dispo = value;
     }
 
 }

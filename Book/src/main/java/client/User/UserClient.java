@@ -16,6 +16,16 @@ public class UserClient extends WebServiceGatewaySupport {
                                 authentication));
     }
 
+    public OutputSOAUserTest getUserTest(Authentication authentication, String pseudo, String password) {
+        InputSOAUserTest request = new InputSOAUserTest();
+        request.setPassword(password);
+        request.setPseudo(pseudo);
+        return (OutputSOAUserTest) getWebServiceTemplate()
+                .marshalSendAndReceive(request,
+                        new SecurityHeader(
+                                authentication));
+    }
+
     public OutputSOAUserById getUserById(Authentication authentication, int id) {
         InputSOAUserById request = new InputSOAUserById();
         request.setId(id);

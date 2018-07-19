@@ -26,6 +26,7 @@ public class RunClientBook {
         book.setEditeurs("Hachette");
         book.setAuthor("Georges Orwell2");
         book.setNbPage(250);
+        book.isDispo();
 
         OutputSOAddConfirm outputSOAddConfirm = client.getBookAdd(authentication,book);
         System.out.println(outputSOAddConfirm.getResult());

@@ -6,32 +6,25 @@
 
 body {
   padding-top: 54px;
-  background-color: #117a8b;
 }
 
 @media (min-width: 992px) {
   body {
     padding-top: 56px;
-    background-color: #117a8b;
   }
 }
 .navbar-dark {
   color:#b3d7ff;
-  background-color: #117a8b;
 }
 .navbar-brand {
   color:#b3d7ff;
-  background-color: #117a8b;
 }
 
 .container {
   color: #b3d7ff;
-  background-color: #117a8b;
 }
 
 .bg-dark{background-color:#117a8b}
-
-.navbar-expand-lg{background-color:#117a8b}
 
 .bg-image-full {
   background: no-repeat center center scroll;

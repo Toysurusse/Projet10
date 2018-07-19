@@ -15,6 +15,7 @@
  */
 package Book;
 
+import action.IndexAction;
 import junit.framework.TestCase;
 
 import com.opensymphony.xwork2.Action;

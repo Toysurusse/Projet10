@@ -78,75 +78,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OutputSOAUserById }
+     * Create an instance of {@link InputSOAUserTest }
      * 
      */
-    public OutputSOAUserById createOutputSOAUserById() {
-        return new OutputSOAUserById();
-    }
-
-    /**
-     * Create an instance of {@link OutputSOARentbookDelConfirm }
-     * 
-     */
-    public OutputSOARentbookDelConfirm createOutputSOARentbookDelConfirm() {
-        return new OutputSOARentbookDelConfirm();
-    }
-
-    /**
-     * Create an instance of {@link InputSOARentbookById }
-     * 
-     */
-    public InputSOARentbookById createInputSOARentbookById() {
-        return new InputSOARentbookById();
-    }
-
-    /**
-     * Create an instance of {@link OutputSOAUser }
-     * 
-     */
-    public OutputSOAUser createOutputSOAUser() {
-        return new OutputSOAUser();
-    }
-
-    /**
-     * Create an instance of {@link InputSOARentbook }
-     * 
-     */
-    public InputSOARentbook createInputSOARentbook() {
-        return new InputSOARentbook();
-    }
-
-    /**
-     * Create an instance of {@link OutputSOARentbookById }
-     * 
-     */
-    public OutputSOARentbookById createOutputSOARentbookById() {
-        return new OutputSOARentbookById();
-    }
-
-    /**
-     * Create an instance of {@link Rentbook }
-     * 
-     */
-    public Rentbook createRentbook() {
-        return new Rentbook();
-    }
-
-    /**
-     * Create an instance of {@link OutputSOABook }
-     * 
-     */
-    public OutputSOABook createOutputSOABook() {
-        return new OutputSOABook();
-    }
-
-    /**
-     * Create an instance of {@link InputSOARentbookAdd }
-     * 
-     */
-    public InputSOARentbookAdd createInputSOARentbookAdd() {
-        return new InputSOARentbookAdd();
+    public InputSOAUserTest createInputSOAUserTest() {
+        return new InputSOAUserTest();
     }
 
     /**
@@ -155,6 +91,14 @@ public class ObjectFactory {
      */
     public OutputSOARentbook createOutputSOARentbook() {
         return new OutputSOARentbook();
+    }
+
+    /**
+     * Create an instance of {@link Rentbook }
+     * 
+     */
+    public Rentbook createRentbook() {
+        return new Rentbook();
     }
 
     /**
@@ -206,22 +150,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OutputSOAddConfirm }
-     * 
-     */
-    public OutputSOAddConfirm createOutputSOAddConfirm() {
-        return new OutputSOAddConfirm();
-    }
-
-    /**
-     * Create an instance of {@link OutputSODelConfirm }
-     * 
-     */
-    public OutputSODelConfirm createOutputSODelConfirm() {
-        return new OutputSODelConfirm();
-    }
-
-    /**
      * Create an instance of {@link OutputSOAUserAddConfirm }
      * 
      */
@@ -243,6 +171,94 @@ public class ObjectFactory {
      */
     public InputSOARentbookDel createInputSOARentbookDel() {
         return new InputSOARentbookDel();
+    }
+
+    /**
+     * Create an instance of {@link OutputSOAUserById }
+     * 
+     */
+    public OutputSOAUserById createOutputSOAUserById() {
+        return new OutputSOAUserById();
+    }
+
+    /**
+     * Create an instance of {@link OutputSOARentbookDelConfirm }
+     * 
+     */
+    public OutputSOARentbookDelConfirm createOutputSOARentbookDelConfirm() {
+        return new OutputSOARentbookDelConfirm();
+    }
+
+    /**
+     * Create an instance of {@link InputSOARentbookById }
+     * 
+     */
+    public InputSOARentbookById createInputSOARentbookById() {
+        return new InputSOARentbookById();
+    }
+
+    /**
+     * Create an instance of {@link OutputSOAUser }
+     * 
+     */
+    public OutputSOAUser createOutputSOAUser() {
+        return new OutputSOAUser();
+    }
+
+    /**
+     * Create an instance of {@link InputSOARentbook }
+     * 
+     */
+    public InputSOARentbook createInputSOARentbook() {
+        return new InputSOARentbook();
+    }
+
+    /**
+     * Create an instance of {@link OutputSOAUserTest }
+     * 
+     */
+    public OutputSOAUserTest createOutputSOAUserTest() {
+        return new OutputSOAUserTest();
+    }
+
+    /**
+     * Create an instance of {@link OutputSOARentbookById }
+     * 
+     */
+    public OutputSOARentbookById createOutputSOARentbookById() {
+        return new OutputSOARentbookById();
+    }
+
+    /**
+     * Create an instance of {@link OutputSOABook }
+     * 
+     */
+    public OutputSOABook createOutputSOABook() {
+        return new OutputSOABook();
+    }
+
+    /**
+     * Create an instance of {@link InputSOARentbookAdd }
+     * 
+     */
+    public InputSOARentbookAdd createInputSOARentbookAdd() {
+        return new InputSOARentbookAdd();
+    }
+
+    /**
+     * Create an instance of {@link OutputSOAddConfirm }
+     * 
+     */
+    public OutputSOAddConfirm createOutputSOAddConfirm() {
+        return new OutputSOAddConfirm();
+    }
+
+    /**
+     * Create an instance of {@link OutputSODelConfirm }
+     * 
+     */
+    public OutputSODelConfirm createOutputSODelConfirm() {
+        return new OutputSODelConfirm();
     }
 
 }
