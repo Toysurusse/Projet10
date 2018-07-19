@@ -30,17 +30,36 @@ public class WebServiceEndpointUser {
                                    @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
 
         Authentication authentication = getAuthentication(auth);
-
         OutputSOAUser response=null;
-
         List<User> output= userService.findAll();
-
         ObjectFactory factory = new ObjectFactory();
         response = factory.createOutputSOAUser();
         response.getResult().addAll(output);
 
         return response;
     }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOAUserTest")
+    @ResponsePayload
+    public OutputSOAUserTest control(@RequestPayload InputSOAUserTest request,
+                                 @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+
+        Authentication authentication = getAuthentication(auth);
+        OutputSOAUserTest response=null;
+
+        User user= new User();
+        user.setPseudo(request.getPseudo());
+        user.setPassword(request.getPassword());
+
+        User output= userService.control(user);
+        ObjectFactory factory = new ObjectFactory();
+        response = factory.createOutputSOAUserTest();
+
+        response.setUser(output);
+
+        return response;
+    }
+
 
     private Authentication getAuthentication(SoapHeaderElement header){
         Authentication authentication = null;

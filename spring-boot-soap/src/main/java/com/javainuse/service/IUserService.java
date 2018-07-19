@@ -9,4 +9,5 @@ public interface IUserService {
         void delete(com.javainuse.User user);
         com.javainuse.User findById(int id);
         List<com.javainuse.User> findAll ();
+        com.javainuse.User control(com.javainuse.User user);
 }

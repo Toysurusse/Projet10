@@ -74,6 +74,7 @@
                     <xs:element name="author" type="xs:string"/>
                     <xs:element name="editeurs" type="xs:string"/>
                     <xs:element name="nbPage" type="xs:int"/>
+                    <xs:element name="dispo" type="xs:boolean"/>
                 </xs:sequence>
             </xs:complexType>
 
@@ -92,6 +93,22 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+
+            <xs:element name="inputSOAUserTest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="pseudo"/>
+                        <xs:element type="xs:string" name="password"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOAUserTest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:user" name="user"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
 
                 <xs:element name="inputSOAUserDel">
                     <xs:complexType>
@@ -386,6 +403,14 @@
     <wsdl:message name="outputSOAUserAddConfirm">
         <wsdl:part name="out" element="tns:outputSOAUserAddConfirm"/>
     </wsdl:message>
+
+    <wsdl:message name="inputSOAUserTest">
+        <wsdl:part name="in" element="tns:inputSOAUserTest"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOAUserTest">
+        <wsdl:part name="out" element="tns:outputSOAUserTest"/>
+    </wsdl:message>
+
     <wsdl:message name="inputSOAUserDel">
         <wsdl:part name="in" element="tns:inputSOAUserDel"/>
     </wsdl:message>
@@ -411,6 +436,13 @@
         <wsdl:operation name="SOAUseradd">
             <wsdl:input message="tns:inputSOAUserAdd"/>
             <wsdl:output message="tns:outputSOAUserAddConfirm"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOAUserTest">
+        <wsdl:operation name="SOAUserTest">
+            <wsdl:input message="tns:inputSOAUserTest"/>
+            <wsdl:output message="tns:outputSOAUserTest"/>
         </wsdl:operation>
     </wsdl:portType>
 
@@ -440,6 +472,20 @@
     <wsdl:binding name="SOAUseraddBinding" type="tns:SOAUseradd">
         <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
         <wsdl:operation name="SOAUseradd">
+            <soap:operation soapAction="http://javainuse.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOAUserTestBinding" type="tns:SOAUserTest">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOAUserTest">
             <soap:operation soapAction="http://javainuse.com"
                             style="document"/>
             <wsdl:input>
@@ -497,6 +543,12 @@
     <wsdl:service name="SOAUseraddEndpointService">
         <wsdl:port name="SOAUseraddEndpoint" binding="tns:SOAUseraddBinding">
             <soap:address location="http://localhost:8080/javainuse/ws/UserAdd"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOAUserTestEndpointService">
+        <wsdl:port name="SOAUserTestEndpoint" binding="tns:SOAUserTestBinding">
+            <soap:address location="http://localhost:8080/javainuse/ws/UserTest"/>
         </wsdl:port>
     </wsdl:service>
 

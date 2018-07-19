@@ -26,6 +26,17 @@ public class Book implements Serializable {
     @Column(name = "author")
     private String author;
 
+    @Column(name = "dispo")
+    private Boolean dispo;
+
+    public Boolean getDispo() {
+        return dispo;
+    }
+
+    public void setDispo(Boolean dispo) {
+        this.dispo = dispo;
+    }
+
     public String getBookName() {
         return bookName;
     }

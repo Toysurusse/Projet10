@@ -5,6 +5,8 @@ import com.javainuse.entity.Rent;
 import java.util.List;
 
 public interface IRentService {
-    void add (Rent rent);
-    List<Rent> findAll ();
+    void add(com.javainuse.Rentbook rent);
+    void delete(com.javainuse.Rentbook rent);
+    com.javainuse.Rentbook findById(int id);
+    List<com.javainuse.Rentbook> findAll ();
 }
