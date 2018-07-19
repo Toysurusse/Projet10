@@ -8,10 +8,11 @@ import com.javainuse.OutputSOABook;
 import com.javainuse.User;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Connected extends Connect {
-
 
     public User user ;
 
@@ -31,7 +32,7 @@ public class Connected extends Connect {
         this.bookToRent = bookToRent;
     }
 
-    public List<Book> bookToRent;
+    public List<Book> bookToRent=new ArrayList<>();
 
     public String execute() throws Exception {
 
@@ -46,9 +47,48 @@ public class Connected extends Connect {
                 bookToRent.add(response.getResult().get(i));
             }
         }
+        this.map.put("books",bookToRent);
+        this.map.put("shop",shoppingList);
+        return SUCCESS;
+    }
+
+    public String addToShop() throws Exception {
+        bookToRent=new ArrayList<>();
+        bookToRent= (List<Book>) this.map.get("books");
+
+        shoppingList=(List<Book>) this.map.get("shop");
+
+        for (int i = 0; i <bookToRent.size() ; i++) {
+            if (bookToRent.get(i).getId()==idBook) {
+                shoppingList.add(bookToRent.get(i));
+                bookToRent.remove(i);
+            }
+        }
+        this.map.remove("shop");
+        this.map.put("shop",shoppingList);
+
 
         return SUCCESS;
     }
 
-
+    public String deleteToShop() throws Exception {
+        bookToRent=new ArrayList<>();
+        bookToRent= (List<Book>) this.map.get("books");
+        shoppingList=(List<Book>) this.map.get("shop");
+        System.out.println(bookToRent.size());
+        System.out.println(shoppingList.size());
+        for (int i = 0; i <shoppingList.size() ; i++) {
+            if (shoppingList.get(i).getId()==idBook) {
+                bookToRent.add(shoppingList.get(i));
+                shoppingList.remove(i);
+            }
+        }
+        System.out.println(bookToRent.size());
+        System.out.println(shoppingList.size());
+        this.map.remove("books");
+        this.map.put("books", bookToRent);
+        this.map.remove("shop");
+        this.map.put("shop",shoppingList);
+        return SUCCESS;
+    }
 }

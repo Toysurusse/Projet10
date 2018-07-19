@@ -40,6 +40,14 @@
             <result name="success">/WEB-INF/jsp/private.jsp</result>
         </action>
 
+        <action name="addToShop" class="action.privacy.Connected" method="addToShop">
+            <result name="success">/WEB-INF/jsp/private.jsp</result>
+        </action>
+
+        <action name="deleteToShop" class="action.privacy.Connected" method="deleteToShop">
+            <result name="success">/WEB-INF/jsp/private.jsp</result>
+        </action>
+
     </package>
 
 
