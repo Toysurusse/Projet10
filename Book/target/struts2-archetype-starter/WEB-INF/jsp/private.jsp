@@ -28,6 +28,7 @@
                 </div>
             </div>
         </s:iterator>
+        <s:a action="rentTotal" class="nav-link">Panier</s:a>
     </div>
 
 <div class="container">
@@ -35,7 +36,7 @@
     <div class="row">
         <div class="container col-9">
             <h1>
-                <s:property value="id" /> : <s:property value="bookName" />
+                <s:property value="bookName" />
             </h1>
             <p>
                 Autheur : <s:property value="author" />

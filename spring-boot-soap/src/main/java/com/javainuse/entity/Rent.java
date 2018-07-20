@@ -12,7 +12,7 @@ public class Rent implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id")
+    @Column(name="rentid")
     private int id;
 
     @Column(name = "book_id")

@@ -35,7 +35,6 @@ public class UserService implements IUserService {
                 test=userList.get(i);
             }
         }
-        System.out.println(test.getUserid()+" ; "+test.getGender()+" ; "+test.getPassword()+" ; "+test.getPseudo()+" ; "+test.getMail()+" ; ");
         return test;
     }
 

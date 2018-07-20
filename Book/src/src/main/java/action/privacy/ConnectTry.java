@@ -2,8 +2,8 @@ package action.privacy;
 
 import client.Authentication;
 
-import client.User.SoapClientUserConfig;
-import client.User.UserClient;
+import client.user.SoapClientUserConfig;
+import client.user.UserClient;
 import com.javainuse.OutputSOAUserTest;
 import com.opensymphony.xwork2.ActionSupport;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

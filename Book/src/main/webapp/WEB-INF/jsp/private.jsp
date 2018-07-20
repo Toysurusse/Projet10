@@ -28,6 +28,7 @@
                 </div>
             </div>
         </s:iterator>
+        <s:a action="rentTotal" class="nav-link">Panier</s:a>
     </div>
 
 <div class="container">

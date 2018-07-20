@@ -81,10 +81,11 @@ public class Book implements Serializable {
 
     }
 
-    public Book(String bookName, int nbPage, String editeurs, String author) {
+    public Book(String bookName, int nbPage, String editeurs, String author, boolean dispo) {
         this.bookName = bookName;
         this.nbPage = nbPage;
         this.editeurs = editeurs;
         this.author = author;
+        this.dispo = dispo;
     }
 }

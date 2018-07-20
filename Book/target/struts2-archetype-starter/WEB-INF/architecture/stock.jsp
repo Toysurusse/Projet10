@@ -1,7 +1,7 @@
 
 <%--
   Created by IntelliJ IDEA.
-  User: maxle
+  user: maxle
   Date: 16/07/2018
   Time: 17:34
   To change this template use File | Settings | File Templates.

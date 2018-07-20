@@ -1,2 +1,4 @@
 Book\HelloWorldActionTest.class
+entity\IndexActionTest.class
+entity\HelloWorldActionTest.class
 Book\IndexActionTest.class

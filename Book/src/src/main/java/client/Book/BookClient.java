@@ -1,4 +1,4 @@
-package client.Book;
+package client.book;
 
 import client.Authentication;
 import client.SecurityHeader;

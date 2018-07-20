@@ -33,7 +33,7 @@ public class HelloWorldAction extends ActionSupport {
     private Date now;
     private String name;
     
-    @TypeConversion(converter = "Book.DateConverter")
+    @TypeConversion(converter = "book.DateConverter")
     @RequiredFieldValidator(message = "Please enter the date")
     public void setDateNow(Date now) { this.now = now; }
     public Date getDateNow() { return now; }

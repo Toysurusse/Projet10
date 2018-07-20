@@ -24,8 +24,8 @@ import java.util.List;
 
 import com.opensymphony.xwork2.conversion.annotations.Conversion;
 import com.opensymphony.xwork2.conversion.annotations.TypeConversion;
-import client.Book.BookClient;
-import client.Book.SoapClientBookConfig;
+import client.book.BookClient;
+import client.book.SoapClientBookConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -33,7 +33,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 @Conversion()
 public class IndexAction extends ActionSupport {
-    
+
     private Date now = new Date(System.currentTimeMillis());
     @TypeConversion(converter = "action.DateConverter")
     public Date getDateNow() { return now; }
@@ -49,13 +49,10 @@ public class IndexAction extends ActionSupport {
     public List<Book> bookList;
 
     public String execute() throws Exception {
-
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         BookClient client = context.getBean(BookClient.class);
         OutputSOABook response = client.getBook(new Authentication("username","password"));
         bookList=response.getResult();
-
-
 
         now = new Date(System.currentTimeMillis());
         return SUCCESS;

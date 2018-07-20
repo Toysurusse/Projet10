@@ -1,4 +1,4 @@
-package client.User;
+package client.user;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

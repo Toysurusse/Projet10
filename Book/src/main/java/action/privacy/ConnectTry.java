@@ -2,8 +2,8 @@ package action.privacy;
 
 import client.Authentication;
 
-import client.User.SoapClientUserConfig;
-import client.User.UserClient;
+import client.user.SoapClientUserConfig;
+import client.user.UserClient;
 import com.javainuse.OutputSOAUserTest;
 import com.opensymphony.xwork2.ActionSupport;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -29,7 +29,7 @@ public class ConnectTry extends Connect {
         else {
             this.addActionError(getText("error.connectError"));
         }
-
+        System.out.println("test1");
         return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
     }
 

@@ -24,8 +24,8 @@ import java.util.List;
 
 import com.opensymphony.xwork2.conversion.annotations.Conversion;
 import com.opensymphony.xwork2.conversion.annotations.TypeConversion;
-import client.Book.BookClient;
-import client.Book.SoapClientBookConfig;
+import client.book.BookClient;
+import client.book.SoapClientBookConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**

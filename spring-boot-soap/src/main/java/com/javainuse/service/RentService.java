@@ -1,17 +1,24 @@
 package com.javainuse.service;
 
 import com.javainuse.Rentbook;
+import com.javainuse.Book;
 import com.javainuse.entity.Rent;
 import com.javainuse.mapper.RentMapper;
 import com.javainuse.repository.BookRentRepository;
+import com.javainuse.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class RentService implements IRentService {
 
     @Autowired
     private BookRentRepository rentRepository;
+
+    @Autowired
+    private BookService bookService;
 
     @Autowired
     private RentMapper rentMapper;
@@ -23,8 +30,17 @@ public class RentService implements IRentService {
     }
 
     @Override
-    public void add(com.javainuse.Rentbook rentbook) {
-        rentRepository.save(rentMapper.convertEtoD(rentbook));
+    public String add(com.javainuse.Rentbook rentbook) {
+        String statut="Impossible";
+        Book book = bookService.findById(rentbook.getBookId());
+        System.out.println(book.getId()+" ; "+book.getBookName()+" ; "+book.getAuthor()+" ; "+book.getEditeurs()+" ; "+book.getNbPage()+" ; "+book.isDispo()+" ; ");
+        if (book.isDispo() == true) {
+            rentRepository.save(rentMapper.convertEtoD(rentbook));
+            book.setDispo(false);
+            bookService.add(book);
+            statut="Ok";
+        }
+        return statut;
     }
 
     @Override

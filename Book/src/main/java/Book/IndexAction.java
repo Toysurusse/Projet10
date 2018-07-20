@@ -21,8 +21,8 @@ import com.opensymphony.xwork2.ActionSupport;
 import java.util.Date;
 import com.opensymphony.xwork2.conversion.annotations.Conversion;
 import com.opensymphony.xwork2.conversion.annotations.TypeConversion;
-import client.Book.BookClient;
-import client.Book.SoapClientBookConfig;
+import client.book.BookClient;
+import client.book.SoapClientBookConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -32,7 +32,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class IndexAction extends ActionSupport {
     
     private Date now = new Date(System.currentTimeMillis());
-    @TypeConversion(converter = "Book.DateConverter")
+    @TypeConversion(converter = "book.DateConverter")
     public Date getDateNow() { return now; }
     
     public String execute() throws Exception {

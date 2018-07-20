@@ -1,8 +1,8 @@
 package action.privacy;
 
 import client.Authentication;
-import client.Book.BookClient;
-import client.Book.SoapClientBookConfig;
+import client.book.BookClient;
+import client.book.SoapClientBookConfig;
 import com.javainuse.Book;
 import com.javainuse.OutputSOABook;
 import com.javainuse.User;

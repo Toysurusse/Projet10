@@ -21,7 +21,7 @@
         </action>
 
         <action name="connectTry" class="action.privacy.ConnectTry">
-            <result name="Input">/WEB-INF/jsp/private.jsp</result>
+            <result name="Input">/WEB-INF/jsp/connect.jsp</result>
             <result name="success" type="redirectAction">
                 <param name="actionName">connected</param>
             </result>
@@ -47,6 +47,19 @@
         <action name="deleteToShop" class="action.privacy.Connected" method="deleteToShop">
             <result name="success">/WEB-INF/jsp/private.jsp</result>
         </action>
+
+
+        <action name="rentTotal" class="action.privacy.Rent">
+            <result name="success">/WEB-INF/jsp/rentbook.jsp</result>
+        </action>
+
+        <action name="rentbook" class="action.privacy.Rent" method="rentbook">
+            <result name="input">/WEB-INF/jsp/rentbook.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">rentTotal</param>
+            </result>
+        </action>
+
 
     </package>
 

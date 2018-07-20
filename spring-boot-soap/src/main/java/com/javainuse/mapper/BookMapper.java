@@ -12,8 +12,9 @@ import java.util.List;
 public class BookMapper {
 
     public Book convertEtoD (com.javainuse.Book book) {
-        Book bookEntity = new Book(book.getBookName(), book.getNbPage(), book.getEditeurs(), book.getAuthor());
+        Book bookEntity = new Book(book.getBookName(), book.getNbPage(), book.getEditeurs(), book.getAuthor(), book.isDispo());
         bookEntity.setId(book.getId());
+        System.out.println(bookEntity.getId()+" ; "+bookEntity.getDispo()+" ; "+bookEntity.getBookName());
         return bookEntity;
     }
 
@@ -25,6 +26,7 @@ public class BookMapper {
         bookEntity.setEditeurs(book.getEditeurs());
         bookEntity.setAuthor(book.getAuthor());
         bookEntity.setNbPage(book.getNbPage());
+        bookEntity.setDispo(book.getDispo());
 
         return bookEntity;
     }
