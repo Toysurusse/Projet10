@@ -31,17 +31,20 @@ public class UserService implements IUserService {
         User test= new User();
 
         for (int i=0;i<userList.size();i++){
-            if(user.getPseudo().equals(userList.get(i).getPseudo()) && user.getPassword().equals(userList.get(i).getPassword())){
+            if(user.getPseudo().equals(userList.get(i).getPseudo())){
                 test=userList.get(i);
             }
         }
         return test;
     }
 
-
     @Override
-    public void add(com.javainuse.User user) {
-        userRepository.save(userMapper.convertEtoD(user));
+    public String add(com.javainuse.User user) {
+        String result="Ok";
+
+            userRepository.save(userMapper.convertEtoD(user));
+
+        return result;
     }
 
     @Override

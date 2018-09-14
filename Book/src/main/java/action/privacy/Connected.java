@@ -13,15 +13,7 @@ import java.util.List;
 
 public class Connected extends Connect {
 
-    public User user ;
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public List<Book> getBookToRent() {
         return bookToRent;
@@ -41,7 +33,6 @@ public class Connected extends Connect {
         OutputSOABook response = client.getBook(new Authentication("username","password"));
 
         for (int i = 0; i <response.getResult().size() ; i++) {
-            System.out.println(response.getResult().get(i).isDispo());
             if (response.getResult().get(i).isDispo()) {
                 bookToRent.add(response.getResult().get(i));
             }
@@ -64,8 +55,6 @@ public class Connected extends Connect {
         }
         this.map.remove("shop");
         this.map.put("shop",shoppingList);
-
-
         return SUCCESS;
     }
 

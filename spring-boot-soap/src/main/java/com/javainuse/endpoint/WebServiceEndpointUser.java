@@ -49,9 +49,8 @@ public class WebServiceEndpointUser {
 
         User user= new User();
         user.setPseudo(request.getPseudo());
-        user.setPassword(request.getPassword());
-
         User output= userService.control(user);
+        System.out.println(output.getPseudo());
         ObjectFactory factory = new ObjectFactory();
         response = factory.createOutputSOAUserTest();
 
@@ -103,9 +102,7 @@ public class WebServiceEndpointUser {
         OutputSOAddConfirm response = factory.createOutputSOAddConfirm();
 	    String result;
 
-	    userService.add(request.getUser());
-
-        response.setResult("Ok");
+        response.setResult(userService.add(request.getUser()));
         return response;
     }
 

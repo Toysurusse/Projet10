@@ -25,10 +25,19 @@ public class Rent extends WebServiceGatewaySupport {
                                 authentication));
     }
 
-    public OutputSOAddConfirm getRentbookAdd(Authentication authentication, Rentbook rentbook) {
+    public OutputSOARentbookAddConfirm getRentbookAdd(Authentication authentication, Rentbook rentbook) {
         InputSOARentbookAdd request = new InputSOARentbookAdd();
         request.setRentbook(rentbook);
-        return (OutputSOAddConfirm) getWebServiceTemplate()
+        return (OutputSOARentbookAddConfirm) getWebServiceTemplate()
+                .marshalSendAndReceive(request,
+                        new SecurityHeader(
+                                authentication));
+    }
+
+    public OutputSOARentbookByUser getRentbookByUser(Authentication authentication, int id) {
+        InputSOARentbookByUser request = new InputSOARentbookByUser();
+        request.setId(id);
+        return (OutputSOARentbookByUser) getWebServiceTemplate()
                 .marshalSendAndReceive(request,
                         new SecurityHeader(
                                 authentication));

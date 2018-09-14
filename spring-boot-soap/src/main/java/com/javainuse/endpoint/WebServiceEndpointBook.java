@@ -44,6 +44,24 @@ public class WebServiceEndpointBook {
         return response;
     }
 
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOABookSearch")
+    @ResponsePayload
+    public OutputSOABookSearch getSearch(@RequestPayload InputSOABookSearch request,
+                                 @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+
+        Authentication authentication = getAuthentication(auth);
+
+        OutputSOABookSearch response=null;
+
+        List<Book> output= bookService.findBySearch(request.getTest());
+
+        ObjectFactory factory = new ObjectFactory();
+        response = factory.createOutputSOABookSearch();
+        response.getResult().addAll(output);
+
+        return response;
+    }
+
     private Authentication getAuthentication(SoapHeaderElement header){
         Authentication authentication = null;
         try {

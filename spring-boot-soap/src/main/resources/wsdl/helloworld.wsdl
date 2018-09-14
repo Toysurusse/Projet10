@@ -67,6 +67,21 @@
                 </xs:complexType>
             </xs:element>
 
+            <xs:element name="inputSOABookSearch">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="test"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOABookSearch">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:book" name="result" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
             <xs:complexType name="book">
                 <xs:sequence>
                     <xs:element name="id" type="xs:int"/>
@@ -79,7 +94,7 @@
             </xs:complexType>
 
 
-                <xs:element name="inputSOAUserAdd">
+            <xs:element name="inputSOAUserAdd">
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element type="tns:user" name="user"/>
@@ -98,7 +113,6 @@
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element type="xs:string" name="pseudo"/>
-                        <xs:element type="xs:string" name="password"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -160,11 +174,30 @@
                         <xs:element name="userid" type="xs:int"/>
                         <xs:element name="pseudo" type="xs:string"/>
                         <xs:element name="password" type="xs:string"/>
+                        <xs:element name="salt" type="xs:string"/>
                         <xs:element name="gender" type="xs:string"/>
                         <xs:element name="mail" type="xs:string"/>
+                        <xs:element name="role" type="xs:int"/>
                     </xs:sequence>
                 </xs:complexType>
 
+
+
+
+            <xs:element name="inputSOARentbookByUser">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:int" name="id"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOARentbookByUser">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:rentbook" name="result" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
 
             <xs:element name="inputSOARentbookAdd">
                 <xs:complexType>
@@ -226,6 +259,29 @@
                 </xs:complexType>
             </xs:element>
 
+            <xs:element name="inputSOARentbookLate">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="test"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOARentbookLate">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:latebook" name="result" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:complexType name="latebook">
+                <xs:sequence>
+                    <xs:element name="bookname" type="xs:string"/>
+                    <xs:element name="pseudo" type="xs:string"/>
+                    <xs:element name="mail" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+
             <xs:complexType name="rentbook">
                 <xs:sequence>
                     <xs:element name="rentid" type="xs:int"/>
@@ -238,22 +294,10 @@
                 </xs:sequence>
             </xs:complexType>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </xs:schema>
     </wsdl:types>
+
+
 
 
 
@@ -282,6 +326,12 @@
     <wsdl:message name="outputSOABook">
         <wsdl:part name="out" element="tns:outputSOABook"/>
     </wsdl:message>
+    <wsdl:message name="inputSOABookSearch">
+        <wsdl:part name="in" element="tns:inputSOABookSearch"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOABookSearch">
+        <wsdl:part name="out" element="tns:outputSOABookSearch"/>
+    </wsdl:message>
 
     <!--Define port definition -->
 
@@ -299,7 +349,6 @@
         </wsdl:operation>
     </wsdl:portType>
 
-
     <wsdl:portType name="SOABookByIdEndpoint">
         <wsdl:operation name="SOABookById">
             <wsdl:input message="tns:inputSOABookById"/>
@@ -311,6 +360,13 @@
         <wsdl:operation name="SOABook">
             <wsdl:input message="tns:inputSOABook"/>
             <wsdl:output message="tns:outputSOABook"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOABookSearchEndpoint">
+        <wsdl:operation name="SOABookSearch">
+            <wsdl:input message="tns:inputSOABookSearch"/>
+            <wsdl:output message="tns:outputSOABookSearch"/>
         </wsdl:operation>
     </wsdl:portType>
 
@@ -371,6 +427,20 @@
         </wsdl:operation>
     </wsdl:binding>
 
+    <wsdl:binding name="SOABookSearchBinding" type="tns:SOABookSearchEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOABookSearch">
+            <soap:operation soapAction="http://javainuse.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
     <!--Define com.javainuse.service -->
     <wsdl:service name="SOABookaddEndpointService">
         <wsdl:port name="SOABookaddEndpoint" binding="tns:SOABookaddBinding">
@@ -395,6 +465,13 @@
             <soap:address location="http://localhost:8080/javainuse/ws/book"/>
         </wsdl:port>
     </wsdl:service>
+
+    <wsdl:service name="SOABookSearchEndpointService">
+        <wsdl:port name="SOABookSearchEndpoint" binding="tns:SOABookSearchBinding">
+            <soap:address location="http://localhost:8080/javainuse/ws/bookSearch"/>
+        </wsdl:port>
+    </wsdl:service>
+
 
     <!--Define input and output parameters -->
     <wsdl:message name="inputSOAUserAdd">
@@ -573,6 +650,12 @@
 
 
     <!--Define input and output parameters -->
+    <wsdl:message name="inputSOARentbookByUser">
+        <wsdl:part name="in" element="tns:inputSOARentbookByUser"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOARentbookByUser">
+        <wsdl:part name="out" element="tns:outputSOARentbookByUser"/>
+    </wsdl:message>
     <wsdl:message name="inputSOARentbookAdd">
         <wsdl:part name="in" element="tns:inputSOARentbookAdd"/>
     </wsdl:message>
@@ -597,8 +680,22 @@
     <wsdl:message name="outputSOARentbook">
         <wsdl:part name="out" element="tns:outputSOARentbook"/>
     </wsdl:message>
+    <wsdl:message name="inputSOARentbookLate">
+        <wsdl:part name="in" element="tns:inputSOARentbookLate"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOARentbookLate">
+        <wsdl:part name="out" element="tns:outputSOARentbookLate"/>
+    </wsdl:message>
+
 
     <!--Define port definition -->
+
+    <wsdl:portType name="SOARentbookByUser">
+        <wsdl:operation name="SOARentbookByUser">
+            <wsdl:input message="tns:inputSOARentbookByUser"/>
+            <wsdl:output message="tns:outputSOARentbookByUser"/>
+        </wsdl:operation>
+    </wsdl:portType>
 
     <wsdl:portType name="SOARentbookadd">
         <wsdl:operation name="SOARentbookadd">
@@ -629,7 +726,28 @@
         </wsdl:operation>
     </wsdl:portType>
 
+    <wsdl:portType name="SOARentbookLateEndpoint">
+        <wsdl:operation name="SOARentbookLate">
+            <wsdl:input message="tns:inputSOARentbookLate"/>
+            <wsdl:output message="tns:outputSOARentbookLate"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
     <!--Bind Soap operation and com.javainuse.service -->
+    <wsdl:binding name="SOARentbookByUserBinding" type="tns:SOARentbookByUser">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOARentbookByUser">
+            <soap:operation soapAction="http://javainuse.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
     <wsdl:binding name="SOARentbookaddBinding" type="tns:SOARentbookadd">
         <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
         <wsdl:operation name="SOARentbookadd">
@@ -686,7 +804,27 @@
         </wsdl:operation>
     </wsdl:binding>
 
+    <wsdl:binding name="SOARentbookLateBinding" type="tns:SOARentbookLateEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOARentbookLate">
+            <soap:operation soapAction="http://javainuse.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
     <!--Define com.javainuse.service -->
+    <wsdl:service name="SOARentbookByUserEndpointService">
+        <wsdl:port name="SOARentbookByUserEndpoint" binding="tns:SOARentbookByUserBinding">
+            <soap:address location="http://localhost:8080/javainuse/ws/RentbookByUser"/>
+        </wsdl:port>
+    </wsdl:service>
+
     <wsdl:service name="SOARentbookaddEndpointService">
         <wsdl:port name="SOARentbookaddEndpoint" binding="tns:SOARentbookaddBinding">
             <soap:address location="http://localhost:8080/javainuse/ws/RentbookAdd"/>
@@ -711,16 +849,10 @@
         </wsdl:port>
     </wsdl:service>
 
-
-
-
-
-
-
-
-
-
-
-
+    <wsdl:service name="SOARentbookLateEndpointService">
+        <wsdl:port name="SOARentbookLateEndpoint" binding="tns:SOARentbookLateBinding">
+            <soap:address location="http://localhost:8080/javainuse/ws/rentbookLate"/>
+        </wsdl:port>
+    </wsdl:service>
 
 </wsdl:definitions>

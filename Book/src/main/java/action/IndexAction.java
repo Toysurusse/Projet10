@@ -18,7 +18,10 @@ package action;
 import client.Authentication;
 import com.javainuse.Book;
 import com.javainuse.OutputSOABook;
+import com.javainuse.OutputSOABookSearch;
 import com.opensymphony.xwork2.ActionSupport;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -48,10 +51,32 @@ public class IndexAction extends ActionSupport {
 
     public List<Book> bookList;
 
+    public String getSearch() {
+        return search;
+    }
+
+    public void setSearch(String search) {
+        this.search = search;
+    }
+
+    public String search;
+
     public String execute() throws Exception {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         BookClient client = context.getBean(BookClient.class);
         OutputSOABook response = client.getBook(new Authentication("username","password"));
+        bookList=response.getResult();
+
+        now = new Date(System.currentTimeMillis());
+        return SUCCESS;
+    }
+
+    public String search() throws Exception {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
+        BookClient client = context.getBean(BookClient.class);
+        OutputSOABookSearch response = client.getSearch(new Authentication("username","password"),search);
+        bookList=null;
+        bookList=new ArrayList<>();
         bookList=response.getResult();
 
         now = new Date(System.currentTimeMillis());

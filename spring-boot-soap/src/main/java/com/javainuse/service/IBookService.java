@@ -10,4 +10,5 @@ public interface IBookService {
     void delete(com.javainuse.Book book);
     com.javainuse.Book findById(int id);
     List<com.javainuse.Book> findAll ();
+    List<com.javainuse.Book> findBySearch (String place);
 }

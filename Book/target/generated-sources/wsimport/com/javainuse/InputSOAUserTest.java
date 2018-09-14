@@ -19,7 +19,6 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="pseudo" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,16 +29,13 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "pseudo",
-    "password"
+    "pseudo"
 })
 @XmlRootElement(name = "inputSOAUserTest")
 public class InputSOAUserTest {
 
     @XmlElement(required = true)
     protected String pseudo;
-    @XmlElement(required = true)
-    protected String password;
 
     /**
      * Obtient la valeur de la propriété pseudo.
@@ -63,30 +59,6 @@ public class InputSOAUserTest {
      */
     public void setPseudo(String value) {
         this.pseudo = value;
-    }
-
-    /**
-     * Obtient la valeur de la propriété password.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     * Définit la valeur de la propriété password.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPassword(String value) {
-        this.password = value;
     }
 
 }

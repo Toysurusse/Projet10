@@ -26,11 +26,11 @@
 			</div>
 			</br>
 			<div class="row">
-				<div class="col-sm-6">
+				<div class="col-sm-6 d-flex justify-content-center">
 					<s:submit method="input" value="Se Connecter" cssClass="btn btn-primary center-block"/>
 				</div>
-				<div class="col-sm-6">
-					<s:a action="loadaccount" cssClass="btn btn-primary center-block">Créer un compte ?</s:a>
+				<div class="col-sm-6 d-flex justify-content-center">
+					<s:a action="InitAccount" cssClass="btn btn-primary center-block">Créer un compte ?</s:a>
 				</div>
 			</div>
 

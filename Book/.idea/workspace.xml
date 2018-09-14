@@ -30,129 +30,111 @@
     <expand />
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Book" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Rent.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/action/privacy/Rent.java">
+      <file leaf-file-name="BookClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/client/book/BookClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="51">
+              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateAccount.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/action/CreateAccount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
-                <element signature="e#3567#3568#0" expanded="true" />
-                <element signature="e#3595#3596#0" expanded="true" />
-                <element signature="e#3637#3638#0" expanded="true" />
-                <element signature="e#3671#3672#0" expanded="true" />
-                <element signature="e#3706#3707#0" expanded="true" />
-                <element signature="e#3738#3739#0" expanded="true" />
-                <element signature="e#3786#3787#0" expanded="true" />
-                <element signature="e#3828#3829#0" expanded="true" />
-                <element signature="e#3859#3860#0" expanded="true" />
-                <element signature="e#3888#3889#0" expanded="true" />
-                <element signature="e#3930#3931#0" expanded="true" />
-                <element signature="e#3966#3967#0" expanded="true" />
-                <element signature="e#4003#4004#0" expanded="true" />
-                <element signature="e#4036#4037#0" expanded="true" />
-                <element signature="e#4088#4089#0" expanded="true" />
-                <element signature="e#4132#4133#0" expanded="true" />
-                <element signature="e#4175#4176#0" expanded="true" />
-                <element signature="e#4206#4207#0" expanded="true" />
-                <element signature="e#4262#4263#0" expanded="true" />
-                <element signature="e#4302#4303#0" expanded="true" />
-                <element signature="e#4355#4356#0" expanded="true" />
-                <element signature="e#4388#4389#0" expanded="true" />
-                <element signature="e#4455#4456#0" expanded="true" />
-                <element signature="e#4499#4500#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="full-width-pics.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/startbootstrap/css/full-width-pics.css">
+      <file leaf-file-name="UserClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/client/user/UserClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+            <state relative-caret-position="51">
+              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Connected.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/action/privacy/Connected.java">
+      <file leaf-file-name="Encrypt.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/action/privacy/Encrypt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="84" selection-end-column="42" />
+            <state relative-caret-position="374">
+              <caret line="29" column="83" lean-forward="false" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="83" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rentbook.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/rentbook.jsp">
+      <file leaf-file-name="struts.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/struts.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="77" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="77" selection-end-column="7" />
+            <state relative-caret-position="1802">
+              <caret line="106" column="27" lean-forward="false" selection-start-line="106" selection-start-column="27" selection-end-line="106" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rented.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/rented.jsp">
+      <file leaf-file-name="Connect.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/action/privacy/Connect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+            <state relative-caret-position="476">
+              <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators/main.jsp">
+      <file leaf-file-name="Reload.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/action/privacy/Reload.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="70" column="39" lean-forward="false" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
+            <state relative-caret-position="612">
+              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="private.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/private.jsp">
+      <file leaf-file-name="Rent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/action/privacy/Rent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="30" />
+            <state relative-caret-position="1632">
+              <caret line="109" column="55" lean-forward="false" selection-start-line="109" selection-start-column="55" selection-end-line="109" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="struts.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="51" column="54" lean-forward="false" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
+            <state relative-caret-position="493">
+              <caret line="29" column="15" lean-forward="false" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="head.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/architecture/head.jsp">
+      <file leaf-file-name="SecurityHeader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/client/SecurityHeader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="28" column="41" lean-forward="false" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stock.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/architecture/stock.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="37" column="53" lean-forward="false" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="53" />
-              <folding />
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -162,8 +144,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -172,7 +154,6 @@
       <find>eer</find>
       <find>tBook</find>
       <find>SOABook</find>
-      <find>book</find>
       <find>Book</find>
       <find>dar</find>
       <find>nav-lin</find>
@@ -181,6 +162,11 @@
       <find>SOAUser</find>
       <find>User</find>
       <find>response.getResult().get(i)</find>
+      <find>protected</find>
+      <find>today</find>
+      <find>connect</find>
+      <find>book</find>
+      <find>update</find>
     </findStrings>
     <replaceStrings>
       <replace>ook</replace>
@@ -188,12 +174,13 @@
       <replace>tUser</replace>
       <replace>SOAUser</replace>
       <replace>UserClient</replace>
-      <replace>user</replace>
-      <replace>User</replace>
       <replace>SOARentbook</replace>
       <replace>Rentbook</replace>
       <replace>rentbook</replace>
       <replace>rent</replace>
+      <replace>public</replace>
+      <replace>User</replace>
+      <replace>user</replace>
     </replaceStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -204,57 +191,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/client/TicketAgentClient.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/src/main/resources/auth.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/Book/WebServiceInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/test/main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/test/t.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Book/HelloworldPublisher.java" />
-        <option value="$PROJECT_DIR$/src/main/java/memorynotfound/client/BeerClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/bookclient/SecurityHeader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/bookclient/Authentication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/bookclient/BeerClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/bookclient/BookClient.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/wsdl/helloworld.wsdl" />
-        <option value="$PROJECT_DIR$/src/main/java/bookclient/RunClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/bookclient/SoapClientConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/client/UserClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/client/SoapClientUserConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/client/RunClientUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/client/Book/SoapClientBookConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/architecture/head.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/client/Book/RunClientBook.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/stock.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/helloWorld.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Book/Connect.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/Book/IndexAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/action/WebServiceInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/client/User/UserClient.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/connect.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/action/privacy/Connect.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/private.jsp" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/client/rent/UserClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/client/rent/UserRent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/client/rent/Rent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/action/IndexAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/action/privacy/ConnectTry.java" />
-        <option value="$PROJECT_DIR$/src/main/java/action/privacy/Connected.java" />
         <option value="$PROJECT_DIR$/src/main/java/client/book/SoapClientBookConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/client/rent/SoapClientRentConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/client/rent/RunClientRent.java" />
         <option value="$PROJECT_DIR$/src/main/java/client/book/RunClientBook.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/startbootstrap/css/full-width-pics.css" />
+        <option value="$PROJECT_DIR$/src/main/java/action/privacy/CreateAccount.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contact.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/client/rent/RunClientRent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/client/rent/Rent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/BookAndRent.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/rentbook.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators/main.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/struts.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/rented.jsp" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/createAccount.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/action/privacy/Connected.java" />
+        <option value="$PROJECT_DIR$/src/main/java/action/privacy/Connect.java" />
+        <option value="$PROJECT_DIR$/src/main/java/action/admin/book.java" />
+        <option value="$PROJECT_DIR$/src/main/java/action/admin/user.java" />
+        <option value="$PROJECT_DIR$/src/main/java/action/IndexAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/client/book/BookClient.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/privacy/private.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/bookUpdate.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/user.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/userUpdate.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/search.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/connect.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators/main.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/globalmessages.properties" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/privacy/rentbook.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/struts.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/action/privacy/Reload.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/privacy/reloadbook.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/startbootstrap/css/full-width-pics.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/book.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/action/privacy/Rent.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/privacy/rented.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/privacy/updateAccount.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/privacy/createAccount.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/action/privacy/Encrypt.java" />
+        <option value="$PROJECT_DIR$/src/main/java/action/CreateAccount.java" />
+        <option value="$PROJECT_DIR$/src/main/java/client/user/UserClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/action/privacy/ConnectTry.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/struts.properties" />
       </list>
     </option>
   </component>
@@ -287,10 +274,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="751" />
-    <option name="width" value="1172" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="742" />
+    <option name="y" value="4" />
+    <option name="width" value="1183" />
+    <option name="height" value="1019" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -307,7 +295,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -340,6 +328,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="action" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Book" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Book" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="action" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Book" type="b2602c69:ProjectViewProjectNode" />
@@ -390,6 +387,14 @@
               <item name="Book" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Book" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Book" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -421,24 +426,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="picture" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Book" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Book" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="startbootstrap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Book" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Book" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="startbootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Book" type="b2602c69:ProjectViewProjectNode" />
@@ -448,48 +436,6 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="startbootstrap" type="462c0819:PsiDirectoryNode" />
               <item name="vendor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Book" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Book" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="startbootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Book" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Book" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="startbootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Book" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Book" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="startbootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Book" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Book" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="startbootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="jquery" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Book" type="b2602c69:ProjectViewProjectNode" />
@@ -498,33 +444,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Book" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Book" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="architecture" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Book" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Book" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="decorators" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Book" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Book" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Book" type="b2602c69:ProjectViewProjectNode" />
@@ -546,6 +465,17 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Book" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Book" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Book" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Book" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Book" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Book" type="b2602c69:ProjectViewProjectNode" />
@@ -624,33 +554,35 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/Telechargement/SpringBatchJob3" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\maxle\IdeaProjects\Projet 7\Book\src\main\java\client\rent" />
-      <recent name="C:\Users\maxle\IdeaProjects\Projet 7\Book\src\main\webapp\startbootstrap\vendor\bootstrap\css" />
-      <recent name="C:\Users\maxle\IdeaProjects\Projet 7\Book\src\main\webapp\startbootstrap\vendor\bootstrap\js" />
+      <recent name="C:\Users\maxle\IdeaProjects\Projet 7\Book\src\main\webapp\WEB-INF\jsp\privacy" />
       <recent name="C:\Users\maxle\IdeaProjects\Projet 7\Book\src\main\webapp\picture" />
-      <recent name="C:\Users\maxle\Downloads\spring-ws-master\spring-ws-master\Book\src\main\webapp\WEB-INF\decorators" />
+      <recent name="C:\Users\maxle\IdeaProjects\Projet 7\Book\src\main\webapp\WEB-INF\jsp" />
+      <recent name="C:\Users\maxle\IdeaProjects\Projet 7\Book\src\main\webapp\WEB-INF\jsp\admin" />
+      <recent name="C:\Users\maxle\IdeaProjects\Projet 7\Book\src\main\java\client\rent" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="action.privacy" />
+      <recent name="action.admin" />
       <recent name="client" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\maxle\IdeaProjects\Projet 7\Book\src\main\webapp\WEB-INF\jsp\privacy" />
       <recent name="C:\Users\maxle\Downloads\spring-ws-master\spring-ws-master\Book\src\main\webapp" />
       <recent name="C:\Users\maxle\Downloads\spring-ws-master\spring-ws-master\Book\src\main\webapp\WEB-INF\architecture" />
     </key>
@@ -812,6 +744,7 @@
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_Book" />
         <option name="HTTP_PORT" value="8082" />
+        <option name="JNDI_PORT" value="1092" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -887,9 +820,9 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.RunClientBook" />
-        <item index="1" class="java.lang.String" itemvalue="Application.RunClientRent" />
-        <item index="2" class="java.lang.String" itemvalue="Application.RunClientUser" />
+        <item index="0" class="java.lang.String" itemvalue="Application.RunClientUser" />
+        <item index="1" class="java.lang.String" itemvalue="Application.RunClientBook" />
+        <item index="2" class="java.lang.String" itemvalue="Application.RunClientRent" />
       </list>
     </recent_temporary>
   </component>
@@ -915,14 +848,23 @@
       <workItem from="1531908260312" duration="286000" />
       <workItem from="1531909202349" duration="18351000" />
       <workItem from="1532014604788" duration="13537000" />
-      <workItem from="1532078197485" duration="19291000" />
+      <workItem from="1532078197485" duration="29901000" />
+      <workItem from="1532116964907" duration="68000" />
+      <workItem from="1532117783032" duration="951000" />
+      <workItem from="1532118890995" duration="21893000" />
+      <workItem from="1532440566163" duration="44120000" />
+      <workItem from="1535972425114" duration="16360000" />
+      <workItem from="1536231278625" duration="3779000" />
+      <workItem from="1536588588415" duration="4358000" />
+      <workItem from="1536738027376" duration="1077000" />
+      <workItem from="1536856120830" duration="3690000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96611000" />
+    <option name="totallyTimeSpent" value="203517000" />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -932,38 +874,38 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="751" y="0" width="1172" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24572127" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08827683" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32865497" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32865497" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31394073" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.325477" sideWeight="0.11035525" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08848614" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.325" sideWeight="0.88964474" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2769784" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20522387" sideWeight="0.87030715" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2418813" sideWeight="0.075414784" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23833059" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22469136" sideWeight="0.12969284" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23369566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1020,370 +962,30 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../Book/src/main/webapp/WEB-INF/web.xml" />
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/wsimport/com/javainuse/Book.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/client/rent/RunClientRent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="306">
+          <caret line="20" column="96" lean-forward="false" selection-start-line="20" selection-start-column="96" selection-end-line="20" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/wsdl/helloworld.wsdl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/struts.properties" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/globalmessages.properties" />
-    <entry file="file://$USER_HOME$/Struts2-NameSpace-Configuration-Example/Struts2Example/src/main/webapp/user/pages/welcome.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators/private.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml">
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/wsimport/com/javainuse/OutputSOARentbookAddConfirm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dwr.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/sitemesh.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="12" lean-forward="false" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/xwork-conversion.properties" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/action/DateConverter.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/action/WebServiceInterface.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/wsdl/helloworld.wsdl" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="29" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/connect.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/wsimport/com/javainuse/Rent.java" />
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/wsimport/com/javainuse/Rentbook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/startbootstrap/vendor/bootstrap/js/transition.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/startbootstrap/vendor/bootstrap/js/collapse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/startbootstrap/vendor/bootstrap/js/bootstrap-datetimepicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/startbootstrap/vendor/bootstrap/css/bootstrap-datetimepicker.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/wsimport/com/javainuse/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="40" column="13" lean-forward="false" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/client/SecurityHeader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/client/Authentication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/client/user/RunClientUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/ognl/ognl/3.1.15/ognl-3.1.15.jar!/ognl/OgnlRuntime.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="474" column="0" lean-forward="false" selection-start-line="474" selection-start-column="0" selection-end-line="474" selection-end-column="0" />
-          <folding>
-            <marker date="1525875270313" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1525875270313" expanded="false" signature="128:1402" ph="..." />
-            <marker date="1525875270313" expanded="true" signature="4754:4761" ph="{}" />
-            <marker date="1525875270313" expanded="true" signature="4799:5287" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="5325:5659" ph="{...}" />
-            <marker date="1525875270313" expanded="false" signature="5719:5730" ph=" { " />
-            <marker date="1525875270313" expanded="false" signature="5770:5776" ph=" }" />
-            <marker date="1525875270313" expanded="true" signature="5849:5925" ph="{...}" />
-            <marker date="1525875270313" expanded="false" signature="5978:5989" ph=" { " />
-            <marker date="1525875270313" expanded="false" signature="6028:6034" ph=" }" />
-            <marker date="1525875270313" expanded="false" signature="6090:6101" ph=" { " />
-            <marker date="1525875270313" expanded="false" signature="6143:6149" ph=" }" />
-            <marker date="1525875270313" expanded="false" signature="6218:6229" ph=" { " />
-            <marker date="1525875270313" expanded="false" signature="6250:6256" ph=" }" />
-            <marker date="1525875270313" expanded="false" signature="6312:6323" ph=" { " />
-            <marker date="1525875270313" expanded="false" signature="6340:6346" ph=" }" />
-            <marker date="1525875270313" expanded="true" signature="6457:6528" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="6579:6668" ph="{...}" />
-            <marker date="1525875270313" expanded="false" signature="6716:6727" ph=" { " />
-            <marker date="1525875270313" expanded="false" signature="6784:6790" ph=" }" />
-            <marker date="1525875270313" expanded="true" signature="6843:6933" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="7007:7147" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="7220:7294" ph="{...}" />
-            <marker date="1525875270313" expanded="false" signature="7345:7356" ph=" { " />
-            <marker date="1525875270313" expanded="false" signature="7416:7422" ph=" }" />
-            <marker date="1525875270313" expanded="true" signature="7478:7601" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="7654:8206" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="8260:8344" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="8430:9076" ph="{...}" />
-            <marker date="1525875270313" expanded="false" signature="9137:9148" ph=" { " />
-            <marker date="1525875270313" expanded="false" signature="9190:9196" ph=" }" />
-            <marker date="1525875270313" expanded="true" signature="9244:9581" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="9637:9997" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="10066:13190" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="13294:13738" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="13792:14027" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="14088:14552" ph="{...}" />
-            <marker date="1525875270313" expanded="false" signature="14608:14619" ph=" { " />
-            <marker date="1525875270313" expanded="false" signature="14643:14649" ph=" }" />
-            <marker date="1525875270313" expanded="false" signature="14715:14726" ph=" { " />
-            <marker date="1525875270313" expanded="false" signature="14751:14757" ph=" }" />
-            <marker date="1525875270313" expanded="true" signature="14817:15519" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="15666:18196" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="18252:19343" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="19400:19696" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="19771:20164" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="20318:22749" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="22827:23355" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="23469:25455" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="25540:26083" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="26143:26992" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="27100:27645" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="27758:28007" ph="{...}" />
-            <marker date="1525875270313" expanded="false" signature="28074:28085" ph=" { " />
-            <marker date="1525875270313" expanded="false" signature="28125:28131" ph=" }" />
-            <marker date="1525875270313" expanded="false" signature="28196:28207" ph=" { " />
-            <marker date="1525875270313" expanded="false" signature="28245:28251" ph=" }" />
-            <marker date="1525875270313" expanded="true" signature="28393:28508" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="28683:29458" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="29609:30226" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="30415:31632" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="31789:32408" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="32535:38338" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="38536:41263" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="41401:41946" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="41952:41970" ph="/**...*/" />
-            <marker date="1525875270313" expanded="true" signature="42119:42224" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="42353:42607" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="42725:45064" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="45070:45088" ph="/**...*/" />
-            <marker date="1525875270313" expanded="true" signature="45300:45376" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="45606:46457" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="46463:46481" ph="/**...*/" />
-            <marker date="1525875270313" expanded="true" signature="46702:46785" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="47024:47796" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="47856:48314" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="48391:50075" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="50155:51519" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="51610:51688" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="51782:51863" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="51916:52562" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="52625:53939" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="53945:53963" ph="/**...*/" />
-            <marker date="1525875270313" expanded="true" signature="54104:54179" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="54338:55353" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="55487:56402" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="56520:56625" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="56741:56841" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="56950:57089" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="57209:58500" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="58576:59656" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="59758:62138" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="62186:62284" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="62430:62859" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="63007:63545" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="63664:63783" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="63945:64068" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="64214:64643" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="64791:65328" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="65496:65619" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="65763:65994" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="66138:66369" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="66435:67533" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="67641:71084" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="71195:72681" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="72827:72953" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="73091:73712" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="73830:74467" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="74599:74957" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="75036:75187" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="75272:75516" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="75599:75756" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="75845:76103" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="76192:76450" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="76533:76690" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="76769:77007" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="77079:77220" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="77296:79063" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="79172:79662" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="79783:80288" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="80409:81039" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="81169:82207" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="82349:83347" ph="{...}" />
-            <marker date="1525875270313" expanded="false" signature="83401:83412" ph=" { " />
-            <marker date="1525875270313" expanded="false" signature="83435:83441" ph=" }" />
-            <marker date="1525875270313" expanded="false" signature="83497:83508" ph=" { " />
-            <marker date="1525875270313" expanded="false" signature="83532:83538" ph=" }" />
-            <marker date="1525875270313" expanded="true" signature="83617:84171" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="84313:86680" ph="{...}" />
-            <marker date="1525875270313" expanded="false" signature="86747:86758" ph=" { " />
-            <marker date="1525875270313" expanded="false" signature="86808:86814" ph=" }" />
-            <marker date="1525875270313" expanded="true" signature="86902:89808" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="89877:89944" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="90033:92916" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="92994:93570" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="93627:94027" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="94102:94642" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="94753:94822" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="94958:96343" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="96356:104138" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="104196:105998" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="104406:104417" ph="{}" />
-            <marker date="1525875270313" expanded="true" signature="104472:104926" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="104994:105405" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="105469:105700" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="105717:105992" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="106040:106465" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="106295:106459" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="106514:106752" ph="{...}" />
-            <marker date="1525875270313" expanded="true" signature="106649:106746" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/action/HelloWorldAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/client/book/BookClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/action/privacy/Connect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/action/IndexAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="53" column="89" lean-forward="false" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="89" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/client/book/SoapClientBookConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/client/user/UserClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/client/user/SoapClientUserConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="510">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1391,144 +993,336 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="19" column="73" lean-forward="false" selection-start-line="19" selection-start-column="73" selection-end-line="19" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/action/admin/book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-core/2.5.14.1/struts2-core-2.5.14.1.jar!/META-INF/struts-tags.tld">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="3593" column="2" lean-forward="false" selection-start-line="3593" selection-start-column="2" selection-end-line="3593" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/client/rent/Rent.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Book/IndexAction.java" />
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/wsimport/com/javainuse/InputSOABookSearch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/user.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contact.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/helloWorld.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/search.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/action/admin/user.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/bookUpdate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/userUpdate.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/action/privacy/Connected.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/client/rent/RunClientRent.java">
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/wsimport/com/javainuse/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="455">
+          <caret line="40" column="10" lean-forward="false" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/globalmessages.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="14" lean-forward="false" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/wsimport/com/javainuse/Rentbook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="52" column="23" lean-forward="true" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/wsimport/com/javainuse/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="52" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="153" column="34" lean-forward="false" selection-start-line="153" selection-start-column="34" selection-end-line="153" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/connect.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="31" column="66" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/startbootstrap/css/full-width-pics.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/book.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="82" column="18" lean-forward="false" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/BookAndRent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/ShoppingList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2448">
+          <caret line="144" column="20" lean-forward="false" selection-start-line="144" selection-start-column="20" selection-end-line="144" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/client/book/SoapClientBookConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/client/book/RunClientBook.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+        <state relative-caret-position="204">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/action/IndexAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="79" column="38" lean-forward="false" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/client/Authentication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/action/HelloWorldAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/client/rent/Rent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/privacy/reloadbook.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="28" lean-forward="false" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/privacy/rentbook.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="17" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/privacy/rented.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/privacy/updateAccount.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="12" lean-forward="false" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/privacy/createAccount.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="61" lean-forward="false" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/privacy/private.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/action/privacy/ConnectTry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-          <folding />
+        <state relative-caret-position="612">
+          <caret line="45" column="32" lean-forward="false" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/action/privacy/Connected.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/client/user/UserClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="84" selection-end-column="42" />
+        <state relative-caret-position="51">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/startbootstrap/css/full-width-pics.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/client/book/BookClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/action/CreateAccount.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding />
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/architecture/head.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/action/privacy/Reload.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="28" column="41" lean-forward="false" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/architecture/stock.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="37" column="53" lean-forward="false" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="70" column="39" lean-forward="false" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="51" column="54" lean-forward="false" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/private.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/rentbook.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="77" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="77" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/rented.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+        <state relative-caret-position="612">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/action/privacy/Rent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="1632">
+          <caret line="109" column="55" lean-forward="false" selection-start-line="109" selection-start-column="55" selection-end-line="109" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="15" lean-forward="false" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/client/SecurityHeader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="e#3567#3568#0" expanded="true" />
-            <element signature="e#3595#3596#0" expanded="true" />
-            <element signature="e#3637#3638#0" expanded="true" />
-            <element signature="e#3671#3672#0" expanded="true" />
-            <element signature="e#3706#3707#0" expanded="true" />
-            <element signature="e#3738#3739#0" expanded="true" />
-            <element signature="e#3786#3787#0" expanded="true" />
-            <element signature="e#3828#3829#0" expanded="true" />
-            <element signature="e#3859#3860#0" expanded="true" />
-            <element signature="e#3888#3889#0" expanded="true" />
-            <element signature="e#3930#3931#0" expanded="true" />
-            <element signature="e#3966#3967#0" expanded="true" />
-            <element signature="e#4003#4004#0" expanded="true" />
-            <element signature="e#4036#4037#0" expanded="true" />
-            <element signature="e#4088#4089#0" expanded="true" />
-            <element signature="e#4132#4133#0" expanded="true" />
-            <element signature="e#4175#4176#0" expanded="true" />
-            <element signature="e#4206#4207#0" expanded="true" />
-            <element signature="e#4262#4263#0" expanded="true" />
-            <element signature="e#4302#4303#0" expanded="true" />
-            <element signature="e#4355#4356#0" expanded="true" />
-            <element signature="e#4388#4389#0" expanded="true" />
-            <element signature="e#4455#4456#0" expanded="true" />
-            <element signature="e#4499#4500#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/action/privacy/Encrypt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="29" column="83" lean-forward="false" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/struts.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1802">
+          <caret line="106" column="27" lean-forward="false" selection-start-line="106" selection-start-column="27" selection-end-line="106" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/action/privacy/Connect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1586,12 +1380,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Book</last-edited>
+          <last-edited>Struts 2|Web|Book</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

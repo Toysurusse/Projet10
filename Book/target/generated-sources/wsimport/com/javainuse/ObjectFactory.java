@@ -62,6 +62,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link OutputSOABookSearch }
+     * 
+     */
+    public OutputSOABookSearch createOutputSOABookSearch() {
+        return new OutputSOABookSearch();
+    }
+
+    /**
      * Create an instance of {@link InputSOAUserAdd }
      * 
      */
@@ -75,6 +83,30 @@ public class ObjectFactory {
      */
     public User createUser() {
         return new User();
+    }
+
+    /**
+     * Create an instance of {@link InputSOARentbookLate }
+     * 
+     */
+    public InputSOARentbookLate createInputSOARentbookLate() {
+        return new InputSOARentbookLate();
+    }
+
+    /**
+     * Create an instance of {@link InputSOABookSearch }
+     * 
+     */
+    public InputSOABookSearch createInputSOABookSearch() {
+        return new InputSOABookSearch();
+    }
+
+    /**
+     * Create an instance of {@link InputSOARentbookByUser }
+     * 
+     */
+    public InputSOARentbookByUser createInputSOARentbookByUser() {
+        return new InputSOARentbookByUser();
     }
 
     /**
@@ -134,6 +166,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link OutputSOARentbookLate }
+     * 
+     */
+    public OutputSOARentbookLate createOutputSOARentbookLate() {
+        return new OutputSOARentbookLate();
+    }
+
+    /**
      * Create an instance of {@link InputSOABook }
      * 
      */
@@ -171,6 +211,14 @@ public class ObjectFactory {
      */
     public InputSOARentbookDel createInputSOARentbookDel() {
         return new InputSOARentbookDel();
+    }
+
+    /**
+     * Create an instance of {@link OutputSOARentbookByUser }
+     * 
+     */
+    public OutputSOARentbookByUser createOutputSOARentbookByUser() {
+        return new OutputSOARentbookByUser();
     }
 
     /**

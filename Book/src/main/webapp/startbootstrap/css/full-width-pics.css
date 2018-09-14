@@ -28,8 +28,14 @@ body {
   color:#b3d7ff;
 }
 
+.section {
+  background-color:#9fcdff;
+}
+
 .container {
-  color: #b3d7ff;
+  color: ghostwhite;
+  background-color:darkgrey;
+  border-color: #4e555b;
 }
 
 .bg-dark{background-color:#117a8b}
@@ -40,4 +46,18 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+}
+
+.stylish-input-group .input-group-addon{
+  background: white !important;
+}
+.stylish-input-group .form-control{
+  align-items: center;
+  border-right:0;
+  box-shadow:0 0 0;
+  border-color:#ccc;
+}
+
+.btn-primary{
+  background-color:#80bdff;
 }

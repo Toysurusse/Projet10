@@ -16,6 +16,15 @@ public class BookClient extends WebServiceGatewaySupport {
                                 authentication));
     }
 
+    public OutputSOABookSearch getSearch(Authentication authentication, String search) {
+        InputSOABookSearch request = new InputSOABookSearch();
+        request.setTest(search);
+        return (OutputSOABookSearch) getWebServiceTemplate()
+                .marshalSendAndReceive(request,
+                        new SecurityHeader(
+                                authentication));
+    }
+
     public OutputSOABookById getBookById(Authentication authentication, int id) {
         InputSOABookById request = new InputSOABookById();
         request.setId(id);
@@ -42,9 +51,5 @@ public class BookClient extends WebServiceGatewaySupport {
                         new SecurityHeader(
                                 authentication));
     }
-
-
-
-
 
 }

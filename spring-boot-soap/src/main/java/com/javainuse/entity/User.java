@@ -20,19 +20,27 @@ public class User implements Serializable {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "salt")
+    private String salt;
+
     @Column(name = "gender")
     private boolean gender;
 
     @Column(name = "mail")
     private String mail;
 
+    @Column(name = "role")
+    private int role;
+
     protected User(){
     }
 
-    public User(String pseudo, String password, String mail){
+    public User(String pseudo, String password, String salt, String mail, int role){
         this.password=password;
+        this.salt=salt;
         this.pseudo=pseudo;
         this.mail=mail;
+        this.role=role;
     }
 
     public int getId() {
@@ -67,12 +75,27 @@ public class User implements Serializable {
         this.gender = gender;
     }
 
-
     public String getMail() {
         return mail;
     }
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
     }
 }

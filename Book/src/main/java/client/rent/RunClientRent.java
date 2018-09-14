@@ -1,10 +1,7 @@
 package client.rent;
 
 import client.Authentication;
-import com.javainuse.OutputSOARentbook;
-import com.javainuse.OutputSOARentbookById;
-import com.javainuse.OutputSOAddConfirm;
-import com.javainuse.Rentbook;
+import com.javainuse.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 
@@ -32,7 +29,7 @@ public class RunClientRent {
         rentbook.setReload(false);
         rentbook.setReturnbook(false);
 
-        OutputSOAddConfirm outputSOAddConfirm = client.getRentbookAdd(authentication,rentbook);
+        OutputSOARentbookAddConfirm outputSOAddConfirm = client.getRentbookAdd(authentication,rentbook);
         System.out.println(outputSOAddConfirm.getResult());
     }
 }

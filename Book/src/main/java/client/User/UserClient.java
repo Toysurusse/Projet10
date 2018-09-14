@@ -16,9 +16,8 @@ public class UserClient extends WebServiceGatewaySupport {
                                 authentication));
     }
 
-    public OutputSOAUserTest getUserTest(Authentication authentication, String pseudo, String password) {
+    public OutputSOAUserTest getUserTest(Authentication authentication, String pseudo) {
         InputSOAUserTest request = new InputSOAUserTest();
-        request.setPassword(password);
         request.setPseudo(pseudo);
         return (OutputSOAUserTest) getWebServiceTemplate()
                 .marshalSendAndReceive(request,
@@ -44,10 +43,10 @@ public class UserClient extends WebServiceGatewaySupport {
                                 authentication));
     }
 
-    public OutputSODelConfirm getUserDel(Authentication authentication, User user) {
+    public OutputSOAUserDelConfirm getUserDel(Authentication authentication, User user) {
         InputSOAUserDel request = new InputSOAUserDel();
         request.setUser(user);
-        return (OutputSODelConfirm) getWebServiceTemplate()
+        return (OutputSOAUserDelConfirm) getWebServiceTemplate()
                 .marshalSendAndReceive(request,
                         new SecurityHeader(
                                 authentication));

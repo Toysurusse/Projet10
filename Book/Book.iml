@@ -17,6 +17,11 @@
           <root url="file://$MODULE_DIR$/target/generated-sources/wsimport" />
         </sourceRoots>
       </configuration>
+      <facet type="Struts2" name="Struts 2">
+        <configuration>
+          <propertiesKeys disabled="false" />
+        </configuration>
+      </facet>
     </facet>
     <facet type="Spring" name="Spring">
       <configuration>

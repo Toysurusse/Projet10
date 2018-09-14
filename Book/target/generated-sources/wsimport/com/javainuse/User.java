@@ -20,8 +20,10 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="userid" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="pseudo" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="salt" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="gender" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="mail" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="role" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,8 +37,10 @@ import javax.xml.bind.annotation.XmlType;
     "userid",
     "pseudo",
     "password",
+    "salt",
     "gender",
-    "mail"
+    "mail",
+    "role"
 })
 public class User {
 
@@ -46,9 +50,12 @@ public class User {
     @XmlElement(required = true)
     protected String password;
     @XmlElement(required = true)
+    protected String salt;
+    @XmlElement(required = true)
     protected String gender;
     @XmlElement(required = true)
     protected String mail;
+    protected int role;
 
     /**
      * Obtient la valeur de la propriété userid.
@@ -115,6 +122,30 @@ public class User {
     }
 
     /**
+     * Obtient la valeur de la propriété salt.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSalt() {
+        return salt;
+    }
+
+    /**
+     * Définit la valeur de la propriété salt.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSalt(String value) {
+        this.salt = value;
+    }
+
+    /**
      * Obtient la valeur de la propriété gender.
      * 
      * @return
@@ -160,6 +191,22 @@ public class User {
      */
     public void setMail(String value) {
         this.mail = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété role.
+     * 
+     */
+    public int getRole() {
+        return role;
+    }
+
+    /**
+     * Définit la valeur de la propriété role.
+     * 
+     */
+    public void setRole(int value) {
+        this.role = value;
     }
 
 }

@@ -1,6 +1,7 @@
 package action.privacy;
 
 import com.javainuse.Book;
+import com.javainuse.User;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.SessionAware;
 
@@ -10,6 +11,16 @@ import java.util.Map;
 
 
 public class Connect extends ActionSupport implements SessionAware {
+
+    public User user ;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public int idBook;
 

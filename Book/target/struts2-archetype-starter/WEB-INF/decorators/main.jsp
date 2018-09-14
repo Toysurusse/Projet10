@@ -23,9 +23,10 @@
     <!-- Custom styles for this template -->
     <link href="../../startbootstrap/css/full-width-pics.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
     <decorator:head/>
 
 </head>
@@ -33,18 +34,27 @@
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <div class="container">
+    <div class="container rounded">
         <a class="navbar-brand" href="#">Library Rent</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse navbar-dark flex-md-column" id="navbarResponsive">
-            <ul class="navbar-nav navbar-dark ml-auto">
+            <ul class="navbar-nav navbar-dark ml-auto align-items-center">
+                <li class="nav-item">
+                            <s:form theme="simple" action="search">
+                                <div class="row">
+                                    <input Class="form-control col-7" placeholder="mot clef" name="search"/>
+                                    <s:submit value="search" cssClass="btn btn-primary center-block col-3"/>
+                                </div>
+                            </s:form>
+                </li>
                 <li class="nav-item">
                     <s:if test="#session.user">
                         <div class="row">
-                            <s:a action="disconnect" class="nav-link">Déconnecter <s:property value="#session.user.pseudo"/></s:a>
+                            <s:a action="disconnect" class="nav-link">Déconnecter <s:property
+                                    value="#session.user.pseudo"/></s:a>
                         </div>
                     </s:if>
                     <s:else>
@@ -55,31 +65,31 @@
                     <s:if test="#session.user">
                     </s:if>
                     <s:else>
-                        <a class="nav-link" href="connect.action">Contact</a>
+                        <s:a action="contact" class="nav-link">Contact</s:a>
                     </s:else>
                 </li>
             </ul>
             <s:if test="#session.user">
-            <ul class="navbar-nav navbar-dark d-flex justify-content-center">
-                <li class="nav-item">
-                    <s:a action="connected" class="nav-link">Sélection livres</s:a>
-                </li>
-                <li class="nav-item">
-                    <s:a action="rentTotal" class="nav-link">Pannier</s:a>
-                </li>
-                <li class="nav-item">
-                    <s:a action="rentTotal" class="nav-link">Etat des prêts</s:a>
-                </li>
-                <li class="nav-item">
-                    <s:a action="rentTotal" class="nav-link">Pannier</s:a>
-                </li>
-                <li class="nav-item">
-                    <s:a action="rentTotal" class="nav-link">Pannier</s:a>
-                </li>
-                <li class="nav-item">
-                    <s:a action="rentTotal" class="nav-link">Pannier</s:a>
-                </li>
-            </ul>
+                <ul class="navbar-nav navbar-dark d-flex justify-content-around">
+                    <li class="nav-item">
+                        <s:a action="connected" class="nav-link">Sélection livres</s:a>
+                    </li>
+                    <li class="nav-item">
+                        <s:a action="rentTotal" class="nav-link">Pannier</s:a>
+                    </li>
+                    <li class="nav-item">
+                        <s:a action="rented" class="nav-link">Etat des prêts</s:a>
+                    </li>
+                    <li class="nav-item">
+                        <s:a action="updateInit" class="nav-link">Compte</s:a>
+                    </li>
+
+                    <s:if test="#session.user.role==2">
+                        <li class="nav-item">
+                            <s:a action="bookInit" class="nav-link">Gestion livre</s:a>
+                        </li>
+                    </s:if>
+                </ul>
             </s:if>
         </div>
     </div>
@@ -102,7 +112,7 @@
 
 <!-- Footer -->
 <footer class="py-5 bg-dark">
-    <div class="container">
+    <div class="container rounded">
         <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
     </div>
     <!-- /.container -->
