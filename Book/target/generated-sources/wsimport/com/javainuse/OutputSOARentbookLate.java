@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="result" type="{http://javainuse.com}rentbook" maxOccurs="unbounded"/>
+ *         &lt;element name="result" type="{http://javainuse.com}latebook" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,7 +37,7 @@ import javax.xml.bind.annotation.XmlType;
 public class OutputSOARentbookLate {
 
     @XmlElement(required = true)
-    protected List<Rentbook> result;
+    protected List<Latebook> result;
 
     /**
      * Gets the value of the result property.
@@ -57,13 +57,13 @@ public class OutputSOARentbookLate {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Rentbook }
+     * {@link Latebook }
      * 
      * 
      */
-    public List<Rentbook> getResult() {
+    public List<Latebook> getResult() {
         if (result == null) {
-            result = new ArrayList<Rentbook>();
+            result = new ArrayList<Latebook>();
         }
         return this.result;
     }

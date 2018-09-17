@@ -1,7 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0c84375-0f84-408f-93fc-337ee3a64f37" name="Default" comment="" />
+    <list default="true" id="f0c84375-0f84-408f-93fc-337ee3a64f37" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/.idea/workspace.xml" afterPath="$PROJECT_DIR$/BatchEmail/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/gs-batch-processing.iml" afterPath="$PROJECT_DIR$/BatchEmail/gs-batch-processing.iml" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/pom.xml" afterPath="$PROJECT_DIR$/BatchEmail/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/Book.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/Book.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOABook.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOABook.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOABookAdd.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOABookAdd.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOABookById.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOABookById.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOABookDel.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOABookDel.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOABookSearch.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOABookSearch.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOARentbook.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOARentbook.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOARentbookAdd.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOARentbookAdd.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOARentbookById.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOARentbookById.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOARentbookByUser.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOARentbookByUser.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOARentbookDel.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOARentbookDel.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOARentbookLate.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOARentbookLate.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOAUser.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOAUser.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOAUserAdd.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOAUserAdd.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOAUserById.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOAUserById.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOAUserDel.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOAUserDel.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOAUserTest.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/InputSOAUserTest.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/Latebook.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/Latebook.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOABookById.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOABookById.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOARentbookAddConfirm.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOARentbookAddConfirm.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOARentbookById.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOARentbookById.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOARentbookDelConfirm.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOARentbookDelConfirm.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOAUserAddConfirm.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOAUserAddConfirm.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOAUserById.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOAUserById.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOAUserDelConfirm.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOAUserDelConfirm.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOAUserTest.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOAUserTest.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOAddConfirm.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSOAddConfirm.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSODelConfirm.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/OutputSODelConfirm.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/Rentbook.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/Rentbook.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookByIdEndpoint.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookByIdEndpoint.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookByIdEndpointService.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookByIdEndpointService.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookEndpoint.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookEndpoint.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookEndpointService.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookEndpointService.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookSearchEndpoint.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookSearchEndpoint.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookSearchEndpointService.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookSearchEndpointService.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookadd.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookadd.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookaddEndpointService.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookaddEndpointService.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookdel.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookdel.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookdelEndpointService.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOABookdelEndpointService.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookByIdEndpoint.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookByIdEndpoint.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookByIdEndpointService.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookByIdEndpointService.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookByUser.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookByUser.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookByUserEndpointService.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookByUserEndpointService.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookEndpoint.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookEndpoint.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookEndpointService.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookEndpointService.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookLateEndpoint.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookLateEndpoint.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookLateEndpointService.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookLateEndpointService.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookadd.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookadd.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookaddEndpointService.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookaddEndpointService.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookdel.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookdel.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookdelEndpointService.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOARentbookdelEndpointService.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUserByIdEndpoint.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUserByIdEndpoint.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUserByIdEndpointService.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUserByIdEndpointService.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUserEndpoint.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUserEndpoint.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUserEndpointService.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUserEndpointService.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUserTest.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUserTest.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUserTestEndpointService.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUserTestEndpointService.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUseradd.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUseradd.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUseraddEndpointService.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUseraddEndpointService.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUserdel.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUserdel.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUserdelEndpointService.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/SOAUserdelEndpointService.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/User.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/com/javainuse/User.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/hello/tasklet/HtmlEmailExampleController.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/hello/tasklet/HtmlEmailExampleController.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/classes/hello/tasklet/TaskletStep.class" afterPath="$PROJECT_DIR$/BatchEmail/target/classes/hello/tasklet/TaskletStep.class" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/gs-batch-processing-0.1.0.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/gs-batch-processing-0.1.0.jar.original" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/BatchEmail/target/maven-archiver/pom.properties" />
+      <change beforePath="$PROJECT_DIR$/BatchEmail/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/BatchEmail/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change beforePath="$PROJECT_DIR$/Book/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Book/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Book/pom.xml" afterPath="$PROJECT_DIR$/Book/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/Book/target/classes/com/javainuse/ObjectFactory.class" afterPath="$PROJECT_DIR$/Book/target/classes/com/javainuse/ObjectFactory.class" />
+      <change beforePath="$PROJECT_DIR$/Book/target/classes/com/javainuse/OutputSOARentbookLate.class" afterPath="$PROJECT_DIR$/Book/target/classes/com/javainuse/OutputSOARentbookLate.class" />
+      <change beforePath="$PROJECT_DIR$/Book/target/generated-sources/wsimport/com/javainuse/ObjectFactory.java" afterPath="$PROJECT_DIR$/Book/target/generated-sources/wsimport/com/javainuse/ObjectFactory.java" />
+      <change beforePath="$PROJECT_DIR$/Book/target/generated-sources/wsimport/com/javainuse/OutputSOARentbookLate.java" afterPath="$PROJECT_DIR$/Book/target/generated-sources/wsimport/com/javainuse/OutputSOARentbookLate.java" />
+      <change beforePath="$PROJECT_DIR$/Book/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/Book/target/maven-archiver/pom.properties" />
+      <change beforePath="$PROJECT_DIR$/Book/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/Book/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change beforePath="$PROJECT_DIR$/Book/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/Book/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change beforePath="$PROJECT_DIR$/Book/target/struts2-archetype-starter.war" afterPath="$PROJECT_DIR$/Book/target/struts2-archetype-starter.war" />
+      <change beforePath="$PROJECT_DIR$/Book/target/struts2-archetype-starter/WEB-INF/classes/com/javainuse/ObjectFactory.class" afterPath="$PROJECT_DIR$/Book/target/struts2-archetype-starter/WEB-INF/classes/com/javainuse/ObjectFactory.class" />
+      <change beforePath="$PROJECT_DIR$/Book/target/struts2-archetype-starter/WEB-INF/classes/com/javainuse/OutputSOARentbookLate.class" afterPath="$PROJECT_DIR$/Book/target/struts2-archetype-starter/WEB-INF/classes/com/javainuse/OutputSOARentbookLate.class" />
+      <change beforePath="$PROJECT_DIR$/Book/target/surefire-reports/Book.HelloWorldActionTest.txt" afterPath="$PROJECT_DIR$/Book/target/surefire-reports/Book.HelloWorldActionTest.txt" />
+      <change beforePath="$PROJECT_DIR$/Book/target/surefire-reports/Book.IndexActionTest.txt" afterPath="$PROJECT_DIR$/Book/target/surefire-reports/Book.IndexActionTest.txt" />
+      <change beforePath="$PROJECT_DIR$/Book/target/surefire-reports/TEST-Book.HelloWorldActionTest.xml" afterPath="$PROJECT_DIR$/Book/target/surefire-reports/TEST-Book.HelloWorldActionTest.xml" />
+      <change beforePath="$PROJECT_DIR$/Book/target/surefire-reports/TEST-Book.IndexActionTest.xml" afterPath="$PROJECT_DIR$/Book/target/surefire-reports/TEST-Book.IndexActionTest.xml" />
+      <change beforePath="$PROJECT_DIR$/Book/target/surefire-reports/TEST-entity.IndexActionTest.xml" afterPath="$PROJECT_DIR$/Book/target/surefire-reports/TEST-entity.IndexActionTest.xml" />
+      <change beforePath="$PROJECT_DIR$/Book/target/surefire-reports/entity.IndexActionTest.txt" afterPath="$PROJECT_DIR$/Book/target/surefire-reports/entity.IndexActionTest.txt" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-soap/pom.xml" afterPath="$PROJECT_DIR$/spring-boot-soap/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-soap/spring-boot-soap/.gitignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-soap/spring-boot-soap/.mvn/wrapper/maven-wrapper.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-soap/spring-boot-soap/.mvn/wrapper/maven-wrapper.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-soap/spring-boot-soap/pom.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-soap/spring-boot-soap/src/main/java/com/javainuse/SpringBootHelloWorldApplication.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-soap/spring-boot-soap/src/main/java/com/javainuse/config/WebServiceConfig.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-soap/spring-boot-soap/src/main/java/com/javainuse/endpoint/WebServiceEndpoint.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-soap/spring-boot-soap/src/main/resources/wsdl/helloworld.wsdl" afterPath="" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,10 +125,11 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="506" />
-    <option name="width" value="1418" />
+    <option name="x" value="276" />
+    <option name="width" value="1648" />
     <option name="height" value="1029" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -44,10 +145,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -58,7 +159,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/batch" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/BatchEmail" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -169,44 +270,46 @@
       <option name="presentableId" value="Default" />
       <updated>1532537485133</updated>
       <workItem from="1532537489508" duration="217000" />
+      <workItem from="1536971312194" duration="62000" />
+      <workItem from="1536971398803" duration="37000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217000" />
+    <option name="totallyTimeSpent" value="316000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="506" y="0" width="1418" height="1029" extended-state="0" />
+    <frame x="276" y="0" width="1648" height="1029" extended-state="0" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21662469" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2496318" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">

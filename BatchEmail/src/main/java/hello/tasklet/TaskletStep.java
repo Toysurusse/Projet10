@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Component
 public class TaskletStep implements Tasklet{
@@ -26,13 +27,22 @@ public class TaskletStep implements Tasklet{
 	private static final Logger log = LoggerFactory.getLogger(TaskletStep.class);
 	@Override
 	public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
+        System.out.println("test");
+	    TimeUnit.SECONDS.sleep(3);
+
 		List<Latebook> bookList=new ArrayList<>();
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);
 		client.rent.Rent client = context.getBean(client.rent.Rent.class);
+        System.out.println("test");
+        TimeUnit.SECONDS.sleep(3);
 		OutputSOARentbookLate response = client.getRentbookLate(new Authentication("username","password"));
 		bookList=response.getResult();
+        System.out.println("test");
+        TimeUnit.SECONDS.sleep(3);
 		for (Latebook b:bookList
 				) {
+            System.out.println("test");
+            TimeUnit.SECONDS.sleep(3);
 			emailExampleController.sendHtmlEmail(b.getMail(),b.getPseudo(),b.getBookname());
 			log.info("Mail sent to : " + b.getMail() + ")");
 		}

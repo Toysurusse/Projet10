@@ -79,7 +79,7 @@
                                         Date de location : <s:date name="#BookAndRent.createat"
                                                                    format="dd/MM/yyyy"/><br>
                                         Date de retour : <s:date name="#BookAndRent.endat" format="dd/MM/yyyy"/><br>
-                                        <s:if test="%{endat.before(currentdate)}">
+                                        <s:if test="%{#BookAndRent.endat.before(today)}">
                                     </p>
                                     <div class="text-danger font-weight-bold">
                                         Livre en retard

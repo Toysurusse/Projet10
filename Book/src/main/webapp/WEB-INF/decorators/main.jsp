@@ -83,12 +83,6 @@
                     <li class="nav-item">
                         <s:a action="updateInit" class="nav-link">Compte</s:a>
                     </li>
-
-                    <s:if test="#session.user.role==2">
-                        <li class="nav-item">
-                            <s:a action="bookInit" class="nav-link">Gestion livre</s:a>
-                        </li>
-                    </s:if>
                 </ul>
             </s:if>
         </div>

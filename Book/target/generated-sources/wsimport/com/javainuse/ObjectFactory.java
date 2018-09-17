@@ -174,6 +174,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Latebook }
+     * 
+     */
+    public Latebook createLatebook() {
+        return new Latebook();
+    }
+
+    /**
      * Create an instance of {@link InputSOABook }
      * 
      */

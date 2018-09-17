@@ -10,11 +10,9 @@ import java.util.List;
 
 @Repository
 public interface BookRepository extends CrudRepository<Book, Integer> {
-
     @Query(
             value = "SELECT * FROM book WHERE bookname LIKE %:searchTerm%",
             nativeQuery = true
     )
     List<Book> search(@Param("searchTerm") String searchTerm);
-
 }

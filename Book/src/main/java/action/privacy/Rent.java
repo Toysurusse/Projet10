@@ -91,7 +91,8 @@ public class Rent extends Connect {
 
 
     public String rented() {
-
+        SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy");
+        today = formater.format(java.util.Calendar.getInstance().getTime());
         User user = (User) this.map.get("user");
         int id = user.getUserid();
 

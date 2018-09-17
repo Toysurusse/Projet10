@@ -1,6 +1,0 @@
-client:
-  default-uri: http://localhost:8080/javainuse/ws/helloworld
-  user:
-    name: r
-    password: r
-

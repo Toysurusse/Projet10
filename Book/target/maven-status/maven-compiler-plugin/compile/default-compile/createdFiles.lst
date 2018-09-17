@@ -66,6 +66,7 @@ action\WebServiceInterface.class
 com\javainuse\InputSOABookSearch.class
 com\javainuse\OutputSOAUserAddConfirm.class
 com\javainuse\SOAUserByIdEndpoint.class
+com\javainuse\Latebook.class
 action\HelloWorldAction.class
 client\user\RunClientUser.class
 com\javainuse\Book.class
