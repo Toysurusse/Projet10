@@ -12,4 +12,5 @@ public interface IRentService {
     List<com.javainuse.Rentbook> findAll ();
     List<com.javainuse.Rentbook> findByUserId(int id);
     List<Latebook> findByLate();
+    String back(com.javainuse.Rentbook rentbook);
 }

@@ -25,8 +25,7 @@
                     Autheur : <s:property value="author"/><br>
                     Editeur : <s:property value="editeurs"/><br>
                     Nombre de pages : <s:property value="nbPage"/><br>
-                    disponibilité : <s:if test="%{Book.dispo}">Non</s:if>
-                    <s:else>Oui</s:else>
+                    Nombre d'ouvrages disponibles : <s:property value="dispo"/>
                 </p>
             </div>
         </section>

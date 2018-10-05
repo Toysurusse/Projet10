@@ -89,7 +89,7 @@
                     <xs:element name="author" type="xs:string"/>
                     <xs:element name="editeurs" type="xs:string"/>
                     <xs:element name="nbPage" type="xs:int"/>
-                    <xs:element name="dispo" type="xs:boolean"/>
+                    <xs:element name="dispo" type="xs:int"/>
                 </xs:sequence>
             </xs:complexType>
 
@@ -207,6 +207,21 @@
                 </xs:complexType>
             </xs:element>
             <xs:element name="outputSOARentbookAddConfirm">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="result"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="inputSOARentbookBack">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:rentbook" name="rentbook"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOARentbookBackConfirm">
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element type="xs:string" name="result"/>
@@ -662,6 +677,12 @@
     <wsdl:message name="outputSOARentbookAddConfirm">
         <wsdl:part name="out" element="tns:outputSOARentbookAddConfirm"/>
     </wsdl:message>
+    <wsdl:message name="inputSOARentbookBack">
+        <wsdl:part name="in" element="tns:inputSOARentbookBack"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOARentbookBackConfirm">
+        <wsdl:part name="out" element="tns:outputSOARentbookBackConfirm"/>
+    </wsdl:message>
     <wsdl:message name="inputSOARentbookDel">
         <wsdl:part name="in" element="tns:inputSOARentbookDel"/>
     </wsdl:message>
@@ -701,6 +722,13 @@
         <wsdl:operation name="SOARentbookadd">
             <wsdl:input message="tns:inputSOARentbookAdd"/>
             <wsdl:output message="tns:outputSOARentbookAddConfirm"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOARentbookBack">
+        <wsdl:operation name="SOARentbookBack">
+            <wsdl:input message="tns:inputSOARentbookBack"/>
+            <wsdl:output message="tns:outputSOARentbookBackConfirm"/>
         </wsdl:operation>
     </wsdl:portType>
 
@@ -751,6 +779,20 @@
     <wsdl:binding name="SOARentbookaddBinding" type="tns:SOARentbookadd">
         <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
         <wsdl:operation name="SOARentbookadd">
+            <soap:operation soapAction="http://javainuse.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOARentbookBackBinding" type="tns:SOARentbookBack">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOARentbookBack">
             <soap:operation soapAction="http://javainuse.com"
                             style="document"/>
             <wsdl:input>
@@ -825,9 +867,9 @@
         </wsdl:port>
     </wsdl:service>
 
-    <wsdl:service name="SOARentbookaddEndpointService">
-        <wsdl:port name="SOARentbookaddEndpoint" binding="tns:SOARentbookaddBinding">
-            <soap:address location="http://localhost:8080/javainuse/ws/RentbookAdd"/>
+    <wsdl:service name="SOARentbookBackEndpointService">
+        <wsdl:port name="SOARentbookBackEndpoint" binding="tns:SOARentbookBackBinding">
+            <soap:address location="http://localhost:8080/javainuse/ws/RentbookBack"/>
         </wsdl:port>
     </wsdl:service>
 

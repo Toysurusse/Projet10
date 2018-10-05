@@ -33,7 +33,7 @@ public class Connected extends Connect {
         OutputSOABook response = client.getBook(new Authentication("username","password"));
 
         for (int i = 0; i <response.getResult().size() ; i++) {
-            if (response.getResult().get(i).isDispo()) {
+            if (response.getResult().get(i).getDispo()>0) {
                 bookToRent.add(response.getResult().get(i));
             }
         }

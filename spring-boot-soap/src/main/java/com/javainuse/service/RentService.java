@@ -47,19 +47,23 @@ public class RentService implements IRentService {
     public String add(com.javainuse.Rentbook rentbook) {
         String statut="Impossible";
         Book book = bookService.findById(rentbook.getBookId());
-        System.out.println(book.getId()+" ; "+book.getBookName()+" ; "+book.getAuthor()+" ; "+book.getEditeurs()+" ; "+book.getNbPage()+" ; "+book.isDispo()+" ; ");
-        if (book.isDispo()) {
+        if (book.getDispo()>0) {
             rentRepository.save(rentMapper.convertEtoD(rentbook));
-            book.setDispo(false);
+            book.setDispo(book.getDispo()-1);
             bookService.add(book);
             statut="Ok";
         }
-        else {
-            rentRepository.save(rentMapper.convertEtoD(rentbook));
-            book.setDispo(true);
-            bookService.add(book);
-            statut="Ok";
-        }
+        return statut;
+    }
+
+    @Override
+    public String back(com.javainuse.Rentbook rentbook) {
+        String statut="Impossible";
+        Book book = bookService.findById(rentbook.getBookId());
+        rentRepository.save(rentMapper.convertEtoD(rentbook));
+        book.setDispo(book.getDispo()+1);
+        bookService.add(book);
+        statut="Ok";
         return statut;
     }
 

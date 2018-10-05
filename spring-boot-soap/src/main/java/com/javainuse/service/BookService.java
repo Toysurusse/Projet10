@@ -19,17 +19,13 @@ public class BookService implements IBookService {
 
     @Override
     public List<com.javainuse.Book> findAll() {
-        List<com.javainuse.Book> obj = bookMapper.bookListDtoE((List<Book>) bookRepository.findAll());
+        List<com.javainuse.Book> obj = bookMapper.bookListDtoE((List<Book>)  bookRepository.findAll());
         return obj;
     }
 
     @Override
     public List<com.javainuse.Book> findBySearch(String place) {
-        System.out.println(place);
         List<com.javainuse.Book> obj = bookMapper.bookListDtoE((List<Book>) bookRepository.search(place));
-        for (com.javainuse.Book b:obj) {
-            System.out.println(b.getBookName());
-        }
         return obj;
     }
 

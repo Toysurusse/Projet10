@@ -30,6 +30,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link InputSOARentbookBack }
+     * 
+     */
+    public InputSOARentbookBack createInputSOARentbookBack() {
+        return new InputSOARentbookBack();
+    }
+
+    /**
+     * Create an instance of {@link Rentbook }
+     * 
+     */
+    public Rentbook createRentbook() {
+        return new Rentbook();
+    }
+
+    /**
      * Create an instance of {@link InputSOABookAdd }
      * 
      */
@@ -123,14 +139,6 @@ public class ObjectFactory {
      */
     public OutputSOARentbook createOutputSOARentbook() {
         return new OutputSOARentbook();
-    }
-
-    /**
-     * Create an instance of {@link Rentbook }
-     * 
-     */
-    public Rentbook createRentbook() {
-        return new Rentbook();
     }
 
     /**
@@ -235,6 +243,14 @@ public class ObjectFactory {
      */
     public OutputSOAUserById createOutputSOAUserById() {
         return new OutputSOAUserById();
+    }
+
+    /**
+     * Create an instance of {@link OutputSOARentbookBackConfirm }
+     * 
+     */
+    public OutputSOARentbookBackConfirm createOutputSOARentbookBackConfirm() {
+        return new OutputSOARentbookBackConfirm();
     }
 
     /**

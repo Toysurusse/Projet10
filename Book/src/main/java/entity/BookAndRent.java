@@ -16,7 +16,7 @@ public class BookAndRent {
         this.author=book.getAuthor();
         this.editeurs=book.getEditeurs();
         this.nbPage=book.getNbPage();
-        this.dispo=book.isDispo();
+        this.dispo=book.getDispo();
         this.rentid=rentbook.getRentid();
         this.userId=rentbook.getUserId();
         this.bookId=rentbook.getBookId();
@@ -31,7 +31,7 @@ public class BookAndRent {
     public String author;
     public String editeurs;
     public int nbPage;
-    public boolean dispo;
+    public int dispo;
     public int rentid;
     public int userId;
     public int bookId;
@@ -72,11 +72,11 @@ public class BookAndRent {
         this.nbPage = nbPage;
     }
 
-    public boolean isDispo() {
+    public int getDispo() {
         return dispo;
     }
 
-    public void setDispo(boolean dispo) {
+    public void setDispo(int dispo) {
         this.dispo = dispo;
     }
 

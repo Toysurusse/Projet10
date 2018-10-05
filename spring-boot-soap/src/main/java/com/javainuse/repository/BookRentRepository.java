@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface BookRentRepository extends CrudRepository<Rent, Integer> {
-    @Query(value = "SELECT * FROM rentbook", nativeQuery = true)
+    @Query(value = "SELECT * FROM rentbook WHERE end_at < current_date", nativeQuery = true)
     List<Rent> findDelayPassed();
 }

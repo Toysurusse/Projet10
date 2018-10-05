@@ -27,13 +27,13 @@ public class Book implements Serializable {
     private String author;
 
     @Column(name = "dispo")
-    private Boolean dispo;
+    private int dispo;
 
-    public Boolean getDispo() {
+    public int getDispo() {
         return dispo;
     }
 
-    public void setDispo(Boolean dispo) {
+    public void setDispo(int dispo) {
         this.dispo = dispo;
     }
 
@@ -81,7 +81,7 @@ public class Book implements Serializable {
 
     }
 
-    public Book(String bookName, int nbPage, String editeurs, String author, boolean dispo) {
+    public Book(String bookName, int nbPage, String editeurs, String author, int dispo) {
         this.bookName = bookName;
         this.nbPage = nbPage;
         this.editeurs = editeurs;
