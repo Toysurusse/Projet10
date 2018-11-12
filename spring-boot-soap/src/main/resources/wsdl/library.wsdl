@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://library.com" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  targetNamespace="http://library.com">
+
+    <wsdl:types>
+        <xs:schema targetNamespace="http://library.com">
+            <xs:element name="inputSOABookAdd">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:book" name="book"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOAddConfirm">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="result"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="inputSOABookDel">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:book" name="book"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSODelConfirm">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="result"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="inputSOABookById">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:int" name="id"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOABookById">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:book" name="result"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="inputSOABook">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="test"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOABook">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:book" name="result" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="inputSOABookSearch">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="test"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOABookSearch">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:book" name="result" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:complexType name="book">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:int"/>
+                    <xs:element name="bookName" type="xs:string"/>
+                    <xs:element name="author" type="xs:string"/>
+                    <xs:element name="editeurs" type="xs:string"/>
+                    <xs:element name="nbPage" type="xs:int"/>
+                    <xs:element name="dispo" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+
+
+            <xs:element name="inputSOAUserAdd">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="tns:user" name="user"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="outputSOAUserAddConfirm">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="result"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            <xs:element name="inputSOAUserTest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="pseudo"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOAUserTest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:user" name="user"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+                <xs:element name="inputSOAUserDel">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="tns:user" name="user"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="outputSOAUserDelConfirm">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="result"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="inputSOAUserById">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:int" name="id"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="outputSOAUserById">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="tns:user" name="result"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="inputSOAUser">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="test"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="outputSOAUser">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="tns:user" name="result" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:complexType name="user">
+                    <xs:sequence>
+                        <xs:element name="userid" type="xs:int"/>
+                        <xs:element name="pseudo" type="xs:string"/>
+                        <xs:element name="password" type="xs:string"/>
+                        <xs:element name="salt" type="xs:string"/>
+                        <xs:element name="gender" type="xs:string"/>
+                        <xs:element name="mail" type="xs:string"/>
+                        <xs:element name="role" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+
+
+
+
+            <xs:element name="inputSOARentbookByUser">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:int" name="id"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOARentbookByUser">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:rentbook" name="result" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="inputSOARentbookAdd">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:rentbook" name="rentbook"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOARentbookAddConfirm">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="result"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="inputSOARentbookBack">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:rentbook" name="rentbook"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOARentbookBackConfirm">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="result"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="inputSOARentbookDel">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:rentbook" name="rentbook"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOARentbookDelConfirm">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="result"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="inputSOARentbookById">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:int" name="id"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOARentbookById">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:rentbook" name="result"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="inputSOARentbook">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="test"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOARentbook">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:rentbook" name="result" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="inputSOARentbookLate">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="test"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOARentbookLate">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:latebook" name="result" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:complexType name="latebook">
+                <xs:sequence>
+                    <xs:element name="bookname" type="xs:string"/>
+                    <xs:element name="pseudo" type="xs:string"/>
+                    <xs:element name="mail" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:complexType name="rentbook">
+                <xs:sequence>
+                    <xs:element name="rentid" type="xs:int"/>
+                    <xs:element name="user_id" type="xs:int"/>
+                    <xs:element name="book_id" type="xs:int"/>
+                    <xs:element name="reload" type="xs:boolean"/>
+                    <xs:element name="returnbook" type="xs:boolean"/>
+                    <xs:element name="createat" type="xs:date"/>
+                    <xs:element name="endat" type="xs:date"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            </xs:schema>
+    </wsdl:types>
+
+
+
+
+
+    <!--Define input and output parameters -->
+    <wsdl:message name="inputSOABookAdd">
+        <wsdl:part name="in" element="tns:inputSOABookAdd"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOAddConfirm">
+        <wsdl:part name="out" element="tns:outputSOAddConfirm"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOABookDel">
+        <wsdl:part name="in" element="tns:inputSOABookDel"/>
+    </wsdl:message>
+    <wsdl:message name="outputSODelConfirm">
+        <wsdl:part name="out" element="tns:outputSODelConfirm"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOABookById">
+        <wsdl:part name="in" element="tns:inputSOABookById"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOABookById">
+        <wsdl:part name="out" element="tns:outputSOABookById"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOABook">
+        <wsdl:part name="in" element="tns:inputSOABook"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOABook">
+        <wsdl:part name="out" element="tns:outputSOABook"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOABookSearch">
+        <wsdl:part name="in" element="tns:inputSOABookSearch"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOABookSearch">
+        <wsdl:part name="out" element="tns:outputSOABookSearch"/>
+    </wsdl:message>
+
+    <!--Define port definition -->
+
+    <wsdl:portType name="SOABookadd">
+        <wsdl:operation name="SOABookadd">
+            <wsdl:input message="tns:inputSOABookAdd"/>
+            <wsdl:output message="tns:outputSOAddConfirm"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOABookdel">
+        <wsdl:operation name="SOABookdel">
+            <wsdl:input message="tns:inputSOABookDel"/>
+            <wsdl:output message="tns:outputSOAddConfirm"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOABookByIdEndpoint">
+        <wsdl:operation name="SOABookById">
+            <wsdl:input message="tns:inputSOABookById"/>
+            <wsdl:output message="tns:outputSOABookById"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOABookEndpoint">
+        <wsdl:operation name="SOABook">
+            <wsdl:input message="tns:inputSOABook"/>
+            <wsdl:output message="tns:outputSOABook"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOABookSearchEndpoint">
+        <wsdl:operation name="SOABookSearch">
+            <wsdl:input message="tns:inputSOABookSearch"/>
+            <wsdl:output message="tns:outputSOABookSearch"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <!--Bind Soap operation and com.libraryervice -->
+    <wsdl:binding name="SOABookaddBinding" type="tns:SOABookadd">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOABookadd">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOABookdelBinding" type="tns:SOABookdel">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOABookdel">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOABookByIdBinding" type="tns:SOABookByIdEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOABookById">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOABookBinding" type="tns:SOABookEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOABook">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOABookSearchBinding" type="tns:SOABookSearchEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOABookSearch">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <!--Define com.libraryervice -->
+    <wsdl:service name="SOABookaddEndpointService">
+        <wsdl:port name="SOABookaddEndpoint" binding="tns:SOABookaddBinding">
+            <soap:address location="http://localhost:8080/library/ws/BookAdd"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOABookdelEndpointService">
+        <wsdl:port name="SOABookdelEndpoint" binding="tns:SOABookdelBinding">
+            <soap:address location="http://localhost:8080/library/ws/Bookdel"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOABookByIdEndpointService">
+        <wsdl:port name="SOABookByIdEndpoint" binding="tns:SOABookByIdBinding">
+            <soap:address location="http://localhost:8080/library/ws/BookById"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOABookEndpointService">
+        <wsdl:port name="SOABookEndpoint" binding="tns:SOABookBinding">
+            <soap:address location="http://localhost:8080/library/ws/book"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOABookSearchEndpointService">
+        <wsdl:port name="SOABookSearchEndpoint" binding="tns:SOABookSearchBinding">
+            <soap:address location="http://localhost:8080/library/ws/bookSearch"/>
+        </wsdl:port>
+    </wsdl:service>
+
+
+    <!--Define input and output parameters -->
+    <wsdl:message name="inputSOAUserAdd">
+        <wsdl:part name="in" element="tns:inputSOAUserAdd"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOAUserAddConfirm">
+        <wsdl:part name="out" element="tns:outputSOAUserAddConfirm"/>
+    </wsdl:message>
+
+    <wsdl:message name="inputSOAUserTest">
+        <wsdl:part name="in" element="tns:inputSOAUserTest"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOAUserTest">
+        <wsdl:part name="out" element="tns:outputSOAUserTest"/>
+    </wsdl:message>
+
+    <wsdl:message name="inputSOAUserDel">
+        <wsdl:part name="in" element="tns:inputSOAUserDel"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOAUserDelConfirm">
+        <wsdl:part name="out" element="tns:outputSOAUserDelConfirm"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOAUserById">
+        <wsdl:part name="in" element="tns:inputSOAUserById"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOAUserById">
+        <wsdl:part name="out" element="tns:outputSOAUserById"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOAUser">
+        <wsdl:part name="in" element="tns:inputSOAUser"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOAUser">
+        <wsdl:part name="out" element="tns:outputSOAUser"/>
+    </wsdl:message>
+
+    <!--Define port definition -->
+
+    <wsdl:portType name="SOAUseradd">
+        <wsdl:operation name="SOAUseradd">
+            <wsdl:input message="tns:inputSOAUserAdd"/>
+            <wsdl:output message="tns:outputSOAUserAddConfirm"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOAUserTest">
+        <wsdl:operation name="SOAUserTest">
+            <wsdl:input message="tns:inputSOAUserTest"/>
+            <wsdl:output message="tns:outputSOAUserTest"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOAUserdel">
+        <wsdl:operation name="SOAUserdel">
+            <wsdl:input message="tns:inputSOAUserDel"/>
+            <wsdl:output message="tns:outputSOAUserDelConfirm"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+
+    <wsdl:portType name="SOAUserByIdEndpoint">
+        <wsdl:operation name="SOAUserById">
+            <wsdl:input message="tns:inputSOAUserById"/>
+            <wsdl:output message="tns:outputSOAUserById"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOAUserEndpoint">
+        <wsdl:operation name="SOAUser">
+            <wsdl:input message="tns:inputSOAUser"/>
+            <wsdl:output message="tns:outputSOAUser"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <!--Bind Soap operation and com.libraryervice -->
+    <wsdl:binding name="SOAUseraddBinding" type="tns:SOAUseradd">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOAUseradd">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOAUserTestBinding" type="tns:SOAUserTest">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOAUserTest">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOAUserdelBinding" type="tns:SOAUserdel">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOAUserdel">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOAUserByIdBinding" type="tns:SOAUserByIdEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOAUserById">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOAUserBinding" type="tns:SOAUserEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOAUser">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <!--Define com.libraryervice -->
+    <wsdl:service name="SOAUseraddEndpointService">
+        <wsdl:port name="SOAUseraddEndpoint" binding="tns:SOAUseraddBinding">
+            <soap:address location="http://localhost:8080/library/ws/UserAdd"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOAUserTestEndpointService">
+        <wsdl:port name="SOAUserTestEndpoint" binding="tns:SOAUserTestBinding">
+            <soap:address location="http://localhost:8080/library/ws/UserTest"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOAUserdelEndpointService">
+        <wsdl:port name="SOAUserdelEndpoint" binding="tns:SOAUserdelBinding">
+            <soap:address location="http://localhost:8080/library/ws/Userdel"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOAUserByIdEndpointService">
+        <wsdl:port name="SOAUserByIdEndpoint" binding="tns:SOAUserByIdBinding">
+            <soap:address location="http://localhost:8080/library/ws/UserById"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOAUserEndpointService">
+        <wsdl:port name="SOAUserEndpoint" binding="tns:SOAUserBinding">
+            <soap:address location="http://localhost:8080/library/ws/user"/>
+        </wsdl:port>
+    </wsdl:service>
+
+
+
+    <!--Define input and output parameters -->
+    <wsdl:message name="inputSOARentbookByUser">
+        <wsdl:part name="in" element="tns:inputSOARentbookByUser"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOARentbookByUser">
+        <wsdl:part name="out" element="tns:outputSOARentbookByUser"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOARentbookAdd">
+        <wsdl:part name="in" element="tns:inputSOARentbookAdd"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOARentbookAddConfirm">
+        <wsdl:part name="out" element="tns:outputSOARentbookAddConfirm"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOARentbookBack">
+        <wsdl:part name="in" element="tns:inputSOARentbookBack"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOARentbookBackConfirm">
+        <wsdl:part name="out" element="tns:outputSOARentbookBackConfirm"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOARentbookDel">
+        <wsdl:part name="in" element="tns:inputSOARentbookDel"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOARentbookDelConfirm">
+        <wsdl:part name="out" element="tns:outputSOARentbookDelConfirm"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOARentbookById">
+        <wsdl:part name="in" element="tns:inputSOARentbookById"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOARentbookById">
+        <wsdl:part name="out" element="tns:outputSOARentbookById"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOARentbook">
+        <wsdl:part name="in" element="tns:inputSOARentbook"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOARentbook">
+        <wsdl:part name="out" element="tns:outputSOARentbook"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOARentbookLate">
+        <wsdl:part name="in" element="tns:inputSOARentbookLate"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOARentbookLate">
+        <wsdl:part name="out" element="tns:outputSOARentbookLate"/>
+    </wsdl:message>
+
+
+    <!--Define port definition -->
+
+    <wsdl:portType name="SOARentbookByUser">
+        <wsdl:operation name="SOARentbookByUser">
+            <wsdl:input message="tns:inputSOARentbookByUser"/>
+            <wsdl:output message="tns:outputSOARentbookByUser"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOARentbookadd">
+        <wsdl:operation name="SOARentbookadd">
+            <wsdl:input message="tns:inputSOARentbookAdd"/>
+            <wsdl:output message="tns:outputSOARentbookAddConfirm"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOARentbookBack">
+        <wsdl:operation name="SOARentbookBack">
+            <wsdl:input message="tns:inputSOARentbookBack"/>
+            <wsdl:output message="tns:outputSOARentbookBackConfirm"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOARentbookdel">
+        <wsdl:operation name="SOARentbookdel">
+            <wsdl:input message="tns:inputSOARentbookDel"/>
+            <wsdl:output message="tns:outputSOARentbookDelConfirm"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+
+    <wsdl:portType name="SOARentbookByIdEndpoint">
+        <wsdl:operation name="SOARentbookById">
+            <wsdl:input message="tns:inputSOARentbookById"/>
+            <wsdl:output message="tns:outputSOARentbookById"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOARentbookEndpoint">
+        <wsdl:operation name="SOARentbook">
+            <wsdl:input message="tns:inputSOARentbook"/>
+            <wsdl:output message="tns:outputSOARentbook"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOARentbookLateEndpoint">
+        <wsdl:operation name="SOARentbookLate">
+            <wsdl:input message="tns:inputSOARentbookLate"/>
+            <wsdl:output message="tns:outputSOARentbookLate"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <!--Bind Soap operation and com.libraryervice -->
+    <wsdl:binding name="SOARentbookByUserBinding" type="tns:SOARentbookByUser">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOARentbookByUser">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOARentbookaddBinding" type="tns:SOARentbookadd">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOARentbookadd">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOARentbookBackBinding" type="tns:SOARentbookBack">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOARentbookBack">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOARentbookdelBinding" type="tns:SOARentbookdel">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOARentbookdel">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOARentbookByIdBinding" type="tns:SOARentbookByIdEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOARentbookById">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOARentbookBinding" type="tns:SOARentbookEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOARentbook">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOARentbookLateBinding" type="tns:SOARentbookLateEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOARentbookLate">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <!--Define com.libraryervice -->
+    <wsdl:service name="SOARentbookByUserEndpointService">
+        <wsdl:port name="SOARentbookByUserEndpoint" binding="tns:SOARentbookByUserBinding">
+            <soap:address location="http://localhost:8080/library/ws/RentbookByUser"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOARentbookBackEndpointService">
+        <wsdl:port name="SOARentbookBackEndpoint" binding="tns:SOARentbookBackBinding">
+            <soap:address location="http://localhost:8080/library/ws/RentbookBack"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOARentbookdelEndpointService">
+        <wsdl:port name="SOARentbookdelEndpoint" binding="tns:SOARentbookdelBinding">
+            <soap:address location="http://localhost:8080/library/ws/Rentbookdel"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOARentbookByIdEndpointService">
+        <wsdl:port name="SOARentbookByIdEndpoint" binding="tns:SOARentbookByIdBinding">
+            <soap:address location="http://localhost:8080/library/ws/RentbookById"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOARentbookEndpointService">
+        <wsdl:port name="SOARentbookEndpoint" binding="tns:SOARentbookBinding">
+            <soap:address location="http://localhost:8080/library/ws/rentbook"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOARentbookLateEndpointService">
+        <wsdl:port name="SOARentbookLateEndpoint" binding="tns:SOARentbookLateBinding">
+            <soap:address location="http://localhost:8080/library/ws/rentbookLate"/>
+        </wsdl:port>
+    </wsdl:service>
+
+</wsdl:definitions>
