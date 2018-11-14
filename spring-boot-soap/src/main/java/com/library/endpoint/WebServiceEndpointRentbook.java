@@ -17,7 +17,7 @@ import javax.xml.bind.Unmarshaller;
 import java.util.List;
 
 @Endpoint
-public class WebServiceEndpointRentbook {
+public class WebServiceEndpointRentbook extends AbstractEndPoint{
 
     private static final String NAMESPACE_URI = "http://library.com";
 
@@ -68,19 +68,6 @@ public class WebServiceEndpointRentbook {
         return response;
     }
 
-    private Authentication getAuthentication(SoapHeaderElement header){
-        Authentication authentication = null;
-        try {
-
-            JAXBContext context = JAXBContext.newInstance(Authentication.class);
-            Unmarshaller unmarshaller = context.createUnmarshaller();
-            authentication = (Authentication) unmarshaller.unmarshal(header.getSource());
-
-        } catch (JAXBException e) {
-            throw new RuntimeException("context Rentbook");
-        }
-        return authentication;
-    }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOARentbookById")
     @ResponsePayload

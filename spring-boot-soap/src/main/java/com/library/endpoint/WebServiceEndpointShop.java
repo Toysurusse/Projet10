@@ -17,7 +17,7 @@ import javax.xml.bind.Unmarshaller;
 import java.util.List;
 
 @Endpoint
-public class WebServiceEndpointShop {
+public class WebServiceEndpointShop extends AbstractEndPoint{
 
 	private static final String NAMESPACE_URI = "http://library.com";
 
@@ -39,19 +39,6 @@ public class WebServiceEndpointShop {
         return response;
     }
 
-    private Authentication getAuthentication(SoapHeaderElement header){
-        Authentication authentication = null;
-        try {
-
-            JAXBContext context = JAXBContext.newInstance(Authentication.class);
-            Unmarshaller unmarshaller = context.createUnmarshaller();
-            authentication = (Authentication) unmarshaller.unmarshal(header.getSource());
-
-        } catch (JAXBException e) {
-            throw new RuntimeException("context Shop");
-        }
-        return authentication;
-    }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOAShopById")
     @ResponsePayload

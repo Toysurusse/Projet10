@@ -29,6 +29,10 @@ public class Authentication {
         return control;
     }
 
+    public Authentication authentic(){
+        return new Authentication("username","password");
+    }
+
     public String getUsername() {
         return username;
     }
