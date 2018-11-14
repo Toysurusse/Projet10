@@ -6,7 +6,6 @@ import java.util.List;
 
 public interface IRentService {
     String add(com.library.Rentbook rent);
-    void delete(com.library.Rentbook rent);
     com.library.Rentbook findById(int id);
     List<com.library.Rentbook> findAll ();
     List<com.library.Rentbook> findByUserId(int id);

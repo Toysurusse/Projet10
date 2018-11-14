@@ -1,6 +1,6 @@
 package com.library.service;
 
-import com.library.User;
+import com.library.Book;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +16,12 @@ import java.util.List;
 public class BookServiceTest {
 
     @Autowired
-    private UserService userService;
+    private BookService bookService;
 
     @Test
-    public void testservicesUser () {
-        List<User> userList = userService.findAll();
-        userService.add(userList.get(0));
-        userService.control(userList.get(0));
-        userService.findById(userList.get(0).getUserid());
-        userService.delete(userList.get(0));
+    public void testservicesBook () {
+        List<Book> bookList = bookService.findAll();
+        bookService.add(bookList.get(0));
+        bookService.findById(bookList.get(0).getId());
     }
 }

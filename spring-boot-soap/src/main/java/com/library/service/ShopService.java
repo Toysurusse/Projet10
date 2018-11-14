@@ -42,11 +42,6 @@ public class ShopService implements IShopService {
     }
 
     @Override
-    public void delete(com.library.Shop shop) {
-        shopRepository.delete(shopMapper.convertEtoD(shop));
-    }
-
-    @Override
     public com.library.Shop findById(int id) {
         com.library.Shop obj = shopMapper.convertDtoE(shopRepository.findOne(id));
         return obj;

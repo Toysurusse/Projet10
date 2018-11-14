@@ -93,21 +93,4 @@ public class WebServiceEndpointBook extends AbstractEndPoint {
         response.setResult("Ok");
         return response;
     }
-
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOABookDel")
-    @ResponsePayload
-    public OutputSODelConfirm Del(@RequestPayload InputSOABookDel request,
-                                  @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
-
-        Authentication authentication = getAuthentication(auth);
-
-        ObjectFactory factory = new ObjectFactory();
-        OutputSODelConfirm response = factory.createOutputSODelConfirm();
-        String result;
-
-        bookService.delete(request.getBook());
-
-        response.setResult("Ok");
-        return response;
-    }
 }

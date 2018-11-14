@@ -1,0 +1,27 @@
+package com.library.service;
+
+import com.library.User;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class UserServiceTest {
+
+    @Autowired
+    private UserService userService;
+
+    @Test
+    public void testservicesUser () {
+        List<User> userList = userService.findAll();
+        userService.add(userList.get(0));
+        userService.control(userList.get(0));
+        userService.findById(userList.get(0).getUserid());
+        userService.delete(userList.get(0));
+    }
+}

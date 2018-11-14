@@ -36,11 +36,6 @@ public class BookService implements IBookService {
     }
 
     @Override
-    public void delete(com.library.Book book) {
-        bookRepository.delete(bookMapper.convertEtoD(book));
-    }
-
-    @Override
     public com.library.Book findById(int id) {
         com.library.Book obj = bookMapper.convertDtoE(bookRepository.findOne(id));
         return obj;

@@ -61,11 +61,6 @@ public class RentService implements IRentService {
     }
 
     @Override
-    public void delete(com.library.Rentbook rentbook) {
-        rentRepository.delete(rentMapper.convertEtoD(rentbook));
-    }
-
-    @Override
     public com.library.Rentbook findById(int id) {
         com.library.Rentbook obj = rentMapper.convertDtoE(rentRepository.findOne(id));
         return obj;

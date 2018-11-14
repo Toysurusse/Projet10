@@ -115,22 +115,4 @@ public class WebServiceEndpointRentbook extends AbstractEndPoint{
         response.setResult(result);
         return response;
     }
-
-
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOARentbookDel")
-    @ResponsePayload
-    public OutputSODelConfirm Del(@RequestPayload InputSOARentbookDel request,
-                                  @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
-
-        Authentication authentication = getAuthentication(auth);
-
-        ObjectFactory factory = new ObjectFactory();
-        OutputSODelConfirm response = factory.createOutputSODelConfirm();
-        String result;
-
-        rentService.delete(request.getRentbook());
-
-        response.setResult("Ok");
-        return response;
-    }
 }
