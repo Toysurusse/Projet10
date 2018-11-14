@@ -69,7 +69,7 @@ public class WebServiceEndpointUser {
             authentication = (Authentication) unmarshaller.unmarshal(header.getSource());
 
         } catch (JAXBException e) {
-            e.printStackTrace();
+            throw new RuntimeException("context User");
         }
         return authentication;
     }

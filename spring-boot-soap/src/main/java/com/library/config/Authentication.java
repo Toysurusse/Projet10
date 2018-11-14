@@ -16,9 +16,6 @@ public class Authentication {
     @XmlElement(namespace = AUTH_NS)
     private String password;
 
-    public Authentication() {
-    }
-
     public Authentication(String username, String password) {
         this.username = username;
         this.password = password;
@@ -26,7 +23,7 @@ public class Authentication {
 
     public boolean isTrue(){
         boolean control = false;
-        if(password.equals("password")&&username.equals("username")){
+        if("password".equals(password)&&"username".equals(username)){
             control=true;
         }
         return control;

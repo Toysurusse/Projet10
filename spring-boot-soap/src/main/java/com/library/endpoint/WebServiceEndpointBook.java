@@ -69,7 +69,7 @@ public class WebServiceEndpointBook {
             authentication = (Authentication) unmarshaller.unmarshal(header.getSource());
 
         } catch (JAXBException e) {
-            e.printStackTrace();
+            throw new RuntimeException("context Book");
         }
         return authentication;
     }

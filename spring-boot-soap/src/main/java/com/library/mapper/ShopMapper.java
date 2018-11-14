@@ -72,7 +72,7 @@ public class ShopMapper {
         try {
             xmlDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal);
         } catch (DatatypeConfigurationException e) {
-            e.printStackTrace();
+            throw new RuntimeException("xmlCalendar config");
         }
         return xmlDate;
     }
