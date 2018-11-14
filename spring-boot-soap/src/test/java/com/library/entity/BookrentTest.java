@@ -18,8 +18,6 @@ public class BookrentTest {
         String author = "TestAuthor";
         int dispo = 0;
 
-
-
         Rent rent = new Rent();
         rent.setId(1);
         assertTrue(rent.getId()==1);
@@ -29,5 +27,12 @@ public class BookrentTest {
         rent.setEnd_at(new Date(5000000));
         rent.setReturnbook(true);
         rent.setReload(true);
+
+        Rent rent2 = new Rent (nbPage,nbPage,rent.getCreate_at(),rent.getCreate_at(),true,true);
+        assertTrue(rent.getId()==1);
+        assertTrue(rent.isReload());
+        assertTrue(rent.isReturnbook());
+        assertTrue(rent.getUser_id()==1);
+        assertTrue(rent.getBook_id()==1);
     }
 }

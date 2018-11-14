@@ -15,21 +15,17 @@ public class UserTest {
         String author = "TestAuthor";
         int dispo = 0;
 
-        Book bookTest = new Book(bookName, nbPage, editeurs, author, dispo);
-        assertTrue(bookTest.getBookName().equals("TestBook"));
-        assertTrue(bookTest.getEditeurs().equals("TestEditors"));
-        assertTrue(bookTest.getDispo() == 0);
-        assertTrue(bookTest.getAuthor().equals("TestAuthor"));
-        assertTrue(bookTest.getNbPage() == 1);
+        User user = new User(bookName, bookName, bookName, bookName, nbPage, true);
 
-        Book book = new Book();
-        book.setId(1);
-        assertTrue(book.getId()==1);
-        book.setAuthor("Auteur");
-        book.setBookName("Nom");
-        book.setDispo(1);
-        book.setEditeurs("Test");
-        book.setNbPage(1);
-
+        User user1 = new User();
+        user1.setId(1);
+        assertTrue(user1.getId()==1);
+        user1.setMail("Auteur");
+        user1.setPassword("Nom");
+        user1.setPseudo("Test");
+        user1.setSalt("Test");
+        user1.setRole(1);
+        user1.setDelete(true);
+        user1.setGender(true);
     }
 }
