@@ -4,11 +4,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class BookTest {
+public class UserTest {
 
 
     @Test
-    public void testBook() {
+    public void testUser() {
         String bookName = "TestBook";
         int nbPage = 1;
         String editeurs = "TestEditors";
