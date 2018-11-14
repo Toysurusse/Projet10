@@ -10,7 +10,8 @@ import java.util.List;
 public class UserMapper {
 
     public User convertEtoD (com.library.User user) {
-        User userEntity = new User(user.getPseudo(), user.getPassword(), user.getSalt(), user.getMail(),user.getRole());
+        boolean bol=true;
+        User userEntity = new User(user.getPseudo(), user.getPassword(), user.getSalt(), user.getMail(),user.getRole(), user.isDelete());
         if (user.getGender().equals("Homme")){
             userEntity.setGender(true);
         }
@@ -30,6 +31,7 @@ public class UserMapper {
         userEntity.setMail(user.getMail());
         userEntity.setRole(user.getRole());
         userEntity.setSalt(user.getSalt());
+        userEntity.setDelete(user.isDelete());
 
         if (user.isGender()){
             userEntity.setGender("Homme");

@@ -31,6 +31,7 @@ public class BookService implements IBookService {
 
     @Override
     public void add(com.library.Book book) {
+        System.out.println(book.getId());
         bookRepository.save(bookMapper.convertEtoD(book));
     }
 

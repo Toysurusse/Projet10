@@ -26,6 +26,9 @@ public class User implements Serializable {
     @Column(name = "gender")
     private boolean gender;
 
+    @Column(name = "delete")
+    private boolean delete;
+
     @Column(name = "mail")
     private String mail;
 
@@ -35,12 +38,13 @@ public class User implements Serializable {
     protected User(){
     }
 
-    public User(String pseudo, String password, String salt, String mail, int role){
+    public User(String pseudo, String password, String salt, String mail, int role, boolean delete){
         this.password=password;
         this.salt=salt;
         this.pseudo=pseudo;
         this.mail=mail;
         this.role=role;
+        this.delete=delete;
     }
 
     public int getId() {
@@ -97,5 +101,13 @@ public class User implements Serializable {
 
     public void setRole(int role) {
         this.role = role;
+    }
+
+    public boolean isDelete() {
+        return delete;
+    }
+
+    public void setDelete(boolean delete) {
+        this.delete = delete;
     }
 }

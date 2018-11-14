@@ -178,11 +178,111 @@
                         <xs:element name="gender" type="xs:string"/>
                         <xs:element name="mail" type="xs:string"/>
                         <xs:element name="role" type="xs:int"/>
+                        <xs:element name="delete" type="xs:boolean"/>
                     </xs:sequence>
                 </xs:complexType>
 
+            <xs:element name="inputSOAShopAdd">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:shop" name="shop"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOAShopAddConfirm">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="result"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
 
+            <xs:element name="inputSOAShopSearch">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:int" name="test"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOAShopSearch">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:shop" name="result" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
 
+            <xs:element name="inputSOAShopTest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="pseudo"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOAShopTest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:shop" name="shop"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="inputSOAShopDel">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:shop" name="shop"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOAShopDelConfirm">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="result"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="inputSOAShopById">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:int" name="id"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOAShopById">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:shop" name="result"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="inputSOAShop">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="test"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOAShop">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tns:shop" name="result" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:complexType name="shop">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:int"/>
+                    <xs:element name="idusershop" type="xs:int"/>
+                    <xs:element name="idbookshop" type="xs:int"/>
+                    <xs:element name="idpannier" type="xs:string"/>
+                    <xs:element name="dispo" type="xs:boolean"/>
+                    <xs:element name="createat" type="xs:dateTime"/>
+                    <xs:element name="endat" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:complexType>
 
             <xs:element name="inputSOARentbookByUser">
                 <xs:complexType>
@@ -459,31 +559,31 @@
     <!--Define com.libraryervice -->
     <wsdl:service name="SOABookaddEndpointService">
         <wsdl:port name="SOABookaddEndpoint" binding="tns:SOABookaddBinding">
-            <soap:address location="http://localhost:8080/library/ws/BookAdd"/>
+            <soap:address location="http://localhost:8085/library/ws/BookAdd"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOABookdelEndpointService">
         <wsdl:port name="SOABookdelEndpoint" binding="tns:SOABookdelBinding">
-            <soap:address location="http://localhost:8080/library/ws/Bookdel"/>
+            <soap:address location="http://localhost:8085/library/ws/Bookdel"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOABookByIdEndpointService">
         <wsdl:port name="SOABookByIdEndpoint" binding="tns:SOABookByIdBinding">
-            <soap:address location="http://localhost:8080/library/ws/BookById"/>
+            <soap:address location="http://localhost:8085/library/ws/BookById"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOABookEndpointService">
         <wsdl:port name="SOABookEndpoint" binding="tns:SOABookBinding">
-            <soap:address location="http://localhost:8080/library/ws/book"/>
+            <soap:address location="http://localhost:8085/library/ws/book"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOABookSearchEndpointService">
         <wsdl:port name="SOABookSearchEndpoint" binding="tns:SOABookSearchBinding">
-            <soap:address location="http://localhost:8080/library/ws/bookSearch"/>
+            <soap:address location="http://localhost:8085/library/ws/bookSearch"/>
         </wsdl:port>
     </wsdl:service>
 
@@ -634,31 +734,31 @@
     <!--Define com.libraryervice -->
     <wsdl:service name="SOAUseraddEndpointService">
         <wsdl:port name="SOAUseraddEndpoint" binding="tns:SOAUseraddBinding">
-            <soap:address location="http://localhost:8080/library/ws/UserAdd"/>
+            <soap:address location="http://localhost:8085/library/ws/UserAdd"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOAUserTestEndpointService">
         <wsdl:port name="SOAUserTestEndpoint" binding="tns:SOAUserTestBinding">
-            <soap:address location="http://localhost:8080/library/ws/UserTest"/>
+            <soap:address location="http://localhost:8085/library/ws/UserTest"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOAUserdelEndpointService">
         <wsdl:port name="SOAUserdelEndpoint" binding="tns:SOAUserdelBinding">
-            <soap:address location="http://localhost:8080/library/ws/Userdel"/>
+            <soap:address location="http://localhost:8085/library/ws/Userdel"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOAUserByIdEndpointService">
         <wsdl:port name="SOAUserByIdEndpoint" binding="tns:SOAUserByIdBinding">
-            <soap:address location="http://localhost:8080/library/ws/UserById"/>
+            <soap:address location="http://localhost:8085/library/ws/UserById"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOAUserEndpointService">
         <wsdl:port name="SOAUserEndpoint" binding="tns:SOAUserBinding">
-            <soap:address location="http://localhost:8080/library/ws/user"/>
+            <soap:address location="http://localhost:8085/library/ws/user"/>
         </wsdl:port>
     </wsdl:service>
 
@@ -863,38 +963,258 @@
     <!--Define com.libraryervice -->
     <wsdl:service name="SOARentbookByUserEndpointService">
         <wsdl:port name="SOARentbookByUserEndpoint" binding="tns:SOARentbookByUserBinding">
-            <soap:address location="http://localhost:8080/library/ws/RentbookByUser"/>
+            <soap:address location="http://localhost:8085/library/ws/RentbookByUser"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOARentbookBackEndpointService">
         <wsdl:port name="SOARentbookBackEndpoint" binding="tns:SOARentbookBackBinding">
-            <soap:address location="http://localhost:8080/library/ws/RentbookBack"/>
+            <soap:address location="http://localhost:8085/library/ws/RentbookBack"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOARentbookdelEndpointService">
         <wsdl:port name="SOARentbookdelEndpoint" binding="tns:SOARentbookdelBinding">
-            <soap:address location="http://localhost:8080/library/ws/Rentbookdel"/>
+            <soap:address location="http://localhost:8085/library/ws/Rentbookdel"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOARentbookByIdEndpointService">
         <wsdl:port name="SOARentbookByIdEndpoint" binding="tns:SOARentbookByIdBinding">
-            <soap:address location="http://localhost:8080/library/ws/RentbookById"/>
+            <soap:address location="http://localhost:8085/library/ws/RentbookById"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOARentbookEndpointService">
         <wsdl:port name="SOARentbookEndpoint" binding="tns:SOARentbookBinding">
-            <soap:address location="http://localhost:8080/library/ws/rentbook"/>
+            <soap:address location="http://localhost:8085/library/ws/rentbook"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOARentbookLateEndpointService">
         <wsdl:port name="SOARentbookLateEndpoint" binding="tns:SOARentbookLateBinding">
-            <soap:address location="http://localhost:8080/library/ws/rentbookLate"/>
+            <soap:address location="http://localhost:8085/library/ws/rentbookLate"/>
         </wsdl:port>
     </wsdl:service>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Define input and output parameters -->
+    <wsdl:message name="inputSOAShopAdd">
+        <wsdl:part name="in" element="tns:inputSOAShopAdd"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOAShopAddConfirm">
+        <wsdl:part name="out" element="tns:outputSOAShopAddConfirm"/>
+    </wsdl:message>
+
+    <wsdl:message name="inputSOAShopTest">
+        <wsdl:part name="in" element="tns:inputSOAShopTest"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOAShopTest">
+        <wsdl:part name="out" element="tns:outputSOAShopTest"/>
+    </wsdl:message>
+
+    <wsdl:message name="inputSOAShopDel">
+        <wsdl:part name="in" element="tns:inputSOAShopDel"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOAShopDelConfirm">
+        <wsdl:part name="out" element="tns:outputSOAShopDelConfirm"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOAShopById">
+        <wsdl:part name="in" element="tns:inputSOAShopById"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOAShopById">
+        <wsdl:part name="out" element="tns:outputSOAShopById"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOAShop">
+        <wsdl:part name="in" element="tns:inputSOAShop"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOAShop">
+        <wsdl:part name="out" element="tns:outputSOAShop"/>
+    </wsdl:message>
+    <wsdl:message name="inputSOAShopSearch">
+        <wsdl:part name="in" element="tns:inputSOAShopSearch"/>
+    </wsdl:message>
+    <wsdl:message name="outputSOAShopSearch">
+        <wsdl:part name="out" element="tns:outputSOAShopSearch"/>
+    </wsdl:message>
+
+    <!--Define port definition -->
+
+    <wsdl:portType name="SOAShopadd">
+        <wsdl:operation name="SOAShopadd">
+            <wsdl:input message="tns:inputSOAShopAdd"/>
+            <wsdl:output message="tns:outputSOAShopAddConfirm"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOAShopTest">
+        <wsdl:operation name="SOAShopTest">
+            <wsdl:input message="tns:inputSOAShopTest"/>
+            <wsdl:output message="tns:outputSOAShopTest"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOAShopdel">
+        <wsdl:operation name="SOAShopdel">
+            <wsdl:input message="tns:inputSOAShopDel"/>
+            <wsdl:output message="tns:outputSOAShopDelConfirm"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+
+    <wsdl:portType name="SOAShopByIdEndpoint">
+        <wsdl:operation name="SOAShopById">
+            <wsdl:input message="tns:inputSOAShopById"/>
+            <wsdl:output message="tns:outputSOAShopById"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOAShopEndpoint">
+        <wsdl:operation name="SOAShop">
+            <wsdl:input message="tns:inputSOAShop"/>
+            <wsdl:output message="tns:outputSOAShop"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:portType name="SOAShopSearchEndpoint">
+        <wsdl:operation name="SOAShopSearch">
+            <wsdl:input message="tns:inputSOAShopSearch"/>
+            <wsdl:output message="tns:outputSOAShopSearch"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <!--Bind Soap operation and com.libraryervice -->
+    <wsdl:binding name="SOAShopaddBinding" type="tns:SOAShopadd">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOAShopadd">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOAShopTestBinding" type="tns:SOAShopTest">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOAShopTest">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOAShopdelBinding" type="tns:SOAShopdel">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOAShopdel">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOAShopByIdBinding" type="tns:SOAShopByIdEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOAShopById">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:binding name="SOAShopBinding" type="tns:SOAShopEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOAShop">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+
+    <wsdl:binding name="SOAShopSearchBinding" type="tns:SOAShopSearchEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="SOAShopSearch">
+            <soap:operation soapAction="http://library.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <!--Define com.libraryervice -->
+    <wsdl:service name="SOAShopaddEndpointService">
+        <wsdl:port name="SOAShopaddEndpoint" binding="tns:SOAShopaddBinding">
+            <soap:address location="http://localhost:8085/library/ws/ShopAdd"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOAShopTestEndpointService">
+        <wsdl:port name="SOAShopTestEndpoint" binding="tns:SOAShopTestBinding">
+            <soap:address location="http://localhost:8085/library/ws/ShopTest"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOAShopdelEndpointService">
+        <wsdl:port name="SOAShopdelEndpoint" binding="tns:SOAShopdelBinding">
+            <soap:address location="http://localhost:8085/library/ws/Shopdel"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOAShopByIdEndpointService">
+        <wsdl:port name="SOAShopByIdEndpoint" binding="tns:SOAShopByIdBinding">
+            <soap:address location="http://localhost:8085/library/ws/ShopById"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOAShopEndpointService">
+        <wsdl:port name="SOAShopEndpoint" binding="tns:SOAShopBinding">
+            <soap:address location="http://localhost:8085/library/ws/shop"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:service name="SOAShopSearchEndpointService">
+        <wsdl:port name="SOAShopSearchEndpoint" binding="tns:SOAShopSearchBinding">
+            <soap:address location="http://localhost:8085/library/ws/shopSearch"/>
+        </wsdl:port>
+    </wsdl:service>
+
 
 </wsdl:definitions>

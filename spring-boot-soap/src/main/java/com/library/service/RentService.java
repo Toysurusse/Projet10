@@ -44,14 +44,8 @@ public class RentService implements IRentService {
 
     @Override
     public String add(com.library.Rentbook rentbook) {
-        String statut="Impossible";
-        Book book = bookService.findById(rentbook.getBookId());
-        if (book.getDispo()>0) {
-            rentRepository.save(rentMapper.convertEtoD(rentbook));
-            book.setDispo(book.getDispo()-1);
-            bookService.add(book);
-            statut="Ok";
-        }
+        rentRepository.save(rentMapper.convertEtoD(rentbook));
+        String statut="Ok";
         return statut;
     }
 

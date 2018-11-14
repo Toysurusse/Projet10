@@ -23,7 +23,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 		return new ServletRegistrationBean(servlet, "/library/ws/*");
 	}
 
-	@Bean(name="helloworld")
+	@Bean(name="library")
 	public Wsdl11Definition defaultWsdl11Definition() {
 		SimpleWsdl11Definition wsdl11Definition = new SimpleWsdl11Definition();
 		wsdl11Definition.setWsdl(new ClassPathResource("/wsdl/library.wsdl"));
