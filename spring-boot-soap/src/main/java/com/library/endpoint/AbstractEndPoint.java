@@ -19,6 +19,7 @@ public class AbstractEndPoint {
             authentication = (Authentication) unmarshaller.unmarshal(header.getSource());
 
         } catch (JAXBException e) {
+
             throw new RuntimeException(e);
         }
         return authentication;

@@ -19,17 +19,11 @@ public class BookServiceTest {
     private UserService userService;
 
     @Test
-    public void testservices () {
+    public void testservicesUser () {
         List<User> userList = userService.findAll();
-
-
-
-
-
+        userService.add(userList.get(0));
+        userService.control(userList.get(0));
+        userService.delete(userList.get(0));
+        userService.findById(userList.get(0).getUserid());
     }
-
-
-
-
-
 }
