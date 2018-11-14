@@ -23,5 +23,6 @@ public class BookServiceTest {
         List<Book> bookList = bookService.findAll();
         bookService.add(bookList.get(0));
         bookService.findById(bookList.get(0).getId());
+        bookService.findBySearch(bookList.get(0).getBookName());
     }
 }

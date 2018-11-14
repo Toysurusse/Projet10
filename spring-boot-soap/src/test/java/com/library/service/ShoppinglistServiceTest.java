@@ -21,5 +21,6 @@ public class ShoppinglistServiceTest {
         List<Shop> shoppinglistList = shoppinglistService.findAll();
         shoppinglistService.add(shoppinglistList.get(0));
         shoppinglistService.findById(shoppinglistList.get(0).getId());
+        shoppinglistService.findBySearch(shoppinglistList.get(0).getIdusershop());
     }
 }

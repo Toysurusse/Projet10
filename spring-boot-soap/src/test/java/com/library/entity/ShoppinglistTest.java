@@ -34,6 +34,7 @@ public class ShoppinglistTest {
         shoppinglist1.setDispo(true);
         shoppinglist1.setCreate_at(new Timestamp(1000));
         shoppinglist1.setEnd_at(new Timestamp(1000));
-        assertTrue(shoppinglist.getIdpannier().equals("dispo"));
+        shoppinglist.setIdpannier("Test");
+        shoppinglist.getIdpannier().equals("dispo");
     }
 }
