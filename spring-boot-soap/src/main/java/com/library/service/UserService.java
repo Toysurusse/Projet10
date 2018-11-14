@@ -49,7 +49,8 @@ public class UserService implements IUserService {
 
     @Override
     public void delete(com.library.User user) {
-        userRepository.delete(userMapper.convertEtoD(user));
+        user.setDelete(true);
+        this.add(user);
     }
 
     @Override
