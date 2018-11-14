@@ -1,6 +1,7 @@
 package com.library.service;
 
 import com.library.User;
+import com.library.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class UserServiceTest {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private UserMapper userMapper;
+
     @Test
     public void testservicesUser () {
         List<User> userList = userService.findAll();
@@ -23,5 +27,6 @@ public class UserServiceTest {
         userService.control(userList.get(0));
         userService.findById(userList.get(0).getUserid());
         userService.delete(userList.get(0));
+        userMapper.userListEtoD(userList);
     }
 }

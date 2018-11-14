@@ -1,6 +1,7 @@
 package com.library.service;
 
 import com.library.Rentbook;
+import com.library.mapper.RentMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class BookrentServiceTest {
     @Autowired
     private RentService bookrentService;
 
+    @Autowired
+    private RentMapper rentMapper;
+
     @Test
     public void testservicesBookrent () {
         List<Rentbook> bookrentList = bookrentService.findAll();
@@ -24,5 +28,6 @@ public class BookrentServiceTest {
         bookrentService.findByLate();
         bookrentService.findByUserId(bookrentList.get(0).getUserId());
         bookrentService.back(bookrentList.get(0));
+        rentMapper.rentListEtoD(bookrentList);
     }
 }

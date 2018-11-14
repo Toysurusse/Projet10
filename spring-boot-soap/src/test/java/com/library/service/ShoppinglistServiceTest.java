@@ -1,6 +1,8 @@
 package com.library.service;
 
 import com.library.Shop;
+import com.library.mapper.ShopMapper;
+import com.library.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +18,15 @@ public class ShoppinglistServiceTest {
     @Autowired
     private ShopService shoppinglistService;
 
+    @Autowired
+    private ShopMapper shopMapper;
+
     @Test
     public void testservicesShoppinglist () {
         List<Shop> shoppinglistList = shoppinglistService.findAll();
         shoppinglistService.add(shoppinglistList.get(0));
         shoppinglistService.findById(shoppinglistList.get(0).getId());
         shoppinglistService.findBySearch(shoppinglistList.get(0).getIdusershop());
+        shopMapper.shopListEtoD(shoppinglistList);
     }
 }
