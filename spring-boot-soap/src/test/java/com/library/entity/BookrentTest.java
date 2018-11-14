@@ -28,11 +28,12 @@ public class BookrentTest {
         rent.setReturnbook(true);
         rent.setReload(true);
 
-        Rent rent2 = new Rent (nbPage,nbPage,rent.getCreate_at(),rent.getCreate_at(),true,true);
+        Rent rent2 = new Rent (nbPage,nbPage,rent.getCreate_at(),rent.getEnd_at(),true,true);
         assertTrue(rent.getId()==1);
         assertTrue(rent.isReload());
         assertTrue(rent.isReturnbook());
         assertTrue(rent.getUser_id()==1);
         assertTrue(rent.getBook_id()==1);
+
     }
 }
