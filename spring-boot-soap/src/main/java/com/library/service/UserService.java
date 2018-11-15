@@ -20,8 +20,7 @@ public class UserService implements IUserService {
 
     @Override
     public List<com.library.User> findAll() {
-        List<com.library.User> obj = userMapper.userListDtoE((List<com.library.entity.User>) userRepository.findAll());
-        return obj;
+        return userMapper.userListDtoE((List<com.library.entity.User>) userRepository.findAll());
     }
 
     @Override
@@ -40,11 +39,8 @@ public class UserService implements IUserService {
 
     @Override
     public String add(com.library.User user) {
-        String result="Ok";
-
-            userRepository.save(userMapper.convertEtoD(user));
-
-        return result;
+        userRepository.save(userMapper.convertEtoD(user));
+        return "Ok";
     }
 
     @Override
@@ -55,7 +51,6 @@ public class UserService implements IUserService {
 
     @Override
     public com.library.User findById(int id) {
-        com.library.User obj = userMapper.convertDtoE(userRepository.findOne(id));
-        return obj;
+        return userMapper.convertDtoE(userRepository.findOne(id));
     }
 }

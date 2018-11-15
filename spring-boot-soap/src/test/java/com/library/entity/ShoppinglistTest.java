@@ -1,6 +1,5 @@
 package com.library.entity;
 
-import com.library.Shop;
 import org.junit.Test;
 
 import java.sql.Timestamp;

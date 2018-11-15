@@ -3,7 +3,6 @@ package com.library.service;
 import com.library.entity.Shoppinglist;
 import com.library.mapper.ShopMapper;
 import com.library.repository.ShoppinglistRepository;
-import com.library.repository.ShoppinglistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,30 +19,23 @@ public class ShopService implements IShopService {
 
     @Override
     public List<com.library.Shop> findAll() {
-        List<com.library.Shop> obj = shopMapper.shopListDtoE((List<Shoppinglist>)  shopRepository.findAll());
-        return obj;
+        return shopMapper.shopListDtoE((List<Shoppinglist>)  shopRepository.findAll());
     }
 
     @Override
     public List<com.library.Shop> findBySearch(int place) {
-        System.out.println("Test");
         shopRepository.maj();
-        System.out.println("Test");
-        List<com.library.Shop> obj = shopMapper.shopListDtoE((List<Shoppinglist>) shopRepository.search(place));
-        System.out.println("Test");
-        return obj;
+        return shopMapper.shopListDtoE((List<Shoppinglist>) shopRepository.search(place));
     }
 
     @Override
     public String add(com.library.Shop shop) {
-        String result="Ok";
         shopRepository.save(shopMapper.convertEtoD(shop));
-        return result;
+        return "Ok";
     }
 
     @Override
     public com.library.Shop findById(int id) {
-        com.library.Shop obj = shopMapper.convertDtoE(shopRepository.findOne(id));
-        return obj;
+        return shopMapper.convertDtoE(shopRepository.findOne(id));
     }
 }

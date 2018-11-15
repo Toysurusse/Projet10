@@ -1,6 +1,5 @@
 package com.library.mapper;
 
-import com.library.Shop;
 import com.library.SpringBootLibraryApplication;
 import com.library.entity.Shoppinglist;
 import org.apache.log4j.LogManager;
@@ -8,11 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.Duration;
 import javax.xml.datatype.XMLGregorianCalendar;
-import javax.xml.namespace.QName;
-import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.util.*;
 

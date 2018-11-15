@@ -19,26 +19,22 @@ public class BookService implements IBookService {
 
     @Override
     public List<com.library.Book> findAll() {
-        List<com.library.Book> obj = bookMapper.bookListDtoE((List<Book>)  bookRepository.findAll());
-        return obj;
+        return bookMapper.bookListDtoE((List<Book>)  bookRepository.findAll());
     }
 
     @Override
     public List<com.library.Book> findBySearch(String place) {
-        List<com.library.Book> obj = bookMapper.bookListDtoE((List<Book>) bookRepository.search(place));
-        return obj;
+        return bookMapper.bookListDtoE((List<Book>) bookRepository.search(place));
     }
 
     @Override
     public void add(com.library.Book book) {
-        System.out.println(book.getId());
         bookRepository.save(bookMapper.convertEtoD(book));
     }
 
     @Override
     public com.library.Book findById(int id) {
-        com.library.Book obj = bookMapper.convertDtoE(bookRepository.findOne(id));
-        return obj;
+        return bookMapper.convertDtoE(bookRepository.findOne(id));
     }
 
 }

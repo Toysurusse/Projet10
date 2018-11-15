@@ -38,32 +38,27 @@ public class RentService implements IRentService {
 
     @Override
     public List<com.library.Rentbook> findAll() {
-        List<com.library.Rentbook> obj = rentMapper.rentListDtoE((List<Rent>) rentRepository.findAll());
-        return obj;
+        return rentMapper.rentListDtoE((List<Rent>) rentRepository.findAll());
     }
 
     @Override
     public String add(com.library.Rentbook rentbook) {
         rentRepository.save(rentMapper.convertEtoD(rentbook));
-        String statut="Ok";
-        return statut;
+        return "Ok";
     }
 
     @Override
     public String back(com.library.Rentbook rentbook) {
-        String statut="Impossible";
         Book book = bookService.findById(rentbook.getBookId());
         rentRepository.save(rentMapper.convertEtoD(rentbook));
         book.setDispo(book.getDispo()+1);
         bookService.add(book);
-        statut="Ok";
-        return statut;
+        return "Ok";
     }
 
     @Override
     public com.library.Rentbook findById(int id) {
-        com.library.Rentbook obj = rentMapper.convertDtoE(rentRepository.findOne(id));
-        return obj;
+        return rentMapper.convertDtoE(rentRepository.findOne(id));
     }
 
     @Override

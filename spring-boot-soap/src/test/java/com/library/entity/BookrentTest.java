@@ -2,7 +2,6 @@ package com.library.entity;
 
 import org.junit.Test;
 
-
 import java.sql.Date;
 
 import static org.junit.Assert.assertTrue;
