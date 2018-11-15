@@ -42,6 +42,10 @@ public class Rent implements Serializable {
         this.returnbook=returnbook;
     }
 
+    public Rent() {
+
+    }
+
     public int getId() {
         return id;
     }

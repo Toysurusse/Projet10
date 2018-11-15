@@ -44,6 +44,10 @@ public class User implements Serializable {
         this.delete=delete;
     }
 
+    public User() {
+
+    }
+
     public int getId() {
         return id;
     }

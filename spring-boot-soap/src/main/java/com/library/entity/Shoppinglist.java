@@ -42,6 +42,10 @@ public class Shoppinglist implements Serializable {
         this.idpannier=idpannier;
     }
 
+    public Shoppinglist() {
+
+    }
+
     public int getId() {
         return id;
     }
