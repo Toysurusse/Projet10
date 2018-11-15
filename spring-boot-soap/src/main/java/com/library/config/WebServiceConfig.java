@@ -30,7 +30,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 
 		return wsdl11Definition;
 	}
-	//http://localhost:8085/javainuse/ws/helloworld.wsdl
+	//http://localhost:8085/library/ws/library.wsdl
 
 }
  

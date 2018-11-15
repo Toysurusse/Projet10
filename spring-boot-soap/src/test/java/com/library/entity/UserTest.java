@@ -12,14 +12,14 @@ public class UserTest {
         String bookName = "TestBook";
         int nbPage = 1;
 
-        new User(bookName, bookName, bookName, bookName, nbPage, true);
+        User user = new User(bookName, bookName, bookName, bookName, nbPage, true);
 
         User user1 = new User();
         user1.setId(1);
         assertTrue(user1.getId()==1);
         user1.setMail("Auteur");
         user1.setPassword("Nom");
-        user1.setPseudo("Test");
+        user.setPseudo("Test");
         user1.setSalt("Test");
         user1.setRole(1);
         user1.setDelete(true);

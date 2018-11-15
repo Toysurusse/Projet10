@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+
+    <package name="myPackage" namespace="/" extends="struts-default">
+
+        <default-action-ref name="index" />
+        <!-- ======================Index========================-->
+        <action name="index" class="action.IndexAction">
+            <result>/WEB-INF/jsp/index.jsp</result>
+        </action>
+
+        <action name="contact">
+            <result name="success">/WEB-INF/jsp/contact.jsp</result>
+        </action>
+
+        <action name="search" class="action.IndexAction" method="search">
+            <result>/WEB-INF/jsp/search.jsp</result>
+        </action>
+
+        <!-- ======================Connect========================-->
+
+        <action name="connect" class="action.privacy.Connect">
+            <result name="input">/WEB-INF/jsp/privacy/private.jsp</result>
+            <result name="success">/WEB-INF/jsp/connect.jsp</result>
+        </action>
+
+        <action name="connectTry" class="action.privacy.ConnectTry" method="input">
+            <result name="input">/WEB-INF/jsp/connect.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">connected</param>
+            </result>
+            <result name="error">/WEB-INF/jsp/connect.jsp</result>
+        </action>
+
+        <action name="disconnect"
+                class="action.privacy.ConnectTry"
+                method ="disconnect">
+            <result name="success" type="redirectAction">
+                <param name="actionName">index</param>
+            </result>
+        </action>
+
+        <action name="connected" class="action.privacy.Connected">
+            <result name="success">/WEB-INF/jsp/privacy/private.jsp</result>
+        </action>
+
+        <action name="InitAccount" class="action.privacy.Connected">
+            <result name="success">/WEB-INF/jsp/privacy/createAccount.jsp</result>
+        </action>
+
+        <action name="createAccount" class="action.CreateAccount" method="createAccount">
+            <result name="input">/WEB-INF/jsp/privacy/createAccount.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">connected</param>
+            </result>
+            <result name="error">/WEB-INF/jsp/privacy/createAccount.jsp</result>
+        </action>
+
+        <action name="updateInit" class="action.CreateAccount" method="updateInit">
+            <result name="success">/WEB-INF/jsp/privacy/updateAccount.jsp</result>
+        </action>
+
+        <action name="updateAccount" class="action.CreateAccount" method="updateAccount">
+            <result name="input">/WEB-INF/jsp/privacy/updateAccount.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">connected</param>
+            </result>
+            <result name="error">/WEB-INF/jsp/privacy/updateAccount.jsp</result>
+        </action>
+
+        <!-- ======================Shop Actions========================-->
+
+        <action name="addToShop" class="action.privacy.Connected" method="addToShop">
+            <result name="success">/WEB-INF/jsp/privacy/private.jsp</result>
+        </action>
+
+        <action name="deleteToShop" class="action.privacy.Connected" method="deleteToShop">
+            <result name="success">/WEB-INF/jsp/privacy/privacy/private.jsp</result>
+        </action>
+
+        <!-- ======================Book management========================-->
+
+        <action name="bookInit" class="action.admin.book" method="execute">
+            <result name="success">/WEB-INF/jsp/admin/book.jsp</result>
+        </action>
+
+        <action name="createBook" class="action.admin.book" method="createBook">
+            <result name="input">/WEB-INF/jsp/admin/book.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">bookInit</param>
+            </result>
+            <result name="error">/WEB-INF/jsp/admin/book.jsp</result>
+        </action>
+
+        <action name="bookUpdate" class="action.admin.book" method="updateBook">
+            <result name="success" type="redirectAction">
+                <param name="actionName">bookInit</param>
+            </result>
+        </action>
+
+        <action name="bookDelete" class="action.admin.book" method="deleteBook">
+            <result name="success">/WEB-INF/jsp/admin/bookUpdate.jsp</result>
+        </action>
+
+        <!-- ======================User management========================-->
+
+        <action name="userInit" class="action.admin.user" method="execute">
+            <result name="success">/WEB-INF/jsp/admin/user.jsp</result>
+        </action>
+
+        <action name="createUser" class="action.admin.user" method="createUser">
+            <result name="input">/WEB-INF/jsp/admin/user.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">userInit</param>
+            </result>
+            <result name="error">/WEB-INF/jsp/admin/user.jsp</result>
+        </action>
+
+        <action name="userUpdate" class="action.admin.user" method="updateUser">
+            <result name="success" type="redirectAction">
+                <param name="actionName">userInit</param>
+            </result>
+        </action>
+
+        <action name="userDelete" class="action.admin.user" method="deleteUser">
+            <result name="success">/WEB-INF/jsp/admin/userUpdate.jsp</result>
+        </action>
+
+        <!-- ======================Bookrent status========================-->
+
+        <action name="rented" class="action.privacy.Rent" method="rented">
+            <result name="success">/WEB-INF/jsp/privacy/rented.jsp</result>
+        </action>
+
+        <action name="returnbook" class="action.privacy.Rent" method="returnBook">
+            <result name="success" type="redirectAction">
+                <param name="actionName">rented</param>
+            </result>
+        </action>
+
+        <action name="reloadbookInit" class="action.privacy.Reload">
+            <result name="success">/WEB-INF/jsp/privacy/reloadbook.jsp</result>
+        </action>
+
+        <action name="reloadrentbook" class="action.privacy.Reload" method="reloadrentbook">
+            <result name="input">/WEB-INF/jsp/privacy/reloadbook.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">rented</param>
+            </result>
+        </action>
+
+        <action name="rentTotal" class="action.privacy.Rent">
+            <result name="success">/WEB-INF/jsp/privacy/rentbook.jsp</result>
+        </action>
+
+        <action name="rentbook" class="action.privacy.Rent" method="rentbook">
+            <result name="input">/WEB-INF/jsp/privacy/rentbook.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">rented</param>
+            </result>
+        </action>
+
+    </package>
+
+</struts>
