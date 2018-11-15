@@ -33,9 +33,6 @@ public class Rent implements Serializable {
     @Column(name = "returnbook")
     private boolean returnbook;
 
-    protected Rent(){
-    }
-
     public Rent(int book_id, int user_id, Date create_at, Date end_at, boolean reload, boolean returnbook){
         this.book_id=book_id;
         this.user_id=user_id;

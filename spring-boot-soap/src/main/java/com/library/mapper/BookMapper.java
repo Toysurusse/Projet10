@@ -34,8 +34,8 @@ public class BookMapper {
 
         List<com.library.Book> booksE = new ArrayList<>();
 
-        for (int i = 0; i < bookData.size(); i++) {
-            com.library.Book book =convertDtoE(bookData.get(i));
+        for (Book aBookData : bookData) {
+            com.library.Book book = convertDtoE(aBookData);
             booksE.add(book);
         }
         return booksE;
@@ -45,8 +45,8 @@ public class BookMapper {
 
         List<Book> booksD = new ArrayList<>();
 
-        for (int i = 0; i < bookEntity.size(); i++) {
-            Book book = convertEtoD(bookEntity.get(i));
+        for (com.library.Book aBookEntity : bookEntity) {
+            Book book = convertEtoD(aBookEntity);
             booksD.add(book);
         }
         return booksD;

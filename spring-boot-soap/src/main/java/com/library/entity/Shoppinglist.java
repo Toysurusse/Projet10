@@ -33,9 +33,6 @@ public class Shoppinglist implements Serializable {
     @Column(name = "idpannier")
     private String idpannier;
 
-    protected Shoppinglist(){
-    }
-
     public Shoppinglist(int idusershop, int idbookshop, Timestamp create_at, Timestamp end_at, boolean dispo, String idpannier){
         this.idbookshop=idbookshop;
         this.idusershop=idusershop;

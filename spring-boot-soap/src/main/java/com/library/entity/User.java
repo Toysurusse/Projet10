@@ -35,9 +35,6 @@ public class User implements Serializable {
     @Column(name = "role")
     private int role;
 
-    protected User(){
-    }
-
     public User(String pseudo, String password, String salt, String mail, int role, boolean delete){
         this.password=password;
         this.salt=salt;

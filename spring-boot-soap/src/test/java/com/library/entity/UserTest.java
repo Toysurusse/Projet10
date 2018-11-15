@@ -11,11 +11,8 @@ public class UserTest {
     public void testUser() {
         String bookName = "TestBook";
         int nbPage = 1;
-        String editeurs = "TestEditors";
-        String author = "TestAuthor";
-        int dispo = 0;
 
-        User user = new User(bookName, bookName, bookName, bookName, nbPage, true);
+        new User(bookName, bookName, bookName, bookName, nbPage, true);
 
         User user1 = new User();
         user1.setId(1);

@@ -1,5 +1,6 @@
 package com.library.mapper;
 
+import com.library.Shop;
 import com.library.SpringBootLibraryApplication;
 import com.library.entity.Shoppinglist;
 import org.apache.log4j.LogManager;
@@ -48,8 +49,8 @@ public class ShopMapper {
 
         List<com.library.Shop> shopsE = new ArrayList<>();
 
-        for (int i = 0; i < shopData.size(); i++) {
-            com.library.Shop shop =convertDtoE(shopData.get(i));
+        for (Shoppinglist aShopData : shopData) {
+            Shop shop = convertDtoE(aShopData);
             shopsE.add(shop);
         }
         return shopsE;
@@ -59,8 +60,8 @@ public class ShopMapper {
 
         List<Shoppinglist> shopsD = new ArrayList<>();
 
-        for (int i = 0; i < shopEntity.size(); i++) {
-            Shoppinglist shop = convertEtoD(shopEntity.get(i));
+        for (Shop aShopEntity : shopEntity) {
+            Shoppinglist shop = convertEtoD(aShopEntity);
             shopsD.add(shop);
         }
         return shopsD;

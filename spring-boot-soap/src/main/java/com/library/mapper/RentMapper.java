@@ -1,5 +1,6 @@
 package com.library.mapper;
 
+import com.library.Rentbook;
 import com.library.SpringBootLibraryApplication;
 import com.library.entity.Rent;
 import org.apache.log4j.LogManager;
@@ -48,8 +49,8 @@ public class RentMapper {
 
         List<com.library.Rentbook> rentsE = new ArrayList<>();
 
-        for (int i = 0; i < rentData.size(); i++) {
-            com.library.Rentbook rent = convertDtoE(rentData.get(i));
+        for (Rent aRentData : rentData) {
+            Rentbook rent = convertDtoE(aRentData);
             rentsE.add(rent);
         }
         return rentsE;
@@ -59,8 +60,8 @@ public class RentMapper {
 
         List<Rent> rentsD = new ArrayList<>();
 
-        for (int i = 0; i < rentEntity.size(); i++) {
-            Rent rent = convertEtoD(rentEntity.get(i));
+        for (Rentbook aRentEntity : rentEntity) {
+            Rent rent = convertEtoD(aRentEntity);
             rentsD.add(rent);
         }
         return rentsD;
@@ -68,8 +69,7 @@ public class RentMapper {
     }
 
     private static java.sql.Date convertUtilToSql(java.util.Date uDate) {
-        java.sql.Date sDate = new java.sql.Date(uDate.getTime());
-        return sDate;
+        return new java.sql.Date(uDate.getTime());
     }
 
     public XMLGregorianCalendar translate(GregorianCalendar cal) {

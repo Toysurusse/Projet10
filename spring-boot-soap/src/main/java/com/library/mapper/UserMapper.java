@@ -47,8 +47,8 @@ public class UserMapper {
 
         List<com.library.User> usersE = new ArrayList<>();
 
-        for (int i = 0; i < userData.size(); i++) {
-            com.library.User user =convertDtoE(userData.get(i));
+        for (User anUserData : userData) {
+            com.library.User user = convertDtoE(anUserData);
             usersE.add(user);
         }
         return usersE;
@@ -58,8 +58,8 @@ public class UserMapper {
 
         List<User> usersD = new ArrayList<>();
 
-        for (int i = 0; i < userEntity.size(); i++) {
-            User user = user=convertEtoD(userEntity.get(i));
+        for (com.library.User anUserEntity : userEntity) {
+            User user = convertEtoD(anUserEntity);
             usersD.add(user);
         }
         return usersD;

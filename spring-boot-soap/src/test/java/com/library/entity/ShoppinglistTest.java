@@ -11,11 +11,7 @@ public class ShoppinglistTest {
 
     @Test
     public void testShop() {
-        String bookName = "TestBook";
         int nbPage = 1;
-        String editeurs = "TestEditors";
-        String author = "TestAuthor";
-        int dispo = 0;
 
         Shoppinglist shoppinglist = new Shoppinglist(nbPage, nbPage, new Timestamp(110000000), new Timestamp(110000000), true, "dispo");
         shoppinglist.setId(1);
@@ -34,6 +30,6 @@ public class ShoppinglistTest {
         shoppinglist1.setCreate_at(new Timestamp(1000));
         shoppinglist1.setEnd_at(new Timestamp(1000));
         shoppinglist.setIdpannier("Test");
-        shoppinglist.getIdpannier().equals("dispo");
+        "dispo".equals(shoppinglist.getIdpannier());
     }
 }

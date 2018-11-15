@@ -11,11 +11,7 @@ public class BookrentTest {
 
     @Test
     public void testRentBook() {
-        String bookName = "TestBook";
         int nbPage = 1;
-        String editeurs = "TestEditors";
-        String author = "TestAuthor";
-        int dispo = 0;
 
         Rent rent = new Rent();
         rent.setId(1);
@@ -27,7 +23,7 @@ public class BookrentTest {
         rent.setReturnbook(true);
         rent.setReload(true);
 
-        Rent rent2 = new Rent (nbPage,nbPage,rent.getCreate_at(),rent.getEnd_at(),true,true);
+        new Rent (nbPage,nbPage,rent.getCreate_at(),rent.getEnd_at(),true,true);
         assertTrue(rent.getId()==1);
         assertTrue(rent.isReload());
         assertTrue(rent.isReturnbook());
