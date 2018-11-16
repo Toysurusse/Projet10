@@ -1,11 +1,13 @@
 package action.privacy;
 
+import action.IndexAction;
 import client.Authentication;
 import client.book.BookClient;
 import client.book.SoapClientBookConfig;
 import com.library.Book;
 import com.library.OutputSOABook;
 import com.library.User;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.ArrayList;
@@ -14,6 +16,7 @@ import java.util.List;
 public class Connected extends Connect {
 
 
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(IndexAction.class);
 
     public List<Book> getBookToRent() {
         return bookToRent;
@@ -26,7 +29,7 @@ public class Connected extends Connect {
     public List<Book> bookToRent=new ArrayList<>();
 
     public String execute() throws Exception {
-
+        LOGGER.info("execute / Classe Java Action.privacy.Connected");
         user = (User) this.map.get("user");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         BookClient client = context.getBean(BookClient.class);
@@ -43,6 +46,7 @@ public class Connected extends Connect {
     }
 
     public String addToShop() throws Exception {
+        LOGGER.info("addToShop / Classe Java Action.privacy.Connected");
         bookToRent=new ArrayList<>();
         bookToRent= (List<Book>) this.map.get("books");
         shoppingList=(List<Book>) this.map.get("shop");
@@ -59,6 +63,7 @@ public class Connected extends Connect {
     }
 
     public String deleteToShop() throws Exception {
+        LOGGER.info("deleteToShop / Classe Java Action.privacy.Connected");
         bookToRent=new ArrayList<>();
         bookToRent= (List<Book>) this.map.get("books");
         shoppingList=(List<Book>) this.map.get("shop");

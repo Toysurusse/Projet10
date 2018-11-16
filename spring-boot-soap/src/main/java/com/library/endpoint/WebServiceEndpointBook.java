@@ -3,6 +3,8 @@ package com.library.endpoint;
 import com.library.*;
 import com.library.config.Authentication;
 import com.library.service.BookService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -11,10 +13,16 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import org.springframework.ws.soap.SoapHeaderElement;
 import org.springframework.ws.soap.server.endpoint.annotation.SoapHeader;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 import java.util.List;
 
 @Endpoint
-public class WebServiceEndpointBook extends AbstractEndPoint {
+public class WebServiceEndpointBook {
+
+
+
 
     private static final String NAMESPACE_URI = "http://library.com";
 
@@ -26,7 +34,6 @@ public class WebServiceEndpointBook extends AbstractEndPoint {
     public OutputSOABook getBeer(@RequestPayload InputSOABook request,
                                  @SoapHeader("{" + Authentication.AUTH_NS + "}authentication") SoapHeaderElement auth) {
 
-        Authentication authentication = getAuthentication(auth);
 
         OutputSOABook response = null;
 
@@ -44,7 +51,6 @@ public class WebServiceEndpointBook extends AbstractEndPoint {
     public OutputSOABookSearch getSearch(@RequestPayload InputSOABookSearch request,
                                          @SoapHeader("{" + Authentication.AUTH_NS + "}authentication") SoapHeaderElement auth) {
 
-        Authentication authentication = getAuthentication(auth);
 
         OutputSOABookSearch response = null;
 
@@ -62,7 +68,6 @@ public class WebServiceEndpointBook extends AbstractEndPoint {
     public OutputSOABookById hello(@RequestPayload InputSOABookById request,
                                    @SoapHeader("{" + Authentication.AUTH_NS + "}authentication") SoapHeaderElement auth) {
 
-        Authentication authentication = getAuthentication(auth);
 
         Book output = bookService.findById(request.getId());
 
@@ -79,7 +84,6 @@ public class WebServiceEndpointBook extends AbstractEndPoint {
     public OutputSOAddConfirm Add(@RequestPayload InputSOABookAdd request,
                                   @SoapHeader("{" + Authentication.AUTH_NS + "}authentication") SoapHeaderElement auth) {
 
-        Authentication authentication = getAuthentication(auth);
 
         ObjectFactory factory = new ObjectFactory();
         OutputSOAddConfirm response = factory.createOutputSOAddConfirm();

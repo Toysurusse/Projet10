@@ -24,11 +24,13 @@ import com.opensymphony.xwork2.ActionSupport;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Logger;
 
 import com.opensymphony.xwork2.conversion.annotations.Conversion;
 import com.opensymphony.xwork2.conversion.annotations.TypeConversion;
 import client.book.BookClient;
 import client.book.SoapClientBookConfig;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -36,6 +38,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 @Conversion()
 public class IndexAction extends ActionSupport {
+
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(IndexAction.class);
 
     private Date now = new Date(System.currentTimeMillis());
     @TypeConversion(converter = "action.DateConverter")
@@ -62,6 +66,7 @@ public class IndexAction extends ActionSupport {
     public String search;
 
     public String execute() throws Exception {
+        LOGGER.info("execute / Classe Java Action.IndexAction");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         BookClient client = context.getBean(BookClient.class);
         OutputSOABook response = client.getBook(new Authentication("username","password"));
@@ -72,6 +77,7 @@ public class IndexAction extends ActionSupport {
     }
 
     public String search() throws Exception {
+        LOGGER.info("Search Action / Classe Java Action.IndexAction");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         BookClient client = context.getBean(BookClient.class);
         OutputSOABookSearch response = client.getSearch(new Authentication("username","password"),search);

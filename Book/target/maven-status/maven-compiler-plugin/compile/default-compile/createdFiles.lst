@@ -33,6 +33,7 @@ com\library\SOAShopdel.class
 client\book\RunClientBook.class
 com\library\InputSOAShopSearch.class
 com\library\SOABookaddEndpointService.class
+action\admin\User.class
 com\library\InputSOABookDel.class
 com\library\SOAShopByIdEndpoint.class
 entity\ShoppingList.class
@@ -47,7 +48,6 @@ com\library\InputSOAUserTest.class
 com\library\OutputSOARentbook.class
 client\book\SoapClientBookConfig.class
 com\library\InputSOAUserDel.class
-action\admin\user.class
 com\library\SOAShopTestEndpointService.class
 action\CreateAccount.class
 com\library\OutputSOAUserById.class
@@ -70,7 +70,6 @@ client\SecurityHeader.class
 client\rent\SoapClientRentConfig.class
 com\library\OutputSOARentbookById.class
 com\library\OutputSOAUserAddConfirm.class
-action\admin\book.class
 com\library\InputSOAShopTest.class
 action\privacy\Rent.class
 client\book\BookClient.class
@@ -115,6 +114,7 @@ com\library\OutputSOABookSearch.class
 com\library\SOARentbookBackEndpointService.class
 com\library\SOABookadd.class
 com\library\SOAUserEndpoint.class
+action\admin\Book.class
 client\Authentication.class
 com\library\SOAUseradd.class
 com\library\OutputSODelConfirm.class

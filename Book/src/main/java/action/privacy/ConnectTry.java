@@ -1,5 +1,6 @@
 package action.privacy;
 
+import action.IndexAction;
 import client.Authentication;
 
 import client.user.SoapClientUserConfig;
@@ -9,20 +10,24 @@ import com.library.OutputSOAUserTest;
 import com.library.OutputSOAddConfirm;
 import com.library.User;
 import com.opensymphony.xwork2.ActionSupport;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 
 public class ConnectTry extends Connect {
 
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(IndexAction.class);
     public String pseudo;
     public String password;
 
     public String execute() throws Exception {
+        LOGGER.info("execute / Classe Java Action.privacy.ConnectTry");
         this.map.remove("user");
         return ActionSupport.SUCCESS;
     }
 
     public String input() throws Exception {
+        LOGGER.info("input / Classe Java Action.privacy.ConnectTry");
         this.clearActionErrors();
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
         UserClient client = context.getBean(UserClient.class);
@@ -35,9 +40,9 @@ public class ConnectTry extends Connect {
 
             if(passwordMatch)
             {
-                System.out.println("Provided user password " + password + " is correct.");
+                LOGGER.info("Provided user password " + password + " is correct.");
             } else {
-                System.out.println("Provided password is incorrect");
+                LOGGER.info("Provided password is incorrect");
             }
 
             if (passwordMatch) {
@@ -55,6 +60,7 @@ public class ConnectTry extends Connect {
     }
 
     public String disconnect() {
+        LOGGER.info("disconnect / Classe Java Action.privacy.ConnectTry");
         this.map.remove("user");
         return ActionSupport.SUCCESS;
     }

@@ -3,6 +3,8 @@ package com.library.endpoint;
 import com.library.*;
 import com.library.config.Authentication;
 import com.library.service.ShopService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -11,11 +13,26 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import org.springframework.ws.soap.SoapHeaderElement;
 import org.springframework.ws.soap.server.endpoint.annotation.SoapHeader;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 import java.util.List;
 
 @Endpoint
-public class WebServiceEndpointShop extends AbstractEndPoint{
+public class WebServiceEndpointShop{
+    private static final Logger LOGGER = LoggerFactory.getLogger( WebServiceEndpointShop.class);
 
+    protected Authentication getAuthentication(SoapHeaderElement header){
+        Authentication authentication = null;
+        try {
+            JAXBContext context = JAXBContext.newInstance(Authentication.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            authentication = (Authentication) unmarshaller.unmarshal(header.getSource());
+        } catch (JAXBException e) {
+            LOGGER.error("Error In AbstractEndPoint",e);
+        }
+        return authentication;
+    }
 	private static final String NAMESPACE_URI = "http://library.com";
 
     @Autowired

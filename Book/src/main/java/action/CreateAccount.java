@@ -7,10 +7,12 @@ import client.user.SoapClientUserConfig;
 import client.user.UserClient;
 import com.library.*;
 import com.opensymphony.xwork2.ActionSupport;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class CreateAccount  extends Connect {
 
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(IndexAction.class);
     public User getUser2() {
         return user2;
     }
@@ -32,7 +34,7 @@ public class CreateAccount  extends Connect {
     public User user;
 
     public String execute() throws Exception {
-
+        LOGGER.info("execute / Classe Java Action.CreateAccount");
         return ActionSupport.SUCCESS;
     }
 
@@ -40,7 +42,7 @@ public class CreateAccount  extends Connect {
 
 
     public String createAccount() throws Exception {
-
+        LOGGER.info("createAccount / Classe Java Action.privacy.Rent");
         this.clearActionErrors();
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
@@ -82,6 +84,7 @@ public class CreateAccount  extends Connect {
     }
 
     public String updateInit() {
+        LOGGER.info("UpdateInit / Classe Java Action.privacy.Rent");
         user = (User) this.map.get("user");
         pseudo = user.getPseudo();
         return ActionSupport.SUCCESS;
@@ -89,6 +92,7 @@ public class CreateAccount  extends Connect {
 
 
     public String updateAccount() {
+        LOGGER.info("updateAccount / Classe Java Action.privacy.Rent");
         this.clearActionErrors();
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);

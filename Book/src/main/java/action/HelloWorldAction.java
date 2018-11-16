@@ -22,12 +22,14 @@ import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.RequiredFieldValidator;
 import com.opensymphony.xwork2.conversion.annotations.Conversion;
 import com.opensymphony.xwork2.conversion.annotations.TypeConversion;
+import org.slf4j.LoggerFactory;
 
 @Validation()
 @Conversion()
 public class HelloWorldAction extends ActionSupport {
 
 
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(IndexAction.class);
 
 
     private Date now;

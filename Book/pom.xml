@@ -44,11 +44,24 @@
             <artifactId>struts2-spring-plugin</artifactId>
             <version>${struts2.version}</version>
         </dependency>
+        <dependency>
+        <groupId>org.apache.struts</groupId>
+        <artifactId>struts2-junit-plugin</artifactId>
+        <version>${struts2.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-config-browser-plugin</artifactId>
             <version>${struts2.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.9.5</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- Servlet & Jsp -->

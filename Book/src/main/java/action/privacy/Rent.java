@@ -1,6 +1,7 @@
 package action.privacy;
 
 
+import action.IndexAction;
 import client.Authentication;
 import client.book.BookClient;
 import client.book.SoapClientBookConfig;
@@ -8,6 +9,7 @@ import client.rent.SoapClientRentConfig;
 import com.library.*;
 import com.opensymphony.xwork2.ActionSupport;
 import entity.BookAndRent;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import javax.xml.datatype.DatatypeConfigurationException;
@@ -18,6 +20,7 @@ import java.util.*;
 
 public class Rent extends Connect {
 
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(IndexAction.class);
     public Date create_at;
     public Date end_at;
     public String today;
@@ -30,7 +33,7 @@ public class Rent extends Connect {
 
 
     public String execute() throws Exception {
-
+        LOGGER.info("execute / Classe Java Action.privacy.Rent");
         //utiliser le calendrier par défaut
         Calendar calendar = Calendar.getInstance();
 
@@ -46,7 +49,7 @@ public class Rent extends Connect {
     }
 
     public String rentbook() throws Exception {
-
+        LOGGER.info("rentbook / Classe Java Action.privacy.Rent");
         List<Rentbook> rents = new ArrayList<>();
         User user = (User) this.map.get("user");
 
@@ -67,7 +70,6 @@ public class Rent extends Connect {
                     rent.setEndat(translate(end_at));
                     rent.setReload(false);
                     rent.setReturnbook(false);
-                    System.out.println(rent.getUserId() + " ; " + rent.getBookId() + " ; " + rent.getRentid() + " ; " + rent.getCreateat() + " ; " + rent.getEndat() + " ; " + rent.isReload() + " ; " + rent.isReturnbook());
                     OutputSOARentbookAddConfirm outputSOAddConfirm = client.getRentbookAdd(new Authentication("username", "password"), rent);
                     rentResult.put(outputSOAddConfirm.getResult(), aShoppingList);
                 }
@@ -91,6 +93,7 @@ public class Rent extends Connect {
 
 
     public String rented() {
+        LOGGER.info("rented / Classe Java Action.privacy.Rent");
         SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy");
         today = formater.format(java.util.Calendar.getInstance().getTime());
         User user = (User) this.map.get("user");
@@ -122,7 +125,7 @@ public class Rent extends Connect {
     }
 
     public String returnBook() throws Exception {
-
+        LOGGER.info("returnBook / Classe Java Action.privacy.Rent");
         User user = (User) this.map.get("user");
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);
@@ -130,8 +133,6 @@ public class Rent extends Connect {
         OutputSOARentbookById outputSOARentbookById = client.getRentbookById(new Authentication("username", "password"), idBook);
         outputSOARentbookById.getResult().setReturnbook(true);
         OutputSOARentbookAddConfirm outputSOARentbookAddConfirm = client.getRentbookAdd(new Authentication("username", "password"), outputSOARentbookById.getResult());
-
-        System.out.println(outputSOARentbookAddConfirm.getResult());
 
         rentbook = new ArrayList<>();
 
@@ -146,7 +147,7 @@ public class Rent extends Connect {
     }
 
     public String input() throws Exception {
-
+        LOGGER.info("input / Classe Java Action.privacy.Rent");
         shoppingList = (List<Book>) this.map.get("shop");
         System.out.println(end_at + " :c " + create_at);
 

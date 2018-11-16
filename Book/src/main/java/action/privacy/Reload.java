@@ -1,6 +1,7 @@
 package action.privacy;
 
 
+import action.IndexAction;
 import client.Authentication;
 import client.book.BookClient;
 import client.book.SoapClientBookConfig;
@@ -8,6 +9,7 @@ import client.rent.SoapClientRentConfig;
 import com.library.*;
 import com.opensymphony.xwork2.ActionSupport;
 import entity.BookAndRent;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import javax.xml.datatype.DatatypeConfigurationException;
@@ -18,6 +20,7 @@ import java.util.*;
 
 public class Reload extends Connect {
 
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(IndexAction.class);
     public Date create_at;
     public Date end_at;
     public String today;
@@ -30,7 +33,7 @@ public class Reload extends Connect {
 
 
     public String execute() throws Exception {
-
+        LOGGER.info("execute / Classe Java Action.privacy.Reload");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);
         client.rent.Rent client = context.getBean(client.rent.Rent.class);
         System.out.println(idBook);
@@ -42,8 +45,6 @@ public class Reload extends Connect {
 
         listrented=new BookAndRent(response.getResult(),rentbook);
 
-        System.out.println(rentbook.getBookId()+" test ");
-        System.out.println(rentbook.getEndat());
         //utiliser le calendrier par défaut
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(rentbook.getEndat().toGregorianCalendar().getTime());
@@ -60,6 +61,7 @@ public class Reload extends Connect {
     }
 
     public String reloadrentbook() throws Exception {
+        LOGGER.info("reloadrentbook / Classe Java Action.privacy.Reload");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);
         client.rent.Rent client = context.getBean(client.rent.Rent.class);
         OutputSOARentbookById outputSOARentbookById = client.getRentbookById(new Authentication("username","password"),idBook);

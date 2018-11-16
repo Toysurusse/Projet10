@@ -1,41 +1,32 @@
 package action.admin;
 
+import action.IndexAction;
 import action.privacy.Connect;
 import client.Authentication;
 import client.user.SoapClientUserConfig;
 import client.user.UserClient;
 import com.library.*;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class user extends Connect {
+public class User extends Connect {
 
-    public List<User> getUserList() {
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(IndexAction.class);
+    public List<com.library.User> getUserList() {
         return userList;
     }
 
-    public void setUserList(List<User> userList) {
+    public void setUserList(List<com.library.User> userList) {
         this.userList = userList;
     }
 
-    public List<User> userList;
-
-    @Override
-    public User getUser() {
-        return user;
-    }
-
-    @Override
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public User user;
+    public List<com.library.User> userList;
 
     public String execute() throws Exception {
-
+        LOGGER.info("execute / Classe Java Action.privacy.User");
         userList=new ArrayList<>();
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
         UserClient client = context.getBean(UserClient.class);
@@ -85,7 +76,7 @@ public class user extends Connect {
         return SUCCESS;
     }
 
-    private void controlMDP(User user) {
+    private void controlMDP(com.library.User user) {
         if (user.getPseudo().equals("")) {
             this.addActionError(getText("error.emptyPseudo"));
         }
