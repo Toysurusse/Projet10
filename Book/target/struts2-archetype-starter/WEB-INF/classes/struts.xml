@@ -110,26 +110,32 @@
 
         <!-- ======================User management========================-->
 
-        <action name="userInit" class="action.admin.user" method="execute">
-            <result name="success">/WEB-INF/jsp/admin/user.jsp</result>
+        <action name="userInit" class="action.admin.User" method="execute">
+            <result name="success">/WEB-INF/jsp/admin/userList.jsp</result>
         </action>
 
-        <action name="createUser" class="action.admin.user" method="createUser">
-            <result name="input">/WEB-INF/jsp/admin/user.jsp</result>
+        <action name="userUpInit" class="action.admin.User" method="updateUInit">
+            <result name="success">/WEB-INF/jsp/admin/updateUser.jsp</result>
+        </action>
+
+        <action name="userUpdate" class="action.admin.User" method="userUpdate">
+            <result name="input">/WEB-INF/jsp/admin/updateUser.jsp</result>
             <result name="success" type="redirectAction">
                 <param name="actionName">userInit</param>
             </result>
-            <result name="error">/WEB-INF/jsp/admin/user.jsp</result>
+            <result name="error">/WEB-INF/jsp/admin/book.jsp</result>
         </action>
 
-        <action name="userUpdate" class="action.admin.user" method="updateUser">
+        <action name="userDelete" class="action.admin.User" method="deleteUser">
             <result name="success" type="redirectAction">
                 <param name="actionName">userInit</param>
             </result>
         </action>
 
-        <action name="userDelete" class="action.admin.user" method="deleteUser">
-            <result name="success">/WEB-INF/jsp/admin/userUpdate.jsp</result>
+        <action name="userActive" class="action.admin.User" method="ActiveUser">
+            <result name="success" type="redirectAction">
+                <param name="actionName">userInit</param>
+            </result>
         </action>
 
         <!-- ======================Bookrent status========================-->

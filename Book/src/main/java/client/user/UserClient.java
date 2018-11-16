@@ -43,10 +43,10 @@ public class UserClient extends WebServiceGatewaySupport {
                                 authentication));
     }
 
-    public OutputSOAUserDelConfirm getUserDel(Authentication authentication, User user) {
+    public OutputSODelConfirm getUserDel(Authentication authentication, User user) {
         InputSOAUserDel request = new InputSOAUserDel();
         request.setUser(user);
-        return (OutputSOAUserDelConfirm) getWebServiceTemplate()
+        return (OutputSODelConfirm) getWebServiceTemplate()
                 .marshalSendAndReceive(request,
                         new SecurityHeader(
                                 authentication));
