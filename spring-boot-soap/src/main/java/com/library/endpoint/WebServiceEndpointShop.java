@@ -20,7 +20,19 @@ import java.util.List;
 
 @Endpoint
 public class WebServiceEndpointShop{
+    private static final Logger LOGGER = LoggerFactory.getLogger( WebServiceEndpointShop.class);
 
+    protected Authentication getAuthentication(SoapHeaderElement header){
+        Authentication authentication = null;
+        try {
+            JAXBContext context = JAXBContext.newInstance(Authentication.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            authentication = (Authentication) unmarshaller.unmarshal(header.getSource());
+        } catch (JAXBException e) {
+            LOGGER.error("Error In AbstractEndPoint",e);
+        }
+        return authentication;
+    }
 	private static final String NAMESPACE_URI = "http://library.com";
 
     @Autowired
@@ -31,6 +43,7 @@ public class WebServiceEndpointShop{
     public OutputSOAShop getBeer(@RequestPayload InputSOAShop request,
                                  @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
 
+        Authentication authentication = getAuthentication(auth);
         OutputSOAShop response=null;
         List<Shop> output= shopService.findAll();
         ObjectFactory factory = new ObjectFactory();
@@ -45,6 +58,8 @@ public class WebServiceEndpointShop{
     @ResponsePayload
     public OutputSOAShopById hello(@RequestPayload InputSOAShopById request,
                                    @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+
+        Authentication authentication = getAuthentication(auth);
 
         Shop output= shopService.findById(request.getId());
 
@@ -61,6 +76,8 @@ public class WebServiceEndpointShop{
     public OutputSOAddConfirm Add(@RequestPayload InputSOAShopAdd request,
                                   @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
 
+        Authentication authentication = getAuthentication(auth);
+
 	    ObjectFactory factory = new ObjectFactory();
         OutputSOAddConfirm response = factory.createOutputSOAddConfirm();
 	    String result;
@@ -73,6 +90,8 @@ public class WebServiceEndpointShop{
     @ResponsePayload
     public OutputSODelConfirm Del(@RequestPayload InputSOAShopDel request,
                                   @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+
+        Authentication authentication = getAuthentication(auth);
 
         ObjectFactory factory = new ObjectFactory();
         OutputSODelConfirm response = factory.createOutputSODelConfirm();
@@ -88,6 +107,8 @@ public class WebServiceEndpointShop{
     @ResponsePayload
     public OutputSOAShopSearch getSearch(@RequestPayload InputSOAShopSearch request,
                                          @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+
+        Authentication authentication = getAuthentication(auth);
 
         OutputSOAShopSearch response=null;
 
