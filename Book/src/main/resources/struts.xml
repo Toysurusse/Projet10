@@ -115,8 +115,20 @@
             <result name="success">/WEB-INF/jsp/admin/userList.jsp</result>
         </action>
 
+        <action name="userCreateInit" class="action.admin.User">
+            <result name="success">/WEB-INF/jsp/admin/createUser.jsp</result>
+        </action>
+
         <action name="userUpInit" class="action.admin.User" method="updateUInit">
             <result name="success">/WEB-INF/jsp/admin/updateUser.jsp</result>
+        </action>
+
+        <action name="userCreate" class="action.admin.User" method="createUser">
+            <result name="input">/WEB-INF/jsp/admin/createUser.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">userInit</param>
+            </result>
+            <result name="error">/WEB-INF/jsp/admin/createUser.jsp</result>
         </action>
 
         <action name="userUpdate" class="action.admin.User" method="userUpdate">
@@ -124,7 +136,7 @@
             <result name="success" type="redirectAction">
                 <param name="actionName">userInit</param>
             </result>
-            <result name="error">/WEB-INF/jsp/admin/book.jsp</result>
+            <result name="error">/WEB-INF/jsp/admin/updateUser.jsp</result>
         </action>
 
         <action name="userDelete" class="action.admin.User" method="deleteUser">

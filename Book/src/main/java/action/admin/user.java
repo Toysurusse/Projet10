@@ -2,6 +2,7 @@ package action.admin;
 
 import action.IndexAction;
 import action.privacy.Connect;
+import action.privacy.Encrypt;
 import client.Authentication;
 import client.user.SoapClientUserConfig;
 import client.user.UserClient;
@@ -14,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User extends Connect {
+
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(IndexAction.class);
 
     public List<com.library.User> getUserList() {
         return userList;
@@ -40,20 +43,44 @@ public class User extends Connect {
     }
 
     public String createUser() throws Exception {
-
+        LOGGER.info("createUser / Classe Java Action.admin.User");
         this.clearActionErrors();
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
         UserClient client = context.getBean(UserClient.class);
-
         controlMDP(user);
+        OutputSOAUser list = client.getUser(new Authentication("username","password"));
 
-        if(!this.hasErrors()) {
-            OutputSOAddConfirm response = client.getUserAdd(new Authentication("username", "password"), user);
-            System.out.println(response.getResult());
+        for (com.library.User u : list.getResult()) {
+            if (u.getPseudo().equals(user.getPseudo())){
+                this.addActionError(getText("error.PseudoExist"));
+            }
         }
 
-        return SUCCESS;
+        // Generate Salt. The generated value can be stored in DB.
+        String salt = Encrypt.getSalt(30);
+
+        // Protect user's password. The generated value can be stored in DB.
+        String mySecurePassword = Encrypt.generateSecurePassword(user.getPassword(), salt);
+
+        user.setPassword(mySecurePassword);
+        user.setSalt(salt);
+
+        // Print out protected password
+        LOGGER.info("createUser / Classe Java Action.admin.User / My secure password = " + mySecurePassword);
+        LOGGER.info("createUser / Classe Java Action.admin.User / Salt value = " + salt);
+
+        if (!this.hasErrors()) {
+            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(new Authentication("username","password"),user);
+            list = client.getUser(new Authentication("username","password"));
+            for (com.library.User u : list.getResult()) {
+                if (u.getPseudo().equals(user.getPseudo())){
+                    user.setUserid(u.getUserid());
+                }
+            }
+            this.map.put("user", user);
+        }
+        return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
     }
 
     public String updateUInit() throws Exception {
@@ -116,6 +143,11 @@ public class User extends Connect {
         }
         if (user.getMail().equals("")) {
             this.addActionError(getText("error.emptyMail"));
+        }
+        if (user.getRole()==1||user.getRole()==2||user.getRole()==3) {
+        }
+        else{
+            this.addActionError(getText("error.emptyrole"));
         }
     }
 

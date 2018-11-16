@@ -15,6 +15,7 @@ import java.util.List;
 public class Book  extends Connect {
 
     private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(IndexAction.class);
+
     public List<com.library.Book> getBookList() {
         return bookList;
     }
