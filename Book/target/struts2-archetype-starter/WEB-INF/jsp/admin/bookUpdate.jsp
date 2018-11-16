@@ -14,7 +14,12 @@
 <div>
 	<div class="starter-template col-sm-4"></div>
 	<div class="container-fluid col-sm-4">
-		<s:form theme="simple" action="createBook">
+		<s:form theme="simple" action="bookUpdate">
+			<div class="row">
+				<label for="book.id" class="starter-template col-sm-12"> ID du livre :</label>
+				<s:textfield cssClass="form-control" placeholder="Titre" name="book.id" label="ID"
+							 requiredLabel="true" readonly="true"/>
+			</div>
 			<div class="row">
 				<label for="book.bookName" class="starter-template col-sm-12"> Titre :</label>
 				<s:textfield cssClass="form-control" placeholder="Titre" name="book.bookName" label="pseudo"
@@ -35,10 +40,15 @@
 				<s:textfield cssClass="form-control" placeholder="Nombre de page" name="book.nbPage" label="pseudo"
 							 requiredLabel="true"/>
 			</div>
+			<div class="row">
+				<label for="book.dispo" class="starter-template col-sm-12"> Nombre d'exemplaires :</label>
+				<s:textfield cssClass="form-control" placeholder="Nombre d'exemplaires" name="book.dispo" label="dispo"
+							 requiredLabel="true"/>
+			</div>
 			<br>
 			<div class="row">
 				<div class="col-sm-6">
-					<s:submit method="createBook" value="créer livre" cssClass="btn btn-primary center-block"/>
+					<s:submit method="bookUpdate" value="créer livre" cssClass="btn btn-primary center-block"/>
 				</div>
 			</div>
 		</s:form>

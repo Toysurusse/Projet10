@@ -86,11 +86,11 @@
 
         <!-- ======================Book management========================-->
 
-        <action name="bookInit" class="action.admin.book" method="execute">
+        <action name="bookInit" class="action.admin.Book" method="execute">
             <result name="success">/WEB-INF/jsp/admin/book.jsp</result>
         </action>
 
-        <action name="createBook" class="action.admin.book" method="createBook">
+        <action name="createBook" class="action.admin.Book" method="createBook">
             <result name="input">/WEB-INF/jsp/admin/book.jsp</result>
             <result name="success" type="redirectAction">
                 <param name="actionName">bookInit</param>
@@ -98,16 +98,23 @@
             <result name="error">/WEB-INF/jsp/admin/book.jsp</result>
         </action>
 
-        <action name="bookUpdate" class="action.admin.book" method="updateBook">
+        <action name="bookUpdateInit" class="action.admin.Book" method="updateBookInit">
+            <result name="success" >/WEB-INF/jsp/admin/bookUpdate.jsp</result>
+        </action>
+
+        <action name="bookUpdate" class="action.admin.Book" method="updateBook">
+            <result name="input">/WEB-INF/jsp/admin/bookUpdate.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">bookInit</param>
+            </result>
+            <result name="error">/WEB-INF/jsp/admin/bookUpdate.jsp</result>
+        </action>
+
+        <action name="bookDelete" class="action.admin.Book" method="deleteBook">
             <result name="success" type="redirectAction">
                 <param name="actionName">bookInit</param>
             </result>
         </action>
-
-        <action name="bookDelete" class="action.admin.book" method="deleteBook">
-            <result name="success">/WEB-INF/jsp/admin/bookUpdate.jsp</result>
-        </action>
-
 
         <!-- ======================User management========================-->
 

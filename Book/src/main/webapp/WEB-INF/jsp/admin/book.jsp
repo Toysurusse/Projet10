@@ -15,7 +15,7 @@
     <div class="col-1"></div>
     <div class="container-fluid border-info rounded col-3">
         <div class="text-lg-center">
-            Ajouter un livre
+            Ajouter un livre :
         </div>
         <s:form theme="simple" action="createBook">
             <div class="row">
@@ -36,6 +36,11 @@
             <div class="row">
                 <label for="book.nbPage" class="starter-template col-sm-12"> Nombre de pages :</label>
                 <s:textfield cssClass="form-control" placeholder="Nombre de page" name="book.nbPage" label="pseudo"
+                             requiredLabel="true"/>
+            </div>
+            <div class="row">
+                <label for="book.dispo" class="starter-template col-sm-12"> Nombre d'exemplaires :</label>
+                <s:textfield cssClass="form-control" placeholder="Nombre d'exemplaires" name="book.dispo" label="pseudo"
                              requiredLabel="true"/>
             </div>
             <br>
@@ -67,14 +72,14 @@
                         </p>
                     </div>
                     <div class="col-1">
-                        <s:a action="bookUpdate">
-                            <img src="../../../picture/Update.JPG" height="10" width="10"/>
+                        <s:a action="bookUpdateInit">
+                            <img src="../../../picture/Prolonger.png" height="30" width="30"/>
                             <s:param name="idBook"><s:property value="id"/></s:param>
                         </s:a> <br>
                     </div>
                     <div class="col-1">
                         <s:a action="bookDelete">
-                            <img src="../../../picture/Delete.JPG" height="10" width="10"/>
+                            <img src="../../../picture/Delete.png" height="30" width="30"/>
                             <s:param name="idBook"><s:property value="id"/></s:param>
                         </s:a>
                     </div>
