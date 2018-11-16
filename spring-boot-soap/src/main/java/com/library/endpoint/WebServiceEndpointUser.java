@@ -22,17 +22,6 @@ import java.util.List;
 public class WebServiceEndpointUser {
     private static final Logger LOGGER = LoggerFactory.getLogger(WebServiceEndpointUser.class);
 
-    protected Authentication getAuthentication(SoapHeaderElement header){
-        Authentication authentication = null;
-        try {
-            JAXBContext context = JAXBContext.newInstance(Authentication.class);
-            Unmarshaller unmarshaller = context.createUnmarshaller();
-            authentication = (Authentication) unmarshaller.unmarshal(header.getSource());
-        } catch (JAXBException e) {
-            LOGGER.error("Error In AbstractEndPoint",e);
-        }
-        return authentication;
-    }
 	private static final String NAMESPACE_URI = "http://library.com";
 
     @Autowired
@@ -43,7 +32,6 @@ public class WebServiceEndpointUser {
     public OutputSOAUser getBeer(@RequestPayload InputSOAUser request,
                                  @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
 
-        Authentication authentication = getAuthentication(auth);
         OutputSOAUser response=null;
         List<User> output= userService.findAll();
         ObjectFactory factory = new ObjectFactory();
@@ -58,7 +46,6 @@ public class WebServiceEndpointUser {
     public OutputSOAUserTest control(@RequestPayload InputSOAUserTest request,
                                      @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
 
-        Authentication authentication = getAuthentication(auth);
         OutputSOAUserTest response=null;
 
         User user= new User();
@@ -80,8 +67,6 @@ public class WebServiceEndpointUser {
     public OutputSOAUserById hello(@RequestPayload InputSOAUserById request,
                                    @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
 
-        Authentication authentication = getAuthentication(auth);
-
         User output= userService.findById(request.getId());
 
         ObjectFactory factory = new ObjectFactory();
@@ -97,8 +82,6 @@ public class WebServiceEndpointUser {
     public OutputSOAddConfirm Add(@RequestPayload InputSOAUserAdd request,
                                   @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
 
-        Authentication authentication = getAuthentication(auth);
-
 	    ObjectFactory factory = new ObjectFactory();
         OutputSOAddConfirm response = factory.createOutputSOAddConfirm();
 	    String result;
@@ -111,8 +94,6 @@ public class WebServiceEndpointUser {
     @ResponsePayload
     public OutputSODelConfirm Del(@RequestPayload InputSOAUserDel request,
                                   @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
-
-        Authentication authentication = getAuthentication(auth);
 
         ObjectFactory factory = new ObjectFactory();
         OutputSODelConfirm response = factory.createOutputSODelConfirm();

@@ -48,7 +48,7 @@ public class CreateAccount  extends Connect {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
         UserClient client = context.getBean(UserClient.class);
         controlMDP(user);
-        OutputSOAUser list = client.getUser(new Authentication("username","password"));
+        OutputSOAUser list = client.getUser();
 
         for (User u : list.getResult()) {
             if (u.getPseudo().equals(user.getPseudo())){
@@ -71,8 +71,8 @@ public class CreateAccount  extends Connect {
         System.out.println("Salt value = " + salt);
 
         if (!this.hasErrors()) {
-            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(new Authentication("username","password"),user);
-            list = client.getUser(new Authentication("username","password"));
+            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(user);
+            list = client.getUser();
             for (User u : list.getResult()) {
                 if (u.getPseudo().equals(user.getPseudo())){
                     user.setUserid(u.getUserid());
@@ -99,7 +99,7 @@ public class CreateAccount  extends Connect {
         UserClient client = context.getBean(UserClient.class);
 
         controlMDP(user);
-        OutputSOAUser list = client.getUser(new Authentication("username", "password"));
+        OutputSOAUser list = client.getUser();
 
         user2 = (User) this.map.get("user");
 
@@ -124,7 +124,7 @@ public class CreateAccount  extends Connect {
         System.out.println("Salt value = " + salt);
 
         if (!this.hasErrors()) {
-            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(new Authentication("username", "password"), user);
+            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(user);
             this.map.remove("user");
             this.map.put("user", user);
         }

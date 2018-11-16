@@ -22,17 +22,6 @@ import java.util.List;
 public class WebServiceEndpointRentbook {
     private static final Logger LOGGER = LoggerFactory.getLogger(WebServiceEndpointRentbook.class);
 
-    protected Authentication getAuthentication(SoapHeaderElement header){
-        Authentication authentication = null;
-        try {
-            JAXBContext context = JAXBContext.newInstance(Authentication.class);
-            Unmarshaller unmarshaller = context.createUnmarshaller();
-            authentication = (Authentication) unmarshaller.unmarshal(header.getSource());
-        } catch (JAXBException e) {
-            LOGGER.error("Error In AbstractEndPoint",e);
-        }
-        return authentication;
-    }
     private static final String NAMESPACE_URI = "http://library.com";
 
     @Autowired
@@ -43,7 +32,6 @@ public class WebServiceEndpointRentbook {
     public OutputSOARentbook getRentbook(@RequestPayload InputSOARentbook request,
                                          @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
 
-        Authentication authentication = getAuthentication(auth);
         OutputSOARentbook response=null;
         List<Rentbook> output= rentService.findAll();
         ObjectFactory factory = new ObjectFactory();
@@ -58,7 +46,6 @@ public class WebServiceEndpointRentbook {
     public OutputSOARentbookLate getRentbookLate(@RequestPayload InputSOARentbookLate request,
                                                  @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
 
-        Authentication authentication = getAuthentication(auth);
         OutputSOARentbookLate response=null;
         List<Latebook> output= rentService.findByLate();
         ObjectFactory factory = new ObjectFactory();
@@ -72,7 +59,7 @@ public class WebServiceEndpointRentbook {
     @ResponsePayload
     public OutputSOARentbookByUser getRentbookByUser(@RequestPayload InputSOARentbookByUser request,
                                          @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
-        Authentication authentication = getAuthentication(auth);
+
         OutputSOARentbookByUser response=null;
         List<Rentbook> output= rentService.findByUserId(request.getId());
         ObjectFactory factory = new ObjectFactory();
@@ -87,8 +74,6 @@ public class WebServiceEndpointRentbook {
     @ResponsePayload
     public OutputSOARentbookById hello(@RequestPayload InputSOARentbookById request,
                                    @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
-
-        Authentication authentication = getAuthentication(auth);
 
         Rentbook output= rentService.findById(request.getId());
 
@@ -105,8 +90,6 @@ public class WebServiceEndpointRentbook {
     public OutputSOARentbookAddConfirm Add(@RequestPayload InputSOARentbookAdd request,
                                   @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
 
-        Authentication authentication = getAuthentication(auth);
-
         ObjectFactory factory = new ObjectFactory();
         OutputSOARentbookAddConfirm response = factory.createOutputSOARentbookAddConfirm();
         String result = rentService.add(request.getRentbook());
@@ -119,8 +102,6 @@ public class WebServiceEndpointRentbook {
     @ResponsePayload
     public OutputSOARentbookBackConfirm Back(@RequestPayload InputSOARentbookBack request,
                                            @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
-
-        Authentication authentication = getAuthentication(auth);
 
         ObjectFactory factory = new ObjectFactory();
         OutputSOARentbookBackConfirm response = factory.createOutputSOARentbookBackConfirm();

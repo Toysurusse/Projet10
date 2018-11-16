@@ -33,12 +33,8 @@ public class WebServiceEndpointBook {
     @ResponsePayload
     public OutputSOABook getBeer(@RequestPayload InputSOABook request,
                                  @SoapHeader("{" + Authentication.AUTH_NS + "}authentication") SoapHeaderElement auth) {
-
-
         OutputSOABook response = null;
-
         List<Book> output = bookService.findAll();
-
         ObjectFactory factory = new ObjectFactory();
         response = factory.createOutputSOABook();
         response.getResult().addAll(output);

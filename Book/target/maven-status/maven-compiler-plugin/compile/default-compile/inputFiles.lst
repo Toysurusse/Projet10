@@ -8,7 +8,6 @@ C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\client\book\B
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOAUserByIdEndpoint.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOAShopEndpoint.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\InputSOAShopTest.java
-C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\client\user\RunClientUser.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\OutputSOABookById.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\Shop.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOABookadd.java
@@ -55,12 +54,10 @@ C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\ws
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\InputSOARentbookById.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOAUseraddEndpointService.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\OutputSOAUserAddConfirm.java
-C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\action\HelloWorldAction.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\action\WebServiceInterface.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\InputSOARentbook.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOAUserdel.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOARentbookEndpoint.java
-C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\client\rent\RunClientRent.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\InputSOAUser.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\client\SecurityHeader.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\InputSOAUserDel.java
@@ -90,7 +87,6 @@ C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\ws
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOAUserEndpointService.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\action\admin\User.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOAShopSearchEndpointService.java
-C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\client\book\RunClientBook.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\OutputSOARentbookLate.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOARentbookBack.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\Latebook.java
@@ -104,11 +100,12 @@ C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\ws
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\OutputSOAUserTest.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\OutputSODelConfirm.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\OutputSOAShopTest.java
+C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\client\rent\RentClient.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\User.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\InputSOABookAdd.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\InputSOAUserById.java
-C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\client\rent\Rent.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\client\book\SoapClientBookConfig.java
+C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\action\ListClientSoap.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\entity\ShoppingList.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOARentbookByIdEndpointService.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOABookaddEndpointService.java

@@ -7,49 +7,53 @@ import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 
 public class UserClient extends WebServiceGatewaySupport {
 
-    public OutputSOAUser getUser(Authentication authentication) {
+    private Authentication getauthentication(){
+        return new Authentication("username","password");
+    }
+    
+    public OutputSOAUser getUser() {
         InputSOAUser request = new InputSOAUser();
         request.setTest("Test");
         return (OutputSOAUser) getWebServiceTemplate()
                 .marshalSendAndReceive(request,
                         new SecurityHeader(
-                                authentication));
+                                getauthentication()));
     }
 
-    public OutputSOAUserTest getUserTest(Authentication authentication, String pseudo) {
+    public OutputSOAUserTest getUserTest( String pseudo) {
         InputSOAUserTest request = new InputSOAUserTest();
         request.setPseudo(pseudo);
         return (OutputSOAUserTest) getWebServiceTemplate()
                 .marshalSendAndReceive(request,
                         new SecurityHeader(
-                                authentication));
+                                getauthentication()));
     }
 
-    public OutputSOAUserById getUserById(Authentication authentication, int id) {
+    public OutputSOAUserById getUserById( int id) {
         InputSOAUserById request = new InputSOAUserById();
         request.setId(id);
         return (OutputSOAUserById) getWebServiceTemplate()
                 .marshalSendAndReceive(request,
                         new SecurityHeader(
-                                authentication));
+                                getauthentication()));
     }
 
-    public OutputSOAddConfirm getUserAdd(Authentication authentication, User user) {
+    public OutputSOAddConfirm getUserAdd( User user) {
         InputSOAUserAdd request = new InputSOAUserAdd();
         request.setUser(user);
         return (OutputSOAddConfirm) getWebServiceTemplate()
                 .marshalSendAndReceive(request,
                         new SecurityHeader(
-                                authentication));
+                                getauthentication()));
     }
 
-    public OutputSODelConfirm getUserDel(Authentication authentication, User user) {
+    public OutputSODelConfirm getUserDel( User user) {
         InputSOAUserDel request = new InputSOAUserDel();
         request.setUser(user);
         return (OutputSODelConfirm) getWebServiceTemplate()
                 .marshalSendAndReceive(request,
                         new SecurityHeader(
-                                authentication));
+                                getauthentication()));
     }
 
 }

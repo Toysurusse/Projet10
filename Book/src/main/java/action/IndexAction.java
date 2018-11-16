@@ -37,7 +37,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * 
  */
 @Conversion()
-public class IndexAction extends ActionSupport {
+public class IndexAction extends ListClientSoap {
 
     private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(IndexAction.class);
 
@@ -67,23 +67,17 @@ public class IndexAction extends ActionSupport {
 
     public String execute() throws Exception {
         LOGGER.info("execute / Classe Java Action.IndexAction");
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
-        BookClient client = context.getBean(BookClient.class);
-        OutputSOABook response = client.getBook(new Authentication("username","password"));
-        bookList=response.getResult();
 
+        bookList=clientB().getBook().getResult();
         now = new Date(System.currentTimeMillis());
         return SUCCESS;
     }
 
     public String search() throws Exception {
         LOGGER.info("Search Action / Classe Java Action.IndexAction");
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
-        BookClient client = context.getBean(BookClient.class);
-        OutputSOABookSearch response = client.getSearch(new Authentication("username","password"),search);
         bookList=null;
         bookList=new ArrayList<>();
-        bookList=response.getResult();
+        bookList=clientB().getSearch(search).getResult();
 
         now = new Date(System.currentTimeMillis());
         return SUCCESS;

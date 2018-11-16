@@ -33,7 +33,7 @@ public class Connected extends Connect {
         user = (User) this.map.get("user");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         BookClient client = context.getBean(BookClient.class);
-        OutputSOABook response = client.getBook(new Authentication("username","password"));
+        OutputSOABook response = client.getBook();
 
         for (int i = 0; i <response.getResult().size() ; i++) {
             if (response.getResult().get(i).getDispo()>0) {

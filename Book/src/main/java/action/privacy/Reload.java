@@ -5,6 +5,7 @@ import action.IndexAction;
 import client.Authentication;
 import client.book.BookClient;
 import client.book.SoapClientBookConfig;
+import client.rent.RentClient;
 import client.rent.SoapClientRentConfig;
 import com.library.*;
 import com.opensymphony.xwork2.ActionSupport;
@@ -35,13 +36,13 @@ public class Reload extends Connect {
     public String execute() throws Exception {
         LOGGER.info("execute / Classe Java Action.privacy.Reload");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);
-        client.rent.Rent client = context.getBean(client.rent.Rent.class);
+        RentClient client = context.getBean(RentClient.class);
         System.out.println(idBook);
-        OutputSOARentbookById outputSOARentbookById = client.getRentbookById(new Authentication("username","password"),idBook);
+        OutputSOARentbookById outputSOARentbookById = client.getRentbookById(idBook);
         rentbook = outputSOARentbookById.getResult();
         AnnotationConfigApplicationContext contextbook = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         client.book.BookClient clientbook = contextbook.getBean(BookClient.class);
-        OutputSOABookById response = clientbook.getBookById(new Authentication("username","password"),rentbook.getBookId());
+        OutputSOABookById response = clientbook.getBookById(rentbook.getBookId());
 
         listrented=new BookAndRent(response.getResult(),rentbook);
 
@@ -63,8 +64,8 @@ public class Reload extends Connect {
     public String reloadrentbook() throws Exception {
         LOGGER.info("reloadrentbook / Classe Java Action.privacy.Reload");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);
-        client.rent.Rent client = context.getBean(client.rent.Rent.class);
-        OutputSOARentbookById outputSOARentbookById = client.getRentbookById(new Authentication("username","password"),idBook);
+        RentClient client = context.getBean(RentClient.class);
+        OutputSOARentbookById outputSOARentbookById = client.getRentbookById(idBook);
 
         System.out.println(idBook);
 
@@ -75,7 +76,7 @@ public class Reload extends Connect {
         rentbook.setEndat(translate(end_at));
         rentbook.setReload(true);
 
-        OutputSOARentbookAddConfirm outputSOAddConfirm = client.getRentbookAdd(new Authentication("username","password"),rentbook);
+        OutputSOARentbookAddConfirm outputSOAddConfirm = client.getRentbookAdd(rentbook);
 
         return ActionSupport.SUCCESS;
     }

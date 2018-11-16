@@ -37,7 +37,7 @@ public class User extends Connect {
         userList=new ArrayList<>();
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
         UserClient client = context.getBean(UserClient.class);
-        OutputSOAUser response = client.getUser(new Authentication("username","password"));
+        OutputSOAUser response = client.getUser();
         userList=response.getResult();
         return SUCCESS;
     }
@@ -49,7 +49,7 @@ public class User extends Connect {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
         UserClient client = context.getBean(UserClient.class);
         controlMDP(user);
-        OutputSOAUser list = client.getUser(new Authentication("username","password"));
+        OutputSOAUser list = client.getUser();
 
         for (com.library.User u : list.getResult()) {
             if (u.getPseudo().equals(user.getPseudo())){
@@ -71,8 +71,8 @@ public class User extends Connect {
         LOGGER.info("createUser / Classe Java Action.admin.User / Salt value = " + salt);
 
         if (!this.hasErrors()) {
-            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(new Authentication("username","password"),user);
-            list = client.getUser(new Authentication("username","password"));
+            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(user);
+            list = client.getUser();
             for (com.library.User u : list.getResult()) {
                 if (u.getPseudo().equals(user.getPseudo())){
                     user.setUserid(u.getUserid());
@@ -87,7 +87,7 @@ public class User extends Connect {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
         UserClient client = context.getBean(UserClient.class);
-        OutputSOAUserById response = client.getUserById(new Authentication("username", "password"), id);
+        OutputSOAUserById response = client.getUserById( id);
 
         user=response.getResult();
         return SUCCESS;
@@ -97,7 +97,7 @@ public class User extends Connect {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
         UserClient client = context.getBean(UserClient.class);
-        OutputSOAUserById userById = client.getUserById(new Authentication("username", "password"), user.getUserid());
+        OutputSOAUserById userById = client.getUserById( user.getUserid());
         user.setUserid(userById.getResult().getUserid());
         user.setPassword(userById.getResult().getPassword());
         user.setSalt(userById.getResult().getSalt());
@@ -105,7 +105,7 @@ public class User extends Connect {
         controlMDP(user);
 
         if(!this.hasErrors()) {
-            OutputSOAddConfirm response = client.getUserAdd(new Authentication("username", "password"), user);
+            OutputSOAddConfirm response = client.getUserAdd( user);
             System.out.println(response.getResult());
         }
 
@@ -115,18 +115,18 @@ public class User extends Connect {
     public String deleteUser() throws Exception {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
         UserClient client = context.getBean(UserClient.class);
-        OutputSOAUserById userById = client.getUserById(new Authentication("username", "password"), id);
+        OutputSOAUserById userById = client.getUserById( id);
         userById.getResult().setDelete(true);
-        OutputSODelConfirm response = client.getUserDel(new Authentication("username", "password"), userById.getResult());
+        OutputSODelConfirm response = client.getUserDel( userById.getResult());
         return SUCCESS;
     }
 
     public String ActiveUser() throws Exception {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
         UserClient client = context.getBean(UserClient.class);
-        OutputSOAUserById userById = client.getUserById(new Authentication("username", "password"), id);
+        OutputSOAUserById userById = client.getUserById( id);
         userById.getResult().setDelete(false);
-        OutputSODelConfirm response = client.getUserDel(new Authentication("username", "password"), userById.getResult());
+        OutputSODelConfirm response = client.getUserDel( userById.getResult());
         return SUCCESS;
     }
 

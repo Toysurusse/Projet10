@@ -34,7 +34,7 @@ public class ConnectTry extends Connect {
 
         if (!pseudo.equals("") && !password.equals("")) {
 
-            OutputSOAUserTest response = client.getUserTest(new Authentication("username", "password"), pseudo);
+            OutputSOAUserTest response = client.getUserTest(pseudo);
 
             boolean passwordMatch = Encrypt.verifyUserPassword(password, response.getUser().getPassword(), response.getUser().getSalt());
 

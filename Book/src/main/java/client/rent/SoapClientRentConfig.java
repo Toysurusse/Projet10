@@ -15,8 +15,8 @@ public class SoapClientRentConfig {
     }
 
     @Bean
-    public Rent weatherClient(Jaxb2Marshaller marshaller) {
-        Rent client = new Rent();
+    public RentClient weatherClient(Jaxb2Marshaller marshaller) {
+        RentClient client = new RentClient();
         client.setDefaultUri("http://localhost:8085/library/ws/rentbook");
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);

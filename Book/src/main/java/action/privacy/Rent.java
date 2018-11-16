@@ -5,6 +5,7 @@ import action.IndexAction;
 import client.Authentication;
 import client.book.BookClient;
 import client.book.SoapClientBookConfig;
+import client.rent.RentClient;
 import client.rent.SoapClientRentConfig;
 import com.library.*;
 import com.opensymphony.xwork2.ActionSupport;
@@ -56,7 +57,7 @@ public class Rent extends Connect {
         shoppingList = (List<Book>) this.map.get("shop");
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);
-        client.rent.Rent client = context.getBean(client.rent.Rent.class);
+        RentClient client = context.getBean(RentClient.class);
 
         if (end_at != null && create_at != null) {
             if (end_at.before(create_at)) {
@@ -70,7 +71,7 @@ public class Rent extends Connect {
                     rent.setEndat(translate(end_at));
                     rent.setReload(false);
                     rent.setReturnbook(false);
-                    OutputSOARentbookAddConfirm outputSOAddConfirm = client.getRentbookAdd(new Authentication("username", "password"), rent);
+                    OutputSOARentbookAddConfirm outputSOAddConfirm = client.getRentbookAdd( rent);
                     rentResult.put(outputSOAddConfirm.getResult(), aShoppingList);
                 }
             }
@@ -100,16 +101,16 @@ public class Rent extends Connect {
         int id = user.getUserid();
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);
-        client.rent.Rent client = context.getBean(client.rent.Rent.class);
+        RentClient client = context.getBean(RentClient.class);
 
         OutputSOARentbookByUser outputSOARentbookByUser = null;
-        outputSOARentbookByUser = client.getRentbookByUser(new Authentication("username", "password"), id);
+        outputSOARentbookByUser = client.getRentbookByUser(id);
 
         rentbook = new ArrayList<>();
 
         AnnotationConfigApplicationContext contextbook = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         client.book.BookClient clientbook = contextbook.getBean(BookClient.class);
-        OutputSOABook response = clientbook.getBook(new Authentication("username", "password"));
+        OutputSOABook response = clientbook.getBook();
 
         rentbook = outputSOARentbookByUser.getResult();
             bookList = response.getResult();
@@ -129,17 +130,17 @@ public class Rent extends Connect {
         User user = (User) this.map.get("user");
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);
-        client.rent.Rent client = context.getBean(client.rent.Rent.class);
-        OutputSOARentbookById outputSOARentbookById = client.getRentbookById(new Authentication("username", "password"), idBook);
+        RentClient client = context.getBean(RentClient.class);
+        OutputSOARentbookById outputSOARentbookById = client.getRentbookById( idBook);
         outputSOARentbookById.getResult().setReturnbook(true);
-        OutputSOARentbookAddConfirm outputSOARentbookAddConfirm = client.getRentbookAdd(new Authentication("username", "password"), outputSOARentbookById.getResult());
+        OutputSOARentbookAddConfirm outputSOARentbookAddConfirm = client.getRentbookAdd( outputSOARentbookById.getResult());
 
         rentbook = new ArrayList<>();
 
         AnnotationConfigApplicationContext contextbook = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         client.book.BookClient clientbook = contextbook.getBean(BookClient.class);
-        OutputSOABookById outputSOABookById = clientbook.getBookById(new Authentication("username", "password"), outputSOARentbookById.getResult().getBookId());
-        OutputSOAddConfirm outputSOAddConfirm = clientbook.getBookAdd(new Authentication("username", "password"), outputSOABookById.getResult());
+        OutputSOABookById outputSOABookById = clientbook.getBookById( outputSOARentbookById.getResult().getBookId());
+        OutputSOAddConfirm outputSOAddConfirm = clientbook.getBookAdd( outputSOABookById.getResult());
 
         System.out.println(outputSOAddConfirm.getResult());
 
