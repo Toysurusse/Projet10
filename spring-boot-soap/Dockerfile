@@ -1,6 +1,5 @@
 RUN USER docker
-FROM tomcat:8
+FROM java:8
 EXPOSE 8085
-# Take the war and copy to webapps of tomcat
-COPY spring-boot-soap/target/*.war /usr/local/tomcat/webapps/
-# Added for jenkins demo
+ADD spring-boot-soap/target/spring-boot-soap-0.0.1-SNAPSHOT.war springspring-boot-soap-0.0.1-SNAPSHOT.war
+ENTRYPOINT {"java","-jar","spring-boot-soap-0.0.1-SNAPSHOT.war"}
