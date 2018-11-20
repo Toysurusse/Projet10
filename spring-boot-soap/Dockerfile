@@ -1,5 +1,7 @@
-RUN USER docker
-FROM java:8
-EXPOSE 8085
-ADD spring-boot-soap/target/spring-boot-soap-0.0.1-SNAPSHOT.war springspring-boot-soap-0.0.1-SNAPSHOT.war
-ENTRYPOINT {"java","-jar","spring-boot-soap-0.0.1-SNAPSHOT.war"}
+FROM openjdk:8-jdk
+VOLUME /tmp
+ARG DEPENDENCY=target/dependency
+COPY ${DEPENDENCY}/BOOT-INF/lib /app/lib
+COPY ${DEPENDENCY}/META-INF /app/META-INF
+COPY ${DEPENDENCY}/BOOT-INF/classes /app
+ENTRYPOINT ["java","-cp","app:app/lib/*","com.library.SpringBootLibraryApplication"]
