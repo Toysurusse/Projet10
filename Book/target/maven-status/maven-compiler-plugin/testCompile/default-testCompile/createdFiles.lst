@@ -1,9 +1,0 @@
-action\privacy\ConnectedTest.class
-action\admin\BookTest.class
-action\IndexActionTest.class
-action\admin\UserTest.class
-action\privacy\ReloadTest.class
-action\privacy\ConnectTest.class
-action\CreateAccountTest.class
-action\privacy\ConnectTry.class
-action\privacy\RentTest.class
