@@ -1,7 +1,6 @@
-FROM openjdk:8-jdk
-VOLUME /tmp
-ARG DEPENDENCY=target/dependency
-COPY ${DEPENDENCY}/BOOT-INF/lib /app/lib
-COPY ${DEPENDENCY}/META-INF /app/META-INF
-COPY ${DEPENDENCY}/BOOT-INF/classes /app
-ENTRYPOINT ["java","-cp","app:app/lib/*","com.library.SpringBootLibraryApplication"]
+RUN USER docker
+FROM tomcat:8
+EXPOSE 8080
+# Take the war and copy to webapps of tomcat
+COPY spring-boot-soap/target/*.war /usr/local/tomcat/webapps/
+# Added for jenkins demo

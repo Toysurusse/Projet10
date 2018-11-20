@@ -3,6 +3,7 @@ package com.library;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 
@@ -11,6 +12,11 @@ public class SpringBootLibraryApplication extends SpringBootServletInitializer i
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootLibraryApplication.class, args);
+	}
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(SpringBootLibraryApplication .class);
 	}
 
 	@Override
