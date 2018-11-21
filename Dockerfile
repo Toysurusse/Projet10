@@ -1,5 +1,5 @@
 FROM tomcat:8.0-alpine
 # Take the war and copy to webapps of tomcat
-COPY spring-boot-soap/target/spring-boot-soap-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
-COPY spring-boot-soap/tomcat-users.xml /usr/local/tomcat/conf/
+RUN ["rm", "-fr", "/usr/local/tomcat/webapps/ROOT"]
+COPY ./target/your-webapp-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
 # Added for jenkins demo
