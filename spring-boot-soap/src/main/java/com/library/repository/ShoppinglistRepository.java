@@ -1,5 +1,6 @@
 package com.library.repository;
 
+import com.library.entity.Rent;
 import com.library.entity.Shoppinglist;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -26,5 +27,8 @@ public interface ShoppinglistRepository extends CrudRepository<Shoppinglist, Int
             nativeQuery = true
     )
     List<Shoppinglist> search(@Param("searchTerm") int searchTerm);
+
+    @Query(value = "SELECT * FROM shoppinglist WHERE id=%id%", nativeQuery = true)
+    Shoppinglist findOne(int id);
 }
 

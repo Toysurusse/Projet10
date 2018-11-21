@@ -51,6 +51,6 @@ public class UserService implements IUserService {
 
     @Override
     public com.library.User findById(int id) {
-        return userMapper.convertDtoE(userRepository.findOne(id));
+        return userMapper.convertDtoE(userRepository.findone(id));
     }
 }

@@ -3,7 +3,7 @@ package com.library.mapper;
 import com.library.Rentbook;
 import com.library.SpringBootLibraryApplication;
 import com.library.entity.Rent;
-import org.apache.log4j.LogManager;
+import org.apache.logging.log4j.LogManager;
 import org.springframework.stereotype.Service;
 
 import javax.xml.datatype.DatatypeConfigurationException;
@@ -16,7 +16,7 @@ import java.util.List;
 @Service
 public class RentMapper {
 
-    private static final org.apache.log4j.Logger logger = LogManager.getLogger(SpringBootLibraryApplication.class);
+    private static final org.apache.logging.log4j.Logger logger = LogManager.getLogger(SpringBootLibraryApplication.class);
 
     public Rent convertEtoD(com.library.Rentbook rent) {
         Rent rentEntity = new Rent(rent.getBookId(), rent.getUserId(), convertUtilToSql(rent.getCreateat().toGregorianCalendar().getTime()), convertUtilToSql(rent.getEndat().toGregorianCalendar().getTime()), rent.isReload(), rent.isReturnbook());

@@ -3,7 +3,7 @@ package com.library.mapper;
 import com.library.Shop;
 import com.library.SpringBootLibraryApplication;
 import com.library.entity.Shoppinglist;
-import org.apache.log4j.LogManager;
+import org.apache.logging.log4j.LogManager;
 import org.springframework.stereotype.Service;
 
 import javax.xml.datatype.DatatypeConfigurationException;
@@ -15,7 +15,7 @@ import java.util.*;
 @Service
 public class ShopMapper {
 
-    private static final org.apache.log4j.Logger logger = LogManager.getLogger(SpringBootLibraryApplication.class);
+    private static final org.apache.logging.log4j.Logger logger = LogManager.getLogger(SpringBootLibraryApplication.class);
 
     public Shoppinglist convertEtoD (com.library.Shop shop) {
         System.out.println(shop.getCreateat());

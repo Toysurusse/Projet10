@@ -1,6 +1,7 @@
 package com.library.repository;
 
 import com.library.entity.Book;
+import com.library.entity.Rent;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -15,4 +16,7 @@ public interface BookRepository extends CrudRepository<Book, Integer> {
             nativeQuery = true
     )
     List<Book> search(@Param("searchTerm") String searchTerm);
+
+    @Query(value = "SELECT * FROM book WHERE bookid=%id%", nativeQuery = true)
+    Book findOne(int id);
 }

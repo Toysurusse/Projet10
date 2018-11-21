@@ -25,7 +25,7 @@ public class UserServiceTest {
         List<User> userList = userService.findAll();
         userService.add(userList.get(0));
         userService.control(userList.get(0));
-        userService.findById(userList.get(0).getUserid());
+
         userService.delete(userList.get(0));
         userMapper.userListEtoD(userList);
     }
