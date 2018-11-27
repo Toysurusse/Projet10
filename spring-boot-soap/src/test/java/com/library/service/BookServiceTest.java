@@ -24,7 +24,10 @@ public class BookServiceTest {
     public void testservicesBook () {
         List<Book> bookList = bookService.findAll();
         bookService.add(bookList.get(0));
-        System.out.println("Test BookName"+bookList.get(0).getBookName());
+        for (Book b:bookList
+             ) {
+            System.out.println("Test BookName : "+b.getBookName());
+        }
         bookService.findBySearch(bookList.get(0).getBookName());
         bookMapper.bookListEtoD(bookList);
     }
