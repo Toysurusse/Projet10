@@ -246,7 +246,6 @@ INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALU
 INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALUES (1320, 'Les Postiches2', 'test', 'Trinors', 180, 0);
 INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALUES (1321, ' Bonsoir Lune', 'Wise Brown, Margaret', 'Lécole des loisirs', 451, 3);
 INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALUES (1850, 'CreateBook', 'Auteur', 'Editors', 251, 3);
-
 --- ================================================================================
 --- Table rentBook
 --- ================================================================================
@@ -271,7 +270,6 @@ INSERT INTO public.rentbook (rentid, user_id, book_id, reload, returnbook, creat
 INSERT INTO public.rentbook (rentid, user_id, book_id, reload, returnbook, create_at, end_at) VALUES (176, 108, 61, true, true, '2018-11-14', '2019-01-14');
 INSERT INTO public.rentbook (rentid, user_id, book_id, reload, returnbook, create_at, end_at) VALUES (180, 108, 139, false, true, '2018-11-16', '2018-12-16');
 INSERT INTO public.rentbook (rentid, user_id, book_id, reload, returnbook, create_at, end_at) VALUES (179, 108, 60, false, true, '2018-11-16', '2018-12-16');
-
 --- ================================================================================
 --- Table shoppingList
 --- ================================================================================
