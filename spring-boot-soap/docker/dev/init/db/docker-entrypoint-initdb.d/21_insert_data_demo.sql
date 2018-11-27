@@ -246,6 +246,14 @@ INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALU
 INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALUES (1320, 'Les Postiches2', 'test', 'Trinors', 180, 0);
 INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALUES (1321, ' Bonsoir Lune', 'Wise Brown, Margaret', 'Lécole des loisirs', 451, 3);
 INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALUES (1850, 'CreateBook', 'Auteur', 'Editors', 251, 3);
+INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (112, 'Crashtest', 'ADIF+ba6x46Bd/PCC9VKz8ZY03ACCJIeG39MwZl134w=', true, 'testmynewnew@gmail.com', 1, 'zsV23grmLo2I3l3ikj8KAO4j7kbGHp', true);
+INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (108, 'Protected', 'pdzpn0PwwN/64ZNXaqsmz4K7QQm9ne9vJa9Nebjc+70=', true, 'max.leboiteux@gmail.com', 3, 'vKxRfKy95bAkLqk8nFAo1jqybG9x25', false);
+INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (124, 'testeut', 'ujK10OGQrRDdf/cwiYMYJFIeiLofA9j+5Uqn0chIrNM=', true, 'max.lb@laposte.ne', 1, 'ctqqDBtz8Oel16OwvsUECVbymTfZCq', false);
+INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (178, 'Employé', 'A4aY5eAefm44R5LfWCDlsS3w1x36VPHskGMZpM3Z8AM=', false, 'max.test@', 2, '4kbUUm13Y172M4cG1BeH9DhGIRkDsc', false);
+INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (126, 'Testeur', '87L9qp5xdmP/BMIsYngldzyNjNZZr5GfPFAjG46mXkY=', false, 'max.leboiteux@gmail', 2, '92rkB4o4GIC9hT5xpskGztkSASveig', true);
+INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (181, 'HelloWorld', 'Ra4iVVbn25z/PfN8D5NRXMvuCfth67IoCmm1tHeq4Lo=', true, 'hello@hotmail.com', 1, 'AAChaMVZrjT6q0wuS2IAoUkj9oRUhm', false);
+INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (182, 'TestCreateRole', 'k7zM1/HxTVIeFIy4ZnpiHw3J5m8pfBuVbdRwKbBmgKY=', true, 'max.lb@laposte.ne', 1, 'ZR5RZkio8CKdFLxu8yqSFMHL5afJfC', false);
+INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (183, 'Test', 'n64s0LH42/EoMJKnYRKetxdGz3ulwvF3BH3Q2d6RgNQ=', false, 'max.leboiteux@gmail.co', 2, 'pfC5JN2xWGahQMUko7V0rzuHPx6EgK', true);
 --- ================================================================================
 --- Table rentBook
 --- ================================================================================
@@ -296,15 +304,3 @@ INSERT INTO public.shoppinglist (id, idusershop, dispo, idbookshop, idpannier, c
 INSERT INTO public.shoppinglist (id, idusershop, dispo, idbookshop, idpannier, create_at, end_at) VALUES (173, 108, false, 237, '0000000108/2018-11-14/14', '2018-11-14 14:15:37.418', '2018-11-14 14:15:37.418');
 INSERT INTO public.shoppinglist (id, idusershop, dispo, idbookshop, idpannier, create_at, end_at) VALUES (172, 108, false, 61, '0000000108/2018-11-14/14', '2018-11-14 14:15:34.986', '2018-11-14 14:15:34.986');
 INSERT INTO public.shoppinglist (id, idusershop, dispo, idbookshop, idpannier, create_at, end_at) VALUES (151, 108, false, 188, '0000000108/2018-11-14/2', '2018-11-14 02:20:56.722', '2018-11-14 04:20:56.725');
-
---- ================================================================================
---- Table usertable
---- ================================================================================
-INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (112, 'Crashtest', 'ADIF+ba6x46Bd/PCC9VKz8ZY03ACCJIeG39MwZl134w=', true, 'testmynewnew@gmail.com', 1, 'zsV23grmLo2I3l3ikj8KAO4j7kbGHp', true);
-INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (108, 'Protected', 'pdzpn0PwwN/64ZNXaqsmz4K7QQm9ne9vJa9Nebjc+70=', true, 'max.leboiteux@gmail.com', 3, 'vKxRfKy95bAkLqk8nFAo1jqybG9x25', false);
-INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (124, 'testeut', 'ujK10OGQrRDdf/cwiYMYJFIeiLofA9j+5Uqn0chIrNM=', true, 'max.lb@laposte.ne', 1, 'ctqqDBtz8Oel16OwvsUECVbymTfZCq', false);
-INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (178, 'Employé', 'A4aY5eAefm44R5LfWCDlsS3w1x36VPHskGMZpM3Z8AM=', false, 'max.test@', 2, '4kbUUm13Y172M4cG1BeH9DhGIRkDsc', false);
-INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (126, 'Testeur', '87L9qp5xdmP/BMIsYngldzyNjNZZr5GfPFAjG46mXkY=', false, 'max.leboiteux@gmail', 2, '92rkB4o4GIC9hT5xpskGztkSASveig', true);
-INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (181, 'HelloWorld', 'Ra4iVVbn25z/PfN8D5NRXMvuCfth67IoCmm1tHeq4Lo=', true, 'hello@hotmail.com', 1, 'AAChaMVZrjT6q0wuS2IAoUkj9oRUhm', false);
-INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (182, 'TestCreateRole', 'k7zM1/HxTVIeFIy4ZnpiHw3J5m8pfBuVbdRwKbBmgKY=', true, 'max.lb@laposte.ne', 1, 'ZR5RZkio8CKdFLxu8yqSFMHL5afJfC', false);
-INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (183, 'Test', 'n64s0LH42/EoMJKnYRKetxdGz3ulwvF3BH3Q2d6RgNQ=', false, 'max.leboiteux@gmail.co', 2, 'pfC5JN2xWGahQMUko7V0rzuHPx6EgK', true);
