@@ -8,7 +8,8 @@ create table if not exists usertable
 	gender boolean not null,
 	mail varchar(200) not null,
 	role integer,
-	salt varchar(250)
+	salt varchar(250),
+	delete boolean default true not null
 )
 ;
 
@@ -21,7 +22,7 @@ create table if not exists book
 	author varchar(100) not null,
 	editeurs varchar(100) not null,
 	nbpage integer,
-	dispo boolean default true not null
+	dispo integer default 3
 )
 ;
 
@@ -40,5 +41,23 @@ create table if not exists rentbook
 	end_at date,
 	constraint rentbook_pk
 		primary key (rentid, user_id, book_id)
+)
+;
+
+create table if not exists shoppinglist
+(
+	id integer not null
+		constraint "ShoppingList_pkey"
+			primary key,
+	idusershop integer not null
+		constraint shoppinglist_usertable_userid_fk
+			references usertable,
+	dispo boolean,
+	create_at timestamp,
+	end_at timestamp,
+	idbookshop integer
+		constraint shoppinglist_book_bookid_fk
+			references book,
+	idpannier varchar(50)
 )
 ;
