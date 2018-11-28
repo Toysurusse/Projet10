@@ -272,7 +272,7 @@ INSERT INTO public.rentbook (rentid, user_id, book_id, reload, returnbook, creat
 INSERT INTO public.rentbook (rentid, user_id, book_id, reload, returnbook, create_at, end_at) VALUES (176, 108, 61, true, true, '2018-11-14', '2019-01-14');
 INSERT INTO public.rentbook (rentid, user_id, book_id, reload, returnbook, create_at, end_at) VALUES (180, 108, 139, false, true, '2018-11-16', '2018-12-16');
 INSERT INTO public.rentbook (rentid, user_id, book_id, reload, returnbook, create_at, end_at) VALUES (179, 108, 60, false, true, '2018-11-16', '2018-12-16');
-INSERT INTO public.shoppinglist (id, idusershop, dispo, idbookshop, idpannier, create_at, end_at) VALUES (148, 108, false, 111, '0000000108/2018-11-14/2', '2018-11-14 02:03:23.968', '2018-11-14 02:03:23.968');
+INSERT INTO public.shoppinglist (id, idusershop, dispo, create_at, end_at, idbookshop, idpannier) VALUES (148, 108, false, '2018-11-14 02:03:23.968', '2018-11-14 02:03:23.968', 111, '0000000108/2018-11-14/2');
 INSERT INTO public.shoppinglist (id, idusershop, dispo, idbookshop, idpannier, create_at, end_at) VALUES (153, 108, false, 65, '0000000108/2018-11-14/2', '2018-11-14 02:25:01.9', '2018-11-14 04:25:01.903');
 INSERT INTO public.shoppinglist (id, idusershop, dispo, idbookshop, idpannier, create_at, end_at) VALUES (149, 108, false, 111, '0000000108/2018-11-14/2', '2018-11-14 02:16:52.075', '2018-11-14 02:16:52.075');
 INSERT INTO public.shoppinglist (id, idusershop, dispo, idbookshop, idpannier, create_at, end_at) VALUES (154, 108, false, 239, '0000000108/2018-11-14/2', '2018-11-14 02:26:16.006', '2018-11-14 04:26:16.008');

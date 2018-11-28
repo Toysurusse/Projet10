@@ -11,4 +11,3 @@ services:
       - POSTGRES_DB=libraryDB
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=Toysrusse
-      
