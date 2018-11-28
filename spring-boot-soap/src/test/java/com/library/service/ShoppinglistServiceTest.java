@@ -1,5 +1,6 @@
 package com.library.service;
 
+import com.library.Book;
 import com.library.Shop;
 import com.library.mapper.ShopMapper;
 import org.junit.Test;
@@ -24,7 +25,10 @@ public class ShoppinglistServiceTest {
     public void testservicesShoppinglist () {
         List<Shop> shoppinglistList = shoppinglistService.findAll();
         shoppinglistService.add(shoppinglistList.get(0));
-
+        for (Shop s:shoppinglistList
+                ) {
+            System.out.println("Test BookName : "+s.getId());
+        }
         shoppinglistService.findBySearch(shoppinglistList.get(0).getIdusershop());
         shopMapper.shopListEtoD(shoppinglistList);
     }

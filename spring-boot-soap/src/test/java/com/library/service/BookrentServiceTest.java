@@ -1,6 +1,8 @@
 package com.library.service;
 
+import com.library.Book;
 import com.library.Rentbook;
+import com.library.Shop;
 import com.library.mapper.RentMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,7 +26,10 @@ public class BookrentServiceTest {
     public void testservicesBookrent () {
         List<Rentbook> bookrentList = bookrentService.findAll();
         bookrentService.add(bookrentList.get(0));
-
+        for (Rentbook b:bookrentList
+                ) {
+            System.out.println("Test BookName : "+b.getRentid());
+        }
         rentMapper.rentListEtoD(bookrentList);
     }
 }
