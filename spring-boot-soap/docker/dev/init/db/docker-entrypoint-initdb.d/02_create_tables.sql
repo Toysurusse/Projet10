@@ -1,4 +1,4 @@
-create table if not exists usertable
+create table usertable
 (
 	userid integer not null
 		constraint usertable_pk
@@ -13,7 +13,7 @@ create table if not exists usertable
 )
 ;
 
-create table if not exists book
+create table book
 (
 	bookid serial not null
 		constraint book_pk
@@ -26,7 +26,7 @@ create table if not exists book
 )
 ;
 
-create table if not exists rentbook
+create table rentbook
 (
 	rentid integer not null,
 	user_id integer not null
@@ -44,7 +44,7 @@ create table if not exists rentbook
 )
 ;
 
-create table if not exists shoppinglist
+create table shoppinglist
 (
 	id integer not null
 		constraint "ShoppingList_pkey"
