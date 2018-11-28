@@ -1,6 +1,3 @@
---- ================================================================================
---- Table Book
---- ================================================================================
 INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALUES (185, ' Non !', 'Rueda, Claudia', 'Rue du monde', 244, 3);
 INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALUES (59, ' Lenfant quon envoie se coucher', 'Roy, Claude', 'Rue du monde', 432, 3);
 INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALUES (236, ' Je veux mon ptit pot !', 'Ross, Tony', 'Gallimard jeunesse', 475, 3);
@@ -131,9 +128,6 @@ INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALU
 INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALUES (45, ' Chuuut! ', 'Ho, Minfong', 'Flammarion - Père-Castor', 305, 3);
 INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALUES (8, ' Comptines pour doigts et menottes (avec Cédé)', 'Hion, Monique', 'Actes Sud junior', 117, 3);
 INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALUES (92, ' Où est Spot, mon petit chien ?', 'Hill, Éric', 'Nathan', 213, 3);
---- ================================================================================
---- Table usertable
---- ================================================================================
 INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (112, 'Crashtest', 'ADIF+ba6x46Bd/PCC9VKz8ZY03ACCJIeG39MwZl134w=', true, 'testmynewnew@gmail.com', 1, 'zsV23grmLo2I3l3ikj8KAO4j7kbGHp', true);
 INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (108, 'Protected', 'pdzpn0PwwN/64ZNXaqsmz4K7QQm9ne9vJa9Nebjc+70=', true, 'max.leboiteux@gmail.com', 3, 'vKxRfKy95bAkLqk8nFAo1jqybG9x25', false);
 INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (124, 'testeut', 'ujK10OGQrRDdf/cwiYMYJFIeiLofA9j+5Uqn0chIrNM=', true, 'max.lb@laposte.ne', 1, 'ctqqDBtz8Oel16OwvsUECVbymTfZCq', false);
@@ -142,9 +136,6 @@ INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt
 INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (181, 'HelloWorld', 'Ra4iVVbn25z/PfN8D5NRXMvuCfth67IoCmm1tHeq4Lo=', true, 'hello@hotmail.com', 1, 'AAChaMVZrjT6q0wuS2IAoUkj9oRUhm', false);
 INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (182, 'TestCreateRole', 'k7zM1/HxTVIeFIy4ZnpiHw3J5m8pfBuVbdRwKbBmgKY=', true, 'max.lb@laposte.ne', 1, 'ZR5RZkio8CKdFLxu8yqSFMHL5afJfC', false);
 INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (183, 'Test', 'n64s0LH42/EoMJKnYRKetxdGz3ulwvF3BH3Q2d6RgNQ=', false, 'max.leboiteux@gmail.co', 2, 'pfC5JN2xWGahQMUko7V0rzuHPx6EgK', true);
---- ================================================================================
---- Table rentBook
---- ================================================================================
 INSERT INTO public.rentbook (rentid, user_id, book_id, reload, returnbook, create_at, end_at) VALUES (110, 108, 249, false, false, '2018-09-07', '2018-09-08');
 INSERT INTO public.rentbook (rentid, user_id, book_id, reload, returnbook, create_at, end_at) VALUES (111, 108, 195, false, false, '2018-09-07', '2018-09-08');
 INSERT INTO public.rentbook (rentid, user_id, book_id, reload, returnbook, create_at, end_at) VALUES (114, 112, 145, false, true, '2018-09-11', '2018-10-11');
@@ -166,9 +157,6 @@ INSERT INTO public.rentbook (rentid, user_id, book_id, reload, returnbook, creat
 INSERT INTO public.rentbook (rentid, user_id, book_id, reload, returnbook, create_at, end_at) VALUES (176, 108, 61, true, true, '2018-11-14', '2019-01-14');
 INSERT INTO public.rentbook (rentid, user_id, book_id, reload, returnbook, create_at, end_at) VALUES (180, 108, 139, false, true, '2018-11-16', '2018-12-16');
 INSERT INTO public.rentbook (rentid, user_id, book_id, reload, returnbook, create_at, end_at) VALUES (179, 108, 60, false, true, '2018-11-16', '2018-12-16');
---- ================================================================================
---- Table shoppingList
---- ================================================================================
 INSERT INTO public.shoppinglist (id, idusershop, dispo, idbookshop, idpannier, create_at, end_at) VALUES (148, 108, false, 111, '0000000108/2018-11-14/2', '2018-11-14 02:03:23.968', '2018-11-14 02:03:23.968');
 INSERT INTO public.shoppinglist (id, idusershop, dispo, idbookshop, idpannier, create_at, end_at) VALUES (153, 108, false, 65, '0000000108/2018-11-14/2', '2018-11-14 02:25:01.9', '2018-11-14 04:25:01.903');
 INSERT INTO public.shoppinglist (id, idusershop, dispo, idbookshop, idpannier, create_at, end_at) VALUES (149, 108, false, 111, '0000000108/2018-11-14/2', '2018-11-14 02:16:52.075', '2018-11-14 02:16:52.075');
