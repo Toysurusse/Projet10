@@ -5,8 +5,7 @@ services:
     ports:
       - "192.168.0.17:5432:5432"
     volumes:
-       - "./data/db:/var/lib/postgresql/data"
-       - "./init/db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
+       - "/var/lib/postgresql/data"
     environment:
       - POSTGRES_DB=libraryDB
       - POSTGRES_USER=postgres
