@@ -242,7 +242,6 @@ INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALU
 INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALUES (194, ' Chut, chut, Charlotte !', 'Wells, Rosemary', 'Gallimard jeunesse', 425, 0);
 INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALUES (1320, 'Les Postiches2', 'test', 'Trinors', 180, 0);
 INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALUES (1321, ' Bonsoir Lune', 'Wise Brown, Margaret', 'Lécole des loisirs', 451, 3);
-INSERT INTO public.book (bookid, bookname, author, editeurs, nbpage, dispo) VALUES (1850, 'CreateBook', 'Auteur', 'Editors', 251, 3);
 INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (112, 'Crashtest', 'ADIF+ba6x46Bd/PCC9VKz8ZY03ACCJIeG39MwZl134w=', true, 'testmynewnew@gmail.com', 1, 'zsV23grmLo2I3l3ikj8KAO4j7kbGHp', true);
 INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (108, 'Protected', 'pdzpn0PwwN/64ZNXaqsmz4K7QQm9ne9vJa9Nebjc+70=', true, 'max.leboiteux@gmail.com', 3, 'vKxRfKy95bAkLqk8nFAo1jqybG9x25', false);
 INSERT INTO public.usertable (userid, pseudo, password, gender, mail, role, salt, delete) VALUES (124, 'testeut', 'ujK10OGQrRDdf/cwiYMYJFIeiLofA9j+5Uqn0chIrNM=', true, 'max.lb@laposte.ne', 1, 'ctqqDBtz8Oel16OwvsUECVbymTfZCq', false);
