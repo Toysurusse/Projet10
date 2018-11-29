@@ -110,7 +110,7 @@ public class Rent extends Connect {
 
         AnnotationConfigApplicationContext contextbook = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         client.book.BookClient clientbook = contextbook.getBean(BookClient.class);
-        OutputSOABook response = clientbook.getBook();
+        OutputSOABook response = clientbook.getBook(new Authentication("username","password"));
 
         rentbook = outputSOARentbookByUser.getResult();
             bookList = response.getResult();
@@ -139,8 +139,8 @@ public class Rent extends Connect {
 
         AnnotationConfigApplicationContext contextbook = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         client.book.BookClient clientbook = contextbook.getBean(BookClient.class);
-        OutputSOABookById outputSOABookById = clientbook.getBookById( outputSOARentbookById.getResult().getBookId());
-        OutputSOAddConfirm outputSOAddConfirm = clientbook.getBookAdd( outputSOABookById.getResult());
+        OutputSOABookById outputSOABookById = clientbook.getBookById(new Authentication("username","password"), outputSOARentbookById.getResult().getBookId());
+        OutputSOAddConfirm outputSOAddConfirm = clientbook.getBookAdd(new Authentication("username","password"), outputSOABookById.getResult());
 
         System.out.println(outputSOAddConfirm.getResult());
 

@@ -42,7 +42,7 @@ public class Reload extends Connect {
         rentbook = outputSOARentbookById.getResult();
         AnnotationConfigApplicationContext contextbook = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         client.book.BookClient clientbook = contextbook.getBean(BookClient.class);
-        OutputSOABookById response = clientbook.getBookById(rentbook.getBookId());
+        OutputSOABookById response = clientbook.getBookById(new Authentication("username","password"), rentbook.getBookId());
 
         listrented=new BookAndRent(response.getResult(),rentbook);
 

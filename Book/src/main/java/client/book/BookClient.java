@@ -7,53 +7,49 @@ import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 
 public class BookClient extends WebServiceGatewaySupport {
 
-    private Authentication getauthentication(){
-        return new Authentication("username","password");
-    }
-    
-    public OutputSOABook getBook() {
+    public OutputSOABook getBook(Authentication authentication) {
         InputSOABook request = new InputSOABook();
         request.setTest("Test");
         return (OutputSOABook) getWebServiceTemplate()
                 .marshalSendAndReceive(request,
                         new SecurityHeader(
-                                getauthentication()));
+                                authentication));
     }
 
-    public OutputSOABookSearch getSearch( String search) {
+    public OutputSOABookSearch getSearch(Authentication authentication, String search) {
         InputSOABookSearch request = new InputSOABookSearch();
         request.setTest(search);
         return (OutputSOABookSearch) getWebServiceTemplate()
                 .marshalSendAndReceive(request,
                         new SecurityHeader(
-                                getauthentication()));
+                                authentication));
     }
 
-    public OutputSOABookById getBookById( int id) {
+    public OutputSOABookById getBookById(Authentication authentication, int id) {
         InputSOABookById request = new InputSOABookById();
         request.setId(id);
         return (OutputSOABookById) getWebServiceTemplate()
                 .marshalSendAndReceive(request,
                         new SecurityHeader(
-                                getauthentication()));
+                                authentication));
     }
 
-    public OutputSOAddConfirm getBookAdd( Book book) {
+    public OutputSOAddConfirm getBookAdd(Authentication authentication, Book book) {
         InputSOABookAdd request = new InputSOABookAdd();
         request.setBook(book);
         return (OutputSOAddConfirm) getWebServiceTemplate()
                 .marshalSendAndReceive(request,
                         new SecurityHeader(
-                                getauthentication()));
+                                authentication));
     }
 
-    public OutputSODelConfirm getBookDel( Book book) {
+    public OutputSODelConfirm getBookDel(Authentication authentication, Book book) {
         InputSOABookDel request = new InputSOABookDel();
         request.setBook(book);
         return (OutputSODelConfirm) getWebServiceTemplate()
                 .marshalSendAndReceive(request,
                         new SecurityHeader(
-                                getauthentication()));
+                                authentication));
     }
 
 }
