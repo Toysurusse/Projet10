@@ -34,7 +34,6 @@ com\library\SOABookaddEndpointService.class
 action\admin\User.class
 com\library\InputSOABookDel.class
 com\library\SOAShopByIdEndpoint.class
-entity\ShoppingList.class
 com\library\Book.class
 com\library\SOABookSearchEndpointService.class
 action\privacy\Encrypt.class
