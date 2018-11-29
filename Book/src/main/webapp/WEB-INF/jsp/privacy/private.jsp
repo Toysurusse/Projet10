@@ -72,7 +72,7 @@
                     </div>
                     <div class="col-1">
                         <s:a action="addToShop">
-                            <img src="<%=request.getContextPath()%>/struts2-archetype-starter/picture/ajouter.png" height="30" width="30"/>
+                            <img src="<%=request.getContextPath()%>/picture/ajouter.png" height="30" width="30"/>
                             <s:param name="idBook"><s:property value="id"/></s:param>
                         </s:a>
                     </div>
