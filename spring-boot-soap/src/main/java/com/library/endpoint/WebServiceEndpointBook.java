@@ -21,7 +21,7 @@ import java.util.List;
 @Endpoint
 public class WebServiceEndpointBook {
 
-        private static final String NAMESPACE_URI = "http://javainuse.com";
+        private static final String NAMESPACE_URI = "http://library.com";
 
         @Autowired
         BookService bookService;
