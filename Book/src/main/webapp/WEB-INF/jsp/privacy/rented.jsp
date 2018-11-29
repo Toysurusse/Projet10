@@ -97,14 +97,14 @@
                                     </s:if>
                                     <s:else>
                                         <s:a action="reloadbookInit">
-                                            <img src="../../../picture/Prolonger.png" height="30" width="30"/>
+                                            <img src="<%=request.getContextPath()%>/picture/Prolonger.png" height="30" width="30"/>
                                             <s:param name="idBook"><s:property value="rentid"/></s:param>
                                         </s:a> <br>
                                     </s:else>
                                 </div>
                                 <div class="col-1">
                                     <s:a action="returnbook">
-                                        <img src="../../../picture/Delete.png" height="30" width="30"/>
+                                        <img src="<%=request.getContextPath()%>/picture/Delete.png" height="30" width="30"/>
                                         <s:param name="idBook"><s:property value="rentid"/></s:param>
                                     </s:a> <br>
                                 </div>

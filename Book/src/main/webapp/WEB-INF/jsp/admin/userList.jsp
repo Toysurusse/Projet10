@@ -13,7 +13,7 @@
 
 <h1 class="text-center">Liste des Utilisateurs :
     <s:a action="userCreateInit">
-        <img src="../../../picture/ajouter.png" height="30" width="30"/>
+        <img src="<%=request.getContextPath()%>/picture/ajouter.png" height="30" width="30"/>
     </s:a>
 </h1>
 
@@ -35,13 +35,13 @@
                         </div>
                         <div class="col-1">
                             <s:a action="userUpInit">
-                                <img src="../../../picture/Prolonger.png" height="30" width="30"/>
+                                <img src="<%=request.getContextPath()%>/picture/Prolonger.png" height="30" width="30"/>
                                 <s:param name="id"><s:property value="userid"/></s:param>
                             </s:a> <br>
                         </div>
                         <div class="col-1">
                             <s:a action="userDelete">
-                                <img src="../../../picture/Delete.png" height="30" width="30"/>
+                                <img src="<%=request.getContextPath()%>/picture/Delete.png" height="30" width="30"/>
                                 <s:param name="id"><s:property value="userid"/></s:param>
                             </s:a> <br>
                         </div>
@@ -62,13 +62,13 @@
                         </div>
                         <div class="col-1">
                             <s:a action="userUpInit">
-                                <img src="../../../picture/Prolonger.png" height="30" width="30"/>
+                                <img src="<%=request.getContextPath()%>/picture/Prolonger.png" height="30" width="30"/>
                                 <s:param name="id"><s:property value="userid"/></s:param>
                             </s:a> <br>
                         </div>
                         <div class="col-1">
                             <s:a action="userActive">
-                                <img src="../../../picture/ajouter.png" height="30" width="30"/>
+                                <img src="<%=request.getContextPath()%>/picture/ajouter.png" height="30" width="30"/>
                                 <s:param name="id"><s:property value="userid"/></s:param>
                             </s:a> <br>
                         </div>

@@ -18,10 +18,10 @@
     <title>Accueil</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../startbootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/startbootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../../startbootstrap/css/full-width-pics.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/startbootstrap/css/full-width-pics.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -105,7 +105,7 @@
 
 <!-- Header - set the background image for the header in the line below -->
 <header class="py-5 bg-image-full" style="background-image: url('https://unsplash.it/1900/1080?image=1076');">
-    <img class="img-fluid d-block mx-auto" src="../../picture/book.JPG" alt="">
+    <img class="img-fluid d-block mx-auto" src="<%=request.getContextPath()%>/picture/book.JPG" alt="">
 </header>
 
 <decorator:body/>
@@ -126,8 +126,8 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="../../startbootstrap/vendor/jquery/jquery.min.js"></script>
-<script src="../../startbootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<%=request.getContextPath()%>/startbootstrap/vendor/jquery/jquery.min.js"></script>
+<script src="<%=request.getContextPath()%>/startbootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
