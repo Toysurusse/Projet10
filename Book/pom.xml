@@ -173,7 +173,7 @@
                             <configuration>
                                 <bindingDirectory>src/bindings</bindingDirectory>
                                 <wsdlUrls>
-                                    <wsdlUrl>http://localhost:8085/library/ws/library.wsdl</wsdlUrl>
+                                    <wsdlUrl>http://192.168.0.17:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/library.wsdl</wsdlUrl>
                                 </wsdlUrls>
                             </configuration>
                         </execution>
