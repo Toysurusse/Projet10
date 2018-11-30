@@ -12,7 +12,7 @@ public class Shoppinglist implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "iduser", unique = true, nullable = false)
+    @Column(name = "id", unique = true, nullable = false)
     private int id;
 
     @Column(name = "idusershop")
