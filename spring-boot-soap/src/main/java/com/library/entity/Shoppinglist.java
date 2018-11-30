@@ -13,7 +13,7 @@ public class Shoppinglist implements Serializable {
     private static final long serialVersionUID = 2L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="books_sequence")
     @Column(name = "id")
     private int id;
 

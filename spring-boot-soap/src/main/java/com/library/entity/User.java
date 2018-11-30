@@ -10,7 +10,7 @@ public class User implements Serializable {
     private static final long serialVersionUID = 2L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="books_sequence")
     @Column(name="userid")
     private int id;
 

@@ -1,6 +1,10 @@
+CREATE SEQUENCE books_sequence
+  start 1000
+  increment 1;
+
 create table usertable
 (
-	userid int identity(1000,1) not null
+	userid serial not null
 		constraint usertable_pk
 			primary key,
 	pseudo varchar(200) not null,
@@ -15,7 +19,7 @@ create table usertable
 
 create table book
 (
-	bookid int identity(1000,1) not null
+	bookid serial not null
 		constraint book_pk
 			primary key,
 	bookname varchar(200) not null,
@@ -28,7 +32,7 @@ create table book
 
 create table rentbook
 (
-	rentid int identity(1000,1) not null,
+	rentid serial not null,
 	user_id integer not null
 		constraint usertable_rentbook_fk
 			references usertable,
@@ -46,7 +50,7 @@ create table rentbook
 
 create table shoppinglist
 (
-	id int identity(1000,1) not null
+	id serial not null
 		constraint "ShoppingList_pkey"
 			primary key,
 	idusershop integer not null
