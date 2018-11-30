@@ -46,7 +46,7 @@ create table rentbook
 
 create table shoppinglist
 (
-	id integer not null
+	id serial not null
 		constraint "ShoppingList_pkey"
 			primary key,
 	idusershop integer not null

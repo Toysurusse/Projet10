@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "Shoppinglist")
+@Table(name = "shoppinglist")
 public class Shoppinglist implements Serializable {
 
     private static final long serialVersionUID = 2L;

@@ -22,7 +22,7 @@ public class ShopMapper {
         Shoppinglist shopEntity = new Shoppinglist(shop.getIdusershop(), shop.getIdbookshop(), new Timestamp(shop.getCreateat().toGregorianCalendar().getTimeInMillis()), new Timestamp(shop.getEndat().toGregorianCalendar().getTimeInMillis()),shop.isDispo(), shop.getIdpannier());
         logger.trace(shopEntity.getCreate_at());
         logger.info(shop.getId());
-        shopEntity.setId(2);
+        shopEntity.setId(shop.getId());
         logger.info(shopEntity.getId());
         return shopEntity;
     }
