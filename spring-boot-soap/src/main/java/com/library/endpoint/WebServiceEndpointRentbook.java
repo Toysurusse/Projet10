@@ -24,90 +24,129 @@ public class WebServiceEndpointRentbook {
 
     private static final String NAMESPACE_URI = "http://library.com";
 
-    @Autowired
-    RentService rentService;
+        @Autowired
+        RentService rentService;
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOARentbook")
-    @ResponsePayload
-    public OutputSOARentbook getRentbook(@RequestPayload InputSOARentbook request,
-                                         @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+        @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOARentbook")
+        @ResponsePayload
+        public OutputSOARentbook getRentbook(@RequestPayload InputSOARentbook request,
+                                             @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
 
-        OutputSOARentbook response=null;
-        List<Rentbook> output= rentService.findAll();
-        ObjectFactory factory = new ObjectFactory();
-        response = factory.createOutputSOARentbook();
-        response.getResult().addAll(output);
+            Authentication authentication = getAuthentication(auth);
+            OutputSOARentbook response=null;
+            List<Rentbook> output= rentService.findAll();
+            ObjectFactory factory = new ObjectFactory();
+            response = factory.createOutputSOARentbook();
+            response.getResult().addAll(output);
 
-        return response;
-    }
+            return response;
+        }
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOARentbookLate")
-    @ResponsePayload
-    public OutputSOARentbookLate getRentbookLate(@RequestPayload InputSOARentbookLate request,
-                                                 @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+        @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOARentbookLate")
+        @ResponsePayload
+        public OutputSOARentbookLate getRentbookLate(@RequestPayload InputSOARentbookLate request,
+                                                     @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
 
-        OutputSOARentbookLate response=null;
-        List<Latebook> output= rentService.findByLate();
-        ObjectFactory factory = new ObjectFactory();
-        response = factory.createOutputSOARentbookLate();
-        response.getResult().addAll(output);
+            Authentication authentication = getAuthentication(auth);
+            OutputSOARentbookLate response=null;
+            List<Latebook> output= rentService.findByLate();
+            ObjectFactory factory = new ObjectFactory();
+            response = factory.createOutputSOARentbookLate();
+            response.getResult().addAll(output);
 
-        return response;
-    }
+            return response;
+        }
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOARentbookByUser")
-    @ResponsePayload
-    public OutputSOARentbookByUser getRentbookByUser(@RequestPayload InputSOARentbookByUser request,
-                                         @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+        @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOARentbookByUser")
+        @ResponsePayload
+        public OutputSOARentbookByUser getRentbookByUser(@RequestPayload InputSOARentbookByUser request,
+                                                         @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+            Authentication authentication = getAuthentication(auth);
+            OutputSOARentbookByUser response=null;
+            List<Rentbook> output= rentService.findByUserId(request.getId());
+            ObjectFactory factory = new ObjectFactory();
+            response = factory.createOutputSOARentbookByUser();
+            response.getResult().addAll(output);
 
-        OutputSOARentbookByUser response=null;
-        List<Rentbook> output= rentService.findByUserId(request.getId());
-        ObjectFactory factory = new ObjectFactory();
-        response = factory.createOutputSOARentbookByUser();
-        response.getResult().addAll(output);
+            return response;
+        }
 
-        return response;
-    }
+        private Authentication getAuthentication(SoapHeaderElement header){
+            Authentication authentication = null;
+            try {
 
+                JAXBContext context = JAXBContext.newInstance(Authentication.class);
+                Unmarshaller unmarshaller = context.createUnmarshaller();
+                authentication = (Authentication) unmarshaller.unmarshal(header.getSource());
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOARentbookById")
-    @ResponsePayload
-    public OutputSOARentbookById hello(@RequestPayload InputSOARentbookById request,
-                                   @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+            } catch (JAXBException e) {
+                e.printStackTrace();
+            }
+            return authentication;
+        }
 
-        Rentbook output= rentService.findById(request.getId());
-
-        ObjectFactory factory = new ObjectFactory();
-        OutputSOARentbookById response = factory.createOutputSOARentbookById();
-        response.setResult(output);
-
-        return response;
-    }
-
-
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOARentbookAdd")
-    @ResponsePayload
-    public OutputSOARentbookAddConfirm Add(@RequestPayload InputSOARentbookAdd request,
-                                  @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
-
-        ObjectFactory factory = new ObjectFactory();
-        OutputSOARentbookAddConfirm response = factory.createOutputSOARentbookAddConfirm();
-        String result = rentService.add(request.getRentbook());
-
-        response.setResult(result);
-        return response;
-    }
-
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOARentbookBack")
-    @ResponsePayload
-    public OutputSOARentbookBackConfirm Back(@RequestPayload InputSOARentbookBack request,
+        @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOARentbookById")
+        @ResponsePayload
+        public OutputSOARentbookById hello(@RequestPayload InputSOARentbookById request,
                                            @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
 
-        ObjectFactory factory = new ObjectFactory();
-        OutputSOARentbookBackConfirm response = factory.createOutputSOARentbookBackConfirm();
-        String result = rentService.back(request.getRentbook());
+            Authentication authentication = getAuthentication(auth);
 
-        response.setResult(result);
-        return response;
+            Rentbook output= rentService.findById(request.getId());
+
+            ObjectFactory factory = new ObjectFactory();
+            OutputSOARentbookById response = factory.createOutputSOARentbookById();
+            response.setResult(output);
+
+            return response;
+        }
+
+
+        @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOARentbookAdd")
+        @ResponsePayload
+        public OutputSOARentbookAddConfirm Add(@RequestPayload InputSOARentbookAdd request,
+                                               @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+
+            Authentication authentication = getAuthentication(auth);
+
+            ObjectFactory factory = new ObjectFactory();
+            OutputSOARentbookAddConfirm response = factory.createOutputSOARentbookAddConfirm();
+            String result = rentService.add(request.getRentbook());
+
+            response.setResult(result);
+            return response;
+        }
+
+        @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOARentbookBack")
+        @ResponsePayload
+        public OutputSOARentbookBackConfirm Back(@RequestPayload InputSOARentbookBack request,
+                                                 @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+
+            Authentication authentication = getAuthentication(auth);
+
+            ObjectFactory factory = new ObjectFactory();
+            OutputSOARentbookBackConfirm response = factory.createOutputSOARentbookBackConfirm();
+            String result = rentService.back(request.getRentbook());
+
+            response.setResult(result);
+            return response;
+        }
+
+
+        @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOARentbookDel")
+        @ResponsePayload
+        public OutputSODelConfirm Del(@RequestPayload InputSOARentbookDel request,
+                                      @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+
+            Authentication authentication = getAuthentication(auth);
+
+            ObjectFactory factory = new ObjectFactory();
+            OutputSODelConfirm response = factory.createOutputSODelConfirm();
+            String result;
+
+            rentService.add(request.getRentbook());
+
+            response.setResult("Ok");
+            return response;
+        }
     }
-}

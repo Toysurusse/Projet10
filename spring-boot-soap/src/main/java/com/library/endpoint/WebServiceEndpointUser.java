@@ -22,7 +22,7 @@ import java.util.List;
 public class WebServiceEndpointUser {
     private static final Logger LOGGER = LoggerFactory.getLogger(WebServiceEndpointUser.class);
 
-	private static final String NAMESPACE_URI = "http://library.com";
+    private static final String NAMESPACE_URI = "http://library.com";
 
     @Autowired
     UserService userService;
@@ -30,10 +30,11 @@ public class WebServiceEndpointUser {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOAUser")
     @ResponsePayload
     public OutputSOAUser getBeer(@RequestPayload InputSOAUser request,
-                                 @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+                                 @SoapHeader("{" + Authentication.AUTH_NS + "}authentication") SoapHeaderElement auth) {
 
-        OutputSOAUser response=null;
-        List<User> output= userService.findAll();
+        Authentication authentication = getAuthentication(auth);
+        OutputSOAUser response = null;
+        List<User> output = userService.findAll();
         ObjectFactory factory = new ObjectFactory();
         response = factory.createOutputSOAUser();
         response.getResult().addAll(output);
@@ -44,13 +45,15 @@ public class WebServiceEndpointUser {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOAUserTest")
     @ResponsePayload
     public OutputSOAUserTest control(@RequestPayload InputSOAUserTest request,
-                                     @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+                                     @SoapHeader("{" + Authentication.AUTH_NS + "}authentication") SoapHeaderElement auth) {
 
-        OutputSOAUserTest response=null;
+        Authentication authentication = getAuthentication(auth);
+        OutputSOAUserTest response = null;
 
-        User user= new User();
+        User user = new User();
         user.setPseudo(request.getPseudo());
-        User output= userService.control(user);
+        User output = userService.control(user);
+        System.out.println(output.getPseudo());
         ObjectFactory factory = new ObjectFactory();
         response = factory.createOutputSOAUserTest();
 
@@ -60,13 +63,28 @@ public class WebServiceEndpointUser {
     }
 
 
+    private Authentication getAuthentication(SoapHeaderElement header) {
+        Authentication authentication = null;
+        try {
+
+            JAXBContext context = JAXBContext.newInstance(Authentication.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            authentication = (Authentication) unmarshaller.unmarshal(header.getSource());
+
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        return authentication;
+    }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOAUserById")
     @ResponsePayload
     public OutputSOAUserById hello(@RequestPayload InputSOAUserById request,
-                                   @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+                                   @SoapHeader("{" + Authentication.AUTH_NS + "}authentication") SoapHeaderElement auth) {
 
-        User output= userService.findById(request.getId());
+        Authentication authentication = getAuthentication(auth);
+
+        User output = userService.findById(request.getId());
 
         ObjectFactory factory = new ObjectFactory();
         OutputSOAUserById response = factory.createOutputSOAUserById();
@@ -79,11 +97,13 @@ public class WebServiceEndpointUser {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOAUserAdd")
     @ResponsePayload
     public OutputSOAddConfirm Add(@RequestPayload InputSOAUserAdd request,
-                                  @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+                                  @SoapHeader("{" + Authentication.AUTH_NS + "}authentication") SoapHeaderElement auth) {
 
-	    ObjectFactory factory = new ObjectFactory();
+        Authentication authentication = getAuthentication(auth);
+
+        ObjectFactory factory = new ObjectFactory();
         OutputSOAddConfirm response = factory.createOutputSOAddConfirm();
-	    String result;
+        String result;
 
         response.setResult(userService.add(request.getUser()));
         return response;
@@ -92,15 +112,18 @@ public class WebServiceEndpointUser {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOAUserDel")
     @ResponsePayload
     public OutputSODelConfirm Del(@RequestPayload InputSOAUserDel request,
-                                  @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
+                                  @SoapHeader("{" + Authentication.AUTH_NS + "}authentication") SoapHeaderElement auth) {
+
+        Authentication authentication = getAuthentication(auth);
 
         ObjectFactory factory = new ObjectFactory();
         OutputSODelConfirm response = factory.createOutputSODelConfirm();
         String result;
 
-        userService.add(request.getUser());
+        userService.delete(request.getUser());
 
         response.setResult("Ok");
         return response;
     }
 }
+
