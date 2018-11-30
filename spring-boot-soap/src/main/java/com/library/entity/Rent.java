@@ -11,7 +11,6 @@ public class Rent implements Serializable {
     private static final long serialVersionUID = 2L;
 
     @Id
-    @SequenceGenerator(name="books_sequence", sequenceName="account_rentid_seq")
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="books_sequence")
     @Column(name="rentid")
     private int id;
