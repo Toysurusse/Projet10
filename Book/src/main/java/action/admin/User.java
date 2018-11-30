@@ -87,7 +87,7 @@ public class User extends Connect {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
         UserClient client = context.getBean(UserClient.class);
-        OutputSOAUserById response = client.getUserById( id);
+        OutputSOAUserById response = client.getUserById(id);
 
         user=response.getResult();
         return SUCCESS;
@@ -97,7 +97,7 @@ public class User extends Connect {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
         UserClient client = context.getBean(UserClient.class);
-        OutputSOAUserById userById = client.getUserById( user.getUserid());
+        OutputSOAUserById userById = client.getUserById(user.getUserid());
         user.setUserid(userById.getResult().getUserid());
         user.setPassword(userById.getResult().getPassword());
         user.setSalt(userById.getResult().getSalt());
@@ -105,8 +105,7 @@ public class User extends Connect {
         controlMDP(user);
 
         if(!this.hasErrors()) {
-            OutputSOAddConfirm response = client.getUserAdd( user);
-            System.out.println(response.getResult());
+            OutputSOAddConfirm response = client.getUserAdd(user);
         }
 
         return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;

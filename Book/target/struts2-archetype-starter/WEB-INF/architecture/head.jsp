@@ -17,10 +17,10 @@
     <title>Full Width Pics - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../startbootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/startbootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../../startbootstrap/css/full-width-pics.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/startbootstrap/css/full-width-pics.css" rel="stylesheet">
 </head>
 
 <body>
@@ -91,8 +91,8 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="../../startbootstrap/vendor/jquery/jquery.min.js"></script>
-<script src="../../startbootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<%=request.getContextPath()%>/startbootstrap/vendor/jquery/jquery.min.js"></script>
+<script src="<%=request.getContextPath()%>/startbootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

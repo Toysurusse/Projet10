@@ -51,7 +51,6 @@ public class WebServiceEndpointUser {
         User user= new User();
         user.setPseudo(request.getPseudo());
         User output= userService.control(user);
-        System.out.println(output.getPseudo());
         ObjectFactory factory = new ObjectFactory();
         response = factory.createOutputSOAUserTest();
 

@@ -1,16 +1,16 @@
 package action.privacy;
 
 
-import action.IndexAction;
 import client.Authentication;
 import client.book.BookClient;
 import client.book.SoapClientBookConfig;
-import client.rent.RentClient;
 import client.rent.SoapClientRentConfig;
+import client.shop.ShopClient;
+import client.shop.SoapClientShopConfig;
 import com.library.*;
 import com.opensymphony.xwork2.ActionSupport;
 import entity.BookAndRent;
-import org.slf4j.LoggerFactory;
+import entity.Shopping;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import javax.xml.datatype.DatatypeConfigurationException;
@@ -21,7 +21,6 @@ import java.util.*;
 
 public class Rent extends Connect {
 
-    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(IndexAction.class);
     public Date create_at;
     public Date end_at;
     public String today;
@@ -30,11 +29,10 @@ public class Rent extends Connect {
     public List<Rentbook> rentbook;
     public List<Book> bookList;
     public List<BookAndRent> listrented = new ArrayList<>();
-    public HashMap<String, Book> rentResult = new HashMap<>();
-
+    public HashMap<String, Shopping> rentResult = new HashMap<>();
 
     public String execute() throws Exception {
-        LOGGER.info("execute / Classe Java Action.privacy.Rent");
+        User user = (User) this.map.get("user");
         //utiliser le calendrier par défaut
         Calendar calendar = Calendar.getInstance();
 
@@ -45,63 +43,67 @@ public class Rent extends Connect {
         today = formater.format(java.util.Calendar.getInstance().getTime());
         calendar.add(calendar.MONTH, 1);
         today4W = formater.format(calendar.getTime());
-        shoppingList = (List<Book>) this.map.get("shop");
+
+        setShoppingList(initShop());
+
         return SUCCESS;
     }
 
     public String rentbook() throws Exception {
-        LOGGER.info("rentbook / Classe Java Action.privacy.Rent");
+
         List<Rentbook> rents = new ArrayList<>();
         User user = (User) this.map.get("user");
 
-        shoppingList = (List<Book>) this.map.get("shop");
+        setShoppingList(initShop());
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);
-        RentClient client = context.getBean(RentClient.class);
+        client.rent.RentClient client = context.getBean(client.rent.RentClient.class);
 
         if (end_at != null && create_at != null) {
             if (end_at.before(create_at)) {
                 this.addActionError("error.DatePost");
             } else {
-                for (Book aShoppingList : shoppingList) {
+                for (Shopping aShoppingList : shoppingList) {
                     Rentbook rent = new Rentbook();
-                    rent.setBookId(aShoppingList.getId());
+                    rent.setBookId(aShoppingList.getIdBook());
                     rent.setUserId(user.getUserid());
                     rent.setCreateat(translate(create_at));
                     rent.setEndat(translate(end_at));
                     rent.setReload(false);
                     rent.setReturnbook(false);
-                    OutputSOARentbookAddConfirm outputSOAddConfirm = client.getRentbookAdd( rent);
+                    System.out.println(rent.getUserId() + " ; " + rent.getBookId() + " ; " + rent.getRentid() + " ; " + rent.getCreateat() + " ; " + rent.getEndat() + " ; " + rent.isReload() + " ; " + rent.isReturnbook());
+                    OutputSOARentbookAddConfirm outputSOAddConfirm = client.getRentbookAdd(rent);
                     rentResult.put(outputSOAddConfirm.getResult(), aShoppingList);
+
+                    //Get Shop Line From BDD and set false
+                    OutputSOAShopById shopList = createInstanceBDDShop().getShopById(new Authentication("username", "password"), aShoppingList.getIdPannier());
+                    shopList.getResult().setDispo(false);
+                    System.out.println("test BDD : "+shopList.getResult().isDispo());
+                    OutputSOAddConfirm shopUpdate = createInstanceBDDShop().getShopAdd(new Authentication("username", "password"), shopList.getResult());
                 }
             }
         } else {
             this.addActionError("error.DateEmpty");
         }
 
-        for (Map.Entry<String, Book> e : rentResult.entrySet()) {
+        for (Map.Entry<String, Shopping> e : rentResult.entrySet()) {
             if (e.getKey().equals("Ok")) {
-                shoppingList.remove(e.getValue());
                 rentResult.remove(e.getKey(), e.getValue());
             }
         }
-
-        this.map.remove("shop");
-        this.map.put("shop", shoppingList);
 
         return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
     }
 
 
     public String rented() {
-        LOGGER.info("rented / Classe Java Action.privacy.Rent");
         SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy");
         today = formater.format(java.util.Calendar.getInstance().getTime());
         User user = (User) this.map.get("user");
         int id = user.getUserid();
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);
-        RentClient client = context.getBean(RentClient.class);
+        client.rent.RentClient client = context.getBean(client.rent.RentClient.class);
 
         OutputSOARentbookByUser outputSOARentbookByUser = null;
         outputSOARentbookByUser = client.getRentbookByUser(id);
@@ -110,47 +112,50 @@ public class Rent extends Connect {
 
         AnnotationConfigApplicationContext contextbook = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         client.book.BookClient clientbook = contextbook.getBean(BookClient.class);
-        OutputSOABook response = clientbook.getBook(new Authentication("username","password"));
+        OutputSOABook response = clientbook.getBook(new Authentication("username", "password"));
 
         rentbook = outputSOARentbookByUser.getResult();
-            bookList = response.getResult();
-            for (Rentbook r : rentbook) {
-                for (Book b : bookList) {
-                    if (r.getBookId() == b.getId()) {
-                        BookAndRent bookAndRent = new BookAndRent(b, r);
-                        listrented.add(bookAndRent);
-                    }
+        bookList = response.getResult();
+        for (Rentbook r : rentbook) {
+            for (Book b : bookList) {
+                if (r.getBookId() == b.getId()) {
+                    BookAndRent bookAndRent = new BookAndRent(b, r);
+                    listrented.add(bookAndRent);
                 }
             }
+        }
         return SUCCESS;
     }
 
     public String returnBook() throws Exception {
-        LOGGER.info("returnBook / Classe Java Action.privacy.Rent");
+
         User user = (User) this.map.get("user");
 
+        //Update returnBook
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);
-        RentClient client = context.getBean(RentClient.class);
-        OutputSOARentbookById outputSOARentbookById = client.getRentbookById( idBook);
+        client.rent.RentClient client = context.getBean(client.rent.RentClient.class);
+        OutputSOARentbookById outputSOARentbookById = client.getRentbookById(idBook);
         outputSOARentbookById.getResult().setReturnbook(true);
-        OutputSOARentbookAddConfirm outputSOARentbookAddConfirm = client.getRentbookAdd( outputSOARentbookById.getResult());
+        OutputSOARentbookAddConfirm outputSOARentbookAddConfirm = client.getRentbookAdd(outputSOARentbookById.getResult());
 
-        rentbook = new ArrayList<>();
-
-        AnnotationConfigApplicationContext contextbook = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
-        client.book.BookClient clientbook = contextbook.getBean(BookClient.class);
-        OutputSOABookById outputSOABookById = clientbook.getBookById(new Authentication("username","password"), outputSOARentbookById.getResult().getBookId());
-        OutputSOAddConfirm outputSOAddConfirm = clientbook.getBookAdd(new Authentication("username","password"), outputSOABookById.getResult());
-
-        System.out.println(outputSOAddConfirm.getResult());
+        //Update dispo Book count
+        OutputSOABookById outputSOABookById = createInstanceBDDBook().getBookById(new Authentication("username", "password"), outputSOARentbookById.getResult().getBookId());
+        outputSOABookById.getResult().setDispo(outputSOABookById.getResult().getDispo()+1);
+        OutputSOAddConfirm outputSOAddConfirm = createInstanceBDDBook().getBookAdd(new Authentication("username", "password"), outputSOABookById.getResult());
 
         return SUCCESS;
     }
 
     public String input() throws Exception {
-        LOGGER.info("input / Classe Java Action.privacy.Rent");
-        shoppingList = (List<Book>) this.map.get("shop");
-        System.out.println(end_at + " :c " + create_at);
+        User user = (User) this.map.get("user");
+        setShoppingList(initShop());
+
+        return SUCCESS;
+    }
+
+    public String deleteToRent() throws Exception {
+
+        deleteShop ();
 
         return SUCCESS;
     }
@@ -208,11 +213,11 @@ public class Rent extends Connect {
         this.rentbook = rentbook;
     }
 
-    public HashMap<String, Book> getRentResult() {
+    public HashMap<String, Shopping> getRentResult() {
         return rentResult;
     }
 
-    public void setRentResult(HashMap<String, Book> rentResult) {
+    public void setRentResult(HashMap<String, Shopping> rentResult) {
         this.rentResult = rentResult;
     }
 

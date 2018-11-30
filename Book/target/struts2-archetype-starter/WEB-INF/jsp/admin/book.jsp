@@ -73,13 +73,13 @@
                     </div>
                     <div class="col-1">
                         <s:a action="bookUpdateInit">
-                            <img src="../../../picture/Prolonger.png" height="30" width="30"/>
+                            <img src="<%=request.getContextPath()%>/picture/Prolonger.png" height="30" width="30"/>
                             <s:param name="idBook"><s:property value="id"/></s:param>
                         </s:a> <br>
                     </div>
                     <div class="col-1">
                         <s:a action="bookDelete">
-                            <img src="../../../picture/Delete.png" height="30" width="30"/>
+                            <img src="<%=request.getContextPath()%>/picture/Delete.png" height="30" width="30"/>
                             <s:param name="idBook"><s:property value="id"/></s:param>
                         </s:a>
                     </div>
