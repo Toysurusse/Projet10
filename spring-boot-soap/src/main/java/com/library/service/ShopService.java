@@ -1,10 +1,12 @@
 package com.library.service;
 
 import com.library.Shop;
+import com.library.SpringBootLibraryApplication;
 import com.library.entity.Book;
 import com.library.entity.Shoppinglist;
 import com.library.mapper.ShopMapper;
 import com.library.repository.ShoppinglistRepository;
+import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +15,7 @@ import java.util.Optional;
 
 @Service
 public class ShopService implements IShopService {
-
+    private static final org.apache.logging.log4j.Logger logger = LogManager.getLogger(SpringBootLibraryApplication.class);
     @Autowired
     private ShoppinglistRepository shopRepository;
 
@@ -33,6 +35,7 @@ public class ShopService implements IShopService {
 
     @Override
     public String add(com.library.Shop shop) {
+        logger.trace("Test id shop : "+shop.getId());
         shopRepository.save(shopMapper.convertEtoD(shop));
         return "Ok";
     }

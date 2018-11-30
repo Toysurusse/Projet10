@@ -18,10 +18,12 @@ public class ShopMapper {
     private static final org.apache.logging.log4j.Logger logger = LogManager.getLogger(SpringBootLibraryApplication.class);
 
     public Shoppinglist convertEtoD (com.library.Shop shop) {
-        System.out.println(shop.getCreateat());
+        logger.trace(shop.getCreateat());
         Shoppinglist shopEntity = new Shoppinglist(shop.getIdusershop(), shop.getIdbookshop(), new Timestamp(shop.getCreateat().toGregorianCalendar().getTimeInMillis()), new Timestamp(shop.getEndat().toGregorianCalendar().getTimeInMillis()),shop.isDispo(), shop.getIdpannier());
-        System.out.println(shopEntity.getCreate_at());
+        logger.trace(shopEntity.getCreate_at());
+        logger.trace(shop.getId());
         shopEntity.setId(shop.getId());
+        logger.trace(shopEntity.getId());
         return shopEntity;
     }
 

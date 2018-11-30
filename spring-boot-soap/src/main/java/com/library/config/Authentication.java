@@ -16,6 +16,11 @@ public class Authentication {
     @XmlElement(namespace = AUTH_NS)
     private String password;
 
+    public Authentication() {
+        this.username = username;
+        this.password = password;
+    }
+
     public Authentication(String username, String password) {
         this.username = username;
         this.password = password;
