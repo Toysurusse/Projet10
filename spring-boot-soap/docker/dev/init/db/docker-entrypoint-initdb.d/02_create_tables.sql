@@ -1,6 +1,6 @@
 create table usertable
 (
-	userid serial not null
+	userid serial identity(1000,1) not null
 		constraint usertable_pk
 			primary key,
 	pseudo varchar(200) not null,
@@ -15,7 +15,7 @@ create table usertable
 
 create table book
 (
-	bookid serial not null
+	bookid serial identity(1000,1) not null
 		constraint book_pk
 			primary key,
 	bookname varchar(200) not null,
@@ -28,7 +28,7 @@ create table book
 
 create table rentbook
 (
-	rentid serial not null,
+	rentid serial identity(1000,1) not null,
 	user_id integer not null
 		constraint usertable_rentbook_fk
 			references usertable,
@@ -46,7 +46,7 @@ create table rentbook
 
 create table shoppinglist
 (
-	id serial not null
+	id serial identity(1000,1) not null
 		constraint "ShoppingList_pkey"
 			primary key,
 	idusershop integer not null

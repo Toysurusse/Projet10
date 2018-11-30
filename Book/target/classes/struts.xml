@@ -50,7 +50,7 @@
             <result name="success">/WEB-INF/jsp/privacy/private.jsp</result>
         </action>
 
-        <action name="InitAccount" class="action.privacy.Connected">
+        <action name="InitAccount" class="action.privacy.Connect">
             <result name="success">/WEB-INF/jsp/privacy/createAccount.jsp</result>
         </action>
 
@@ -77,11 +77,15 @@
         <!-- ======================Shop Actions========================-->
 
         <action name="addToShop" class="action.privacy.Connected" method="addToShop">
-            <result name="success">/WEB-INF/jsp/privacy/private.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">connected</param>
+            </result>
         </action>
 
         <action name="deleteToShop" class="action.privacy.Connected" method="deleteToShop">
-            <result name="success">/WEB-INF/jsp/privacy/private.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">connected</param>
+            </result>
         </action>
 
         <!-- ======================Book management========================-->
@@ -122,20 +126,8 @@
             <result name="success">/WEB-INF/jsp/admin/userList.jsp</result>
         </action>
 
-        <action name="userCreateInit" class="action.admin.User">
-            <result name="success">/WEB-INF/jsp/admin/createUser.jsp</result>
-        </action>
-
         <action name="userUpInit" class="action.admin.User" method="updateUInit">
             <result name="success">/WEB-INF/jsp/admin/updateUser.jsp</result>
-        </action>
-
-        <action name="userCreate" class="action.admin.User" method="createUser">
-            <result name="input">/WEB-INF/jsp/admin/createUser.jsp</result>
-            <result name="success" type="redirectAction">
-                <param name="actionName">userInit</param>
-            </result>
-            <result name="error">/WEB-INF/jsp/admin/createUser.jsp</result>
         </action>
 
         <action name="userUpdate" class="action.admin.User" method="userUpdate">
@@ -143,7 +135,7 @@
             <result name="success" type="redirectAction">
                 <param name="actionName">userInit</param>
             </result>
-            <result name="error">/WEB-INF/jsp/admin/updateUser.jsp</result>
+            <result name="error">/WEB-INF/jsp/admin/book.jsp</result>
         </action>
 
         <action name="userDelete" class="action.admin.User" method="deleteUser">
@@ -167,6 +159,12 @@
         <action name="returnbook" class="action.privacy.Rent" method="returnBook">
             <result name="success" type="redirectAction">
                 <param name="actionName">rented</param>
+            </result>
+        </action>
+
+        <action name="deleteshopRent" class="action.privacy.Rent" method="deleteToRent">
+            <result name="success" type="redirectAction">
+                <param name="actionName">rentTotal</param>
             </result>
         </action>
 
