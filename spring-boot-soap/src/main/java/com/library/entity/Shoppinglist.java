@@ -1,5 +1,7 @@
 package com.library.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -11,7 +13,14 @@ public class Shoppinglist implements Serializable {
     private static final long serialVersionUID = 2L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(
+            strategy= GenerationType.AUTO,
+            generator="native"
+    )
+    @GenericGenerator(
+            name = "native",
+            strategy = "native"
+    )
     private int id;
 
     @Column(name = "idusershop")
