@@ -7,13 +7,14 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "book")
+@SequenceGenerator(name="PERSONNE_SEQUENCE",
+        sequenceName="PERSONNE_SEQ")
 public class Book implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(generator = "SEC_ODONe", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "SEC_ODONe", sequenceName = "SO.SEC_ODONe",allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PERSONNE_SEQUENCE")
     @Column(name="bookid")
     private int id;
 
