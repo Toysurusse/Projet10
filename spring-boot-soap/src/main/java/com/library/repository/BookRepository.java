@@ -16,7 +16,4 @@ public interface BookRepository extends CrudRepository<Book, Integer> {
             nativeQuery = true
     )
     List<Book> search(@Param("searchTerm") String searchTerm);
-
-    @Query(value = "SELECT * FROM book WHERE bookid=%id%", nativeQuery = true)
-    Book findOne(@Param("id") int id);
 }

@@ -2,6 +2,7 @@ package com.library.service;
 
 import com.library.entity.Book;
 import java.util.List;
+import java.util.Optional;
 
 import com.library.mapper.BookMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,15 @@ public class BookService implements IBookService {
 
     @Override
     public com.library.Book findById(int id) {
-        return bookMapper.convertDtoE(bookRepository.findOne(id));
+        return optional(bookRepository.findById(id));
+    }
+
+    private com.library.Book optional(Optional<Book> book){
+        Book bookById=new Book(null,0,null,null,0);
+        if (book.isPresent()){
+            bookById=book.get();
+        }
+        return bookMapper.convertDtoE(bookById);
     }
 
 }
