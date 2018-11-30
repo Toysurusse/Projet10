@@ -1,7 +1,3 @@
-CREATE SCHEMA public
-
-    AUTHORIZATION postgres
-
 	CREATE SEQUENCE books_sequence start 1000 increment 1;
 	CREATE SEQUENCE user_sequence start 1000 increment 1;
 	CREATE SEQUENCE rent_sequence start 1000 increment 1;
@@ -70,8 +66,6 @@ create table shoppinglist
 	idpannier varchar(50)
 )
 ;
-
-
 
 COMMENT ON SCHEMA public
     IS 'standard public schema';
