@@ -1,6 +1,6 @@
 create table usertable
 (
-	userid integer not null
+	userid serial not null
 		constraint usertable_pk
 			primary key,
 	pseudo varchar(200) not null,
@@ -28,7 +28,7 @@ create table book
 
 create table rentbook
 (
-	rentid integer not null,
+	rentid serial not null,
 	user_id integer not null
 		constraint usertable_rentbook_fk
 			references usertable,
