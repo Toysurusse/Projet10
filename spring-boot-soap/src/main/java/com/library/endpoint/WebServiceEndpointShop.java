@@ -66,7 +66,8 @@ public class WebServiceEndpointShop{
         OutputSOAddConfirm response = factory.createOutputSOAddConfirm();
 	    String result;
 
-        response.setResult(shopService.add(request.getShop()));
+        shopService.add(request.getShop());
+        response.setResult("Ok");
         return response;
     }
 

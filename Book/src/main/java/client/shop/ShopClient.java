@@ -16,15 +16,6 @@ public class ShopClient extends WebServiceGatewaySupport {
                                 authentication));
     }
 
-    public OutputSOAShopTest getShopTest(Authentication authentication, String pseudo) {
-        InputSOAShopTest request = new InputSOAShopTest();
-        request.setPseudo(pseudo);
-        return (OutputSOAShopTest) getWebServiceTemplate()
-                .marshalSendAndReceive(request,
-                        new SecurityHeader(
-                                authentication));
-    }
-
     public OutputSOAShopById getShopById(Authentication authentication, int id) {
         InputSOAShopById request = new InputSOAShopById();
         request.setId(id);
@@ -43,7 +34,7 @@ public class ShopClient extends WebServiceGatewaySupport {
                                 authentication));
     }
 
-    public OutputSODelConfirm getShopDel(Authentication authentication, Shop shop) {
+    public OutputSODelConfirm getShopDellllll(Authentication authentication, Shop shop) {
         InputSOAShopDel request = new InputSOAShopDel();
         request.setShop(shop);
         return (OutputSODelConfirm) getWebServiceTemplate()
@@ -55,7 +46,6 @@ public class ShopClient extends WebServiceGatewaySupport {
     public OutputSOAShopSearch getSearch(Authentication authentication, int search) {
         InputSOAShopSearch requests = new InputSOAShopSearch();
         requests.setTest(search);
-        System.out.println("SearchTerm : "+requests.getTest());
         return (OutputSOAShopSearch) getWebServiceTemplate()
                 .marshalSendAndReceive(requests,
                         new SecurityHeader(

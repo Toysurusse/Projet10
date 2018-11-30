@@ -8,6 +8,7 @@ import client.shop.SoapClientShopConfig;
 import client.user.SoapClientUserConfig;
 import client.user.UserClient;
 import com.library.*;
+import com.sun.org.apache.xpath.internal.SourceTree;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import javax.xml.datatype.DatatypeConfigurationException;
@@ -62,6 +63,9 @@ public class Connected extends Connect {
         OutputSOABookById bookToShop = createInstanceBDDBook().getBookById(new Authentication("username", "password"), idBook);
         bookToShop.getResult().setDispo(bookToShop.getResult().getDispo() - 1);
         OutputSOAddConfirm bookUpdate = createInstanceBDDBook().getBookAdd(new Authentication("username", "password"), bookToShop.getResult());
+
+        System.out.println("Shopping List : "+shop.getId()+" ; "+shop.isDispo()+" ; "+shop.getIdbookshop()+" ; "+shop.getIdusershop()+" ; "+shop.getIdpannier()+" ; "+shop.getCreateat()+" ; ");
+
         OutputSOAddConfirm ShopList = createInstanceBDDShop().getShopAdd(new Authentication("username", "password"), shop);
 
         return SUCCESS;
