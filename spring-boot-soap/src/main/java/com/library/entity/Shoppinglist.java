@@ -12,7 +12,6 @@ public class Shoppinglist implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="shopid")
     private int id;
 
     @Column(name = "idusershop")
