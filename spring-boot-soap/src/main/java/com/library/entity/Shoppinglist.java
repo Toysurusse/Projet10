@@ -11,7 +11,8 @@ public class Shoppinglist implements Serializable {
     private static final long serialVersionUID = 2L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQMYCLASSID")
+    @SequenceGenerator(name="SEQMYCLASSID", sequenceName="SEQMYCLASSID")
     private int id;
 
     @Column(name = "idusershop")
