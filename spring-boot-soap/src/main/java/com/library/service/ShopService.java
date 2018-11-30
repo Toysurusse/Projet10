@@ -35,7 +35,7 @@ public class ShopService implements IShopService {
 
     @Override
     public String add(com.library.Shop shop) {
-        System.out.println("Test id shop : "+shop.getId());
+        logger.info("Test id shop : "+shop.getId());
         shopRepository.save(shopMapper.convertEtoD(shop));
         return "Ok";
     }

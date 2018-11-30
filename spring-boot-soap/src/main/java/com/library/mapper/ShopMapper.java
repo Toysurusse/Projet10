@@ -21,9 +21,9 @@ public class ShopMapper {
         logger.trace(shop.getCreateat());
         Shoppinglist shopEntity = new Shoppinglist(shop.getIdusershop(), shop.getIdbookshop(), new Timestamp(shop.getCreateat().toGregorianCalendar().getTimeInMillis()), new Timestamp(shop.getEndat().toGregorianCalendar().getTimeInMillis()),shop.isDispo(), shop.getIdpannier());
         logger.trace(shopEntity.getCreate_at());
-        logger.trace(shop.getId());
+        logger.info(shop.getId());
         shopEntity.setId(shop.getId());
-        logger.trace(shopEntity.getId());
+        logger.info(shopEntity.getId());
         return shopEntity;
     }
 
