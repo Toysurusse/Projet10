@@ -1,5 +1,7 @@
 package com.library.service;
 
+import com.library.Shop;
+import com.library.entity.Book;
 import com.library.entity.Shoppinglist;
 import com.library.mapper.ShopMapper;
 import com.library.repository.ShoppinglistRepository;
@@ -7,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ShopService implements IShopService {
@@ -36,6 +39,14 @@ public class ShopService implements IShopService {
 
     @Override
     public com.library.Shop findById(int id) {
-        return shopMapper.convertDtoE(shopRepository.findOne(id));
+        return optional(shopRepository.findById(id));
+    }
+
+    private com.library.Shop optional(Optional<Shoppinglist> book){
+        Shoppinglist bookById=new Shoppinglist(0,0,null,null,false,null);
+        if (book.isPresent()){
+            bookById=book.get();
+        }
+        return shopMapper.convertDtoE(bookById);
     }
 }

@@ -45,5 +45,4 @@ public class BookService implements IBookService {
         }
         return bookMapper.convertDtoE(bookById);
     }
-
 }

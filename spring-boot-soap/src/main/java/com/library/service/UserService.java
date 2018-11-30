@@ -1,12 +1,14 @@
 package com.library.service;
 
 import com.library.User;
+import com.library.entity.Shoppinglist;
 import com.library.mapper.UserMapper;
 import com.library.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService implements IUserService {
@@ -51,6 +53,14 @@ public class UserService implements IUserService {
 
     @Override
     public com.library.User findById(int id) {
-        return userMapper.convertDtoE(userRepository.findone(id));
+        return optional(userRepository.findById(id));
+    }
+
+    private com.library.User optional(Optional<com.library.entity.User> book){
+        com.library.entity.User userById=new com.library.entity.User(null,null,null,null,0,false);
+        if (book.isPresent()){
+            userById=book.get();
+        }
+        return userMapper.convertDtoE(userById);
     }
 }

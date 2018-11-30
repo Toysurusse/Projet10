@@ -8,7 +8,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer>  {
-
-    @Query(value = "SELECT * FROM usertable WHERE userid=%id%", nativeQuery = true)
-    User findone(int id);
 }

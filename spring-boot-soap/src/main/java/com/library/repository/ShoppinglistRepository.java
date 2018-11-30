@@ -27,8 +27,5 @@ public interface ShoppinglistRepository extends CrudRepository<Shoppinglist, Int
             nativeQuery = true
     )
     List<Shoppinglist> search(@Param("searchTerm") int searchTerm);
-
-    @Query(value = "SELECT * FROM shoppinglist WHERE id=%id%", nativeQuery = true)
-    Shoppinglist findOne(int id);
 }
 

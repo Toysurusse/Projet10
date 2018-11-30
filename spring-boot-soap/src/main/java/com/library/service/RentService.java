@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RentService implements IRentService {
@@ -58,8 +59,17 @@ public class RentService implements IRentService {
 
     @Override
     public com.library.Rentbook findById(int id) {
-        return rentMapper.convertDtoE(rentRepository.findOne(id));
+        return optional(rentRepository.findById(id));
     }
+
+    private com.library.Rentbook optional(Optional<com.library.entity.Rent> book){
+        com.library.entity.Rent RentbookById=new com.library.entity.Rent(0,0,null,null,false,false);
+        if (book.isPresent()){
+            RentbookById=book.get();
+        }
+        return rentMapper.convertDtoE(RentbookById);
+    }
+
 
     @Override
     public List<com.library.Rentbook> findByUserId(int id) {
