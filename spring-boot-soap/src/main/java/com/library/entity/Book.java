@@ -12,7 +12,8 @@ public class Book implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "auto_genB")
+    @SequenceGenerator(name = "auto_genB", sequenceName = "B")
     @Column(name="bookid")
     private int id;
 
