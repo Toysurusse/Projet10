@@ -6,14 +6,12 @@ import java.sql.Timestamp;
 
 @Entity
 @Table(name = "shoppinglist")
-@SequenceGenerator(name="seq", initialValue=1, allocationSize=100)
 public class Shoppinglist implements Serializable {
 
     private static final long serialVersionUID = 2L;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "idusershop")
