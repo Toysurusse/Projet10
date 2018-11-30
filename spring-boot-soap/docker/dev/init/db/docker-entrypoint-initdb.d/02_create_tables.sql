@@ -1,10 +1,15 @@
-CREATE SEQUENCE books_sequence
-  start 1000
-  increment 1;
+CREATE SCHEMA public
 
-create table usertable
+    AUTHORIZATION postgres
+
+	CREATE SEQUENCE books_sequence start 1000 increment 1;
+	CREATE SEQUENCE user_sequence start 1000 increment 1;
+	CREATE SEQUENCE rent_sequence start 1000 increment 1;
+	CREATE SEQUENCE shop_sequence start 1000 increment 1;
+
+	create table usertable
 (
-	userid serial not null
+	userid int default nextval('user_sequence'::regclass)
 		constraint usertable_pk
 			primary key,
 	pseudo varchar(200) not null,
@@ -19,7 +24,7 @@ create table usertable
 
 create table book
 (
-	bookid serial not null
+	bookid int default nextval('books_sequence'::regclass)
 		constraint book_pk
 			primary key,
 	bookname varchar(200) not null,
@@ -32,7 +37,7 @@ create table book
 
 create table rentbook
 (
-	rentid serial not null,
+	rentid int default nextval('rent_sequence'::regclass),
 	user_id integer not null
 		constraint usertable_rentbook_fk
 			references usertable,
@@ -50,7 +55,7 @@ create table rentbook
 
 create table shoppinglist
 (
-	id serial not null
+	id int default nextval('shop_sequence'::regclass)
 		constraint "ShoppingList_pkey"
 			primary key,
 	idusershop integer not null
@@ -65,3 +70,12 @@ create table shoppinglist
 	idpannier varchar(50)
 )
 ;
+
+
+
+COMMENT ON SCHEMA public
+    IS 'standard public schema';
+
+GRANT ALL ON SCHEMA public TO postgres;
+
+GRANT ALL ON SCHEMA public TO PUBLIC;
