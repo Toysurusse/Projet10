@@ -48,7 +48,7 @@
 			</div>
 			<br>
 			<div class="row">
-				<div class="col-sm-6 d-flex justify-content-center">
+				<div class="d-flex justify-content-center">
 					<s:submit method="bookUpdate" value="créer livre" cssClass="btn btn-primary center-block"/>
 				</div>
 			</div>

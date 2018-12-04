@@ -14,6 +14,7 @@
     <div class="starter-template col-sm-4"></div>
     <div class="container-fluid col-sm-4">
         <s:form theme="simple" action="createAccount">
+            <br>
             <div class="row">
                 <label for="user.pseudo" class="starter-template col-sm-12"> Pseudo :</label>
                 <s:textfield cssClass="form-control" placeholder="Login" name="user.pseudo" label="pseudo"
@@ -41,6 +42,7 @@
             <div class="col-12 d-flex justify-content-center">
                 <s:submit method="createAccount" value="Créer" cssClass="btn btn-primary center-block"/>
             </div>
+            <br>
         </s:form>
         <div class="starter-template"><s:actionerror/></div>
     </div>

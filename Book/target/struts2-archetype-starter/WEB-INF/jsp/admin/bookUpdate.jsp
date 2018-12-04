@@ -15,6 +15,7 @@
 	<div class="starter-template col-sm-4"></div>
 	<div class="container-fluid col-sm-4">
 		<s:form theme="simple" action="bookUpdate">
+			<br>
 			<div class="row">
 				<label for="book.id" class="starter-template col-sm-12"> ID du livre :</label>
 				<s:textfield cssClass="form-control" placeholder="Titre" name="book.id" label="ID"
@@ -47,10 +48,11 @@
 			</div>
 			<br>
 			<div class="row">
-				<div class="col-sm-6">
+				<div class="d-flex justify-content-center">
 					<s:submit method="bookUpdate" value="créer livre" cssClass="btn btn-primary center-block"/>
 				</div>
 			</div>
+			<br>
 		</s:form>
 		<div class="starter-template"><s:actionerror/></div>
 	</div>

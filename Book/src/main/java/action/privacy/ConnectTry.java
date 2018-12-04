@@ -36,7 +36,7 @@ public class ConnectTry extends Connect {
 
             OutputSOAUserTest response = client.getUserTest(pseudo);
 
-            if(response.getUser()==null){
+            if(response.getUser().getPassword()==null){
                 this.addActionError(getText("error.connectNotFound"));
             }
             else{

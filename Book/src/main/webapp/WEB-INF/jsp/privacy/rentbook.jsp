@@ -33,7 +33,7 @@
                         <div class="col-1">
                             <s:a action="deleteToShop">
                                 <img src="<%=request.getContextPath()%>/picture/Delete.png" height="30" width="30"/>
-                                <s:param name="idBook"><s:property value="idBook"/></s:param>
+                                <s:param name="idShop"><s:property value="idPannier"/></s:param>
                             </s:a>
                         </div>
                     </div>

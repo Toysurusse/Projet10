@@ -57,7 +57,7 @@ public class Connected extends Connect {
         shop.setIdpannier(panierGen());
         shop.setIdusershop(user.getUserid());
         shop.setCreateat(translate(System.currentTimeMillis()));
-        shop.setEndat(translate(new Long(System.currentTimeMillis() + 7200000)));
+        shop.setEndat(translate(new Long(System.currentTimeMillis() + 172800000)));
 
         //Update book dispo and create ShopLine
         OutputSOABookById bookToShop = createInstanceBDDBook().getBookById(new Authentication("username", "password"), idBook);
