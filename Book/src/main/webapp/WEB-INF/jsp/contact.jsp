@@ -15,11 +15,11 @@
     <div class="container-fluid col-sm-4">
 
 <p class="text-lg-center">
+    <br>
     Projet : Gestion d'une librairie <br>
     Mail : Info@Librairie.com
 </p>
-
-        <div class="starter-template"><s:actionerror/></div>
+    <div class="starter-template"><s:actionerror/></div>
     </div>
     <div class="starter-template col-sm-4"></div>
 </div>

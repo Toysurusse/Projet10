@@ -47,7 +47,6 @@ public class UserService implements IUserService {
 
     @Override
     public void delete(com.library.User user) {
-        user.setDelete(true);
         this.add(user);
     }
 

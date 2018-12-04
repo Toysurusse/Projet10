@@ -14,6 +14,7 @@
 	<div class="starter-template col-sm-4"></div>
 	<div class="container-fluid col-sm-4">
 		<s:form theme="simple" action="connectTry">
+			<br>
 			<div class="row">
 				<label for="pseudo" class="starter-template col-sm-12"> Pseudo :</label>
 				<s:textfield cssClass="form-control" placeholder="Login" name="pseudo" label="pseudo"
@@ -24,7 +25,7 @@
 				<s:password cssClass="form-control" placeholder="Password" name="password" label="password"
 							requiredLabel="true"/>
 			</div>
-			</br>
+			<br>
 			<div class="row">
 				<div class="col-sm-6 d-flex justify-content-center">
 					<s:submit method="input" value="Se Connecter" cssClass="btn btn-primary center-block"/>
@@ -33,7 +34,7 @@
 					<s:a action="InitAccount" cssClass="btn btn-primary center-block">Créer un compte ?</s:a>
 				</div>
 			</div>
-
+			<br>
 		</s:form>
 		<div class="starter-template"><s:actionerror/></div>
 	</div>

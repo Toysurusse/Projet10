@@ -36,9 +36,14 @@ public class ConnectTry extends Connect {
 
             OutputSOAUserTest response = client.getUserTest(pseudo);
 
-            boolean passwordMatch = Encrypt.verifyUserPassword(password, response.getUser().getPassword(), response.getUser().getSalt());
+            if(response.getUser()==null){
+                this.addActionError(getText("error.connectNotFound"));
+            }
+            else{
+                boolean passwordMatch = Encrypt.verifyUserPassword(password, response.getUser().getPassword(), response.getUser().getSalt());
 
-            if(passwordMatch)
+
+                if(passwordMatch)
             {
                 LOGGER.info("Provided user password " + password + " is correct.");
             } else {
@@ -51,6 +56,7 @@ public class ConnectTry extends Connect {
                 password = null;
             } else {
                 this.addActionError(getText("error.connectError"));
+            }
             }
         } else {
             this.addActionError(getText("error.connectEmpty"));
