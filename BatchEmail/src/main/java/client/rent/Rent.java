@@ -18,7 +18,7 @@ public class Rent extends WebServiceGatewaySupport {
 
     public OutputSOARentbookLate getRentbookLate(Authentication authentication) {
         InputSOARentbookLate request = new InputSOARentbookLate();
-        request.setTest("Test");
+        request.setTest("48h");
         return (OutputSOARentbookLate) getWebServiceTemplate()
                 .marshalSendAndReceive(request,
                         new SecurityHeader(

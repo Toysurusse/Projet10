@@ -17,7 +17,7 @@ public class SoapClientShopConfig {
     @Bean
     public ShopClient weatherClient(Jaxb2Marshaller marshaller) {
         ShopClient client = new ShopClient();
-        client.setDefaultUri("http://192.168.0.17:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/Shop");
+        client.setDefaultUri("http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/Shop");
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);
         return client;

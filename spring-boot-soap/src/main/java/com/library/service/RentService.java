@@ -86,6 +86,16 @@ public class RentService implements IRentService {
     @Override
     public List<Latebook> findByLate() {
         List<com.library.Rentbook> data =rentMapper.rentListDtoE((List<Rent>) rentRepository.findDelayPassed());
+        return extractForMail(data);
+    }
+
+    @Override
+    public List<Latebook> findByEnd() {
+        List<com.library.Rentbook> data =rentMapper.rentListDtoE((List<Rent>) rentRepository.findDelayEnd());
+        return extractForMail(data);
+    }
+
+    private List<Latebook> extractForMail(List<com.library.Rentbook> data){
         List<Latebook> mails=new ArrayList<>();
 
         for (Rentbook r: data) {
@@ -99,4 +109,5 @@ public class RentService implements IRentService {
 
         return mails;
     }
+
 }

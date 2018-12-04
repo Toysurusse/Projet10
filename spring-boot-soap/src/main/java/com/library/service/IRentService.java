@@ -10,5 +10,6 @@ public interface IRentService {
     List<com.library.Rentbook> findAll ();
     List<com.library.Rentbook> findByUserId(int id);
     List<Latebook> findByLate();
+    List<Latebook> findByEnd();
     String back(com.library.Rentbook rentbook);
 }

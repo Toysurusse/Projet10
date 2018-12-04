@@ -47,12 +47,22 @@ public class WebServiceEndpointRentbook {
         public OutputSOARentbookLate getRentbookLate(@RequestPayload InputSOARentbookLate request,
                                                      @SoapHeader("{" + Authentication.AUTH_NS +"}authentication") SoapHeaderElement auth) {
 
+
             Authentication authentication = getAuthentication(auth);
             OutputSOARentbookLate response=null;
-            List<Latebook> output= rentService.findByLate();
-            ObjectFactory factory = new ObjectFactory();
-            response = factory.createOutputSOARentbookLate();
-            response.getResult().addAll(output);
+
+            if(request.getTest().equals("Test")){
+                List<Latebook> output= rentService.findByLate();
+                ObjectFactory factory = new ObjectFactory();
+                response = factory.createOutputSOARentbookLate();
+                response.getResult().addAll(output);
+            }
+            if(request.getTest().equals("48h")){
+                List<Latebook> output= rentService.findByLate();
+                ObjectFactory factory = new ObjectFactory();
+                response = factory.createOutputSOARentbookLate();
+                response.getResult().addAll(output);
+            }
 
             return response;
         }
