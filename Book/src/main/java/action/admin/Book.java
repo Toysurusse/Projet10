@@ -5,6 +5,7 @@ import client.Authentication;
 import client.book.BookClient;
 import client.book.SoapClientBookConfig;
 import com.library.*;
+import com.library.User;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.ArrayList;
@@ -31,9 +32,11 @@ public class Book extends Connect {
 
     public String createBook() throws Exception {
 
+        com.library.User user = (User) this.map.get("user");
+
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         BookClient client = context.getBean(BookClient.class);
-            OutputSOAddConfirm response = client.getBookAdd(new Authentication("username", "password"), book);
+            OutputSOAddConfirm response = client.getBookAdd(new Authentication(Integer.toString(user.getUserid()), "password"), book);
         return SUCCESS;
     }
 
@@ -43,7 +46,7 @@ public class Book extends Connect {
         BookClient client = context.getBean(BookClient.class);
         OutputSOABookById response = client.getBookById(new Authentication("username","password"),idBook);
         response.getResult().setDispo(0);
-        OutputSOAddConfirm update = client.getBookAdd(new Authentication("username","password"),response.getResult());
+        OutputSOAddConfirm update = client.getBookAdd(new Authentication(Integer.toString(user.getUserid()),"password"),response.getResult());
 
         return SUCCESS;
     }
@@ -52,7 +55,7 @@ public class Book extends Connect {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         BookClient client = context.getBean(BookClient.class);
-        OutputSOABookById response = client.getBookById(new Authentication("username","password"),idBook);
+        OutputSOABookById response = client.getBookById(new Authentication(Integer.toString(user.getUserid()),"password"),idBook);
         book=response.getResult();
 
         return SUCCESS;
@@ -62,7 +65,7 @@ public class Book extends Connect {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         BookClient client = context.getBean(BookClient.class);
-        OutputSOAddConfirm response = client.getBookAdd(new Authentication("username","password"),book);
+        OutputSOAddConfirm response = client.getBookAdd(new Authentication(Integer.toString(user.getUserid()),"password"),book);
 
         return SUCCESS;
     }
