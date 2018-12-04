@@ -41,7 +41,7 @@ public class Book extends Connect {
     }
 
     public String deleteBook() throws Exception {
-
+        com.library.User user = (User) this.map.get("user");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         BookClient client = context.getBean(BookClient.class);
         OutputSOABookById response = client.getBookById(new Authentication("username","password"),idBook);
@@ -52,7 +52,7 @@ public class Book extends Connect {
     }
 
     public String updateBookInit() throws Exception {
-
+        com.library.User user = (User) this.map.get("user");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         BookClient client = context.getBean(BookClient.class);
         OutputSOABookById response = client.getBookById(new Authentication(Integer.toString(user.getUserid()),"password"),idBook);
@@ -62,7 +62,7 @@ public class Book extends Connect {
     }
 
     public String updateBook() throws Exception {
-
+        com.library.User user = (User) this.map.get("user");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);
         BookClient client = context.getBean(BookClient.class);
         OutputSOAddConfirm response = client.getBookAdd(new Authentication(Integer.toString(user.getUserid()),"password"),book);

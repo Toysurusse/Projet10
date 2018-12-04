@@ -38,13 +38,13 @@ public class UserClient extends WebServiceGatewaySupport {
                                 getauthentication()));
     }
 
-    public OutputSOAddConfirm getUserAdd( User user) {
+    public OutputSOAddConfirm getUserAdd(Authentication authentication, User user) {
         InputSOAUserAdd request = new InputSOAUserAdd();
         request.setUser(user);
         return (OutputSOAddConfirm) getWebServiceTemplate()
                 .marshalSendAndReceive(request,
                         new SecurityHeader(
-                                getauthentication()));
+                                authentication));
     }
 
     public OutputSODelConfirm getUserDel( User user) {

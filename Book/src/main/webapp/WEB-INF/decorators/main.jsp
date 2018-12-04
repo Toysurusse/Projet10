@@ -80,9 +80,11 @@
                     <li class="nav-item">
                         <s:a action="rented" class="nav-link">Etat des prêts</s:a>
                     </li>
-                    <li class="nav-item">
-                        <s:a action="updateInit" class="nav-link">Compte</s:a>
-                    </li>
+                    <s:if test="#session.user.role==1">
+                        <li class="nav-item">
+                            <s:a action="updateInit" class="nav-link">Compte</s:a>
+                        </li>
+                    </s:if>
                     <s:if test="#session.user.role==2">
                         <li class="nav-item">
                             <s:a action="bookInit" class="nav-link">Livres Admin</s:a>

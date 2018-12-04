@@ -42,47 +42,6 @@ public class User extends Connect {
         return SUCCESS;
     }
 
-    public String createUser() throws Exception {
-        LOGGER.info("createUser / Classe Java Action.admin.User");
-        this.clearActionErrors();
-
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
-        UserClient client = context.getBean(UserClient.class);
-        controlMDP(user);
-        OutputSOAUser list = client.getUser();
-
-        for (com.library.User u : list.getResult()) {
-            if (u.getPseudo().equals(user.getPseudo())){
-                this.addActionError(getText("error.PseudoExist"));
-            }
-        }
-
-        // Generate Salt. The generated value can be stored in DB.
-        String salt = Encrypt.getSalt(30);
-
-        // Protect user's password. The generated value can be stored in DB.
-        String mySecurePassword = Encrypt.generateSecurePassword(user.getPassword(), salt);
-
-        user.setPassword(mySecurePassword);
-        user.setSalt(salt);
-
-        // Print out protected password
-        LOGGER.info("createUser / Classe Java Action.admin.User / My secure password = " + mySecurePassword);
-        LOGGER.info("createUser / Classe Java Action.admin.User / Salt value = " + salt);
-
-        if (!this.hasErrors()) {
-            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(user);
-            list = client.getUser();
-            for (com.library.User u : list.getResult()) {
-                if (u.getPseudo().equals(user.getPseudo())){
-                    user.setUserid(u.getUserid());
-                }
-            }
-            this.map.put("user", user);
-        }
-        return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
-    }
-
     public String updateUInit() throws Exception {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
@@ -105,7 +64,8 @@ public class User extends Connect {
         controlMDP(user);
 
         if(!this.hasErrors()) {
-            OutputSOAddConfirm response = client.getUserAdd(user);
+            com.library.User user = (com.library.User) this.map.get("user");
+            OutputSOAddConfirm response = client.getUserAdd(new Authentication(Integer.toString(user.getUserid()), "password"), user);
         }
 
         return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
@@ -116,7 +76,8 @@ public class User extends Connect {
         UserClient client = context.getBean(UserClient.class);
         OutputSOAUserById userById = client.getUserById( id);
         userById.getResult().setDelete(true);
-        OutputSODelConfirm response = client.getUserDel( userById.getResult());
+        com.library.User user = (com.library.User) this.map.get("user");
+        OutputSOAddConfirm response = client.getUserAdd(new Authentication(Integer.toString(user.getUserid()), "password"), user);
         return SUCCESS;
     }
 
@@ -125,7 +86,8 @@ public class User extends Connect {
         UserClient client = context.getBean(UserClient.class);
         OutputSOAUserById userById = client.getUserById( id);
         userById.getResult().setDelete(false);
-        OutputSODelConfirm response = client.getUserDel( userById.getResult());
+        com.library.User user = (com.library.User) this.map.get("user");
+        OutputSOAddConfirm response = client.getUserAdd(new Authentication(Integer.toString(user.getUserid()), "password"), user);
         return SUCCESS;
     }
 
