@@ -58,7 +58,7 @@ public class WebServiceEndpointRentbook {
                 response.getResult().addAll(output);
             }
             if(request.getTest().equals("48h")){
-                List<Latebook> output= rentService.findByLate();
+                List<Latebook> output= rentService.findByEnd();
                 ObjectFactory factory = new ObjectFactory();
                 response = factory.createOutputSOARentbookLate();
                 response.getResult().addAll(output);
@@ -121,7 +121,14 @@ public class WebServiceEndpointRentbook {
 
             ObjectFactory factory = new ObjectFactory();
             OutputSOARentbookAddConfirm response = factory.createOutputSOARentbookAddConfirm();
-            String result = rentService.add(request.getRentbook());
+
+            String result = "Test";
+
+            for (Rentbook r:request.getResult()
+                 ) {
+                result = rentService.add(r);
+            }
+            rentService.extractForMail(request.getResult());
 
             response.setResult(result);
             return response;

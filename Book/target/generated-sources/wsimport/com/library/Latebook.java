@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "latebook", propOrder = {
     "bookname",
     "pseudo",
-    "mail"
+    "com/library/mail"
 })
 public class Latebook {
 

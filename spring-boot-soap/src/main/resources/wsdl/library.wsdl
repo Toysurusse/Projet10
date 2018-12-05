@@ -302,7 +302,7 @@
             <xs:element name="inputSOARentbookAdd">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="tns:rentbook" name="rentbook"/>
+                        <xs:element type="tns:rentbook" name="result" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>

@@ -40,7 +40,7 @@ import javax.xml.bind.annotation.XmlType;
     "password",
     "salt",
     "gender",
-    "mail",
+    "com/library/mail",
     "role",
     "delete"
 })
