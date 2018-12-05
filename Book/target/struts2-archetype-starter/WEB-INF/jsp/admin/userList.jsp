@@ -11,11 +11,7 @@
 </head>
 <body>
 
-<h1 class="text-center">Liste des Utilisateurs :
-    <s:a action="userCreateInit">
-        <img src="<%=request.getContextPath()%>/picture/ajouter.png" height="30" width="30"/>
-    </s:a>
-</h1>
+<h1 class="text-center">Liste des Utilisateurs :</h1>
 
 <s:iterator var="User" value="userList">
     <div class="row">

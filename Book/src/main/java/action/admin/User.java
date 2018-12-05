@@ -64,8 +64,8 @@ public class User extends Connect {
         controlMDP(user);
 
         if(!this.hasErrors()) {
-            com.library.User user = (com.library.User) this.map.get("user");
-            OutputSOAddConfirm response = client.getUserAdd(new Authentication(Integer.toString(user.getUserid()), "password"), user);
+            com.library.User user2 = (com.library.User) this.map.get("user");
+            OutputSOAddConfirm response = client.getUserAdd(new Authentication(Integer.toString(user2.getUserid()), "password"), user);
         }
 
         return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
@@ -74,10 +74,10 @@ public class User extends Connect {
     public String deleteUser() throws Exception {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
         UserClient client = context.getBean(UserClient.class);
-        OutputSOAUserById userById = client.getUserById( id);
+        OutputSOAUserById userById = client.getUserById(id);
         userById.getResult().setDelete(true);
-        com.library.User user = (com.library.User) this.map.get("user");
-        OutputSOAddConfirm response = client.getUserAdd(new Authentication(Integer.toString(user.getUserid()), "password"), user);
+        com.library.User user2 = (com.library.User) this.map.get("user");
+        OutputSOAddConfirm response = client.getUserAdd(new Authentication(Integer.toString(user2.getUserid()), "password"), userById.getResult());
         return SUCCESS;
     }
 
@@ -86,8 +86,8 @@ public class User extends Connect {
         UserClient client = context.getBean(UserClient.class);
         OutputSOAUserById userById = client.getUserById( id);
         userById.getResult().setDelete(false);
-        com.library.User user = (com.library.User) this.map.get("user");
-        OutputSOAddConfirm response = client.getUserAdd(new Authentication(Integer.toString(user.getUserid()), "password"), user);
+        com.library.User user2 = (com.library.User) this.map.get("user");
+        OutputSOAddConfirm response = client.getUserAdd(new Authentication(Integer.toString(user2.getUserid()), "password"), userById.getResult());
         return SUCCESS;
     }
 
