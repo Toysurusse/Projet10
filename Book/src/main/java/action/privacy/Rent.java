@@ -84,12 +84,7 @@ public class Rent extends Connect {
                     System.out.println("test BDD : "+shopList.getResult().isDispo());
                     OutputSOAddConfirm shopUpdate = createInstanceBDDShop().getShopAdd(new Authentication("username", "password"), shopList.getResult());
                 }
-                for (Rentbook r:rentList
-                     ) {
-                    System.out.println("Rent : "+r.getRentid());
-                }
                 OutputSOARentbookAddConfirm outputSOAddConfirm = client.getRentbookAdd(rentList);
-
             }
         } else {
             this.addActionError("error.DateEmpty");
