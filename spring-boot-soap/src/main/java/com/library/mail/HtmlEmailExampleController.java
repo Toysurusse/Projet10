@@ -42,7 +42,7 @@ public class HtmlEmailExampleController {
                 htmlMsg = "<h1>Bonjour " + mailList.get(0).getPseudo() + "</h1>" +
                         "<p>le prêt des livres suivant est enregistré : <br>"
                         + book +
-                        " est enregistré. Nos agents sont à votre disposition pour mettre vous remettre vos livres </p>";
+                        "Nos agents sont à votre disposition pour mettre vous remettre vos livres </p>";
             }
             message.setContent(htmlMsg, "text/html");
             helper.setTo(mailList.get(0).getMail());
