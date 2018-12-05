@@ -31,6 +31,7 @@ public class UserServiceTest {
             System.out.println("Test BookName : "+u.getPseudo());
         }
         userService.delete(userList.get(0));
+        userService.findById(108);
         userMapper.userListEtoD(userList);
     }
 }

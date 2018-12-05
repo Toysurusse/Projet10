@@ -31,5 +31,9 @@ public class BookrentServiceTest {
             System.out.println("Test BookName : "+b.getRentid());
         }
         rentMapper.rentListEtoD(bookrentList);
+        bookrentService.findByLate();
+        bookrentService.findByEnd();
+        bookrentService.findById(120);
+        bookrentService.findByUserId(108);
     }
 }

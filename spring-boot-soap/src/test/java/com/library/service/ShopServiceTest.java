@@ -33,5 +33,6 @@ public class ShopServiceTest {
             System.out.println("Test BookName : "+b.getId());
         }
         shopService.findBySearch(108);
+        shopService.findById(148);
     }
 }

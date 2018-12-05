@@ -30,5 +30,6 @@ public class BookServiceTest {
         }
         bookService.findBySearch(bookList.get(0).getBookName());
         bookMapper.bookListEtoD(bookList);
+        bookService.findById(10);
     }
 }
