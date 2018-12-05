@@ -101,9 +101,18 @@ public class WebServiceEndpointBook {
 
         Authentication authentication = getAuthentication(auth);
 
-        if (userService.findById(Integer.parseInt(authentication.getUsername())).getRole()>1) {
+        if (authentication.getUsername().equals("username")) {
+            Book book = bookService.findById(request.getBook().getId());
+            request.getBook().setNbPage(book.getNbPage());
+            request.getBook().setEditeurs(book.getEditeurs());
+            request.getBook().setAuthor(book.getAuthor());
+            request.getBook().setBookName(book.getBookName());
             bookService.add(request.getBook());
         }
+        else if (userService.findById(Integer.parseInt(authentication.getUsername())).getRole()>1) {
+            bookService.add(request.getBook());
+        }
+
 
         ObjectFactory factory = new ObjectFactory();
         OutputSOAddConfirm response = factory.createOutputSOAddConfirm();
