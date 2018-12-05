@@ -26,18 +26,28 @@ public class HtmlEmailExampleController {
 
         javax.mail.internet.MimeMessage message = emailSender.getJavaMailSender().createMimeMessage();
         boolean multipart = true;
+        String book="";
 
-        for (Latebook m : mailList) {
             MimeMessageHelper helper = new MimeMessageHelper(message, multipart, "utf-8");
-            String htmlMsg = "<h1>Bonjour " +m.getPseudo()+"</h1>"+
-                    "<p>le prêt de votre livre "+ m.getBookname() +" est enregistré. Nos agents sont à votre disposition pour mettre à disposition vos livres </p>";
+                String htmlMsg = "<h1>Bonjour ";
+            if (mailList.size()==1){
+                htmlMsg = "<h1>Bonjour " +mailList.get(0).getPseudo()+"</h1>"+
+                        "<p>le prêt de votre livre "+ mailList.get(0).getBookname() +" est enregistré. Nos agents sont à votre disposition pour mettre vous remettre vos livres </p>";
+            }
+            else {
+                for (Latebook l : mailList
+                        ) {
+                    book = book + l.getBookname() + "<br>";
+                }
+                htmlMsg = "<h1>Bonjour " + mailList.get(0).getPseudo() + "</h1>" +
+                        "<p>le prêt des livres suivant est enregistré : <br>"
+                        + book +
+                        " est enregistré. Nos agents sont à votre disposition pour mettre vous remettre vos livres </p>";
+            }
             message.setContent(htmlMsg, "text/html");
-            helper.setTo(m.getMail());
-            helper.setSubject("Livre en retard");
+            helper.setTo(mailList.get(0).getMail());
+            helper.setSubject("Location livre");
             this.emailSender.getJavaMailSender().send(message);
-        }
-
-
         return "Email Sent!";
     }
 
