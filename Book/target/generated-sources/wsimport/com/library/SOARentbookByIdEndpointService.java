@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "SOARentbookByIdEndpointService", targetNamespace = "http://library.com", wsdlLocation = "http://192.168.0.17:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/library.wsdl")
+@WebServiceClient(name = "SOARentbookByIdEndpointService", targetNamespace = "http://library.com", wsdlLocation = "http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/library.wsdl")
 public class SOARentbookByIdEndpointService
     extends Service
 {
@@ -30,7 +30,7 @@ public class SOARentbookByIdEndpointService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://192.168.0.17:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/library.wsdl");
+            url = new URL("http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/library.wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

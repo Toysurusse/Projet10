@@ -8,7 +8,6 @@ import client.shop.SoapClientShopConfig;
 import client.user.SoapClientUserConfig;
 import client.user.UserClient;
 import com.library.*;
-import com.sun.org.apache.xpath.internal.SourceTree;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import javax.xml.datatype.DatatypeConfigurationException;

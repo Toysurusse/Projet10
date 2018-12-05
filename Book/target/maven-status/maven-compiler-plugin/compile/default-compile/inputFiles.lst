@@ -63,6 +63,7 @@ C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\client\Securi
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\InputSOAUserDel.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOAUserTestEndpointService.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\action\privacy\Connected.java
+C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\client\shop\ShopClient.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOAShopEndpointService.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\package-info.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\InputSOAUserAdd.java
@@ -84,6 +85,7 @@ C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\ws
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOABookSearchEndpointService.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOAUserEndpoint.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\OutputSOAUser.java
+C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\client\shop\SoapClientShopConfig.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOAUserEndpointService.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\action\admin\User.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOAShopSearchEndpointService.java
@@ -95,6 +97,7 @@ C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\ws
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\InputSOAUserTest.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\OutputSOAUserById.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\action\DateConverter.java
+C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\src\main\java\entity\Shopping.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\SOAShopdel.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\OutputSOARentbookByUser.java
 C:\Users\maxle\Documents\OpenClassRoom\Etape 10\Book\target\generated-sources\wsimport\com\library\OutputSOAUserTest.java

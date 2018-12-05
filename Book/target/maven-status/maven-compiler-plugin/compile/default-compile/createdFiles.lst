@@ -5,6 +5,8 @@ com\library\SOABookByIdEndpoint.class
 com\library\Shop.class
 action\privacy\Connect.class
 com\library\SOARentbookdel.class
+client\shop\SoapClientShopConfig.class
+entity\Shopping.class
 com\library\InputSOARentbookByUser.class
 com\library\SOARentbookByUserEndpointService.class
 com\library\InputSOAShopAdd.class
@@ -65,6 +67,7 @@ com\library\SOARentbookByIdEndpointService.class
 com\library\SOAUserByIdEndpointService.class
 client\SecurityHeader.class
 client\rent\SoapClientRentConfig.class
+client\shop\ShopClient.class
 com\library\OutputSOARentbookById.class
 com\library\OutputSOAUserAddConfirm.class
 com\library\InputSOAShopTest.class

@@ -76,7 +76,10 @@ public class Reload extends Connect {
         rentbook.setEndat(translate(end_at));
         rentbook.setReload(true);
 
-        OutputSOARentbookAddConfirm outputSOAddConfirm = client.getRentbookAdd(rentbook);
+
+        List<Rentbook> rentbookList = new ArrayList<>();
+        rentbookList.add(outputSOARentbookById.getResult());
+        OutputSOARentbookAddConfirm outputSOAddConfirm = client.getRentbookAdd(rentbookList);
 
         return ActionSupport.SUCCESS;
     }

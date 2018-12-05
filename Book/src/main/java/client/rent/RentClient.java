@@ -5,6 +5,8 @@ import client.SecurityHeader;
 import com.library.*;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 
+import java.util.List;
+
 public class RentClient extends WebServiceGatewaySupport {
 
     private Authentication getauthentication(){
@@ -29,9 +31,9 @@ public class RentClient extends WebServiceGatewaySupport {
                                 getauthentication()));
     }
 
-    public OutputSOARentbookAddConfirm getRentbookAdd(Rentbook rentbook) {
+    public OutputSOARentbookAddConfirm getRentbookAdd(List<Rentbook> rentbook) {
         InputSOARentbookAdd request = new InputSOARentbookAdd();
-        request.setRentbook(rentbook);
+        request.getResult().addAll(rentbook);
         return (OutputSOARentbookAddConfirm) getWebServiceTemplate()
                 .marshalSendAndReceive(request,
                         new SecurityHeader(

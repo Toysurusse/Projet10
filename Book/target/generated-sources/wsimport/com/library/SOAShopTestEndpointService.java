@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "SOAShopTestEndpointService", targetNamespace = "http://library.com", wsdlLocation = "http://192.168.0.17:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/library.wsdl")
+@WebServiceClient(name = "SOAShopTestEndpointService", targetNamespace = "http://library.com", wsdlLocation = "http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/library.wsdl")
 public class SOAShopTestEndpointService
     extends Service
 {
@@ -30,7 +30,7 @@ public class SOAShopTestEndpointService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://192.168.0.17:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/library.wsdl");
+            url = new URL("http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/library.wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

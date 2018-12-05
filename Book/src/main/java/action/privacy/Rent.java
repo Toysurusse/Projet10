@@ -54,6 +54,7 @@ public class Rent extends Connect {
         List<Rentbook> rents = new ArrayList<>();
         User user = (User) this.map.get("user");
 
+        List<Rentbook> rentList=new ArrayList<>();
         setShoppingList(initShop());
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);
@@ -72,8 +73,10 @@ public class Rent extends Connect {
                     rent.setReload(false);
                     rent.setReturnbook(false);
                     System.out.println(rent.getUserId() + " ; " + rent.getBookId() + " ; " + rent.getRentid() + " ; " + rent.getCreateat() + " ; " + rent.getEndat() + " ; " + rent.isReload() + " ; " + rent.isReturnbook());
-                    OutputSOARentbookAddConfirm outputSOAddConfirm = client.getRentbookAdd(rent);
-                    rentResult.put(outputSOAddConfirm.getResult(), aShoppingList);
+
+                    rentList.add(rent);
+
+                    //rentResult.put(outputSOAddConfirm.getResult(), aShoppingList);
 
                     //Get Shop Line From BDD and set false
                     OutputSOAShopById shopList = createInstanceBDDShop().getShopById(new Authentication("username", "password"), aShoppingList.getIdPannier());
@@ -81,10 +84,18 @@ public class Rent extends Connect {
                     System.out.println("test BDD : "+shopList.getResult().isDispo());
                     OutputSOAddConfirm shopUpdate = createInstanceBDDShop().getShopAdd(new Authentication("username", "password"), shopList.getResult());
                 }
+                for (Rentbook r:rentList
+                     ) {
+                    System.out.println("Rent : "+r.getRentid());
+                }
+                OutputSOARentbookAddConfirm outputSOAddConfirm = client.getRentbookAdd(rentList);
+
             }
         } else {
             this.addActionError("error.DateEmpty");
         }
+
+
 
         for (Map.Entry<String, Shopping> e : rentResult.entrySet()) {
             if (e.getKey().equals("Ok")) {
@@ -130,13 +141,18 @@ public class Rent extends Connect {
     public String returnBook() throws Exception {
 
         User user = (User) this.map.get("user");
+        List<Rentbook> rentbookList = new ArrayList<>();
+
 
         //Update returnBook
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);
         client.rent.RentClient client = context.getBean(client.rent.RentClient.class);
         OutputSOARentbookById outputSOARentbookById = client.getRentbookById(idBook);
         outputSOARentbookById.getResult().setReturnbook(true);
-        OutputSOARentbookAddConfirm outputSOARentbookAddConfirm = client.getRentbookAdd(outputSOARentbookById.getResult());
+
+        rentbookList.add(outputSOARentbookById.getResult());
+
+        OutputSOARentbookAddConfirm outputSOARentbookAddConfirm = client.getRentbookAdd(rentbookList);
 
         //Update dispo Book count
         OutputSOABookById outputSOABookById = createInstanceBDDBook().getBookById(new Authentication("username", "password"), outputSOARentbookById.getResult().getBookId());

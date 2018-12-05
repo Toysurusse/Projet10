@@ -1,7 +1,7 @@
-	CREATE SEQUENCE books_sequence start 1000 increment 1;
-	CREATE SEQUENCE user_sequence start 1000 increment 1;
-	CREATE SEQUENCE rent_sequence start 1000 increment 1;
-	CREATE SEQUENCE shop_sequence start 1000 increment 1;
+	CREATE SEQUENCE books_sequence start 1100 increment 1;
+	CREATE SEQUENCE user_sequence start 1100 increment 1;
+	CREATE SEQUENCE rent_sequence start 1100 increment 1;
+	CREATE SEQUENCE shop_sequence start 1100 increment 1;
 
 	create table usertable
 (

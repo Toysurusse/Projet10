@@ -2,6 +2,7 @@ package com.library.endpoint;
 
 import com.library.*;
 import com.library.config.Authentication;
+import com.library.mail.HtmlEmailExampleController;
 import com.library.service.RentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +14,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import org.springframework.ws.soap.SoapHeaderElement;
 import org.springframework.ws.soap.server.endpoint.annotation.SoapHeader;
 
+import javax.mail.MessagingException;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
@@ -26,6 +28,9 @@ public class WebServiceEndpointRentbook {
 
         @Autowired
         RentService rentService;
+
+        @Autowired
+        HtmlEmailExampleController mailer;
 
         @PayloadRoot(namespace = NAMESPACE_URI, localPart = "inputSOARentbook")
         @ResponsePayload
@@ -128,8 +133,13 @@ public class WebServiceEndpointRentbook {
                  ) {
                 result = rentService.add(r);
             }
-            rentService.extractForMail(request.getResult());
-
+            if (request.getResult().get(0).getRentid()==0) {
+                try {
+                    mailer.sendHtmlEmail(rentService.extractForMail(request.getResult()));
+                } catch (MessagingException e) {
+                    e.printStackTrace();
+                }
+            }
             response.setResult(result);
             return response;
         }
