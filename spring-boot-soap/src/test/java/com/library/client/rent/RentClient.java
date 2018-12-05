@@ -1,8 +1,8 @@
 package com.library.client.rent;
 
-import client.Authentication;
-import client.SecurityHeader;
 import com.library.*;
+import com.library.client.Authentication;
+import com.library.client.SecurityHeader;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 
 import java.util.List;

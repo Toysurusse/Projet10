@@ -1,7 +1,5 @@
 package com.library.client.book;
 
-import client.Authentication;
-import client.SecurityHeader;
 import com.library.*;
 import com.library.client.Authentication;
 import com.library.client.SecurityHeader;
