@@ -30,8 +30,7 @@ public class WebServiceEndpointBookiTest {
         WebServiceEndpointBook wBook= new WebServiceEndpointBook();
         InputSOABook request = new InputSOABook();
         request.setTest("Test");
-        /*SoapHeaderElement soapHeaderElement = ((SoapMessage)message).getSoapHeader();
-        wBook.getBeer(request, soapHeaderElement);
-        getWebServiceTemplate().marshalSendAndReceive(request, new SecurityHeader(new Authentication("username","password")));*/
+        SoapHeaderElement auth=null;
+        OutputSOABook beer = wBook.getBeer(request, auth);
     }
 }
