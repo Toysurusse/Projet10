@@ -26,10 +26,6 @@ public class BookrentServiceTest {
     public void testservicesBookrent () {
         List<Rentbook> bookrentList = bookrentService.findAll();
         bookrentService.add(bookrentList.get(0));
-        for (Rentbook b:bookrentList
-                ) {
-            System.out.println("Test BookName : "+b.getRentid());
-        }
         rentMapper.rentListEtoD(bookrentList);
         bookrentService.findByLate();
         bookrentService.findByEnd();

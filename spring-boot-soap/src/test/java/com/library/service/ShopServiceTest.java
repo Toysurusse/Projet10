@@ -28,10 +28,6 @@ public class ShopServiceTest {
     public void testservicesBook () {
         List<Shop> bookList = shopService.findAll();
         shopService.add(bookList.get(0));
-        for (Shop b:bookList
-                ) {
-            System.out.println("Test BookName : "+b.getId());
-        }
         shopService.findBySearch(108);
         shopService.findById(148);
     }
