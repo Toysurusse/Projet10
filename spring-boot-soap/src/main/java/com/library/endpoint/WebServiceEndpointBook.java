@@ -34,8 +34,6 @@ public class WebServiceEndpointBook {
                                  @SoapHeader("{" + Authentication.AUTH_NS + "}authentication") SoapHeaderElement auth) {
 
         Authentication authentication = getAuthentication(auth);
-        System.out.println(authentication.getPassword());
-        System.out.println(authentication.getUsername());
         OutputSOABook response = null;
 
         List<Book> output = bookService.findAll();
