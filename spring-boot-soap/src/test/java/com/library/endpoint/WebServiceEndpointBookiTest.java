@@ -9,11 +9,14 @@ import com.library.client.SecurityHeader;
 import com.library.client.book.BookClient;
 import com.library.client.book.SoapClientBookConfig;
 import javafx.application.Application;
+import org.springframework.ws.soap.SoapHeader;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.ws.soap.SoapHeaderElement;
+import org.springframework.ws.soap.SoapMessage;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes= SpringBootLibraryApplication.class)
@@ -27,5 +30,8 @@ public class WebServiceEndpointBookiTest {
         WebServiceEndpointBook wBook= new WebServiceEndpointBook();
         InputSOABook request = new InputSOABook();
         request.setTest("Test");
+        /*SoapHeaderElement soapHeaderElement = ((SoapMessage)message).getSoapHeader();
+        wBook.getBeer(request, soapHeaderElement);
+        getWebServiceTemplate().marshalSendAndReceive(request, new SecurityHeader(new Authentication("username","password")));*/
     }
 }
