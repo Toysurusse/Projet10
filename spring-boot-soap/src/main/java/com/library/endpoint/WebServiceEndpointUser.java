@@ -104,14 +104,11 @@ public class WebServiceEndpointUser {
         OutputSOAddConfirm response = factory.createOutputSOAddConfirm();
         String result;
 
-        User user = userService.findById(Integer.parseInt(authentication.getUsername()));
-
         if (authentication.getUsername().equals("username")) {
             request.getUser().setRole(1);
-            request.getUser().setDelete(userService.findById(Integer.parseInt(authentication.getUsername())).isDelete());
             response.setResult(userService.add(request.getUser()));
         }
-        else if (user.getRole()>1){
+        else if (userService.findById(Integer.parseInt(authentication.getUsername())).getRole()>2){
             response.setResult(userService.add(request.getUser()));
         }
         else{

@@ -71,7 +71,7 @@ public class CreateAccount  extends Connect {
         System.out.println("Salt value = " + salt);
 
         if (!this.hasErrors()) {
-            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(user);
+            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(new Authentication("username", "password"),user);
             list = client.getUser();
             for (User u : list.getResult()) {
                 if (u.getPseudo().equals(user.getPseudo())){
@@ -124,7 +124,7 @@ public class CreateAccount  extends Connect {
         System.out.println("Salt value = " + salt);
 
         if (!this.hasErrors()) {
-            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(user);
+            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(new Authentication("username", "password"),user);
             this.map.remove("user");
             this.map.put("user", user);
         }
