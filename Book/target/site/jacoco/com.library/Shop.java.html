@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Shop.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Book</a> &gt; <a href="index.source.html" class="el_package">com.library</a> &gt; <span class="el_source">Shop.java</span></div><h1>Shop.java</h1><pre class="source lang-java linenums">
+package com.library;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
+
+
+/**
+ * &lt;p&gt;Classe Java pour shop complex type.
+ * 
+ * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * &lt;pre&gt;
+ * &amp;lt;complexType name=&quot;shop&quot;&gt;
+ *   &amp;lt;complexContent&gt;
+ *     &amp;lt;restriction base=&quot;{http://www.w3.org/2001/XMLSchema}anyType&quot;&gt;
+ *       &amp;lt;sequence&gt;
+ *         &amp;lt;element name=&quot;id&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}int&quot;/&gt;
+ *         &amp;lt;element name=&quot;idusershop&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}int&quot;/&gt;
+ *         &amp;lt;element name=&quot;idbookshop&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}int&quot;/&gt;
+ *         &amp;lt;element name=&quot;idpannier&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot;/&gt;
+ *         &amp;lt;element name=&quot;dispo&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}boolean&quot;/&gt;
+ *         &amp;lt;element name=&quot;createat&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}dateTime&quot;/&gt;
+ *         &amp;lt;element name=&quot;endat&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}dateTime&quot;/&gt;
+ *       &amp;lt;/sequence&gt;
+ *     &amp;lt;/restriction&gt;
+ *   &amp;lt;/complexContent&gt;
+ * &amp;lt;/complexType&gt;
+ * &lt;/pre&gt;
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = &quot;shop&quot;, propOrder = {
+    &quot;id&quot;,
+    &quot;idusershop&quot;,
+    &quot;idbookshop&quot;,
+    &quot;idpannier&quot;,
+    &quot;dispo&quot;,
+    &quot;createat&quot;,
+    &quot;endat&quot;
+})
+<span class="nc" id="L47">public class Shop {</span>
+
+    protected int id;
+    protected int idusershop;
+    protected int idbookshop;
+    @XmlElement(required = true)
+    protected String idpannier;
+    protected boolean dispo;
+    @XmlElement(required = true)
+    @XmlSchemaType(name = &quot;dateTime&quot;)
+    protected XMLGregorianCalendar createat;
+    @XmlElement(required = true)
+    @XmlSchemaType(name = &quot;dateTime&quot;)
+    protected XMLGregorianCalendar endat;
+
+    /**
+     * Obtient la valeur de la propriété id.
+     * 
+     */
+    public int getId() {
+<span class="nc" id="L67">        return id;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété id.
+     * 
+     */
+    public void setId(int value) {
+<span class="nc" id="L75">        this.id = value;</span>
+<span class="nc" id="L76">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété idusershop.
+     * 
+     */
+    public int getIdusershop() {
+<span class="nc" id="L83">        return idusershop;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété idusershop.
+     * 
+     */
+    public void setIdusershop(int value) {
+<span class="nc" id="L91">        this.idusershop = value;</span>
+<span class="nc" id="L92">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété idbookshop.
+     * 
+     */
+    public int getIdbookshop() {
+<span class="nc" id="L99">        return idbookshop;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété idbookshop.
+     * 
+     */
+    public void setIdbookshop(int value) {
+<span class="nc" id="L107">        this.idbookshop = value;</span>
+<span class="nc" id="L108">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété idpannier.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getIdpannier() {
+<span class="nc" id="L119">        return idpannier;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété idpannier.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setIdpannier(String value) {
+<span class="nc" id="L131">        this.idpannier = value;</span>
+<span class="nc" id="L132">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété dispo.
+     * 
+     */
+    public boolean isDispo() {
+<span class="nc" id="L139">        return dispo;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété dispo.
+     * 
+     */
+    public void setDispo(boolean value) {
+<span class="nc" id="L147">        this.dispo = value;</span>
+<span class="nc" id="L148">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété createat.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getCreateat() {
+<span class="nc" id="L159">        return createat;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété createat.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setCreateat(XMLGregorianCalendar value) {
+<span class="nc" id="L171">        this.createat = value;</span>
+<span class="nc" id="L172">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété endat.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getEndat() {
+<span class="nc" id="L183">        return endat;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété endat.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setEndat(XMLGregorianCalendar value) {
+<span class="nc" id="L195">        this.endat = value;</span>
+<span class="nc" id="L196">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

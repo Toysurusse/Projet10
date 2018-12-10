@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BookClient.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Book</a> &gt; <a href="index.source.html" class="el_package">client.book</a> &gt; <span class="el_source">BookClient.java</span></div><h1>BookClient.java</h1><pre class="source lang-java linenums">package client.book;
+
+import client.Authentication;
+import client.SecurityHeader;
+import com.library.*;
+import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
+
+<span class="nc" id="L8">public class BookClient extends WebServiceGatewaySupport {</span>
+
+    public OutputSOABook getBook(Authentication authentication) {
+<span class="nc" id="L11">        InputSOABook request = new InputSOABook();</span>
+<span class="nc" id="L12">        request.setTest(&quot;Test&quot;);</span>
+<span class="nc" id="L13">        return (OutputSOABook) getWebServiceTemplate()</span>
+<span class="nc" id="L14">                .marshalSendAndReceive(request,</span>
+                        new SecurityHeader(
+                                authentication));
+    }
+
+    public OutputSOABookSearch getSearch(Authentication authentication, String search) {
+<span class="nc" id="L20">        InputSOABookSearch request = new InputSOABookSearch();</span>
+<span class="nc" id="L21">        request.setTest(search);</span>
+<span class="nc" id="L22">        return (OutputSOABookSearch) getWebServiceTemplate()</span>
+<span class="nc" id="L23">                .marshalSendAndReceive(request,</span>
+                        new SecurityHeader(
+                                authentication));
+    }
+
+    public OutputSOABookById getBookById(Authentication authentication, int id) {
+<span class="nc" id="L29">        InputSOABookById request = new InputSOABookById();</span>
+<span class="nc" id="L30">        request.setId(id);</span>
+<span class="nc" id="L31">        return (OutputSOABookById) getWebServiceTemplate()</span>
+<span class="nc" id="L32">                .marshalSendAndReceive(request,</span>
+                        new SecurityHeader(
+                                authentication));
+    }
+
+    public OutputSOAddConfirm getBookAdd(Authentication authentication, Book book) {
+<span class="nc" id="L38">        InputSOABookAdd request = new InputSOABookAdd();</span>
+<span class="nc" id="L39">        request.setBook(book);</span>
+<span class="nc" id="L40">        return (OutputSOAddConfirm) getWebServiceTemplate()</span>
+<span class="nc" id="L41">                .marshalSendAndReceive(request,</span>
+                        new SecurityHeader(
+                                authentication));
+    }
+
+    public OutputSODelConfirm getBookDel(Authentication authentication, Book book) {
+<span class="nc" id="L47">        InputSOABookDel request = new InputSOABookDel();</span>
+<span class="nc" id="L48">        request.setBook(book);</span>
+<span class="nc" id="L49">        return (OutputSODelConfirm) getWebServiceTemplate()</span>
+<span class="nc" id="L50">                .marshalSendAndReceive(request,</span>
+                        new SecurityHeader(
+                                authentication));
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserClient.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Book</a> &gt; <a href="index.source.html" class="el_package">client.user</a> &gt; <span class="el_source">UserClient.java</span></div><h1>UserClient.java</h1><pre class="source lang-java linenums">package client.user;
+
+import client.Authentication;
+import client.SecurityHeader;
+import com.library.*;
+import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
+
+<span class="nc" id="L8">public class UserClient extends WebServiceGatewaySupport {</span>
+
+    private Authentication getauthentication(){
+<span class="nc" id="L11">        return new Authentication(&quot;username&quot;,&quot;password&quot;);</span>
+    }
+    
+    public OutputSOAUser getUser() {
+<span class="nc" id="L15">        InputSOAUser request = new InputSOAUser();</span>
+<span class="nc" id="L16">        request.setTest(&quot;Test&quot;);</span>
+<span class="nc" id="L17">        return (OutputSOAUser) getWebServiceTemplate()</span>
+<span class="nc" id="L18">                .marshalSendAndReceive(request,</span>
+                        new SecurityHeader(
+<span class="nc" id="L20">                                getauthentication()));</span>
+    }
+
+    public OutputSOAUserTest getUserTest( String pseudo) {
+<span class="nc" id="L24">        InputSOAUserTest request = new InputSOAUserTest();</span>
+<span class="nc" id="L25">        request.setPseudo(pseudo);</span>
+<span class="nc" id="L26">        return (OutputSOAUserTest) getWebServiceTemplate()</span>
+<span class="nc" id="L27">                .marshalSendAndReceive(request,</span>
+                        new SecurityHeader(
+<span class="nc" id="L29">                                getauthentication()));</span>
+    }
+
+    public OutputSOAUserById getUserById( int id) {
+<span class="nc" id="L33">        InputSOAUserById request = new InputSOAUserById();</span>
+<span class="nc" id="L34">        request.setId(id);</span>
+<span class="nc" id="L35">        return (OutputSOAUserById) getWebServiceTemplate()</span>
+<span class="nc" id="L36">                .marshalSendAndReceive(request,</span>
+                        new SecurityHeader(
+<span class="nc" id="L38">                                getauthentication()));</span>
+    }
+
+    public OutputSOAddConfirm getUserAdd(Authentication authentication, User user) {
+<span class="nc" id="L42">        InputSOAUserAdd request = new InputSOAUserAdd();</span>
+<span class="nc" id="L43">        request.setUser(user);</span>
+<span class="nc" id="L44">        return (OutputSOAddConfirm) getWebServiceTemplate()</span>
+<span class="nc" id="L45">                .marshalSendAndReceive(request,</span>
+                        new SecurityHeader(
+                                authentication));
+    }
+
+    public OutputSODelConfirm getUserDel( User user) {
+<span class="nc" id="L51">        InputSOAUserDel request = new InputSOAUserDel();</span>
+<span class="nc" id="L52">        request.setUser(user);</span>
+<span class="nc" id="L53">        return (OutputSODelConfirm) getWebServiceTemplate()</span>
+<span class="nc" id="L54">                .marshalSendAndReceive(request,</span>
+                        new SecurityHeader(
+<span class="nc" id="L56">                                getauthentication()));</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

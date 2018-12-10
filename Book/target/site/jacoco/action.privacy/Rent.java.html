@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Rent.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Book</a> &gt; <a href="index.source.html" class="el_package">action.privacy</a> &gt; <span class="el_source">Rent.java</span></div><h1>Rent.java</h1><pre class="source lang-java linenums">package action.privacy;
+
+
+import client.Authentication;
+import client.book.BookClient;
+import client.book.SoapClientBookConfig;
+import client.rent.SoapClientRentConfig;
+import client.shop.ShopClient;
+import client.shop.SoapClientShopConfig;
+import com.library.*;
+import com.opensymphony.xwork2.ActionSupport;
+import entity.BookAndRent;
+import entity.Shopping;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+<span class="nc" id="L22">public class Rent extends Connect {</span>
+
+    public Date create_at;
+    public Date end_at;
+    public String today;
+    public String today4W;
+    public String threeWeeks;
+    public List&lt;Rentbook&gt; rentbook;
+    public List&lt;Book&gt; bookList;
+<span class="nc" id="L31">    public List&lt;BookAndRent&gt; listrented = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L32">    public HashMap&lt;String, Shopping&gt; rentResult = new HashMap&lt;&gt;();</span>
+
+    public String execute() throws Exception {
+<span class="nc" id="L35">        User user = (User) this.map.get(&quot;user&quot;);</span>
+        //utiliser le calendrier par défaut
+<span class="nc" id="L37">        Calendar calendar = Calendar.getInstance();</span>
+
+        //définir le format de la date
+<span class="nc" id="L40">        SimpleDateFormat sdf = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
+
+<span class="nc" id="L42">        SimpleDateFormat formater = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
+<span class="nc" id="L43">        today = formater.format(java.util.Calendar.getInstance().getTime());</span>
+<span class="nc" id="L44">        calendar.add(calendar.MONTH, 1);</span>
+<span class="nc" id="L45">        today4W = formater.format(calendar.getTime());</span>
+
+<span class="nc" id="L47">        setShoppingList(initShop());</span>
+
+<span class="nc" id="L49">        return SUCCESS;</span>
+    }
+
+    public String rentbook() throws Exception {
+
+<span class="nc" id="L54">        List&lt;Rentbook&gt; rents = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L55">        User user = (User) this.map.get(&quot;user&quot;);</span>
+
+<span class="nc" id="L57">        List&lt;Rentbook&gt; rentList=new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L58">        setShoppingList(initShop());</span>
+
+<span class="nc" id="L60">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);</span>
+<span class="nc" id="L61">        client.rent.RentClient client = context.getBean(client.rent.RentClient.class);</span>
+
+<span class="nc bnc" id="L63" title="All 4 branches missed.">        if (end_at != null &amp;&amp; create_at != null) {</span>
+<span class="nc bnc" id="L64" title="All 2 branches missed.">            if (end_at.before(create_at)) {</span>
+<span class="nc" id="L65">                this.addActionError(&quot;error.DatePost&quot;);</span>
+            } else {
+<span class="nc bnc" id="L67" title="All 2 branches missed.">                for (Shopping aShoppingList : shoppingList) {</span>
+<span class="nc" id="L68">                    Rentbook rent = new Rentbook();</span>
+<span class="nc" id="L69">                    rent.setBookId(aShoppingList.getIdBook());</span>
+<span class="nc" id="L70">                    rent.setUserId(user.getUserid());</span>
+<span class="nc" id="L71">                    rent.setCreateat(translate(create_at));</span>
+<span class="nc" id="L72">                    rent.setEndat(translate(end_at));</span>
+<span class="nc" id="L73">                    rent.setReload(false);</span>
+<span class="nc" id="L74">                    rent.setReturnbook(false);</span>
+<span class="nc" id="L75">                    System.out.println(rent.getUserId() + &quot; ; &quot; + rent.getBookId() + &quot; ; &quot; + rent.getRentid() + &quot; ; &quot; + rent.getCreateat() + &quot; ; &quot; + rent.getEndat() + &quot; ; &quot; + rent.isReload() + &quot; ; &quot; + rent.isReturnbook());</span>
+
+<span class="nc" id="L77">                    rentList.add(rent);</span>
+
+                    //rentResult.put(outputSOAddConfirm.getResult(), aShoppingList);
+
+                    //Get Shop Line From BDD and set false
+<span class="nc" id="L82">                    OutputSOAShopById shopList = createInstanceBDDShop().getShopById(new Authentication(&quot;username&quot;, &quot;password&quot;), aShoppingList.getIdPannier());</span>
+<span class="nc" id="L83">                    shopList.getResult().setDispo(false);</span>
+<span class="nc" id="L84">                    System.out.println(&quot;test BDD : &quot;+shopList.getResult().isDispo());</span>
+<span class="nc" id="L85">                    OutputSOAddConfirm shopUpdate = createInstanceBDDShop().getShopAdd(new Authentication(&quot;username&quot;, &quot;password&quot;), shopList.getResult());</span>
+<span class="nc" id="L86">                }</span>
+<span class="nc" id="L87">                OutputSOARentbookAddConfirm outputSOAddConfirm = client.getRentbookAdd(rentList);</span>
+<span class="nc" id="L88">            }</span>
+        } else {
+<span class="nc" id="L90">            this.addActionError(&quot;error.DateEmpty&quot;);</span>
+        }
+
+
+
+<span class="nc bnc" id="L95" title="All 2 branches missed.">        for (Map.Entry&lt;String, Shopping&gt; e : rentResult.entrySet()) {</span>
+<span class="nc bnc" id="L96" title="All 2 branches missed.">            if (e.getKey().equals(&quot;Ok&quot;)) {</span>
+<span class="nc" id="L97">                rentResult.remove(e.getKey(), e.getValue());</span>
+            }
+<span class="nc" id="L99">        }</span>
+
+<span class="nc bnc" id="L101" title="All 2 branches missed.">        return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;</span>
+    }
+
+
+    public String rented() {
+<span class="nc" id="L106">        SimpleDateFormat formater = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
+<span class="nc" id="L107">        today = formater.format(java.util.Calendar.getInstance().getTime());</span>
+<span class="nc" id="L108">        User user = (User) this.map.get(&quot;user&quot;);</span>
+<span class="nc" id="L109">        int id = user.getUserid();</span>
+
+<span class="nc" id="L111">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);</span>
+<span class="nc" id="L112">        client.rent.RentClient client = context.getBean(client.rent.RentClient.class);</span>
+
+<span class="nc" id="L114">        OutputSOARentbookByUser outputSOARentbookByUser = null;</span>
+<span class="nc" id="L115">        outputSOARentbookByUser = client.getRentbookByUser(id);</span>
+
+<span class="nc" id="L117">        rentbook = new ArrayList&lt;&gt;();</span>
+
+<span class="nc" id="L119">        AnnotationConfigApplicationContext contextbook = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
+<span class="nc" id="L120">        client.book.BookClient clientbook = contextbook.getBean(BookClient.class);</span>
+<span class="nc" id="L121">        OutputSOABook response = clientbook.getBook(new Authentication(&quot;username&quot;, &quot;password&quot;));</span>
+
+<span class="nc" id="L123">        rentbook = outputSOARentbookByUser.getResult();</span>
+<span class="nc" id="L124">        bookList = response.getResult();</span>
+<span class="nc bnc" id="L125" title="All 2 branches missed.">        for (Rentbook r : rentbook) {</span>
+<span class="nc bnc" id="L126" title="All 2 branches missed.">            for (Book b : bookList) {</span>
+<span class="nc bnc" id="L127" title="All 2 branches missed.">                if (r.getBookId() == b.getId()) {</span>
+<span class="nc" id="L128">                    BookAndRent bookAndRent = new BookAndRent(b, r);</span>
+<span class="nc" id="L129">                    listrented.add(bookAndRent);</span>
+                }
+<span class="nc" id="L131">            }</span>
+<span class="nc" id="L132">        }</span>
+<span class="nc" id="L133">        return SUCCESS;</span>
+    }
+
+    public String returnBook() throws Exception {
+
+<span class="nc" id="L138">        User user = (User) this.map.get(&quot;user&quot;);</span>
+<span class="nc" id="L139">        List&lt;Rentbook&gt; rentbookList = new ArrayList&lt;&gt;();</span>
+
+
+        //Update returnBook
+<span class="nc" id="L143">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);</span>
+<span class="nc" id="L144">        client.rent.RentClient client = context.getBean(client.rent.RentClient.class);</span>
+<span class="nc" id="L145">        OutputSOARentbookById outputSOARentbookById = client.getRentbookById(idBook);</span>
+<span class="nc" id="L146">        outputSOARentbookById.getResult().setReturnbook(true);</span>
+
+<span class="nc" id="L148">        rentbookList.add(outputSOARentbookById.getResult());</span>
+
+<span class="nc" id="L150">        OutputSOARentbookAddConfirm outputSOARentbookAddConfirm = client.getRentbookAdd(rentbookList);</span>
+
+        //Update dispo Book count
+<span class="nc" id="L153">        OutputSOABookById outputSOABookById = createInstanceBDDBook().getBookById(new Authentication(&quot;username&quot;, &quot;password&quot;), outputSOARentbookById.getResult().getBookId());</span>
+<span class="nc" id="L154">        outputSOABookById.getResult().setDispo(outputSOABookById.getResult().getDispo()+1);</span>
+<span class="nc" id="L155">        OutputSOAddConfirm outputSOAddConfirm = createInstanceBDDBook().getBookAdd(new Authentication(&quot;username&quot;, &quot;password&quot;), outputSOABookById.getResult());</span>
+
+<span class="nc" id="L157">        return SUCCESS;</span>
+    }
+
+    public String input() throws Exception {
+<span class="nc" id="L161">        User user = (User) this.map.get(&quot;user&quot;);</span>
+<span class="nc" id="L162">        setShoppingList(initShop());</span>
+
+<span class="nc" id="L164">        return SUCCESS;</span>
+    }
+
+    public String deleteToRent() throws Exception {
+
+<span class="nc" id="L169">        deleteShop ();</span>
+
+<span class="nc" id="L171">        return SUCCESS;</span>
+    }
+
+    public XMLGregorianCalendar translate(Date date) {
+<span class="nc" id="L175">        GregorianCalendar Gdate = new GregorianCalendar();</span>
+<span class="nc" id="L176">        Gdate.setTime(date);</span>
+<span class="nc" id="L177">        XMLGregorianCalendar xmlDate = null;</span>
+        try {
+<span class="nc" id="L179">            xmlDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(Gdate);</span>
+<span class="nc" id="L180">        } catch (DatatypeConfigurationException e) {</span>
+<span class="nc" id="L181">            e.printStackTrace();</span>
+<span class="nc" id="L182">        }</span>
+<span class="nc" id="L183">        return xmlDate;</span>
+    }
+
+    public String getToday() {
+<span class="nc" id="L187">        return today;</span>
+    }
+
+    public void setToday(String today) {
+<span class="nc" id="L191">        this.today = today;</span>
+<span class="nc" id="L192">    }</span>
+
+
+    public Date getCreate_at() {
+<span class="nc" id="L196">        return create_at;</span>
+    }
+
+    public void setCreate_at(Date create_at) {
+<span class="nc" id="L200">        this.create_at = create_at;</span>
+<span class="nc" id="L201">    }</span>
+
+    public Date getEnd_at() {
+<span class="nc" id="L204">        return end_at;</span>
+    }
+
+    public void setEnd_at(Date end_at) {
+<span class="nc" id="L208">        this.end_at = end_at;</span>
+<span class="nc" id="L209">    }</span>
+
+    public String getThreeWeeks() {
+<span class="nc" id="L212">        return threeWeeks;</span>
+    }
+
+    public void setThreeWeeks(String threeWeeks) {
+<span class="nc" id="L216">        this.threeWeeks = threeWeeks;</span>
+<span class="nc" id="L217">    }</span>
+
+    public List&lt;Rentbook&gt; getRentbook() {
+<span class="nc" id="L220">        return rentbook;</span>
+    }
+
+    public void setRentbook(List&lt;Rentbook&gt; rentbook) {
+<span class="nc" id="L224">        this.rentbook = rentbook;</span>
+<span class="nc" id="L225">    }</span>
+
+    public HashMap&lt;String, Shopping&gt; getRentResult() {
+<span class="nc" id="L228">        return rentResult;</span>
+    }
+
+    public void setRentResult(HashMap&lt;String, Shopping&gt; rentResult) {
+<span class="nc" id="L232">        this.rentResult = rentResult;</span>
+<span class="nc" id="L233">    }</span>
+
+    public List&lt;Book&gt; getBookList() {
+<span class="nc" id="L236">        return bookList;</span>
+    }
+
+    public void setBookList(List&lt;Book&gt; bookList) {
+<span class="nc" id="L240">        this.bookList = bookList;</span>
+<span class="nc" id="L241">    }</span>
+
+
+    public List&lt;BookAndRent&gt; getListrented() {
+<span class="nc" id="L245">        return listrented;</span>
+    }
+
+    public void setListrented(List&lt;BookAndRent&gt; listrented) {
+<span class="nc" id="L249">        this.listrented = listrented;</span>
+<span class="nc" id="L250">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

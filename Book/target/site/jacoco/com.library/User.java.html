@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>User.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Book</a> &gt; <a href="index.source.html" class="el_package">com.library</a> &gt; <span class="el_source">User.java</span></div><h1>User.java</h1><pre class="source lang-java linenums">
+package com.library;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * &lt;p&gt;Classe Java pour user complex type.
+ * 
+ * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * &lt;pre&gt;
+ * &amp;lt;complexType name=&quot;user&quot;&gt;
+ *   &amp;lt;complexContent&gt;
+ *     &amp;lt;restriction base=&quot;{http://www.w3.org/2001/XMLSchema}anyType&quot;&gt;
+ *       &amp;lt;sequence&gt;
+ *         &amp;lt;element name=&quot;userid&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}int&quot;/&gt;
+ *         &amp;lt;element name=&quot;pseudo&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot;/&gt;
+ *         &amp;lt;element name=&quot;password&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot;/&gt;
+ *         &amp;lt;element name=&quot;salt&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot;/&gt;
+ *         &amp;lt;element name=&quot;gender&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot;/&gt;
+ *         &amp;lt;element name=&quot;mail&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot;/&gt;
+ *         &amp;lt;element name=&quot;role&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}int&quot;/&gt;
+ *         &amp;lt;element name=&quot;delete&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}boolean&quot;/&gt;
+ *       &amp;lt;/sequence&gt;
+ *     &amp;lt;/restriction&gt;
+ *   &amp;lt;/complexContent&gt;
+ * &amp;lt;/complexType&gt;
+ * &lt;/pre&gt;
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = &quot;user&quot;, propOrder = {
+    &quot;userid&quot;,
+    &quot;pseudo&quot;,
+    &quot;password&quot;,
+    &quot;salt&quot;,
+    &quot;gender&quot;,
+    &quot;mail&quot;,
+    &quot;role&quot;,
+    &quot;delete&quot;
+})
+<span class="nc" id="L47">public class User {</span>
+
+    protected int userid;
+    @XmlElement(required = true)
+    protected String pseudo;
+    @XmlElement(required = true)
+    protected String password;
+    @XmlElement(required = true)
+    protected String salt;
+    @XmlElement(required = true)
+    protected String gender;
+    @XmlElement(required = true)
+    protected String mail;
+    protected int role;
+    protected boolean delete;
+
+    /**
+     * Obtient la valeur de la propriété userid.
+     * 
+     */
+    public int getUserid() {
+<span class="nc" id="L68">        return userid;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété userid.
+     * 
+     */
+    public void setUserid(int value) {
+<span class="nc" id="L76">        this.userid = value;</span>
+<span class="nc" id="L77">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété pseudo.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPseudo() {
+<span class="nc" id="L88">        return pseudo;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété pseudo.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPseudo(String value) {
+<span class="nc" id="L100">        this.pseudo = value;</span>
+<span class="nc" id="L101">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété password.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPassword() {
+<span class="nc" id="L112">        return password;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété password.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPassword(String value) {
+<span class="nc" id="L124">        this.password = value;</span>
+<span class="nc" id="L125">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété salt.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSalt() {
+<span class="nc" id="L136">        return salt;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété salt.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSalt(String value) {
+<span class="nc" id="L148">        this.salt = value;</span>
+<span class="nc" id="L149">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété gender.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getGender() {
+<span class="nc" id="L160">        return gender;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété gender.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setGender(String value) {
+<span class="nc" id="L172">        this.gender = value;</span>
+<span class="nc" id="L173">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété mail.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMail() {
+<span class="nc" id="L184">        return mail;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété mail.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMail(String value) {
+<span class="nc" id="L196">        this.mail = value;</span>
+<span class="nc" id="L197">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété role.
+     * 
+     */
+    public int getRole() {
+<span class="nc" id="L204">        return role;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété role.
+     * 
+     */
+    public void setRole(int value) {
+<span class="nc" id="L212">        this.role = value;</span>
+<span class="nc" id="L213">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété delete.
+     * 
+     */
+    public boolean isDelete() {
+<span class="nc" id="L220">        return delete;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété delete.
+     * 
+     */
+    public void setDelete(boolean value) {
+<span class="nc" id="L228">        this.delete = value;</span>
+<span class="nc" id="L229">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

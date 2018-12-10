@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Reload.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Book</a> &gt; <a href="index.source.html" class="el_package">action.privacy</a> &gt; <span class="el_source">Reload.java</span></div><h1>Reload.java</h1><pre class="source lang-java linenums">package action.privacy;
+
+
+import action.IndexAction;
+import client.Authentication;
+import client.book.BookClient;
+import client.book.SoapClientBookConfig;
+import client.rent.RentClient;
+import client.rent.SoapClientRentConfig;
+import com.library.*;
+import com.opensymphony.xwork2.ActionSupport;
+import entity.BookAndRent;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+<span class="nc" id="L22">public class Reload extends Connect {</span>
+
+<span class="nc" id="L24">    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(IndexAction.class);</span>
+    public Date create_at;
+    public Date end_at;
+    public String today;
+    public String today4W;
+    public String threeWeeks;
+    public Rentbook rentbook;
+    public List&lt;Book&gt; bookList;
+    BookAndRent listrented;
+<span class="nc" id="L33">    public HashMap&lt;String, Book&gt; rentResult=new HashMap&lt;&gt;();</span>
+
+
+    public String execute() throws Exception {
+<span class="nc" id="L37">        LOGGER.info(&quot;execute / Classe Java Action.privacy.Reload&quot;);</span>
+<span class="nc" id="L38">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);</span>
+<span class="nc" id="L39">        RentClient client = context.getBean(RentClient.class);</span>
+<span class="nc" id="L40">        System.out.println(idBook);</span>
+<span class="nc" id="L41">        OutputSOARentbookById outputSOARentbookById = client.getRentbookById(idBook);</span>
+<span class="nc" id="L42">        rentbook = outputSOARentbookById.getResult();</span>
+<span class="nc" id="L43">        AnnotationConfigApplicationContext contextbook = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
+<span class="nc" id="L44">        client.book.BookClient clientbook = contextbook.getBean(BookClient.class);</span>
+<span class="nc" id="L45">        OutputSOABookById response = clientbook.getBookById(new Authentication(&quot;username&quot;,&quot;password&quot;), rentbook.getBookId());</span>
+
+<span class="nc" id="L47">        listrented=new BookAndRent(response.getResult(),rentbook);</span>
+
+        //utiliser le calendrier par défaut
+<span class="nc" id="L50">        Calendar calendar = Calendar.getInstance();</span>
+<span class="nc" id="L51">        calendar.setTime(rentbook.getEndat().toGregorianCalendar().getTime());</span>
+
+        //définir le format de la date
+<span class="nc" id="L54">        SimpleDateFormat sdf = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
+<span class="nc" id="L55">        SimpleDateFormat formater = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
+<span class="nc" id="L56">        calendar.add(calendar.MONTH,1);</span>
+<span class="nc" id="L57">        today4W =formater.format(calendar.getTime());</span>
+<span class="nc" id="L58">        calendar.setTime(rentbook.getEndat().toGregorianCalendar().getTime());</span>
+<span class="nc" id="L59">        today = formater.format(calendar.getTime());</span>
+
+<span class="nc" id="L61">        return SUCCESS;</span>
+    }
+
+    public String reloadrentbook() throws Exception {
+<span class="nc" id="L65">        LOGGER.info(&quot;reloadrentbook / Classe Java Action.privacy.Reload&quot;);</span>
+<span class="nc" id="L66">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);</span>
+<span class="nc" id="L67">        RentClient client = context.getBean(RentClient.class);</span>
+<span class="nc" id="L68">        OutputSOARentbookById outputSOARentbookById = client.getRentbookById(idBook);</span>
+
+<span class="nc" id="L70">        System.out.println(idBook);</span>
+
+<span class="nc" id="L72">        rentbook = outputSOARentbookById.getResult();</span>
+
+<span class="nc" id="L74">        System.out.println(rentbook.getCreateat());</span>
+
+<span class="nc" id="L76">        rentbook.setEndat(translate(end_at));</span>
+<span class="nc" id="L77">        rentbook.setReload(true);</span>
+
+
+<span class="nc" id="L80">        List&lt;Rentbook&gt; rentbookList = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L81">        rentbookList.add(outputSOARentbookById.getResult());</span>
+<span class="nc" id="L82">        OutputSOARentbookAddConfirm outputSOAddConfirm = client.getRentbookAdd(rentbookList);</span>
+
+<span class="nc" id="L84">        return ActionSupport.SUCCESS;</span>
+    }
+
+
+    public XMLGregorianCalendar translate(Date date) {
+<span class="nc" id="L89">        GregorianCalendar Gdate = new GregorianCalendar();</span>
+<span class="nc" id="L90">        Gdate.setTime(date);</span>
+<span class="nc" id="L91">        XMLGregorianCalendar xmlDate = null;</span>
+        try {
+<span class="nc" id="L93">            xmlDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(Gdate);</span>
+<span class="nc" id="L94">        } catch (DatatypeConfigurationException e) {</span>
+<span class="nc" id="L95">            e.printStackTrace();</span>
+<span class="nc" id="L96">        }</span>
+<span class="nc" id="L97">        return xmlDate;</span>
+    }
+
+    public XMLGregorianCalendar translateGtoD(GregorianCalendar cal) {
+<span class="nc" id="L101">        XMLGregorianCalendar xmlDate = null;</span>
+        try {
+<span class="nc" id="L103">            xmlDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal);</span>
+<span class="nc" id="L104">        } catch (DatatypeConfigurationException e) {</span>
+<span class="nc" id="L105">            e.printStackTrace();</span>
+<span class="nc" id="L106">        }</span>
+<span class="nc" id="L107">        return xmlDate;</span>
+    }
+
+    public String getToday() {
+<span class="nc" id="L111">        return today;</span>
+    }
+
+    public void setToday(String today) {
+<span class="nc" id="L115">        this.today = today;</span>
+<span class="nc" id="L116">    }</span>
+
+
+    public Date getCreate_at() {
+<span class="nc" id="L120">        return create_at;</span>
+    }
+
+    public void setCreate_at(Date create_at) {
+<span class="nc" id="L124">        this.create_at = create_at;</span>
+<span class="nc" id="L125">    }</span>
+
+    public Date getEnd_at() {
+<span class="nc" id="L128">        return end_at;</span>
+    }
+
+    public void setEnd_at(Date end_at) {
+<span class="nc" id="L132">        this.end_at = end_at;</span>
+<span class="nc" id="L133">    }</span>
+
+    public String getThreeWeeks() {
+<span class="nc" id="L136">        return threeWeeks;</span>
+    }
+
+    public void setThreeWeeks(String threeWeeks) {
+<span class="nc" id="L140">        this.threeWeeks = threeWeeks;</span>
+<span class="nc" id="L141">    }</span>
+
+    public HashMap&lt;String, Book&gt; getRentResult() {
+<span class="nc" id="L144">        return rentResult;</span>
+    }
+
+    public void setRentResult(HashMap&lt;String, Book&gt; rentResult) {
+<span class="nc" id="L148">        this.rentResult = rentResult;</span>
+<span class="nc" id="L149">    }</span>
+
+    public List&lt;Book&gt; getBookList() {
+<span class="nc" id="L152">        return bookList;</span>
+    }
+
+    public void setBookList(List&lt;Book&gt; bookList) {
+<span class="nc" id="L156">        this.bookList = bookList;</span>
+<span class="nc" id="L157">    }</span>
+
+
+    public BookAndRent getListrented() {
+<span class="nc" id="L161">        return listrented;</span>
+    }
+
+    public void setListrented(BookAndRent listrented) {
+<span class="nc" id="L165">        this.listrented = listrented;</span>
+<span class="nc" id="L166">    }</span>
+
+
+    public Rentbook getRentbook() {
+<span class="nc" id="L170">        return rentbook;</span>
+    }
+
+    public void setRentbook(Rentbook rentbook) {
+<span class="nc" id="L174">        this.rentbook = rentbook;</span>
+<span class="nc" id="L175">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

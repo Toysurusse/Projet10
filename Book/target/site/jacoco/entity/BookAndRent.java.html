@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BookAndRent.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Book</a> &gt; <a href="index.source.html" class="el_package">entity</a> &gt; <span class="el_source">BookAndRent.java</span></div><h1>BookAndRent.java</h1><pre class="source lang-java linenums">package entity;
+
+
+import com.library.*;
+
+import java.util.Date;
+
+public class BookAndRent {
+
+    public Book book;
+
+    public Rentbook rentbook;
+
+<span class="nc" id="L14">    public BookAndRent(Book book, Rentbook rentbook) {</span>
+<span class="nc" id="L15">        this.bookName=book.getBookName();</span>
+<span class="nc" id="L16">        this.author=book.getAuthor();</span>
+<span class="nc" id="L17">        this.editeurs=book.getEditeurs();</span>
+<span class="nc" id="L18">        this.nbPage=book.getNbPage();</span>
+<span class="nc" id="L19">        this.dispo=book.getDispo();</span>
+<span class="nc" id="L20">        this.rentid=rentbook.getRentid();</span>
+<span class="nc" id="L21">        this.userId=rentbook.getUserId();</span>
+<span class="nc" id="L22">        this.bookId=rentbook.getBookId();</span>
+<span class="nc" id="L23">        this.reload=rentbook.isReload();</span>
+<span class="nc" id="L24">        this.returnbook=rentbook.isReturnbook();</span>
+<span class="nc" id="L25">        this.createat=rentbook.getCreateat().toGregorianCalendar().getTime();</span>
+<span class="nc" id="L26">        this.endat=rentbook.getEndat().toGregorianCalendar().getTime();</span>
+
+<span class="nc" id="L28">    }</span>
+
+    public String bookName;
+    public String author;
+    public String editeurs;
+    public int nbPage;
+    public int dispo;
+    public int rentid;
+    public int userId;
+    public int bookId;
+    public boolean reload;
+    public boolean returnbook;
+    public Date createat;
+    public Date endat;
+
+    public String getBookName() {
+<span class="nc" id="L44">        return bookName;</span>
+    }
+
+    public void setBookName(String bookName) {
+<span class="nc" id="L48">        this.bookName = bookName;</span>
+<span class="nc" id="L49">    }</span>
+
+    public String getAuthor() {
+<span class="nc" id="L52">        return author;</span>
+    }
+
+    public void setAuthor(String author) {
+<span class="nc" id="L56">        this.author = author;</span>
+<span class="nc" id="L57">    }</span>
+
+    public String getEditeurs() {
+<span class="nc" id="L60">        return editeurs;</span>
+    }
+
+    public void setEditeurs(String editeurs) {
+<span class="nc" id="L64">        this.editeurs = editeurs;</span>
+<span class="nc" id="L65">    }</span>
+
+    public int getNbPage() {
+<span class="nc" id="L68">        return nbPage;</span>
+    }
+
+    public void setNbPage(int nbPage) {
+<span class="nc" id="L72">        this.nbPage = nbPage;</span>
+<span class="nc" id="L73">    }</span>
+
+    public int getDispo() {
+<span class="nc" id="L76">        return dispo;</span>
+    }
+
+    public void setDispo(int dispo) {
+<span class="nc" id="L80">        this.dispo = dispo;</span>
+<span class="nc" id="L81">    }</span>
+
+    public int getRentid() {
+<span class="nc" id="L84">        return rentid;</span>
+    }
+
+    public void setRentid(int rentid) {
+<span class="nc" id="L88">        this.rentid = rentid;</span>
+<span class="nc" id="L89">    }</span>
+
+    public int getUserId() {
+<span class="nc" id="L92">        return userId;</span>
+    }
+
+    public void setUserId(int userId) {
+<span class="nc" id="L96">        this.userId = userId;</span>
+<span class="nc" id="L97">    }</span>
+
+    public int getBookId() {
+<span class="nc" id="L100">        return bookId;</span>
+    }
+
+    public void setBookId(int bookId) {
+<span class="nc" id="L104">        this.bookId = bookId;</span>
+<span class="nc" id="L105">    }</span>
+
+    public boolean isReload() {
+<span class="nc" id="L108">        return reload;</span>
+    }
+
+    public void setReload(boolean reload) {
+<span class="nc" id="L112">        this.reload = reload;</span>
+<span class="nc" id="L113">    }</span>
+
+    public boolean isReturnbook() {
+<span class="nc" id="L116">        return returnbook;</span>
+    }
+
+    public void setReturnbook(boolean returnbook) {
+<span class="nc" id="L120">        this.returnbook = returnbook;</span>
+<span class="nc" id="L121">    }</span>
+
+    public Date getCreateat() {
+<span class="nc" id="L124">        return createat;</span>
+    }
+
+    public void setCreateat(Date createat) {
+<span class="nc" id="L128">        this.createat = createat;</span>
+<span class="nc" id="L129">    }</span>
+
+    public Date getEndat() {
+<span class="nc" id="L132">        return endat;</span>
+    }
+
+    public void setEndat(Date endat) {
+<span class="nc" id="L136">        this.endat = endat;</span>
+<span class="nc" id="L137">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

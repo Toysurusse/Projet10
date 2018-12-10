@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Latebook.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Book</a> &gt; <a href="index.source.html" class="el_package">com.library</a> &gt; <span class="el_source">Latebook.java</span></div><h1>Latebook.java</h1><pre class="source lang-java linenums">
+package com.library;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * &lt;p&gt;Classe Java pour latebook complex type.
+ * 
+ * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * &lt;pre&gt;
+ * &amp;lt;complexType name=&quot;latebook&quot;&gt;
+ *   &amp;lt;complexContent&gt;
+ *     &amp;lt;restriction base=&quot;{http://www.w3.org/2001/XMLSchema}anyType&quot;&gt;
+ *       &amp;lt;sequence&gt;
+ *         &amp;lt;element name=&quot;bookname&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot;/&gt;
+ *         &amp;lt;element name=&quot;pseudo&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot;/&gt;
+ *         &amp;lt;element name=&quot;mail&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot;/&gt;
+ *       &amp;lt;/sequence&gt;
+ *     &amp;lt;/restriction&gt;
+ *   &amp;lt;/complexContent&gt;
+ * &amp;lt;/complexType&gt;
+ * &lt;/pre&gt;
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = &quot;latebook&quot;, propOrder = {
+    &quot;bookname&quot;,
+    &quot;pseudo&quot;,
+    &quot;mail&quot;
+})
+<span class="nc" id="L37">public class Latebook {</span>
+
+    @XmlElement(required = true)
+    protected String bookname;
+    @XmlElement(required = true)
+    protected String pseudo;
+    @XmlElement(required = true)
+    protected String mail;
+
+    /**
+     * Obtient la valeur de la propriété bookname.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getBookname() {
+<span class="nc" id="L55">        return bookname;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété bookname.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setBookname(String value) {
+<span class="nc" id="L67">        this.bookname = value;</span>
+<span class="nc" id="L68">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété pseudo.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPseudo() {
+<span class="nc" id="L79">        return pseudo;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété pseudo.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPseudo(String value) {
+<span class="nc" id="L91">        this.pseudo = value;</span>
+<span class="nc" id="L92">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété mail.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMail() {
+<span class="nc" id="L103">        return mail;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété mail.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMail(String value) {
+<span class="nc" id="L115">        this.mail = value;</span>
+<span class="nc" id="L116">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

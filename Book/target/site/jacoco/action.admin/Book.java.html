@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Book.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Book</a> &gt; <a href="index.source.html" class="el_package">action.admin</a> &gt; <span class="el_source">Book.java</span></div><h1>Book.java</h1><pre class="source lang-java linenums">package action.admin;
+
+import action.privacy.Connect;
+import client.Authentication;
+import client.book.BookClient;
+import client.book.SoapClientBookConfig;
+import com.library.*;
+import com.library.User;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import java.util.ArrayList;
+import java.util.List;
+
+<span class="nc" id="L14">public class Book extends Connect {</span>
+
+    public List&lt;com.library.Book&gt; bookList;
+
+    public int idBook;
+
+    public com.library.Book book;
+
+    public String execute() throws Exception {
+
+<span class="nc" id="L24">        bookList=new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L25">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
+<span class="nc" id="L26">        BookClient client = context.getBean(BookClient.class);</span>
+<span class="nc" id="L27">        OutputSOABook response = client.getBook(new Authentication(&quot;username&quot;,&quot;password&quot;));</span>
+<span class="nc" id="L28">        bookList=response.getResult();</span>
+
+<span class="nc" id="L30">        return SUCCESS;</span>
+    }
+
+    public String createBook() throws Exception {
+
+<span class="nc" id="L35">        com.library.User user = (User) this.map.get(&quot;user&quot;);</span>
+
+<span class="nc" id="L37">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
+<span class="nc" id="L38">        BookClient client = context.getBean(BookClient.class);</span>
+<span class="nc" id="L39">            OutputSOAddConfirm response = client.getBookAdd(new Authentication(Integer.toString(user.getUserid()), &quot;password&quot;), book);</span>
+<span class="nc" id="L40">        return SUCCESS;</span>
+    }
+
+    public String deleteBook() throws Exception {
+<span class="nc" id="L44">        com.library.User user = (User) this.map.get(&quot;user&quot;);</span>
+<span class="nc" id="L45">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
+<span class="nc" id="L46">        BookClient client = context.getBean(BookClient.class);</span>
+<span class="nc" id="L47">        OutputSOABookById response = client.getBookById(new Authentication(&quot;username&quot;,&quot;password&quot;),idBook);</span>
+<span class="nc" id="L48">        response.getResult().setDispo(0);</span>
+<span class="nc" id="L49">        OutputSOAddConfirm update = client.getBookAdd(new Authentication(Integer.toString(user.getUserid()),&quot;password&quot;),response.getResult());</span>
+
+<span class="nc" id="L51">        return SUCCESS;</span>
+    }
+
+    public String updateBookInit() throws Exception {
+<span class="nc" id="L55">        com.library.User user = (User) this.map.get(&quot;user&quot;);</span>
+<span class="nc" id="L56">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
+<span class="nc" id="L57">        BookClient client = context.getBean(BookClient.class);</span>
+<span class="nc" id="L58">        OutputSOABookById response = client.getBookById(new Authentication(Integer.toString(user.getUserid()),&quot;password&quot;),idBook);</span>
+<span class="nc" id="L59">        book=response.getResult();</span>
+
+<span class="nc" id="L61">        return SUCCESS;</span>
+    }
+
+    public String updateBook() throws Exception {
+<span class="nc" id="L65">        com.library.User user = (User) this.map.get(&quot;user&quot;);</span>
+<span class="nc" id="L66">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
+<span class="nc" id="L67">        BookClient client = context.getBean(BookClient.class);</span>
+<span class="nc" id="L68">        OutputSOAddConfirm response = client.getBookAdd(new Authentication(Integer.toString(user.getUserid()),&quot;password&quot;),book);</span>
+
+<span class="nc" id="L70">        return SUCCESS;</span>
+    }
+
+
+
+    @Override
+    public int getIdBook() {
+<span class="nc" id="L77">        return idBook;</span>
+    }
+
+    @Override
+    public void setIdBook(int idBook) {
+<span class="nc" id="L82">        this.idBook = idBook;</span>
+<span class="nc" id="L83">    }</span>
+
+    public com.library.Book getBook() {
+<span class="nc" id="L86">        return book;</span>
+    }
+
+    public void setBook(com.library.Book book) {
+<span class="nc" id="L90">        this.book = book;</span>
+<span class="nc" id="L91">    }</span>
+
+    public List&lt;com.library.Book&gt; getBookList() {
+<span class="nc" id="L94">        return bookList;</span>
+    }
+
+    public void setBookList(List&lt;com.library.Book&gt; bookList) {
+<span class="nc" id="L98">        this.bookList = bookList;</span>
+<span class="nc" id="L99">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

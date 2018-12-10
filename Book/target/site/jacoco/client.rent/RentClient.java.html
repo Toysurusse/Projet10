@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RentClient.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Book</a> &gt; <a href="index.source.html" class="el_package">client.rent</a> &gt; <span class="el_source">RentClient.java</span></div><h1>RentClient.java</h1><pre class="source lang-java linenums">package client.rent;
+
+import client.Authentication;
+import client.SecurityHeader;
+import com.library.*;
+import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
+
+import java.util.List;
+
+<span class="nc" id="L10">public class RentClient extends WebServiceGatewaySupport {</span>
+
+    private Authentication getauthentication(){
+<span class="nc" id="L13">        return new Authentication(&quot;username&quot;,&quot;password&quot;);</span>
+    }
+    
+    public OutputSOARentbook getRentbook() {
+<span class="nc" id="L17">        InputSOARentbook request = new InputSOARentbook();</span>
+<span class="nc" id="L18">        request.setTest(&quot;Test&quot;);</span>
+<span class="nc" id="L19">        return (OutputSOARentbook) getWebServiceTemplate()</span>
+<span class="nc" id="L20">                .marshalSendAndReceive(request,</span>
+                        new SecurityHeader(
+<span class="nc" id="L22">                                getauthentication()));</span>
+    }
+
+    public OutputSOARentbookById getRentbookById(int id) {
+<span class="nc" id="L26">        InputSOARentbookById request = new InputSOARentbookById();</span>
+<span class="nc" id="L27">        request.setId(id);</span>
+<span class="nc" id="L28">        return (OutputSOARentbookById) getWebServiceTemplate()</span>
+<span class="nc" id="L29">                .marshalSendAndReceive(request,</span>
+                        new SecurityHeader(
+<span class="nc" id="L31">                                getauthentication()));</span>
+    }
+
+    public OutputSOARentbookAddConfirm getRentbookAdd(List&lt;Rentbook&gt; rentbook) {
+<span class="nc" id="L35">        InputSOARentbookAdd request = new InputSOARentbookAdd();</span>
+<span class="nc" id="L36">        request.getResult().addAll(rentbook);</span>
+<span class="nc" id="L37">        return (OutputSOARentbookAddConfirm) getWebServiceTemplate()</span>
+<span class="nc" id="L38">                .marshalSendAndReceive(request,</span>
+                        new SecurityHeader(
+<span class="nc" id="L40">                                getauthentication()));</span>
+    }
+
+    public OutputSOARentbookByUser getRentbookByUser(int id) {
+<span class="nc" id="L44">        InputSOARentbookByUser request = new InputSOARentbookByUser();</span>
+<span class="nc" id="L45">        request.setId(id);</span>
+<span class="nc" id="L46">        return (OutputSOARentbookByUser) getWebServiceTemplate()</span>
+<span class="nc" id="L47">                .marshalSendAndReceive(request,</span>
+                        new SecurityHeader(
+<span class="nc" id="L49">                                getauthentication()));</span>
+    }
+
+    public OutputSODelConfirm getRentbookDel(Rentbook rentbook) {
+<span class="nc" id="L53">        InputSOARentbookDel request = new InputSOARentbookDel();</span>
+<span class="nc" id="L54">        request.setRentbook(rentbook);</span>
+<span class="nc" id="L55">        return (OutputSODelConfirm) getWebServiceTemplate()</span>
+<span class="nc" id="L56">                .marshalSendAndReceive(request,</span>
+                        new SecurityHeader(
+<span class="nc" id="L58">                                getauthentication()));</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

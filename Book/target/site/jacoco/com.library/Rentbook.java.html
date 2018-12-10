@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Rentbook.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Book</a> &gt; <a href="index.source.html" class="el_package">com.library</a> &gt; <span class="el_source">Rentbook.java</span></div><h1>Rentbook.java</h1><pre class="source lang-java linenums">
+package com.library;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
+
+
+/**
+ * &lt;p&gt;Classe Java pour rentbook complex type.
+ * 
+ * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * &lt;pre&gt;
+ * &amp;lt;complexType name=&quot;rentbook&quot;&gt;
+ *   &amp;lt;complexContent&gt;
+ *     &amp;lt;restriction base=&quot;{http://www.w3.org/2001/XMLSchema}anyType&quot;&gt;
+ *       &amp;lt;sequence&gt;
+ *         &amp;lt;element name=&quot;rentid&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}int&quot;/&gt;
+ *         &amp;lt;element name=&quot;user_id&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}int&quot;/&gt;
+ *         &amp;lt;element name=&quot;book_id&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}int&quot;/&gt;
+ *         &amp;lt;element name=&quot;reload&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}boolean&quot;/&gt;
+ *         &amp;lt;element name=&quot;returnbook&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}boolean&quot;/&gt;
+ *         &amp;lt;element name=&quot;createat&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}date&quot;/&gt;
+ *         &amp;lt;element name=&quot;endat&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}date&quot;/&gt;
+ *       &amp;lt;/sequence&gt;
+ *     &amp;lt;/restriction&gt;
+ *   &amp;lt;/complexContent&gt;
+ * &amp;lt;/complexType&gt;
+ * &lt;/pre&gt;
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = &quot;rentbook&quot;, propOrder = {
+    &quot;rentid&quot;,
+    &quot;userId&quot;,
+    &quot;bookId&quot;,
+    &quot;reload&quot;,
+    &quot;returnbook&quot;,
+    &quot;createat&quot;,
+    &quot;endat&quot;
+})
+<span class="nc" id="L47">public class Rentbook {</span>
+
+    protected int rentid;
+    @XmlElement(name = &quot;user_id&quot;)
+    protected int userId;
+    @XmlElement(name = &quot;book_id&quot;)
+    protected int bookId;
+    protected boolean reload;
+    protected boolean returnbook;
+    @XmlElement(required = true)
+    @XmlSchemaType(name = &quot;date&quot;)
+    protected XMLGregorianCalendar createat;
+    @XmlElement(required = true)
+    @XmlSchemaType(name = &quot;date&quot;)
+    protected XMLGregorianCalendar endat;
+
+    /**
+     * Obtient la valeur de la propriété rentid.
+     * 
+     */
+    public int getRentid() {
+<span class="nc" id="L68">        return rentid;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété rentid.
+     * 
+     */
+    public void setRentid(int value) {
+<span class="nc" id="L76">        this.rentid = value;</span>
+<span class="nc" id="L77">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété userId.
+     * 
+     */
+    public int getUserId() {
+<span class="nc" id="L84">        return userId;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété userId.
+     * 
+     */
+    public void setUserId(int value) {
+<span class="nc" id="L92">        this.userId = value;</span>
+<span class="nc" id="L93">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété bookId.
+     * 
+     */
+    public int getBookId() {
+<span class="nc" id="L100">        return bookId;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété bookId.
+     * 
+     */
+    public void setBookId(int value) {
+<span class="nc" id="L108">        this.bookId = value;</span>
+<span class="nc" id="L109">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété reload.
+     * 
+     */
+    public boolean isReload() {
+<span class="nc" id="L116">        return reload;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété reload.
+     * 
+     */
+    public void setReload(boolean value) {
+<span class="nc" id="L124">        this.reload = value;</span>
+<span class="nc" id="L125">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété returnbook.
+     * 
+     */
+    public boolean isReturnbook() {
+<span class="nc" id="L132">        return returnbook;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété returnbook.
+     * 
+     */
+    public void setReturnbook(boolean value) {
+<span class="nc" id="L140">        this.returnbook = value;</span>
+<span class="nc" id="L141">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété createat.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getCreateat() {
+<span class="nc" id="L152">        return createat;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété createat.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setCreateat(XMLGregorianCalendar value) {
+<span class="nc" id="L164">        this.createat = value;</span>
+<span class="nc" id="L165">    }</span>
+
+    /**
+     * Obtient la valeur de la propriété endat.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getEndat() {
+<span class="nc" id="L176">        return endat;</span>
+    }
+
+    /**
+     * Définit la valeur de la propriété endat.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setEndat(XMLGregorianCalendar value) {
+<span class="nc" id="L188">        this.endat = value;</span>
+<span class="nc" id="L189">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

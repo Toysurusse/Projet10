@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Connect.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Book</a> &gt; <a href="index.source.html" class="el_package">action.privacy</a> &gt; <span class="el_source">Connect.java</span></div><h1>Connect.java</h1><pre class="source lang-java linenums">package action.privacy;
+
+import client.Authentication;
+import client.book.BookClient;
+import client.book.SoapClientBookConfig;
+import client.shop.ShopClient;
+import client.shop.SoapClientShopConfig;
+import com.library.*;
+import com.opensymphony.xwork2.ActionSupport;
+import entity.Shopping;
+import org.apache.struts2.interceptor.SessionAware;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+
+<span class="nc" id="L19">public class Connect extends ActionSupport implements SessionAware {</span>
+
+    public User user ;
+
+    public User getUser() {
+<span class="nc" id="L24">        return user;</span>
+    }
+
+    public void setUser(User user) {
+<span class="nc" id="L28">        this.user = user;</span>
+<span class="nc" id="L29">    }</span>
+
+    public int idBook;
+
+    public int getIdBook() {
+<span class="nc" id="L34">        return idBook;</span>
+    }
+
+    public void setIdBook(int idBook) {
+<span class="nc" id="L38">        this.idBook = idBook;</span>
+<span class="nc" id="L39">    }</span>
+
+    public List&lt;Shopping&gt; getShoppingList() {
+<span class="nc" id="L42">        return shoppingList;</span>
+    }
+
+    public void setShoppingList(List&lt;Shopping&gt; shoppingList) {
+<span class="nc" id="L46">        this.shoppingList = shoppingList;</span>
+<span class="nc" id="L47">    }</span>
+
+<span class="nc" id="L49">    public List&lt;Shopping&gt; shoppingList=new ArrayList&lt;&gt;();</span>
+
+    public int idShop;
+
+    public String execute() throws Exception {
+
+<span class="nc" id="L55">        return SUCCESS;</span>
+    }
+
+    public String input() throws Exception {
+
+<span class="nc" id="L60">        return SUCCESS;</span>
+    }
+
+    /**
+     * MapString to import session
+     */
+    protected Map&lt;String, Object&gt; map;
+
+    @Override
+    public void setSession(Map&lt;String, Object&gt; map) {
+<span class="nc" id="L70">        this.map = map;</span>
+<span class="nc" id="L71">    }</span>
+
+    public Map&lt;String, Object&gt; getSession() {
+<span class="nc" id="L74">        return map;</span>
+    }
+
+
+    public int getIdShop() {
+<span class="nc" id="L79">        return idShop;</span>
+    }
+
+    public void setIdShop(int idShop) {
+<span class="nc" id="L83">        this.idShop = idShop;</span>
+<span class="nc" id="L84">    }</span>
+
+    public List&lt;Shopping&gt; initShop(){
+<span class="nc" id="L87">        User user = (User) this.map.get(&quot;user&quot;);</span>
+<span class="nc" id="L88">        OutputSOAShopSearch shoppingListUser = createInstanceBDDShop().getSearch(new Authentication(&quot;username&quot;, &quot;password&quot;), user.getUserid());</span>
+<span class="nc" id="L89">        List&lt;Shopping&gt; shopList=new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L90" title="All 2 branches missed.">        for (int i = 0; i &lt; shoppingListUser.getResult().size(); i++) {</span>
+<span class="nc" id="L91">            Book book = createInstanceBDDBook().getBookById(new Authentication(&quot;username&quot;, &quot;password&quot;), shoppingListUser.getResult().get(i).getIdbookshop()).getResult();</span>
+<span class="nc" id="L92">            shopList.add(new Shopping(book, shoppingListUser.getResult().get(i).getId()));</span>
+        }
+<span class="nc" id="L94">        return shopList;</span>
+    }
+
+    protected void deleteShop (){
+        //Get Shop Line From BDD and set false / after set Book dispo +1
+<span class="nc" id="L99">        OutputSOAShopById shopList = createInstanceBDDShop().getShopById(new Authentication(&quot;username&quot;, &quot;password&quot;), idShop);</span>
+<span class="nc" id="L100">        shopList.getResult().setDispo(false);</span>
+<span class="nc" id="L101">        OutputSOABookById bookToShop = createInstanceBDDBook().getBookById(new Authentication(&quot;username&quot;, &quot;password&quot;), shopList.getResult().getIdbookshop());</span>
+<span class="nc" id="L102">        bookToShop.getResult().setDispo(bookToShop.getResult().getDispo() + 1);</span>
+
+        //Update BDD
+<span class="nc" id="L105">        OutputSOAddConfirm bookUpdate = createInstanceBDDBook().getBookAdd(new Authentication(&quot;username&quot;, &quot;password&quot;), bookToShop.getResult());</span>
+<span class="nc" id="L106">        OutputSOAddConfirm shopUpdate = createInstanceBDDShop().getShopAdd(new Authentication(&quot;username&quot;, &quot;password&quot;), shopList.getResult());</span>
+<span class="nc" id="L107">    }</span>
+
+    protected ShopClient createInstanceBDDShop() {
+<span class="nc" id="L110">        AnnotationConfigApplicationContext contextS = new AnnotationConfigApplicationContext(SoapClientShopConfig.class);</span>
+<span class="nc" id="L111">        ShopClient clientS = contextS.getBean(ShopClient.class);</span>
+<span class="nc" id="L112">        return clientS;</span>
+    }
+
+    protected BookClient createInstanceBDDBook() {
+<span class="nc" id="L116">        AnnotationConfigApplicationContext contextB = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
+<span class="nc" id="L117">        BookClient clientB = contextB.getBean(BookClient.class);</span>
+<span class="nc" id="L118">        return clientB;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>
