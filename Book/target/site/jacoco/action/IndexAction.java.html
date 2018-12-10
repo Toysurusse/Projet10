@@ -62,25 +62,25 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
     public String search;
 
     public String execute() throws Exception {
-<span class="nc" id="L65">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
-<span class="nc" id="L66">        BookClient client = context.getBean(BookClient.class);</span>
-<span class="nc" id="L67">        OutputSOABook response = client.getBook(new Authentication(&quot;username&quot;,&quot;password&quot;));</span>
-<span class="nc" id="L68">        bookList=response.getResult();</span>
+<span class="fc" id="L65">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
+<span class="fc" id="L66">        BookClient client = context.getBean(BookClient.class);</span>
+<span class="fc" id="L67">        OutputSOABook response = client.getBook(new Authentication(&quot;username&quot;,&quot;password&quot;));</span>
+<span class="fc" id="L68">        bookList=response.getResult();</span>
 
-<span class="nc" id="L70">        now = new Date(System.currentTimeMillis());</span>
-<span class="nc" id="L71">        return SUCCESS;</span>
+<span class="fc" id="L70">        now = new Date(System.currentTimeMillis());</span>
+<span class="fc" id="L71">        return SUCCESS;</span>
     }
 
     public String search() throws Exception {
-<span class="nc" id="L75">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
-<span class="nc" id="L76">        BookClient client = context.getBean(BookClient.class);</span>
-<span class="nc" id="L77">        OutputSOABookSearch response = client.getSearch(new Authentication(&quot;username&quot;,&quot;password&quot;),search);</span>
-<span class="nc" id="L78">        bookList=null;</span>
-<span class="nc" id="L79">        bookList=new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L80">        bookList=response.getResult();</span>
+<span class="fc" id="L75">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
+<span class="fc" id="L76">        BookClient client = context.getBean(BookClient.class);</span>
+<span class="fc" id="L77">        OutputSOABookSearch response = client.getSearch(new Authentication(&quot;username&quot;,&quot;password&quot;),search);</span>
+<span class="fc" id="L78">        bookList=null;</span>
+<span class="fc" id="L79">        bookList=new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L80">        bookList=response.getResult();</span>
 
-<span class="nc" id="L82">        now = new Date(System.currentTimeMillis());</span>
-<span class="nc" id="L83">        return SUCCESS;</span>
+<span class="fc" id="L82">        now = new Date(System.currentTimeMillis());</span>
+<span class="fc" id="L83">        return SUCCESS;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

@@ -1,9 +1,12 @@
-action\privacy\ConnectedTest.class
+action\mock\UserClientMock.class
 action\admin\BookTest.class
+action\privacy\ReloadTest.class
+action\ListClientSoapTest.class
+action\CreateAccountTest.class
+action\privacy\RentTest.class
+action\privacy\ConnectedTest.class
 action\IndexActionTest.class
 action\admin\UserTest.class
-action\privacy\ReloadTest.class
+action\mock\SoapClientUserConfig.class
 action\privacy\ConnectTest.class
-action\CreateAccountTest.class
 action\privacy\ConnectTry.class
-action\privacy\RentTest.class

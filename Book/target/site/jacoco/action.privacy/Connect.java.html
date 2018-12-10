@@ -12,110 +12,111 @@ import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 
-<span class="nc" id="L19">public class Connect extends ActionSupport implements SessionAware {</span>
+<span class="fc" id="L20">public class Connect extends ActionSupport implements SessionAware {</span>
 
     public User user ;
 
     public User getUser() {
-<span class="nc" id="L24">        return user;</span>
+<span class="nc" id="L25">        return user;</span>
     }
 
     public void setUser(User user) {
-<span class="nc" id="L28">        this.user = user;</span>
-<span class="nc" id="L29">    }</span>
+<span class="nc" id="L29">        this.user = user;</span>
+<span class="nc" id="L30">    }</span>
 
     public int idBook;
 
     public int getIdBook() {
-<span class="nc" id="L34">        return idBook;</span>
+<span class="nc" id="L35">        return idBook;</span>
     }
 
     public void setIdBook(int idBook) {
-<span class="nc" id="L38">        this.idBook = idBook;</span>
-<span class="nc" id="L39">    }</span>
+<span class="nc" id="L39">        this.idBook = idBook;</span>
+<span class="nc" id="L40">    }</span>
 
     public List&lt;Shopping&gt; getShoppingList() {
-<span class="nc" id="L42">        return shoppingList;</span>
+<span class="nc" id="L43">        return shoppingList;</span>
     }
 
     public void setShoppingList(List&lt;Shopping&gt; shoppingList) {
-<span class="nc" id="L46">        this.shoppingList = shoppingList;</span>
-<span class="nc" id="L47">    }</span>
+<span class="nc" id="L47">        this.shoppingList = shoppingList;</span>
+<span class="nc" id="L48">    }</span>
 
-<span class="nc" id="L49">    public List&lt;Shopping&gt; shoppingList=new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L50">    public List&lt;Shopping&gt; shoppingList=new ArrayList&lt;&gt;();</span>
 
     public int idShop;
 
     public String execute() throws Exception {
 
-<span class="nc" id="L55">        return SUCCESS;</span>
+<span class="nc" id="L56">        return SUCCESS;</span>
     }
 
     public String input() throws Exception {
 
-<span class="nc" id="L60">        return SUCCESS;</span>
+<span class="nc" id="L61">        return SUCCESS;</span>
     }
 
     /**
      * MapString to import session
      */
-    protected Map&lt;String, Object&gt; map;
+<span class="fc" id="L67">    protected Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();</span>
 
     @Override
     public void setSession(Map&lt;String, Object&gt; map) {
-<span class="nc" id="L70">        this.map = map;</span>
-<span class="nc" id="L71">    }</span>
+<span class="nc" id="L71">        this.map = map;</span>
+<span class="nc" id="L72">    }</span>
 
     public Map&lt;String, Object&gt; getSession() {
-<span class="nc" id="L74">        return map;</span>
+<span class="nc" id="L75">        return map;</span>
     }
 
 
     public int getIdShop() {
-<span class="nc" id="L79">        return idShop;</span>
+<span class="nc" id="L80">        return idShop;</span>
     }
 
     public void setIdShop(int idShop) {
-<span class="nc" id="L83">        this.idShop = idShop;</span>
-<span class="nc" id="L84">    }</span>
+<span class="nc" id="L84">        this.idShop = idShop;</span>
+<span class="nc" id="L85">    }</span>
 
     public List&lt;Shopping&gt; initShop(){
-<span class="nc" id="L87">        User user = (User) this.map.get(&quot;user&quot;);</span>
-<span class="nc" id="L88">        OutputSOAShopSearch shoppingListUser = createInstanceBDDShop().getSearch(new Authentication(&quot;username&quot;, &quot;password&quot;), user.getUserid());</span>
-<span class="nc" id="L89">        List&lt;Shopping&gt; shopList=new ArrayList&lt;&gt;();</span>
-<span class="nc bnc" id="L90" title="All 2 branches missed.">        for (int i = 0; i &lt; shoppingListUser.getResult().size(); i++) {</span>
-<span class="nc" id="L91">            Book book = createInstanceBDDBook().getBookById(new Authentication(&quot;username&quot;, &quot;password&quot;), shoppingListUser.getResult().get(i).getIdbookshop()).getResult();</span>
-<span class="nc" id="L92">            shopList.add(new Shopping(book, shoppingListUser.getResult().get(i).getId()));</span>
+<span class="nc" id="L88">        User user = (User) this.map.get(&quot;user&quot;);</span>
+<span class="nc" id="L89">        OutputSOAShopSearch shoppingListUser = createInstanceBDDShop().getSearch(new Authentication(&quot;username&quot;, &quot;password&quot;), user.getUserid());</span>
+<span class="nc" id="L90">        List&lt;Shopping&gt; shopList=new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L91" title="All 2 branches missed.">        for (int i = 0; i &lt; shoppingListUser.getResult().size(); i++) {</span>
+<span class="nc" id="L92">            Book book = createInstanceBDDBook().getBookById(new Authentication(&quot;username&quot;, &quot;password&quot;), shoppingListUser.getResult().get(i).getIdbookshop()).getResult();</span>
+<span class="nc" id="L93">            shopList.add(new Shopping(book, shoppingListUser.getResult().get(i).getId()));</span>
         }
-<span class="nc" id="L94">        return shopList;</span>
+<span class="nc" id="L95">        return shopList;</span>
     }
 
     protected void deleteShop (){
         //Get Shop Line From BDD and set false / after set Book dispo +1
-<span class="nc" id="L99">        OutputSOAShopById shopList = createInstanceBDDShop().getShopById(new Authentication(&quot;username&quot;, &quot;password&quot;), idShop);</span>
-<span class="nc" id="L100">        shopList.getResult().setDispo(false);</span>
-<span class="nc" id="L101">        OutputSOABookById bookToShop = createInstanceBDDBook().getBookById(new Authentication(&quot;username&quot;, &quot;password&quot;), shopList.getResult().getIdbookshop());</span>
-<span class="nc" id="L102">        bookToShop.getResult().setDispo(bookToShop.getResult().getDispo() + 1);</span>
+<span class="nc" id="L100">        OutputSOAShopById shopList = createInstanceBDDShop().getShopById(new Authentication(&quot;username&quot;, &quot;password&quot;), idShop);</span>
+<span class="nc" id="L101">        shopList.getResult().setDispo(false);</span>
+<span class="nc" id="L102">        OutputSOABookById bookToShop = createInstanceBDDBook().getBookById(new Authentication(&quot;username&quot;, &quot;password&quot;), shopList.getResult().getIdbookshop());</span>
+<span class="nc" id="L103">        bookToShop.getResult().setDispo(bookToShop.getResult().getDispo() + 1);</span>
 
         //Update BDD
-<span class="nc" id="L105">        OutputSOAddConfirm bookUpdate = createInstanceBDDBook().getBookAdd(new Authentication(&quot;username&quot;, &quot;password&quot;), bookToShop.getResult());</span>
-<span class="nc" id="L106">        OutputSOAddConfirm shopUpdate = createInstanceBDDShop().getShopAdd(new Authentication(&quot;username&quot;, &quot;password&quot;), shopList.getResult());</span>
-<span class="nc" id="L107">    }</span>
+<span class="nc" id="L106">        OutputSOAddConfirm bookUpdate = createInstanceBDDBook().getBookAdd(new Authentication(&quot;username&quot;, &quot;password&quot;), bookToShop.getResult());</span>
+<span class="nc" id="L107">        OutputSOAddConfirm shopUpdate = createInstanceBDDShop().getShopAdd(new Authentication(&quot;username&quot;, &quot;password&quot;), shopList.getResult());</span>
+<span class="nc" id="L108">    }</span>
 
     protected ShopClient createInstanceBDDShop() {
-<span class="nc" id="L110">        AnnotationConfigApplicationContext contextS = new AnnotationConfigApplicationContext(SoapClientShopConfig.class);</span>
-<span class="nc" id="L111">        ShopClient clientS = contextS.getBean(ShopClient.class);</span>
-<span class="nc" id="L112">        return clientS;</span>
+<span class="nc" id="L111">        AnnotationConfigApplicationContext contextS = new AnnotationConfigApplicationContext(SoapClientShopConfig.class);</span>
+<span class="nc" id="L112">        ShopClient clientS = contextS.getBean(ShopClient.class);</span>
+<span class="nc" id="L113">        return clientS;</span>
     }
 
     protected BookClient createInstanceBDDBook() {
-<span class="nc" id="L116">        AnnotationConfigApplicationContext contextB = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
-<span class="nc" id="L117">        BookClient clientB = contextB.getBean(BookClient.class);</span>
-<span class="nc" id="L118">        return clientB;</span>
+<span class="nc" id="L117">        AnnotationConfigApplicationContext contextB = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
+<span class="nc" id="L118">        BookClient clientB = contextB.getBean(BookClient.class);</span>
+<span class="nc" id="L119">        return clientB;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

@@ -11,37 +11,37 @@ import java.util.Random;
 
 <span class="nc" id="L12">public class Encrypt {</span>
 
-<span class="nc" id="L14">    private static final Random RANDOM = new SecureRandom();</span>
+<span class="fc" id="L14">    private static final Random RANDOM = new SecureRandom();</span>
     private static final String ALPHABET = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&quot;;
     private static final int ITERATIONS = 10000;
     private static final int KEY_LENGTH = 256;
 
     public static String getSalt(int length) {
-<span class="nc" id="L20">        StringBuilder returnValue = new StringBuilder(length);</span>
-<span class="nc bnc" id="L21" title="All 2 branches missed.">        for (int i = 0; i &lt; length; i++) {</span>
-<span class="nc" id="L22">            returnValue.append(ALPHABET.charAt(RANDOM.nextInt(ALPHABET.length())));</span>
+<span class="fc" id="L20">        StringBuilder returnValue = new StringBuilder(length);</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        for (int i = 0; i &lt; length; i++) {</span>
+<span class="fc" id="L22">            returnValue.append(ALPHABET.charAt(RANDOM.nextInt(ALPHABET.length())));</span>
         }
-<span class="nc" id="L24">        return new String(returnValue);</span>
+<span class="fc" id="L24">        return new String(returnValue);</span>
     }
     public static byte[] hash(char[] password, byte[] salt) {
-<span class="nc" id="L27">        PBEKeySpec spec = new PBEKeySpec(password, salt, ITERATIONS, KEY_LENGTH);</span>
-<span class="nc" id="L28">        Arrays.fill(password, Character.MIN_VALUE);</span>
+<span class="fc" id="L27">        PBEKeySpec spec = new PBEKeySpec(password, salt, ITERATIONS, KEY_LENGTH);</span>
+<span class="fc" id="L28">        Arrays.fill(password, Character.MIN_VALUE);</span>
         try {
-<span class="nc" id="L30">            SecretKeyFactory skf = SecretKeyFactory.getInstance(&quot;PBKDF2WithHmacSHA1&quot;);</span>
-<span class="nc" id="L31">            return skf.generateSecret(spec).getEncoded();</span>
+<span class="fc" id="L30">            SecretKeyFactory skf = SecretKeyFactory.getInstance(&quot;PBKDF2WithHmacSHA1&quot;);</span>
+<span class="fc" id="L31">            return skf.generateSecret(spec).getEncoded();</span>
 <span class="nc" id="L32">        } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {</span>
 <span class="nc" id="L33">            throw new AssertionError(&quot;Error while hashing a password: &quot; + e.getMessage(), e);</span>
         } finally {
-<span class="nc" id="L35">            spec.clearPassword();</span>
+<span class="pc" id="L35">            spec.clearPassword();</span>
 <span class="nc" id="L36">        }</span>
     }
     public static String generateSecurePassword(String password, String salt) {
-<span class="nc" id="L39">        String returnValue = null;</span>
-<span class="nc" id="L40">        byte[] securePassword = hash(password.toCharArray(), salt.getBytes());</span>
+<span class="fc" id="L39">        String returnValue = null;</span>
+<span class="fc" id="L40">        byte[] securePassword = hash(password.toCharArray(), salt.getBytes());</span>
 
-<span class="nc" id="L42">        returnValue = Base64.getEncoder().encodeToString(securePassword);</span>
+<span class="fc" id="L42">        returnValue = Base64.getEncoder().encodeToString(securePassword);</span>
 
-<span class="nc" id="L44">        return returnValue;</span>
+<span class="fc" id="L44">        return returnValue;</span>
     }
 
     public static boolean verifyUserPassword(String providedPassword,

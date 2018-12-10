@@ -5,22 +5,22 @@ import client.SecurityHeader;
 import com.library.*;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 
-<span class="nc" id="L8">public class BookClient extends WebServiceGatewaySupport {</span>
+<span class="fc" id="L8">public class BookClient extends WebServiceGatewaySupport {</span>
 
     public OutputSOABook getBook(Authentication authentication) {
-<span class="nc" id="L11">        InputSOABook request = new InputSOABook();</span>
-<span class="nc" id="L12">        request.setTest(&quot;Test&quot;);</span>
-<span class="nc" id="L13">        return (OutputSOABook) getWebServiceTemplate()</span>
-<span class="nc" id="L14">                .marshalSendAndReceive(request,</span>
+<span class="fc" id="L11">        InputSOABook request = new InputSOABook();</span>
+<span class="fc" id="L12">        request.setTest(&quot;Test&quot;);</span>
+<span class="fc" id="L13">        return (OutputSOABook) getWebServiceTemplate()</span>
+<span class="fc" id="L14">                .marshalSendAndReceive(request,</span>
                         new SecurityHeader(
                                 authentication));
     }
 
     public OutputSOABookSearch getSearch(Authentication authentication, String search) {
-<span class="nc" id="L20">        InputSOABookSearch request = new InputSOABookSearch();</span>
-<span class="nc" id="L21">        request.setTest(search);</span>
-<span class="nc" id="L22">        return (OutputSOABookSearch) getWebServiceTemplate()</span>
-<span class="nc" id="L23">                .marshalSendAndReceive(request,</span>
+<span class="fc" id="L20">        InputSOABookSearch request = new InputSOABookSearch();</span>
+<span class="fc" id="L21">        request.setTest(search);</span>
+<span class="fc" id="L22">        return (OutputSOABookSearch) getWebServiceTemplate()</span>
+<span class="fc" id="L23">                .marshalSendAndReceive(request,</span>
                         new SecurityHeader(
                                 authentication));
     }

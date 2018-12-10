@@ -12,6 +12,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -63,7 +64,7 @@ public class Connect extends ActionSupport implements SessionAware {
     /**
      * MapString to import session
      */
-    protected Map<String, Object> map;
+    protected Map<String, Object> map = new HashMap<>();
 
     @Override
     public void setSession(Map<String, Object> map) {

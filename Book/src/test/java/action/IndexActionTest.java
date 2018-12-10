@@ -51,7 +51,7 @@ public class IndexActionTest {
 
     private IndexAction action = new IndexAction();
 
-    private List<Book> book=new ArrayList<>();
+    private List<Book> book=new ArrayList<Book>();
 
     @Mock
     private WebServiceTemplate webServiceTemplate;
@@ -73,7 +73,8 @@ public class IndexActionTest {
         outputSOABook.getResult().add(book);
         when(webServiceTemplate.marshalSendAndReceive(any()))
                 .thenReturn(outputSOABook);
-        when(outputSOABook.getResult()).thenReturn(Collections.singletonList(book));LOGGER.info(action.execute());
+        when(outputSOABook.getResult()).thenReturn(Collections.singletonList(book));
+        LOGGER.info(action.execute());
         assertNotNull(action.execute());
     }
 

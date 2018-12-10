@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlType;
     &quot;result&quot;
 })
 @XmlRootElement(name = &quot;outputSOABookSearch&quot;)
-<span class="nc" id="L37">public class OutputSOABookSearch {</span>
+<span class="fc" id="L37">public class OutputSOABookSearch {</span>
 
     @XmlElement(required = true)
     protected List&lt;Book&gt; result;
@@ -62,10 +62,10 @@ import javax.xml.bind.annotation.XmlType;
      * 
      */
     public List&lt;Book&gt; getResult() {
-<span class="nc bnc" id="L65" title="All 2 branches missed.">        if (result == null) {</span>
-<span class="nc" id="L66">            result = new ArrayList&lt;Book&gt;();</span>
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">        if (result == null) {</span>
+<span class="fc" id="L66">            result = new ArrayList&lt;Book&gt;();</span>
         }
-<span class="nc" id="L68">        return this.result;</span>
+<span class="fc" id="L68">        return this.result;</span>
     }
 
 }

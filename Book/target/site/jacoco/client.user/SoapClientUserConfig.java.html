@@ -5,22 +5,22 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
 @Configuration
-<span class="nc" id="L8">public class SoapClientUserConfig {</span>
+<span class="fc" id="L8">public class SoapClientUserConfig {</span>
 
     @Bean
     public Jaxb2Marshaller marshaller() {
-<span class="nc" id="L12">        Jaxb2Marshaller marshaller = new Jaxb2Marshaller();</span>
-<span class="nc" id="L13">        marshaller.setContextPath(&quot;com.library&quot;);</span>
-<span class="nc" id="L14">        return marshaller;</span>
+<span class="fc" id="L12">        Jaxb2Marshaller marshaller = new Jaxb2Marshaller();</span>
+<span class="fc" id="L13">        marshaller.setContextPath(&quot;com.library&quot;);</span>
+<span class="fc" id="L14">        return marshaller;</span>
     }
 
     @Bean
     public UserClient weatherClient(Jaxb2Marshaller marshaller) {
-<span class="nc" id="L19">        UserClient client = new UserClient();</span>
-<span class="nc" id="L20">        client.setDefaultUri(&quot;http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/user&quot;);</span>
-<span class="nc" id="L21">        client.setMarshaller(marshaller);</span>
-<span class="nc" id="L22">        client.setUnmarshaller(marshaller);</span>
-<span class="nc" id="L23">        return client;</span>
+<span class="fc" id="L19">        UserClient client = new UserClient();</span>
+<span class="fc" id="L20">        client.setDefaultUri(&quot;http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/user&quot;);</span>
+<span class="fc" id="L21">        client.setMarshaller(marshaller);</span>
+<span class="fc" id="L22">        client.setUnmarshaller(marshaller);</span>
+<span class="fc" id="L23">        return client;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

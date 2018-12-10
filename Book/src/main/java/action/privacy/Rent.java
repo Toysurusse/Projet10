@@ -72,7 +72,6 @@ public class Rent extends Connect {
                     rent.setEndat(translate(end_at));
                     rent.setReload(false);
                     rent.setReturnbook(false);
-                    System.out.println(rent.getUserId() + " ; " + rent.getBookId() + " ; " + rent.getRentid() + " ; " + rent.getCreateat() + " ; " + rent.getEndat() + " ; " + rent.isReload() + " ; " + rent.isReturnbook());
 
                     rentList.add(rent);
 

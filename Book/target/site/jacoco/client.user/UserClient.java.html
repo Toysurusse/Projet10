@@ -5,19 +5,19 @@ import client.SecurityHeader;
 import com.library.*;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 
-<span class="nc" id="L8">public class UserClient extends WebServiceGatewaySupport {</span>
+<span class="fc" id="L8">public class UserClient extends WebServiceGatewaySupport {</span>
 
     private Authentication getauthentication(){
-<span class="nc" id="L11">        return new Authentication(&quot;username&quot;,&quot;password&quot;);</span>
+<span class="fc" id="L11">        return new Authentication(&quot;username&quot;,&quot;password&quot;);</span>
     }
     
     public OutputSOAUser getUser() {
-<span class="nc" id="L15">        InputSOAUser request = new InputSOAUser();</span>
-<span class="nc" id="L16">        request.setTest(&quot;Test&quot;);</span>
-<span class="nc" id="L17">        return (OutputSOAUser) getWebServiceTemplate()</span>
-<span class="nc" id="L18">                .marshalSendAndReceive(request,</span>
+<span class="fc" id="L15">        InputSOAUser request = new InputSOAUser();</span>
+<span class="fc" id="L16">        request.setTest(&quot;Test&quot;);</span>
+<span class="fc" id="L17">        return (OutputSOAUser) getWebServiceTemplate()</span>
+<span class="fc" id="L18">                .marshalSendAndReceive(request,</span>
                         new SecurityHeader(
-<span class="nc" id="L20">                                getauthentication()));</span>
+<span class="fc" id="L20">                                getauthentication()));</span>
     }
 
     public OutputSOAUserTest getUserTest( String pseudo) {
@@ -39,10 +39,10 @@ import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
     }
 
     public OutputSOAddConfirm getUserAdd(Authentication authentication, User user) {
-<span class="nc" id="L42">        InputSOAUserAdd request = new InputSOAUserAdd();</span>
-<span class="nc" id="L43">        request.setUser(user);</span>
-<span class="nc" id="L44">        return (OutputSOAddConfirm) getWebServiceTemplate()</span>
-<span class="nc" id="L45">                .marshalSendAndReceive(request,</span>
+<span class="fc" id="L42">        InputSOAUserAdd request = new InputSOAUserAdd();</span>
+<span class="fc" id="L43">        request.setUser(user);</span>
+<span class="fc" id="L44">        return (OutputSOAddConfirm) getWebServiceTemplate()</span>
+<span class="fc" id="L45">                .marshalSendAndReceive(request,</span>
                         new SecurityHeader(
                                 authentication));
     }

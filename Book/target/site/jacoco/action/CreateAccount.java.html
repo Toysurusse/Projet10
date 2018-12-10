@@ -10,9 +10,9 @@ import com.opensymphony.xwork2.ActionSupport;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-<span class="nc" id="L13">public class CreateAccount  extends Connect {</span>
+<span class="fc" id="L13">public class CreateAccount  extends Connect {</span>
 
-<span class="nc" id="L15">    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(IndexAction.class);</span>
+<span class="fc" id="L15">    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(IndexAction.class);</span>
     public User getUser2() {
 <span class="nc" id="L17">        return user2;</span>
     }
@@ -21,151 +21,144 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 <span class="nc" id="L21">        this.user2 = user2;</span>
 <span class="nc" id="L22">    }</span>
 
+<span class="fc" id="L24">    protected Authentication auth = new Authentication(&quot;username&quot;,&quot;password&quot;);</span>
+
     public User user2;
 
     public User getUser() {
-<span class="nc" id="L27">        return user;</span>
+<span class="nc" id="L29">        return user;</span>
     }
 
     public void setUser(User user) {
-<span class="nc" id="L31">        this.user = user;</span>
-<span class="nc" id="L32">    }</span>
+<span class="nc" id="L33">        this.user = user;</span>
+<span class="nc" id="L34">    }</span>
 
     public User user;
 
     public String execute() throws Exception {
-<span class="nc" id="L37">        LOGGER.info(&quot;execute / Classe Java Action.CreateAccount&quot;);</span>
-<span class="nc" id="L38">        return ActionSupport.SUCCESS;</span>
+<span class="fc" id="L39">        LOGGER.info(&quot;execute / Classe Java Action.CreateAccount&quot;);</span>
+<span class="fc" id="L40">        return ActionSupport.SUCCESS;</span>
     }
 
-
-
-
     public String createAccount() throws Exception {
-<span class="nc" id="L45">        LOGGER.info(&quot;createAccount / Classe Java Action.privacy.Rent&quot;);</span>
-<span class="nc" id="L46">        this.clearActionErrors();</span>
+<span class="nc" id="L44">        LOGGER.info(&quot;createAccount / Classe Java Action.privacy.CreateAccount&quot;);</span>
+<span class="nc" id="L45">        this.clearActionErrors();</span>
 
-<span class="nc" id="L48">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);</span>
-<span class="nc" id="L49">        UserClient client = context.getBean(UserClient.class);</span>
-<span class="nc" id="L50">        controlMDP(user);</span>
-<span class="nc" id="L51">        OutputSOAUser list = client.getUser();</span>
+<span class="nc" id="L47">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);</span>
+<span class="nc" id="L48">        UserClient client = context.getBean(UserClient.class);</span>
+<span class="nc" id="L49">        controlMDP(user);</span>
+<span class="nc" id="L50">        OutputSOAUser list = client.getUser();</span>
 
-<span class="nc bnc" id="L53" title="All 2 branches missed.">        for (User u : list.getResult()) {</span>
-<span class="nc bnc" id="L54" title="All 2 branches missed.">            if (u.getPseudo().equals(user.getPseudo())){</span>
-<span class="nc" id="L55">                this.addActionError(getText(&quot;error.PseudoExist&quot;));</span>
+<span class="nc" id="L52">        LOGGER.info(&quot;createAccount / Classe Java Action.privacy.CreateAccount ==&gt; Control MDP&quot;);</span>
+
+<span class="nc bnc" id="L54" title="All 2 branches missed.">        for (User u : list.getResult()) {</span>
+<span class="nc bnc" id="L55" title="All 2 branches missed.">            if (u.getPseudo().equals(user.getPseudo())){</span>
+<span class="nc" id="L56">                this.addActionError(getText(&quot;error.PseudoExist&quot;));</span>
             }
-<span class="nc" id="L57">        }</span>
-<span class="nc" id="L58">        user.setRole(1);</span>
+<span class="nc" id="L58">        }</span>
+<span class="nc" id="L59">        user.setRole(1);</span>
 
         // Generate Salt. The generated value can be stored in DB.
-<span class="nc" id="L61">        String salt = Encrypt.getSalt(30);</span>
+<span class="nc" id="L62">        String salt = Encrypt.getSalt(30);</span>
+
+<span class="nc" id="L64">        LOGGER.info(&quot;createAccount / Classe Java Action.privacy.CreateAccount ==&gt; Set Encrypt PWD&quot;);</span>
 
         // Protect user's password. The generated value can be stored in DB.
-<span class="nc" id="L64">        String mySecurePassword = Encrypt.generateSecurePassword(user.getPassword(), salt);</span>
+<span class="nc" id="L67">        String mySecurePassword = Encrypt.generateSecurePassword(user.getPassword(), salt);</span>
 
-<span class="nc" id="L66">        user.setPassword(mySecurePassword);</span>
-<span class="nc" id="L67">        user.setSalt(salt);</span>
+<span class="nc" id="L69">        user.setPassword(mySecurePassword);</span>
+<span class="nc" id="L70">        user.setSalt(salt);</span>
 
-        // Print out protected password
-<span class="nc" id="L70">        System.out.println(&quot;My secure password = &quot; + mySecurePassword);</span>
-<span class="nc" id="L71">        System.out.println(&quot;Salt value = &quot; + salt);</span>
+<span class="nc" id="L72">        LOGGER.info(&quot;createAccount / Classe Java Action.privacy.CreateAccount ==&gt; Add User&quot;);</span>
 
-<span class="nc bnc" id="L73" title="All 2 branches missed.">        if (!this.hasErrors()) {</span>
-<span class="nc" id="L74">            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(new Authentication(&quot;username&quot;, &quot;password&quot;),user);</span>
-<span class="nc" id="L75">            list = client.getUser();</span>
-<span class="nc bnc" id="L76" title="All 2 branches missed.">            for (User u : list.getResult()) {</span>
-<span class="nc bnc" id="L77" title="All 2 branches missed.">                if (u.getPseudo().equals(user.getPseudo())){</span>
-<span class="nc" id="L78">                    user.setUserid(u.getUserid());</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">        if (!this.hasErrors()) {</span>
+<span class="nc" id="L75">            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(auth,user);</span>
+<span class="nc" id="L76">            list = client.getUser();</span>
+<span class="nc bnc" id="L77" title="All 2 branches missed.">            for (User u : list.getResult()) {</span>
+<span class="nc bnc" id="L78" title="All 2 branches missed.">                if (u.getPseudo().equals(user.getPseudo())){</span>
+<span class="nc" id="L79">                    user.setUserid(u.getUserid());</span>
+<span class="nc" id="L80">                    LOGGER.info(&quot;createAccount / Classe Java Action.privacy.CreateAccount ==&gt; get Id User&quot;);</span>
                 }
-<span class="nc" id="L80">            }</span>
-<span class="nc" id="L81">            this.map.put(&quot;user&quot;, user);</span>
+<span class="nc" id="L82">            }</span>
+<span class="nc" id="L83">            this.map.put(&quot;user&quot;, user);</span>
+<span class="nc" id="L84">            LOGGER.info(&quot;createAccount / Classe Java Action.privacy.CreateAccount ==&gt; Update Map&quot;);</span>
         }
-<span class="nc bnc" id="L83" title="All 2 branches missed.">        return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;</span>
+<span class="nc bnc" id="L86" title="All 2 branches missed.">        return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;</span>
     }
 
     public String updateInit() {
-<span class="nc" id="L87">        LOGGER.info(&quot;UpdateInit / Classe Java Action.privacy.Rent&quot;);</span>
-<span class="nc" id="L88">        user = (User) this.map.get(&quot;user&quot;);</span>
-<span class="nc" id="L89">        pseudo = user.getPseudo();</span>
-<span class="nc" id="L90">        return ActionSupport.SUCCESS;</span>
+<span class="fc" id="L90">        LOGGER.info(&quot;UpdateInit / Classe Java Action.privacy.CreateAccount&quot;);</span>
+<span class="fc" id="L91">        user = (User) this.map.get(&quot;user&quot;);</span>
+<span class="fc" id="L92">        pseudo = user.getPseudo();</span>
+<span class="fc" id="L93">        return ActionSupport.SUCCESS;</span>
     }
 
-
     public String updateAccount() {
-<span class="nc" id="L95">        LOGGER.info(&quot;updateAccount / Classe Java Action.privacy.Rent&quot;);</span>
-<span class="nc" id="L96">        this.clearActionErrors();</span>
+<span class="fc" id="L97">        LOGGER.info(&quot;updateAccount / Classe Java Action.privacy.CreateAccount&quot;);</span>
+<span class="fc" id="L98">        this.clearActionErrors();</span>
 
-<span class="nc" id="L98">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);</span>
-<span class="nc" id="L99">        UserClient client = context.getBean(UserClient.class);</span>
+<span class="fc" id="L100">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);</span>
+<span class="fc" id="L101">        UserClient client = context.getBean(UserClient.class);</span>
 
-<span class="nc" id="L101">        controlMDP(user);</span>
-<span class="nc" id="L102">        OutputSOAUser list = client.getUser();</span>
+<span class="fc" id="L103">        controlMDP(user);</span>
+<span class="fc" id="L104">        OutputSOAUser list = client.getUser();</span>
 
-<span class="nc" id="L104">        user2 = (User) this.map.get(&quot;user&quot;);</span>
+<span class="fc" id="L106">        user2 = (User) this.map.get(&quot;user&quot;);</span>
 
-<span class="nc" id="L106">        user.setRole(user2.getRole());</span>
-<span class="nc" id="L107">        user.setUserid(user2.getUserid());</span>
-
-<span class="nc" id="L109">        System.out.println(user.getUserid());</span>
-
-<span class="nc" id="L111">        System.out.println(user.getPseudo()+user.getMail());</span>
+<span class="fc" id="L108">        user.setRole(user2.getRole());</span>
+<span class="fc" id="L109">        user.setUserid(user2.getUserid());</span>
 
         // Generate Salt. The generated value can be stored in DB.
-<span class="nc" id="L114">        String salt = Encrypt.getSalt(30);</span>
+<span class="fc" id="L112">        String salt = Encrypt.getSalt(30);</span>
 
         // Protect user's password. The generated value can be stored in DB.
-<span class="nc" id="L117">        String mySecurePassword = Encrypt.generateSecurePassword(user.getPassword(), salt);</span>
+<span class="fc" id="L115">        String mySecurePassword = Encrypt.generateSecurePassword(user.getPassword(), salt);</span>
 
-<span class="nc" id="L119">        user.setPassword(mySecurePassword);</span>
-<span class="nc" id="L120">        user.setSalt(salt);</span>
+<span class="fc" id="L117">        user.setPassword(mySecurePassword);</span>
+<span class="fc" id="L118">        user.setSalt(salt);</span>
 
-        // Print out protected password
-<span class="nc" id="L123">        System.out.println(&quot;My secure password = &quot; + mySecurePassword);</span>
-<span class="nc" id="L124">        System.out.println(&quot;Salt value = &quot; + salt);</span>
-
-<span class="nc bnc" id="L126" title="All 2 branches missed.">        if (!this.hasErrors()) {</span>
-<span class="nc" id="L127">            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(new Authentication(&quot;username&quot;, &quot;password&quot;),user);</span>
-<span class="nc" id="L128">            this.map.remove(&quot;user&quot;);</span>
-<span class="nc" id="L129">            this.map.put(&quot;user&quot;, user);</span>
+<span class="pc bpc" id="L120" title="1 of 2 branches missed.">        if (!this.hasErrors()) {</span>
+<span class="fc" id="L121">            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(auth,user);</span>
+<span class="fc" id="L122">            this.map.remove(&quot;user&quot;);</span>
+<span class="fc" id="L123">            this.map.put(&quot;user&quot;, user);</span>
         }
-
-<span class="nc bnc" id="L132" title="All 2 branches missed.">        return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;</span>
+<span class="pc bpc" id="L125" title="1 of 2 branches missed.">        return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;</span>
     }
 
 
     private void controlMDP(User user) {
-<span class="nc bnc" id="L137" title="All 2 branches missed.">        if (user.getPseudo().equals(&quot;&quot;)) {</span>
-<span class="nc" id="L138">            this.addActionError(getText(&quot;error.emptyPseudo&quot;));</span>
+<span class="pc bpc" id="L130" title="1 of 2 branches missed.">        if (user.getPseudo().equals(&quot;&quot;)) {</span>
+<span class="nc" id="L131">            this.addActionError(getText(&quot;error.emptyPseudo&quot;));</span>
         }
-<span class="nc bnc" id="L140" title="All 2 branches missed.">        if (user.getPassword().equals(&quot;&quot;)) {</span>
-<span class="nc" id="L141">            this.addActionError(getText(&quot;error.emptyPassword&quot;));</span>
+<span class="pc bpc" id="L133" title="1 of 2 branches missed.">        if (user.getPassword().equals(&quot;&quot;)) {</span>
+<span class="nc" id="L134">            this.addActionError(getText(&quot;error.emptyPassword&quot;));</span>
         }
-<span class="nc bnc" id="L143" title="All 2 branches missed.">        if (user.getGender() ==null) {</span>
-<span class="nc" id="L144">            this.addActionError(getText(&quot;error.emptyGender&quot;));</span>
+<span class="pc bpc" id="L136" title="1 of 2 branches missed.">        if (user.getGender() ==null) {</span>
+<span class="nc" id="L137">            this.addActionError(getText(&quot;error.emptyGender&quot;));</span>
         }
-<span class="nc bnc" id="L146" title="All 2 branches missed.">        if (user.getMail().equals(&quot;&quot;)) {</span>
-<span class="nc" id="L147">            this.addActionError(getText(&quot;error.emptyMail&quot;));</span>
+<span class="pc bpc" id="L139" title="1 of 2 branches missed.">        if (user.getMail().equals(&quot;&quot;)) {</span>
+<span class="nc" id="L140">            this.addActionError(getText(&quot;error.emptyMail&quot;));</span>
         }
-<span class="nc" id="L149">    }</span>
+<span class="fc" id="L142">    }</span>
 
 
     public String pseudo;
     public String password;
 
     public String getPseudo() {
-<span class="nc" id="L156">        return pseudo;</span>
+<span class="nc" id="L149">        return pseudo;</span>
     }
 
     public void setPseudo(String pseudo) {
-<span class="nc" id="L160">        this.pseudo = pseudo;</span>
-<span class="nc" id="L161">    }</span>
+<span class="nc" id="L153">        this.pseudo = pseudo;</span>
+<span class="nc" id="L154">    }</span>
 
     public String getPassword() {
-<span class="nc" id="L164">        return password;</span>
+<span class="nc" id="L157">        return password;</span>
     }
 
     public void setPassword(String password) {
-<span class="nc" id="L168">        this.password = password;</span>
-<span class="nc" id="L169">    }</span>
+<span class="nc" id="L161">        this.password = password;</span>
+<span class="nc" id="L162">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

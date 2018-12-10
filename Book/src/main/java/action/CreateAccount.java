@@ -21,6 +21,8 @@ public class CreateAccount  extends Connect {
         this.user2 = user2;
     }
 
+    protected Authentication auth = new Authentication("username","password");
+
     public User user2;
 
     public User getUser() {
@@ -38,17 +40,16 @@ public class CreateAccount  extends Connect {
         return ActionSupport.SUCCESS;
     }
 
-
-
-
     public String createAccount() throws Exception {
-        LOGGER.info("createAccount / Classe Java Action.privacy.Rent");
+        LOGGER.info("createAccount / Classe Java Action.privacy.CreateAccount");
         this.clearActionErrors();
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
         UserClient client = context.getBean(UserClient.class);
         controlMDP(user);
         OutputSOAUser list = client.getUser();
+
+        LOGGER.info("createAccount / Classe Java Action.privacy.CreateAccount ==> Control MDP");
 
         for (User u : list.getResult()) {
             if (u.getPseudo().equals(user.getPseudo())){
@@ -60,39 +61,40 @@ public class CreateAccount  extends Connect {
         // Generate Salt. The generated value can be stored in DB.
         String salt = Encrypt.getSalt(30);
 
+        LOGGER.info("createAccount / Classe Java Action.privacy.CreateAccount ==> Set Encrypt PWD");
+
         // Protect user's password. The generated value can be stored in DB.
         String mySecurePassword = Encrypt.generateSecurePassword(user.getPassword(), salt);
 
         user.setPassword(mySecurePassword);
         user.setSalt(salt);
 
-        // Print out protected password
-        System.out.println("My secure password = " + mySecurePassword);
-        System.out.println("Salt value = " + salt);
+        LOGGER.info("createAccount / Classe Java Action.privacy.CreateAccount ==> Add User");
 
         if (!this.hasErrors()) {
-            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(new Authentication("username", "password"),user);
+            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(auth,user);
             list = client.getUser();
             for (User u : list.getResult()) {
                 if (u.getPseudo().equals(user.getPseudo())){
                     user.setUserid(u.getUserid());
+                    LOGGER.info("createAccount / Classe Java Action.privacy.CreateAccount ==> get Id User");
                 }
             }
             this.map.put("user", user);
+            LOGGER.info("createAccount / Classe Java Action.privacy.CreateAccount ==> Update Map");
         }
         return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
     }
 
     public String updateInit() {
-        LOGGER.info("UpdateInit / Classe Java Action.privacy.Rent");
+        LOGGER.info("UpdateInit / Classe Java Action.privacy.CreateAccount");
         user = (User) this.map.get("user");
         pseudo = user.getPseudo();
         return ActionSupport.SUCCESS;
     }
 
-
     public String updateAccount() {
-        LOGGER.info("updateAccount / Classe Java Action.privacy.Rent");
+        LOGGER.info("updateAccount / Classe Java Action.privacy.CreateAccount");
         this.clearActionErrors();
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);
@@ -106,10 +108,6 @@ public class CreateAccount  extends Connect {
         user.setRole(user2.getRole());
         user.setUserid(user2.getUserid());
 
-        System.out.println(user.getUserid());
-
-        System.out.println(user.getPseudo()+user.getMail());
-
         // Generate Salt. The generated value can be stored in DB.
         String salt = Encrypt.getSalt(30);
 
@@ -119,16 +117,11 @@ public class CreateAccount  extends Connect {
         user.setPassword(mySecurePassword);
         user.setSalt(salt);
 
-        // Print out protected password
-        System.out.println("My secure password = " + mySecurePassword);
-        System.out.println("Salt value = " + salt);
-
         if (!this.hasErrors()) {
-            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(new Authentication("username", "password"),user);
+            OutputSOAddConfirm outputSOAddConfirm = client.getUserAdd(auth,user);
             this.map.remove("user");
             this.map.put("user", user);
         }
-
         return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
     }
 

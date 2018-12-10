@@ -9,20 +9,20 @@ import client.user.UserClient;
 import com.opensymphony.xwork2.ActionSupport;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-<span class="nc" id="L12">public class ListClientSoap extends ActionSupport {</span>
+<span class="fc" id="L12">public class ListClientSoap extends ActionSupport {</span>
     protected BookClient clientB() {
-<span class="nc" id="L14">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
-<span class="nc" id="L15">        return context.getBean(BookClient.class);</span>
+<span class="fc" id="L14">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
+<span class="fc" id="L15">        return context.getBean(BookClient.class);</span>
     }
 
     protected RentClient clientR() {
-<span class="nc" id="L19">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);</span>
-<span class="nc" id="L20">        return context.getBean(RentClient.class);</span>
+<span class="fc" id="L19">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);</span>
+<span class="fc" id="L20">        return context.getBean(RentClient.class);</span>
     }
 
     protected UserClient clientU() {
-<span class="nc" id="L24">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);</span>
-<span class="nc" id="L25">        return context.getBean(UserClient.class);</span>
+<span class="fc" id="L24">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);</span>
+<span class="fc" id="L25">        return context.getBean(UserClient.class);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>
