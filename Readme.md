@@ -29,17 +29,17 @@ Cette application pourrait être accessible à d’autres application se connect
 
 A step
 
-## Deployment
+## Deploiement
 
 Pour initialiser cette application, vous devez installer successivement les trois applications de ce projet.
 
-Le déploiement de l'application nécessite dans un premier temps la création de la base de donnée via le fichier DataBase. Un jeu de données test est disponible.
+La base de données est créée grâce à l'application docker-compose. Les fichiers de création de la BDD sont contenus dans le dossier spring-boot-soap. La commande docker-compose up permet d'initier la base de donnée.
 
-La première application à installer est le web service. Pour se faire déployez votre serveur et installez le fichier WAR (Spring-boot-SOAP.war). Si vous le souhaitez, vous pouvez modifier l'application et la repackager via le fichier pom.xml.
+La première application à installer est le web service. Pour se faire déployez votre serveur tomcat et installez le fichier WAR (Spring-boot-SOAP.war). Si vous le souhaitez, vous pouvez modifier l'application et la repackager via le fichier pom.xml. Les fichiers de configuration sont le fichier pom.xml, le fichier wsdl et le fichier application.properties de spring.
 
-Une fois le Web Service déployé, vous pouvez packager le client struts en installant le fichier Book.war sur le serveur de votre choix. Le client est également packagé sous forme de WAR.
+Une fois le Web Service déployé, vous pouvez packager le client struts en installant le fichier Book.war sur le serveur de votre choix. Le client est également packagé sous forme de WAR. Les fichiers de configuration sont le fichier pom.xml, le fichier wsdl et le fichier application.properties de spring.
 
-Concernant le batch, il est accessible sous forme d'un fichier jar et peut être lancé via la commande : java -jar BatchEmail-0.1.0.jar
+Concernant les batchs, il sont accessibles sous forme de deux fichiers jar et peuvent être lancé via la commande : java -jar BatchEmail-0.1.0.jar.
 
 ## Built With
 
@@ -49,7 +49,7 @@ Concernant le batch, il est accessible sous forme d'un fichier jar et peut être
 
 Maximilien LeBoiteux alias ToyTheRusse : https://github.com/Toysurusse
 
-Ce projet est libre de droit et disponible gratuitement : https://github.com/Toysurusse/Projet-3.git
+Ce projet est libre de droit et disponible gratuitement : https://github.com/Toysurusse/Projet-10.git
 
 ## License
 
