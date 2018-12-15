@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(namespace = Authentication.AUTH_NS)
 public class Authentication {
 
-    public static final String AUTH_NS = "http://javainuse";
+    public static final String AUTH_NS = "http://library";
 
     @XmlElement(namespace = AUTH_NS)
     private String username;

@@ -32,7 +32,7 @@ public class HtmlEmailExampleController {
                 String htmlMsg = "<h1>Bonjour ";
             if (mailList.size()==1){
                 htmlMsg = "<h1>Bonjour " +mailList.get(0).getPseudo()+"</h1>"+
-                        "<p>le prêt de votre livre "+ mailList.get(0).getBookname() +" est enregistré. Nos agents sont à votre disposition pour mettre vous remettre vos livres </p>";
+                        "<p>le prêt de votre livre "+ mailList.get(0).getBookname() +" est enregistré. Nos agents sont à votre disposition pour vous remettre votre livre </p>";
             }
             else {
                 for (Latebook l : mailList
@@ -42,7 +42,7 @@ public class HtmlEmailExampleController {
                 htmlMsg = "<h1>Bonjour " + mailList.get(0).getPseudo() + "</h1>" +
                         "<p>le prêt des livres suivant est enregistré : <br>"
                         + book +
-                        "Nos agents sont à votre disposition pour mettre vous remettre vos livres </p>";
+                        "Nos agents sont à votre disposition pour vous remettre vos livres </p>";
             }
             message.setContent(htmlMsg, "text/html");
             helper.setTo(mailList.get(0).getMail());

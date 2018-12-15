@@ -2,7 +2,7 @@ package client.book;
 
 import client.Authentication;
 import client.SecurityHeader;
-import com.javainuse.*;
+import com.library.*;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 
 public class BookClient extends WebServiceGatewaySupport {

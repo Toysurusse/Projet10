@@ -28,7 +28,6 @@ public class CreateAccountTest extends CreateAccount {
         execute();
 
         user= new User();
-        User usertest = new User();
 
         user.setPseudo("Test");
         user.setDelete(true);
@@ -39,7 +38,6 @@ public class CreateAccountTest extends CreateAccount {
         user.setMail("test@gmail.com");
         user.setUserid(900);
 
-        usertest=user;
         user.setPseudo("test");
         this.map.put("user",user);
 
@@ -52,8 +50,5 @@ public class CreateAccountTest extends CreateAccount {
 
         updateInit();
         updateAccount();
-
     }
-
-
 }

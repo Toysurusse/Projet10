@@ -2,8 +2,8 @@ package hello.tasklet;
 
 import client.Authentication;
 import client.rent.SoapClientRentConfig;
-import com.javainuse.Latebook;
-import com.javainuse.OutputSOARentbookLate;
+import com.library.Latebook;
+import com.library.OutputSOARentbookLate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.StepContribution;
@@ -29,8 +29,8 @@ public class TaskletStep implements Tasklet{
 	public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
 		List<Latebook> bookList=new ArrayList<>();
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientRentConfig.class);
-		client.rent.Rent client = context.getBean(client.rent.Rent.class);
-		OutputSOARentbookLate response = client.getRentbookLate(new Authentication("username","password"));
+		client.rent.RentClient client = context.getBean(client.rent.RentClient.class);
+		OutputSOARentbookLate response = client.getRentbookLate();
 		bookList=response.getResult();
 		for (Latebook b:bookList
 				) {

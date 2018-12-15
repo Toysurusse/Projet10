@@ -24,13 +24,13 @@ public class HtmlEmailExampleController {
         boolean multipart = true;
         MimeMessageHelper helper = new MimeMessageHelper(message, multipart, "utf-8");
         String htmlMsg = "<h1>Bonjour " +pseudo+"</h1>"+
-                "<p>le prêt de votre livre "+ bookName +" est bientôt terminé. Nos agents sont à votre disposition pour recevoir vos livres </p>";
+                "<p>le prêt de votre livre "+ bookName +" est bientôt terminé. Nos agents sont à votre disposition. </p>";
 
         System.out.println(htmlMsg);
 
         message.setContent(htmlMsg, "text/html");
         helper.setTo(mail);
-        helper.setSubject("Livre en retard");
+        helper.setSubject("Fin de votre prêt");
         this.emailSender.getJavaMailSender().send(message);
 
         return "Email Sent!";

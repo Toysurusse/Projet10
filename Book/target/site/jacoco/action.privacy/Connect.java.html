@@ -36,16 +36,16 @@ import java.util.Map;
     }
 
     public void setIdBook(int idBook) {
-<span class="nc" id="L39">        this.idBook = idBook;</span>
-<span class="nc" id="L40">    }</span>
+<span class="fc" id="L39">        this.idBook = idBook;</span>
+<span class="fc" id="L40">    }</span>
 
     public List&lt;Shopping&gt; getShoppingList() {
 <span class="nc" id="L43">        return shoppingList;</span>
     }
 
     public void setShoppingList(List&lt;Shopping&gt; shoppingList) {
-<span class="nc" id="L47">        this.shoppingList = shoppingList;</span>
-<span class="nc" id="L48">    }</span>
+<span class="fc" id="L47">        this.shoppingList = shoppingList;</span>
+<span class="fc" id="L48">    }</span>
 
 <span class="fc" id="L50">    public List&lt;Shopping&gt; shoppingList=new ArrayList&lt;&gt;();</span>
 
@@ -85,14 +85,14 @@ import java.util.Map;
 <span class="nc" id="L85">    }</span>
 
     public List&lt;Shopping&gt; initShop(){
-<span class="nc" id="L88">        User user = (User) this.map.get(&quot;user&quot;);</span>
-<span class="nc" id="L89">        OutputSOAShopSearch shoppingListUser = createInstanceBDDShop().getSearch(new Authentication(&quot;username&quot;, &quot;password&quot;), user.getUserid());</span>
-<span class="nc" id="L90">        List&lt;Shopping&gt; shopList=new ArrayList&lt;&gt;();</span>
-<span class="nc bnc" id="L91" title="All 2 branches missed.">        for (int i = 0; i &lt; shoppingListUser.getResult().size(); i++) {</span>
+<span class="fc" id="L88">        User user = (User) this.map.get(&quot;user&quot;);</span>
+<span class="fc" id="L89">        OutputSOAShopSearch shoppingListUser = createInstanceBDDShop().getSearch(new Authentication(&quot;username&quot;, &quot;password&quot;), user.getUserid());</span>
+<span class="fc" id="L90">        List&lt;Shopping&gt; shopList=new ArrayList&lt;&gt;();</span>
+<span class="pc bpc" id="L91" title="1 of 2 branches missed.">        for (int i = 0; i &lt; shoppingListUser.getResult().size(); i++) {</span>
 <span class="nc" id="L92">            Book book = createInstanceBDDBook().getBookById(new Authentication(&quot;username&quot;, &quot;password&quot;), shoppingListUser.getResult().get(i).getIdbookshop()).getResult();</span>
 <span class="nc" id="L93">            shopList.add(new Shopping(book, shoppingListUser.getResult().get(i).getId()));</span>
         }
-<span class="nc" id="L95">        return shopList;</span>
+<span class="fc" id="L95">        return shopList;</span>
     }
 
     protected void deleteShop (){
@@ -108,15 +108,15 @@ import java.util.Map;
 <span class="nc" id="L108">    }</span>
 
     protected ShopClient createInstanceBDDShop() {
-<span class="nc" id="L111">        AnnotationConfigApplicationContext contextS = new AnnotationConfigApplicationContext(SoapClientShopConfig.class);</span>
-<span class="nc" id="L112">        ShopClient clientS = contextS.getBean(ShopClient.class);</span>
-<span class="nc" id="L113">        return clientS;</span>
+<span class="fc" id="L111">        AnnotationConfigApplicationContext contextS = new AnnotationConfigApplicationContext(SoapClientShopConfig.class);</span>
+<span class="fc" id="L112">        ShopClient clientS = contextS.getBean(ShopClient.class);</span>
+<span class="fc" id="L113">        return clientS;</span>
     }
 
     protected BookClient createInstanceBDDBook() {
-<span class="nc" id="L117">        AnnotationConfigApplicationContext contextB = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
-<span class="nc" id="L118">        BookClient clientB = contextB.getBean(BookClient.class);</span>
-<span class="nc" id="L119">        return clientB;</span>
+<span class="fc" id="L117">        AnnotationConfigApplicationContext contextB = new AnnotationConfigApplicationContext(SoapClientBookConfig.class);</span>
+<span class="fc" id="L118">        BookClient clientB = contextB.getBean(BookClient.class);</span>
+<span class="fc" id="L119">        return clientB;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

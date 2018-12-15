@@ -5,7 +5,7 @@ import client.SecurityHeader;
 import com.library.*;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 
-<span class="nc" id="L8">public class ShopClient extends WebServiceGatewaySupport {</span>
+<span class="fc" id="L8">public class ShopClient extends WebServiceGatewaySupport {</span>
 
     public OutputSOAShop getShop(Authentication authentication) {
 <span class="nc" id="L11">        InputSOAShop request = new InputSOAShop();</span>
@@ -26,10 +26,10 @@ import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
     }
 
     public OutputSOAddConfirm getShopAdd(Authentication authentication, Shop shop) {
-<span class="nc" id="L29">        InputSOAShopAdd request = new InputSOAShopAdd();</span>
-<span class="nc" id="L30">        request.setShop(shop);</span>
-<span class="nc" id="L31">        return (OutputSOAddConfirm) getWebServiceTemplate()</span>
-<span class="nc" id="L32">                .marshalSendAndReceive(request,</span>
+<span class="fc" id="L29">        InputSOAShopAdd request = new InputSOAShopAdd();</span>
+<span class="fc" id="L30">        request.setShop(shop);</span>
+<span class="fc" id="L31">        return (OutputSOAddConfirm) getWebServiceTemplate()</span>
+<span class="fc" id="L32">                .marshalSendAndReceive(request,</span>
                         new SecurityHeader(
                                 authentication));
     }
@@ -44,10 +44,10 @@ import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
     }
 
     public OutputSOAShopSearch getSearch(Authentication authentication, int search) {
-<span class="nc" id="L47">        InputSOAShopSearch requests = new InputSOAShopSearch();</span>
-<span class="nc" id="L48">        requests.setTest(search);</span>
-<span class="nc" id="L49">        return (OutputSOAShopSearch) getWebServiceTemplate()</span>
-<span class="nc" id="L50">                .marshalSendAndReceive(requests,</span>
+<span class="fc" id="L47">        InputSOAShopSearch requests = new InputSOAShopSearch();</span>
+<span class="fc" id="L48">        requests.setTest(search);</span>
+<span class="fc" id="L49">        return (OutputSOAShopSearch) getWebServiceTemplate()</span>
+<span class="fc" id="L50">                .marshalSendAndReceive(requests,</span>
                         new SecurityHeader(
                                 authentication));
     }

@@ -76,6 +76,7 @@ public class IndexActionTest {
         when(outputSOABook.getResult()).thenReturn(Collections.singletonList(book));
         LOGGER.info(action.execute());
         assertNotNull(action.execute());
+
     }
 
     @Test

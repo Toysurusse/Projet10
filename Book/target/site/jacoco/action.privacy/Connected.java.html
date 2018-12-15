@@ -20,90 +20,87 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-<span class="nc" id="L23">public class Connected extends Connect {</span>
+<span class="fc" id="L23">public class Connected extends Connect {</span>
 
     public List&lt;Book&gt; getBookToRent() {
 <span class="nc" id="L26">        return bookToRent;</span>
     }
 
     public void setBookToRent(List&lt;Book&gt; bookToRent) {
-<span class="nc" id="L30">        this.bookToRent = bookToRent;</span>
-<span class="nc" id="L31">    }</span>
+<span class="fc" id="L30">        this.bookToRent = bookToRent;</span>
+<span class="fc" id="L31">    }</span>
 
     public String idPannier;
 
-<span class="nc" id="L35">    public List&lt;Book&gt; bookToRent = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L35">    public List&lt;Book&gt; bookToRent = new ArrayList&lt;&gt;();</span>
 
-<span class="nc" id="L37">    public Shop shop = new Shop();</span>
+<span class="fc" id="L37">    public Shop shop = new Shop();</span>
 
     public String execute() throws Exception {
-<span class="nc" id="L40">        User user = (User) this.map.get(&quot;user&quot;);</span>
+<span class="fc" id="L40">        User user = (User) this.map.get(&quot;user&quot;);</span>
 
-<span class="nc" id="L42">        OutputSOABook response = createInstanceBDDBook().getBook(new Authentication(&quot;username&quot;, &quot;password&quot;));</span>
-<span class="nc" id="L43">        setBookToRent(response.getResult());</span>
+<span class="fc" id="L42">        OutputSOABook response = createInstanceBDDBook().getBook(new Authentication(&quot;username&quot;, &quot;password&quot;));</span>
+<span class="fc" id="L43">        setBookToRent(response.getResult());</span>
 
-<span class="nc" id="L45">        setShoppingList(initShop());</span>
+<span class="fc" id="L45">        setShoppingList(initShop());</span>
 
-<span class="nc" id="L47">        return SUCCESS;</span>
+<span class="fc" id="L47">        return SUCCESS;</span>
     }
 
     public String addToShop() throws Exception {
-<span class="nc" id="L51">        User user = (User) this.map.get(&quot;user&quot;);</span>
+<span class="fc" id="L51">        User user = (User) this.map.get(&quot;user&quot;);</span>
 
         //Create ShopLine
-<span class="nc" id="L54">        shop.setDispo(true);</span>
-<span class="nc" id="L55">        shop.setIdbookshop(idBook);</span>
-<span class="nc" id="L56">        shop.setIdpannier(panierGen());</span>
-<span class="nc" id="L57">        shop.setIdusershop(user.getUserid());</span>
-<span class="nc" id="L58">        shop.setCreateat(translate(System.currentTimeMillis()));</span>
-<span class="nc" id="L59">        shop.setEndat(translate(new Long(System.currentTimeMillis() + 172800000)));</span>
+<span class="fc" id="L54">        shop.setDispo(true);</span>
+<span class="fc" id="L55">        shop.setIdbookshop(idBook);</span>
+<span class="fc" id="L56">        shop.setIdpannier(panierGen());</span>
+<span class="fc" id="L57">        shop.setIdusershop(user.getUserid());</span>
+<span class="fc" id="L58">        shop.setCreateat(translate(System.currentTimeMillis()));</span>
+<span class="fc" id="L59">        shop.setEndat(translate(new Long(System.currentTimeMillis() + 172800000)));</span>
 
         //Update book dispo and create ShopLine
-<span class="nc" id="L62">        OutputSOABookById bookToShop = createInstanceBDDBook().getBookById(new Authentication(&quot;username&quot;, &quot;password&quot;), idBook);</span>
-<span class="nc" id="L63">        bookToShop.getResult().setDispo(bookToShop.getResult().getDispo() - 1);</span>
-<span class="nc" id="L64">        OutputSOAddConfirm bookUpdate = createInstanceBDDBook().getBookAdd(new Authentication(&quot;username&quot;, &quot;password&quot;), bookToShop.getResult());</span>
+<span class="fc" id="L62">        OutputSOABookById bookToShop = createInstanceBDDBook().getBookById(new Authentication(&quot;username&quot;, &quot;password&quot;), idBook);</span>
+<span class="fc" id="L63">        bookToShop.getResult().setDispo(bookToShop.getResult().getDispo() - 1);</span>
+<span class="fc" id="L64">        OutputSOAddConfirm bookUpdate = createInstanceBDDBook().getBookAdd(new Authentication(&quot;username&quot;, &quot;password&quot;), bookToShop.getResult());</span>
+<span class="fc" id="L65">        OutputSOAddConfirm ShopList = createInstanceBDDShop().getShopAdd(new Authentication(&quot;username&quot;, &quot;password&quot;), shop);</span>
 
-<span class="nc" id="L66">        System.out.println(&quot;Shopping List : &quot;+shop.getId()+&quot; ; &quot;+shop.isDispo()+&quot; ; &quot;+shop.getIdbookshop()+&quot; ; &quot;+shop.getIdusershop()+&quot; ; &quot;+shop.getIdpannier()+&quot; ; &quot;+shop.getCreateat()+&quot; ; &quot;);</span>
-
-<span class="nc" id="L68">        OutputSOAddConfirm ShopList = createInstanceBDDShop().getShopAdd(new Authentication(&quot;username&quot;, &quot;password&quot;), shop);</span>
-
-<span class="nc" id="L70">        return SUCCESS;</span>
+<span class="fc" id="L67">        return SUCCESS;</span>
     }
 
     public String deleteToShop() throws Exception {
 
-<span class="nc" id="L75">        deleteShop ();</span>
+<span class="nc" id="L72">        deleteShop ();</span>
 
-<span class="nc" id="L77">        return SUCCESS;</span>
+<span class="nc" id="L74">        return SUCCESS;</span>
     }
 
     public Shop getShop() {
-<span class="nc" id="L81">        return shop;</span>
+<span class="nc" id="L78">        return shop;</span>
     }
 
     public void setShop(Shop shop) {
-<span class="nc" id="L85">        this.shop = shop;</span>
-<span class="nc" id="L86">    }</span>
+<span class="nc" id="L82">        this.shop = shop;</span>
+<span class="nc" id="L83">    }</span>
 
     public XMLGregorianCalendar translate(Long time) {
-<span class="nc" id="L89">        Timestamp timestamp = new Timestamp(time);</span>
-<span class="nc" id="L90">        GregorianCalendar cal = new GregorianCalendar();</span>
-<span class="nc" id="L91">        cal.setTimeInMillis(java.sql.Timestamp.valueOf(timestamp.toString()).getTime());</span>
-<span class="nc" id="L92">        XMLGregorianCalendar xmlDate = null;</span>
+<span class="fc" id="L86">        Timestamp timestamp = new Timestamp(time);</span>
+<span class="fc" id="L87">        GregorianCalendar cal = new GregorianCalendar();</span>
+<span class="fc" id="L88">        cal.setTimeInMillis(java.sql.Timestamp.valueOf(timestamp.toString()).getTime());</span>
+<span class="fc" id="L89">        XMLGregorianCalendar xmlDate = null;</span>
         try {
-<span class="nc" id="L94">            xmlDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal);</span>
-<span class="nc" id="L95">        } catch (DatatypeConfigurationException e) {</span>
-<span class="nc" id="L96">            e.printStackTrace();</span>
-<span class="nc" id="L97">        }</span>
-<span class="nc" id="L98">        return xmlDate;</span>
+<span class="fc" id="L91">            xmlDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal);</span>
+<span class="nc" id="L92">        } catch (DatatypeConfigurationException e) {</span>
+<span class="nc" id="L93">            e.printStackTrace();</span>
+<span class="fc" id="L94">        }</span>
+<span class="fc" id="L95">        return xmlDate;</span>
     }
 
     public String panierGen() {
-<span class="nc" id="L102">        User user = (User) this.map.get(&quot;user&quot;);</span>
-<span class="nc" id="L103">        long millis = System.currentTimeMillis();</span>
-<span class="nc" id="L104">        java.sql.Date date = new java.sql.Date(millis);</span>
-<span class="nc" id="L105">        idPannier = String.format(&quot;%010d&quot;, user.getUserid()) + &quot;/&quot; + date + &quot;/&quot; + LocalDateTime.now().getHour();</span>
-<span class="nc" id="L106">        return idPannier;</span>
+<span class="fc" id="L99">        User user = (User) this.map.get(&quot;user&quot;);</span>
+<span class="fc" id="L100">        long millis = System.currentTimeMillis();</span>
+<span class="fc" id="L101">        java.sql.Date date = new java.sql.Date(millis);</span>
+<span class="fc" id="L102">        idPannier = String.format(&quot;%010d&quot;, user.getUserid()) + &quot;/&quot; + date + &quot;/&quot; + LocalDateTime.now().getHour();</span>
+<span class="fc" id="L103">        return idPannier;</span>
     }
 
 }

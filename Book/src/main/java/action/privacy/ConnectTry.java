@@ -87,18 +87,4 @@ public class ConnectTry extends Connect {
         this.password = password;
     }
 
-    private void controlMDP(User user) {
-        if (user.getPseudo().equals("")) {
-            this.addActionError(getText("error.emptyPseudo"));
-        }
-        if (user.getPassword().equals("")) {
-            this.addActionError(getText("error.emptyPassword"));
-        }
-        if (user.getGender() == null) {
-            this.addActionError(getText("error.emptyGender"));
-        }
-        if (user.getMail().equals("")) {
-            this.addActionError(getText("error.emptyMail"));
-        }
-    }
 }

@@ -30,7 +30,7 @@
             <result name="success">/WEB-INF/jsp/connect.jsp</result>
         </action>
 
-        <action name="connectTry" class="action.privacy.ConnectTry" method="input">
+        <action name="connectTry" class="action.privacy.ConnectTryTest" method="input">
             <result name="input">/WEB-INF/jsp/connect.jsp</result>
             <result name="success" type="redirectAction">
                 <param name="actionName">connected</param>
@@ -39,7 +39,7 @@
         </action>
 
         <action name="disconnect"
-                class="action.privacy.ConnectTry"
+                class="action.privacy.ConnectTryTest"
                 method ="disconnect">
             <result name="success" type="redirectAction">
                 <param name="actionName">index</param>

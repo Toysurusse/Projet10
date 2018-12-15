@@ -14,61 +14,61 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 
-<span class="nc" id="L17">public class ConnectTry extends Connect {</span>
+<span class="fc" id="L17">public class ConnectTry extends Connect {</span>
 
-<span class="nc" id="L19">    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(IndexAction.class);</span>
+<span class="fc" id="L19">    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(IndexAction.class);</span>
     public String pseudo;
     public String password;
 
     public String execute() throws Exception {
-<span class="nc" id="L24">        LOGGER.info(&quot;execute / Classe Java Action.privacy.ConnectTry&quot;);</span>
-<span class="nc" id="L25">        this.map.remove(&quot;user&quot;);</span>
-<span class="nc" id="L26">        return ActionSupport.SUCCESS;</span>
+<span class="fc" id="L24">        LOGGER.info(&quot;execute / Classe Java Action.privacy.ConnectTry&quot;);</span>
+<span class="fc" id="L25">        this.map.remove(&quot;user&quot;);</span>
+<span class="fc" id="L26">        return ActionSupport.SUCCESS;</span>
     }
 
     public String input() throws Exception {
-<span class="nc" id="L30">        LOGGER.info(&quot;input / Classe Java Action.privacy.ConnectTry&quot;);</span>
-<span class="nc" id="L31">        this.clearActionErrors();</span>
-<span class="nc" id="L32">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);</span>
-<span class="nc" id="L33">        UserClient client = context.getBean(UserClient.class);</span>
+<span class="fc" id="L30">        LOGGER.info(&quot;input / Classe Java Action.privacy.ConnectTry&quot;);</span>
+<span class="fc" id="L31">        this.clearActionErrors();</span>
+<span class="fc" id="L32">        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SoapClientUserConfig.class);</span>
+<span class="fc" id="L33">        UserClient client = context.getBean(UserClient.class);</span>
 
-<span class="nc bnc" id="L35" title="All 4 branches missed.">        if (!pseudo.equals(&quot;&quot;) &amp;&amp; !password.equals(&quot;&quot;)) {</span>
+<span class="pc bpc" id="L35" title="2 of 4 branches missed.">        if (!pseudo.equals(&quot;&quot;) &amp;&amp; !password.equals(&quot;&quot;)) {</span>
 
-<span class="nc" id="L37">            OutputSOAUserTest response = client.getUserTest(pseudo);</span>
+<span class="fc" id="L37">            OutputSOAUserTest response = client.getUserTest(pseudo);</span>
 
-<span class="nc bnc" id="L39" title="All 2 branches missed.">            if(response.getUser().getPassword()==null){</span>
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">            if(response.getUser().getPassword()==null){</span>
 <span class="nc" id="L40">                this.addActionError(getText(&quot;error.connectNotFound&quot;));</span>
             }
             else{
-<span class="nc" id="L43">                boolean passwordMatch = Encrypt.verifyUserPassword(password, response.getUser().getPassword(), response.getUser().getSalt());</span>
+<span class="fc" id="L43">                boolean passwordMatch = Encrypt.verifyUserPassword(password, response.getUser().getPassword(), response.getUser().getSalt());</span>
 
 
-<span class="nc bnc" id="L46" title="All 2 branches missed.">                if(passwordMatch)</span>
+<span class="pc bpc" id="L46" title="1 of 2 branches missed.">                if(passwordMatch)</span>
             {
-<span class="nc" id="L48">                LOGGER.info(&quot;Provided user password &quot; + password + &quot; is correct.&quot;);</span>
+<span class="fc" id="L48">                LOGGER.info(&quot;Provided user password &quot; + password + &quot; is correct.&quot;);</span>
             } else {
 <span class="nc" id="L50">                LOGGER.info(&quot;Provided password is incorrect&quot;);</span>
             }
 
-<span class="nc bnc" id="L53" title="All 2 branches missed.">            if (passwordMatch) {</span>
-<span class="nc" id="L54">                this.map.put(&quot;user&quot;, response.getUser());</span>
-<span class="nc" id="L55">                pseudo = null;</span>
-<span class="nc" id="L56">                password = null;</span>
+<span class="pc bpc" id="L53" title="1 of 2 branches missed.">            if (passwordMatch) {</span>
+<span class="fc" id="L54">                this.map.put(&quot;user&quot;, response.getUser());</span>
+<span class="fc" id="L55">                pseudo = null;</span>
+<span class="fc" id="L56">                password = null;</span>
             } else {
 <span class="nc" id="L58">                this.addActionError(getText(&quot;error.connectError&quot;));</span>
             }
             }
-<span class="nc" id="L61">        } else {</span>
+<span class="fc" id="L61">        } else {</span>
 <span class="nc" id="L62">            this.addActionError(getText(&quot;error.connectEmpty&quot;));</span>
         }
 
-<span class="nc bnc" id="L65" title="All 2 branches missed.">        return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;</span>
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">        return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;</span>
     }
 
     public String disconnect() {
-<span class="nc" id="L69">        LOGGER.info(&quot;disconnect / Classe Java Action.privacy.ConnectTry&quot;);</span>
-<span class="nc" id="L70">        this.map.remove(&quot;user&quot;);</span>
-<span class="nc" id="L71">        return ActionSupport.SUCCESS;</span>
+<span class="fc" id="L69">        LOGGER.info(&quot;disconnect / Classe Java Action.privacy.ConnectTry&quot;);</span>
+<span class="fc" id="L70">        this.map.remove(&quot;user&quot;);</span>
+<span class="fc" id="L71">        return ActionSupport.SUCCESS;</span>
     }
 
     public String getPseudo() {
@@ -76,30 +76,16 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
     }
 
     public void setPseudo(String pseudo) {
-<span class="nc" id="L79">        this.pseudo = pseudo;</span>
-<span class="nc" id="L80">    }</span>
+<span class="fc" id="L79">        this.pseudo = pseudo;</span>
+<span class="fc" id="L80">    }</span>
 
     public String getPassword() {
 <span class="nc" id="L83">        return password;</span>
     }
 
     public void setPassword(String password) {
-<span class="nc" id="L87">        this.password = password;</span>
-<span class="nc" id="L88">    }</span>
+<span class="fc" id="L87">        this.password = password;</span>
+<span class="fc" id="L88">    }</span>
 
-    private void controlMDP(User user) {
-<span class="nc bnc" id="L91" title="All 2 branches missed.">        if (user.getPseudo().equals(&quot;&quot;)) {</span>
-<span class="nc" id="L92">            this.addActionError(getText(&quot;error.emptyPseudo&quot;));</span>
-        }
-<span class="nc bnc" id="L94" title="All 2 branches missed.">        if (user.getPassword().equals(&quot;&quot;)) {</span>
-<span class="nc" id="L95">            this.addActionError(getText(&quot;error.emptyPassword&quot;));</span>
-        }
-<span class="nc bnc" id="L97" title="All 2 branches missed.">        if (user.getGender() == null) {</span>
-<span class="nc" id="L98">            this.addActionError(getText(&quot;error.emptyGender&quot;));</span>
-        }
-<span class="nc bnc" id="L100" title="All 2 branches missed.">        if (user.getMail().equals(&quot;&quot;)) {</span>
-<span class="nc" id="L101">            this.addActionError(getText(&quot;error.emptyMail&quot;));</span>
-        }
-<span class="nc" id="L103">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

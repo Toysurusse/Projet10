@@ -21,12 +21,12 @@ import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
     }
 
     public OutputSOAUserTest getUserTest( String pseudo) {
-<span class="nc" id="L24">        InputSOAUserTest request = new InputSOAUserTest();</span>
-<span class="nc" id="L25">        request.setPseudo(pseudo);</span>
-<span class="nc" id="L26">        return (OutputSOAUserTest) getWebServiceTemplate()</span>
-<span class="nc" id="L27">                .marshalSendAndReceive(request,</span>
+<span class="fc" id="L24">        InputSOAUserTest request = new InputSOAUserTest();</span>
+<span class="fc" id="L25">        request.setPseudo(pseudo);</span>
+<span class="fc" id="L26">        return (OutputSOAUserTest) getWebServiceTemplate()</span>
+<span class="fc" id="L27">                .marshalSendAndReceive(request,</span>
                         new SecurityHeader(
-<span class="nc" id="L29">                                getauthentication()));</span>
+<span class="fc" id="L29">                                getauthentication()));</span>
     }
 
     public OutputSOAUserById getUserById( int id) {
