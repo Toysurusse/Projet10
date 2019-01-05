@@ -18,7 +18,7 @@ public class SoapClientBookConfig {
     public BookClient weatherClient(Jaxb2Marshaller marshaller) {
         System.out.println(marshaller);
         BookClient client = new BookClient();
-        client.setDefaultUri("http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/book");
+        client.setDefaultUri("http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/book");
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);
         return client;

@@ -17,7 +17,7 @@ public class SoapClientUserConfig {
     @Bean
     public UserClient weatherClient(Jaxb2Marshaller marshaller) {
         UserClient client = new UserClient();
-        client.setDefaultUri("http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/user");
+        client.setDefaultUri("http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/user");
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);
         return client;
