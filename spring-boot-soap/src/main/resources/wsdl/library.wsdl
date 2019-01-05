@@ -559,31 +559,31 @@
     <!--Define com.libraryervice -->
     <wsdl:service name="SOABookaddEndpointService">
         <wsdl:port name="SOABookaddEndpoint" binding="tns:SOABookaddBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/BookAdd"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/BookAdd"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOABookdelEndpointService">
         <wsdl:port name="SOABookdelEndpoint" binding="tns:SOABookdelBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/Bookdel"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/Bookdel"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOABookByIdEndpointService">
         <wsdl:port name="SOABookByIdEndpoint" binding="tns:SOABookByIdBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/BookById"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/BookById"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOABookEndpointService">
         <wsdl:port name="SOABookEndpoint" binding="tns:SOABookBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/book"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/book"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOABookSearchEndpointService">
         <wsdl:port name="SOABookSearchEndpoint" binding="tns:SOABookSearchBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/bookSearch"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/bookSearch"/>
         </wsdl:port>
     </wsdl:service>
 
@@ -734,31 +734,31 @@
     <!--Define com.libraryervice -->
     <wsdl:service name="SOAUseraddEndpointService">
         <wsdl:port name="SOAUseraddEndpoint" binding="tns:SOAUseraddBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/UserAdd"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/UserAdd"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOAUserTestEndpointService">
         <wsdl:port name="SOAUserTestEndpoint" binding="tns:SOAUserTestBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/UserTest"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/UserTest"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOAUserdelEndpointService">
         <wsdl:port name="SOAUserdelEndpoint" binding="tns:SOAUserdelBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/Userdel"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/Userdel"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOAUserByIdEndpointService">
         <wsdl:port name="SOAUserByIdEndpoint" binding="tns:SOAUserByIdBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/UserById"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/UserById"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOAUserEndpointService">
         <wsdl:port name="SOAUserEndpoint" binding="tns:SOAUserBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/user"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/user"/>
         </wsdl:port>
     </wsdl:service>
 
@@ -963,37 +963,37 @@
     <!--Define com.libraryervice -->
     <wsdl:service name="SOARentbookByUserEndpointService">
         <wsdl:port name="SOARentbookByUserEndpoint" binding="tns:SOARentbookByUserBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/RentbookByUser"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/RentbookByUser"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOARentbookBackEndpointService">
         <wsdl:port name="SOARentbookBackEndpoint" binding="tns:SOARentbookBackBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/RentbookBack"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/RentbookBack"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOARentbookdelEndpointService">
         <wsdl:port name="SOARentbookdelEndpoint" binding="tns:SOARentbookdelBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/Rentbookdel"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/Rentbookdel"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOARentbookByIdEndpointService">
         <wsdl:port name="SOARentbookByIdEndpoint" binding="tns:SOARentbookByIdBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/RentbookById"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/RentbookById"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOARentbookEndpointService">
         <wsdl:port name="SOARentbookEndpoint" binding="tns:SOARentbookBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/rentbook"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/rentbook"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOARentbookLateEndpointService">
         <wsdl:port name="SOARentbookLateEndpoint" binding="tns:SOARentbookLateBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/rentbookLate"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/rentbookLate"/>
         </wsdl:port>
     </wsdl:service>
 
@@ -1182,37 +1182,37 @@
     <!--Define com.libraryervice -->
     <wsdl:service name="SOAShopaddEndpointService">
         <wsdl:port name="SOAShopaddEndpoint" binding="tns:SOAShopaddBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/ShopAdd"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/ShopAdd"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOAShopTestEndpointService">
         <wsdl:port name="SOAShopTestEndpoint" binding="tns:SOAShopTestBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/ShopTest"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/ShopTest"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOAShopdelEndpointService">
         <wsdl:port name="SOAShopdelEndpoint" binding="tns:SOAShopdelBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/Shopdel"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/Shopdel"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOAShopByIdEndpointService">
         <wsdl:port name="SOAShopByIdEndpoint" binding="tns:SOAShopByIdBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/ShopById"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/ShopById"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOAShopEndpointService">
         <wsdl:port name="SOAShopEndpoint" binding="tns:SOAShopBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/shop"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/shop"/>
         </wsdl:port>
     </wsdl:service>
 
     <wsdl:service name="SOAShopSearchEndpointService">
         <wsdl:port name="SOAShopSearchEndpoint" binding="tns:SOAShopSearchBinding">
-            <soap:address location="http://192.168.0.14:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/shopSearch"/>
+            <soap:address location="http://192.168.0.18:8082/spring-boot-soap-0.0.1-SNAPSHOT/library/ws/shopSearch"/>
         </wsdl:port>
     </wsdl:service>
 
